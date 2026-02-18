@@ -100,7 +100,7 @@ export default function Footer() {
                             opacity: 0.3
                         }}
                     >
-                        1947
+                        STUDIO 1947
                     </motion.h1>
                 </div>
 
