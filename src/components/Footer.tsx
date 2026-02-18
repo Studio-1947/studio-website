@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import Logo from './Logo';
+import GoldenSprinkles from './GoldenSprinkles';
 
 
 export default function Footer() {
@@ -90,7 +91,10 @@ export default function Footer() {
                 </div>
 
                 {/* Big Text */}
-                <div className="border-t border-gray-800 pt-12 mt-12">
+                <div className="border-t border-gray-800 pt-12 mt-12 relative overflow-hidden">
+                    <div className="absolute inset-0 z-0">
+                        <GoldenSprinkles />
+                    </div>
                     <motion.h1
                         initial={{ opacity: 0, scale: 0.95 }}
                         whileInView={{ opacity: 1, scale: 1 }}
