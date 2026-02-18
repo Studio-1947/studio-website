@@ -2,6 +2,7 @@ import Layout from './components/Layout';
 import Hero from './components/Hero';
 import ClientsTicker from './components/ClientsTicker';
 import Services from './components/Services/Services';
+import Verticals from './components/Verticals/Verticals';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Hero />
       <ClientsTicker />
       <Services />
+      <Verticals />
 
       {/* Featured Work Section Placeholder */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
