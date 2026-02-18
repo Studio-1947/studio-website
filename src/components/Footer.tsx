@@ -47,12 +47,13 @@ export default function Footer() {
                         <p className="text-gray-400 max-w-sm text-lg leading-relaxed">
                             Crafting digital experiences that merge timeless design with cutting-edge technology.
                         </p>
-                        <div className="pt-6">
-                            <a href="/contact" className="inline-flex items-center space-x-2 text-white border-b border-white pb-1 hover:text-purple-400 hover:border-purple-400 transition-all group">
-                                <span>Start a Project</span>
-                                <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
+                        <div className="pt-8">
+                            <a href="/contact" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border border-gray-700 rounded-full hover:border-white">
+                                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
+                                    <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </span>
+                                <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">Start a Project</span>
+                                <span className="relative invisible">Start a Project</span>
                             </a>
                         </div>
                     </div>
