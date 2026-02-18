@@ -8,14 +8,31 @@ import SearchModal from './SearchModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
+interface DropdownItem {
+    name: string;
+    href: string;
+}
+
+interface NavLink {
+    name: string;
+    href: string;
+    spokeIndex?: number;
+    onClick?: () => void;
+    dropdown?: DropdownItem[];
+}
+
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [activeSpoke, setActiveSpoke] = useState<number | null>(null);
+    const [hoveredLink, setHoveredLink] = useState<string | null>(null);
+    const [expandedMobileLinks, setExpandedMobileLinks] = useState<string[]>([]);
+
     const containerRef = useRef<HTMLDivElement>(null);
     const leftPillRef = useRef<HTMLDivElement>(null);
     const rightPillRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLElement>(null);
+    const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     // Keyboard shortcut for search
     useEffect(() => {
@@ -76,13 +93,6 @@ export default function Navbar() {
         }
     }, { scope: containerRef });
 
-    interface NavLink {
-        name: string;
-        href: string;
-        spokeIndex?: number;
-        onClick?: () => void;
-    }
-
     const leftLinks: NavLink[] = [
         { name: 'About Us', href: '/about' },
         // Search is now handled separately
@@ -91,10 +101,29 @@ export default function Navbar() {
 
     // Spoke Mapping: 2 (Right/3oclock), 1 (1:30), 0 (12:00), 7 (10:30) - Anti-clockwise
     const rightLinks: NavLink[] = [
-        { name: 'Products', href: '/products', spokeIndex: 2 },
+        {
+            name: 'Products',
+            href: '/products',
+            spokeIndex: 2,
+            dropdown: [
+                { name: 'Doptor', href: '/products/doptor' },
+                { name: 'Angan', href: '/products/angan' },
+                { name: 'Data analysis dashboards', href: '/products/data-analysis' },
+                { name: 'Social media dashboards', href: '/products/social-media' },
+            ]
+        },
         { name: 'Solutions', href: '/solutions', spokeIndex: 1 },
         { name: 'Collabs', href: '/collabs', spokeIndex: 0 },
-        { name: 'Initiative', href: '/initiative', spokeIndex: 7 },
+        {
+            name: 'Initiative',
+            href: '/initiative',
+            spokeIndex: 7,
+            dropdown: [
+                { name: 'Himal nagirk fellowships', href: '/initiative/himal-nagirk-fellowships' },
+                { name: 'Local design', href: '/initiative/local-design' },
+                { name: 'Sirf local', href: '/initiative/sirf-local' },
+            ]
+        },
     ];
 
     const allLinks: NavLink[] = [
@@ -105,6 +134,25 @@ export default function Navbar() {
 
     // Increased padding and adjusted max-width for "proper screen fill"
     const pillBaseClass = "flex items-center space-x-10 px-12 py-5 bg-gray-900/80 dark:bg-black/80 backdrop-blur-3xl border border-gray-200/10 dark:border-white/10 text-gray-100 transition-colors duration-300";
+
+    const handleMouseEnter = (linkName: string, spokeIndex?: number) => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        setHoveredLink(linkName);
+        if (spokeIndex !== undefined) setActiveSpoke(spokeIndex);
+    };
+
+    const handleMouseLeave = () => {
+        timeoutRef.current = setTimeout(() => {
+            setHoveredLink(null);
+            setActiveSpoke(null);
+        }, 300); // 300ms delay before hiding dropdown
+    };
+
+    const toggleMobileSubmenu = (name: string) => {
+        setExpandedMobileLinks(prev =>
+            prev.includes(name) ? prev.filter(item => item !== name) : [...prev, name]
+        );
+    };
 
     return (
         <>
@@ -165,15 +213,49 @@ export default function Navbar() {
                     >
                         <div className="flex space-x-6 items-center">
                             {rightLinks.map((link) => (
-                                <a
+                                <div
                                     key={link.name}
-                                    href={link.href}
-                                    className="text-base font-medium hover:text-primary transition-colors"
-                                    onMouseEnter={() => setActiveSpoke(link.spokeIndex ?? null)}
-                                    onMouseLeave={() => setActiveSpoke(null)}
+                                    className="relative group"
+                                    onMouseEnter={() => handleMouseEnter(link.name, link.spokeIndex)}
+                                    onMouseLeave={handleMouseLeave}
                                 >
-                                    {link.name}
-                                </a>
+                                    <a
+                                        href={link.href}
+                                        className={`text-base font-medium hover:text-primary transition-colors flex items-center gap-1 ${hoveredLink === link.name ? 'text-primary' : ''}`}
+                                    >
+                                        {link.name}
+                                        {link.dropdown && (
+                                            <svg
+                                                className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        )}
+                                    </a>
+
+                                    {/* Desktop Dropdown */}
+                                    {link.dropdown && (
+                                        <div
+                                            className={`absolute left-0 top-full pt-4 w-64 transition-all duration-300 transform origin-top ${hoveredLink === link.name ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'
+                                                }`}
+                                        >
+                                            <div className="bg-gray-900/95 backdrop-blur-3xl border border-white/10 rounded-xl overflow-hidden shadow-xl p-2 flex flex-col gap-1">
+                                                {link.dropdown.map((item) => (
+                                                    <a
+                                                        key={item.name}
+                                                        href={item.href}
+                                                        className="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                                                    >
+                                                        {item.name}
+                                                    </a>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
+                                </div>
                             ))}
                             <div className="pl-6 ml-6 border-l border-gray-700">
                                 <ThemeToggle />
@@ -215,29 +297,70 @@ export default function Navbar() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 z-40 bg-gray-900/95 backdrop-blur-3xl transition-all duration-500 lg:hidden flex flex-col items-center justify-center space-y-8 ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-10'
+                className={`fixed inset-0 z-40 bg-gray-900/95 backdrop-blur-3xl transition-all duration-500 lg:hidden flex flex-col ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-10'
                     }`}
             >
-                {allLinks.map((link, index) => (
-                    <a
-                        key={link.name}
-                        href={link.href}
-                        style={{ transitionDelay: `${index * 50}ms` }}
-                        onClick={(e) => {
-                            if (link.onClick) {
-                                e.preventDefault();
-                                link.onClick();
-                            }
-                            setIsOpen(false);
-                        }}
-                        className={`text-3xl font-bold text-white hover:text-primary transition-all transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                    >
-                        {link.name}
-                    </a>
-                ))}
+                <div className="flex flex-col items-center justify-center min-h-screen w-full p-8 space-y-6 overflow-y-auto">
+
+                    {allLinks.map((link, index) => (
+                        <div key={link.name} className="flex flex-col items-center w-full max-w-sm">
+                            <div className="flex items-center justify-center w-full relative">
+                                <a
+                                    href={link.href}
+                                    style={{ transitionDelay: `${index * 50}ms` }}
+                                    onClick={(e) => {
+                                        if (link.dropdown) {
+                                            e.preventDefault();
+                                            toggleMobileSubmenu(link.name);
+                                        } else {
+                                            if (link.onClick) {
+                                                e.preventDefault();
+                                                link.onClick();
+                                            }
+                                            setIsOpen(false);
+                                        }
+                                    }}
+                                    className={`text-3xl font-bold text-white hover:text-primary transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                                >
+                                    {link.name}
+                                    {link.dropdown && (
+                                        <svg
+                                            className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke="currentColor"
+                                        >
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    )}
+                                </a>
+                            </div>
+
+                            {/* Mobile Dropdown Items */}
+                            {link.dropdown && (
+                                <div
+                                    className={`flex flex-col items-center space-y-4 w-full transition-all duration-300 overflow-hidden ${expandedMobileLinks.includes(link.name) ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
+                                        }`}
+                                >
+                                    {link.dropdown.map((item) => (
+                                        <a
+                                            key={item.name}
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className="text-xl font-medium text-gray-400 hover:text-white transition-colors"
+                                        >
+                                            {item.name}
+                                        </a>
+                                    ))}
+                                </div>
+                            )}
+                        </div>
+                    ))}
+                </div>
             </div>
 
             <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         </>
     );
 }
+
