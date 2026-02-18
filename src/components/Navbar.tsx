@@ -130,7 +130,7 @@ export default function Navbar() {
             dropdown: [
                 { name: 'Himal nagirk fellowships', href: '/initiative/himal-nagirk-fellowships' },
                 { name: 'Local design', href: '/initiative/local-design' },
-                { name: 'Sirf local', href: '/initiative/sirf-local' },
+                { name: 'Sirf Local', href: '/initiative/sirflocal' },
             ]
         },
     ];

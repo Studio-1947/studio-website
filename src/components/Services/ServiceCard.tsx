@@ -7,7 +7,7 @@ interface ServiceCardProps {
 
 export default function ServiceCard({ title, description }: ServiceCardProps) {
   return (
-    <div className="min-w-[300px] md:min-w-[350px] lg:min-w-[400px] bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 p-6 rounded-lg flex flex-col gap-4 snap-start group hover:border-blue-500/50 transition-colors duration-300">
+    <div className="min-w-[300px] md:min-w-[350px] lg:min-w-[calc((100%-3rem)/3)] lg:w-[calc((100%-3rem)/3)] bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 p-6 rounded-lg flex flex-col gap-4 snap-start group hover:border-blue-500/50 transition-colors duration-300">
       <h3 className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
         {title}
       </h3>
