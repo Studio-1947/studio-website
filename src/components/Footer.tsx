@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import Logo from './Logo';
 
 
 export default function Footer() {
@@ -40,7 +41,8 @@ export default function Footer() {
                             transition={{ duration: 0.6 }}
                             className="text-3xl font-bold tracking-tight"
                         >
-                            Studio <span className="text-purple-500">1947</span>
+                            <Logo className="h-10 w-auto text-white" />
+
                         </motion.h2>
                         <p className="text-gray-400 max-w-sm text-lg leading-relaxed">
                             Crafting digital experiences that merge timeless design with cutting-edge technology.

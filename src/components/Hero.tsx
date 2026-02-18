@@ -1,3 +1,5 @@
+import Logo from './Logo';
+
 export default function Hero() {
     return (
         <div className="relative bg-white dark:bg-gray-900 overflow-hidden">
@@ -52,7 +54,7 @@ export default function Hero() {
                 <div className="h-56 w-full bg-primary sm:h-72 md:h-96 lg:w-full lg:h-full flex items-center justify-center text-white p-8">
                     {/* Gradient or Image placeholder */}
                     <div className="w-full h-full bg-gradient-to-br from-primary to-purple-900 opacity-90 flex items-center justify-center">
-                        <span className="text-9xl font-bold opacity-20">1947</span>
+                        <Logo className="h-40 w-auto text-white opacity-20" />
                     </div>
                 </div>
             </div>

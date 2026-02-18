@@ -31,9 +31,9 @@ const Logo: React.FC<LogoProps> = ({ className, activeSpoke }) => {
             </mask>
 
             {/* Original Logo (Background/White): Full Icon */}
-            <path d={iconPath} fill="white" />
+            <path d={iconPath} fill="currentColor" />
             {/* Original Text (Background/White): "Studio 1947" */}
-            <path d={textPath} fill="white" />
+            <path d={textPath} fill="currentColor" />
 
             {/* Active Highlights (Primary Color) */}
             <g mask="url(#logo-icon-mask)">

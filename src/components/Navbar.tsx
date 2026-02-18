@@ -274,8 +274,8 @@ export default function Navbar() {
 
                     {/* Mobile Nav Container - Wider */}
                     <div className="lg:hidden w-full flex justify-between items-center px-6 py-4 bg-gray-900/90 backdrop-blur-md rounded-2xl border border-white/10 pointer-events-auto min-w-[92vw] mx-auto">
-                        <a href="/" className="text-xl font-bold text-white">
-                            Studio <span className="text-primary">1947</span>
+                        <a href="/" className="block">
+                            <Logo className="h-8 w-auto text-white" />
                         </a>
                         <div className="flex items-center gap-4">
                             <button
