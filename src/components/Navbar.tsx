@@ -1,19 +1,40 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ThemeToggle from './ThemeToggle';
 import Logo from './Logo';
+import SearchModal from './SearchModal';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [isSearchOpen, setIsSearchOpen] = useState(false);
     const [activeSpoke, setActiveSpoke] = useState<number | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const leftPillRef = useRef<HTMLDivElement>(null);
     const rightPillRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLElement>(null);
+
+    // Keyboard shortcut for search
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            // Check if the target is an input or textarea to avoid triggering while typing
+            const target = e.target as HTMLElement;
+            if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
+                return;
+            }
+
+            if (e.key.toLowerCase() === 'k') {
+                e.preventDefault();
+                setIsSearchOpen(true);
+            }
+        };
+
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, []);
 
     useGSAP(() => {
         const tl = gsap.timeline({
@@ -55,21 +76,32 @@ export default function Navbar() {
         }
     }, { scope: containerRef });
 
-    const leftLinks = [
+    interface NavLink {
+        name: string;
+        href: string;
+        spokeIndex?: number;
+        onClick?: () => void;
+    }
+
+    const leftLinks: NavLink[] = [
         { name: 'About Us', href: '/about' },
-        { name: 'Search', href: '#' },
+        // Search is now handled separately
         { name: 'Say Hello', href: '/contact' },
     ];
 
     // Spoke Mapping: 2 (Right/3oclock), 1 (1:30), 0 (12:00), 7 (10:30) - Anti-clockwise
-    const rightLinks = [
+    const rightLinks: NavLink[] = [
         { name: 'Products', href: '/products', spokeIndex: 2 },
         { name: 'Solutions', href: '/solutions', spokeIndex: 1 },
         { name: 'Collabs', href: '/collabs', spokeIndex: 0 },
         { name: 'Initiative', href: '/initiative', spokeIndex: 7 },
     ];
 
-    const allLinks = [...leftLinks, ...rightLinks];
+    const allLinks: NavLink[] = [
+        ...leftLinks,
+        { name: 'Search', href: '#', onClick: () => setIsSearchOpen(true) },
+        ...rightLinks
+    ];
 
     // Increased padding and adjusted max-width for "proper screen fill"
     const pillBaseClass = "flex items-center space-x-10 px-12 py-5 bg-gray-900/80 dark:bg-black/80 backdrop-blur-3xl border border-gray-200/10 dark:border-white/10 text-gray-100 transition-colors duration-300";
@@ -101,12 +133,22 @@ export default function Navbar() {
                         >
                             <Logo className="h-10 w-auto object-contain" activeSpoke={activeSpoke} />
                         </a>
-                        <div className="flex space-x-6">
+                        <div className="flex space-x-6 items-center">
                             {leftLinks.map((link) => (
                                 <a key={link.name} href={link.href} className="text-base font-medium hover:text-primary transition-colors">
                                     {link.name}
                                 </a>
                             ))}
+
+                            {/* Search Button */}
+                            <button
+                                onClick={() => setIsSearchOpen(true)}
+                                className="text-base font-medium hover:text-primary transition-colors focus:outline-none flex items-center gap-2"
+                                aria-label="Search"
+                            >
+                                <img src="/search-02.png" alt="Search" className="w-5 h-5 opacity-80 hover:opacity-100 transition-opacity" />
+                                <span className="text-gray-500 text-sm hidden xl:inline-block font-sans">K</span>
+                            </button>
                         </div>
                     </div>
 
@@ -127,7 +169,7 @@ export default function Navbar() {
                                     key={link.name}
                                     href={link.href}
                                     className="text-base font-medium hover:text-primary transition-colors"
-                                    onMouseEnter={() => setActiveSpoke(link.spokeIndex)}
+                                    onMouseEnter={() => setActiveSpoke(link.spokeIndex ?? null)}
                                     onMouseLeave={() => setActiveSpoke(null)}
                                 >
                                     {link.name}
@@ -145,6 +187,12 @@ export default function Navbar() {
                             Studio <span className="text-primary">1947</span>
                         </a>
                         <div className="flex items-center gap-4">
+                            <button
+                                onClick={() => setIsSearchOpen(true)}
+                                className="p-2 text-white hover:text-primary"
+                            >
+                                <img src="/search-02.png" alt="Search" className="w-5 h-5 invert dark:invert-0" />
+                            </button>
                             <ThemeToggle />
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
@@ -175,21 +223,21 @@ export default function Navbar() {
                         key={link.name}
                         href={link.href}
                         style={{ transitionDelay: `${index * 50}ms` }}
-                        onClick={() => setIsOpen(false)}
+                        onClick={(e) => {
+                            if (link.onClick) {
+                                e.preventDefault();
+                                link.onClick();
+                            }
+                            setIsOpen(false);
+                        }}
                         className={`text-3xl font-bold text-white hover:text-primary transition-all transform ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
                     >
                         {link.name}
                     </a>
                 ))}
-                {/* <button
-                    className="absolute top-8 right-8 text-white p-2 rounded-full hover:bg-white/10 transition-colors"
-                    onClick={() => setIsOpen(false)}
-                >
-                    <svg className="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                    </svg>
-                </button> */}
             </div>
+
+            <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
         </>
     );
 }
