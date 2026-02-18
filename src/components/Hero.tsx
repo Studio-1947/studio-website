@@ -29,7 +29,7 @@ export default function Hero() {
                                         animate={{ y: 0, opacity: 1 }}
                                         exit={{ y: -20, opacity: 0 }}
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                                        className="absolute inset-0 text-gray-400 font-semibold"
+                                        className="absolute inset-0 text-gray-400 font-semibold mt-1.5"
                                     >
                                         {TICKER_WORDS[index]}
                                     </motion.span>
@@ -63,7 +63,7 @@ export default function Hero() {
                         <motion.img
                             src="/Hero_right_figure.svg"
                             alt="Studio 1947 Hero Figure"
-                            className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px]"
+                            className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px] dark:invert"
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
