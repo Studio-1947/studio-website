@@ -96,7 +96,7 @@ export default function Navbar() {
     const leftLinks: NavLink[] = [
         { name: 'About Us', href: '/about' },
         // Search is now handled separately
-        { name: 'Say Hello', href: '/contact' },
+        { name: 'Blogs', href: '/blogs' },
     ];
 
     // Spoke Mapping: 2 (Right/3oclock), 1 (1:30), 0 (12:00), 7 (10:30) - Anti-clockwise
