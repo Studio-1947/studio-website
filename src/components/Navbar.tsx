@@ -113,7 +113,16 @@ export default function Navbar() {
             ]
         },
         { name: 'Solutions', href: '/solutions', spokeIndex: 1 },
-        { name: 'Collabs', href: '/collabs', spokeIndex: 0 },
+        {
+            name: 'Collabs',
+            href: '/collabs',
+            spokeIndex: 0,
+            dropdown: [
+                { name: 'Walking Project', href: '/collabs/walking-project' },
+                { name: 'Ai Crowd', href: '/collabs/ai-crowd' },
+                { name: 'The ecological foundation', href: '/collabs/ecological-foundation' },
+            ]
+        },
         {
             name: 'Initiative',
             href: '/initiative',
