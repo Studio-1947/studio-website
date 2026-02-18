@@ -46,11 +46,11 @@ export default function HeroFigure({ className }: { className?: string }) {
                     animate={{ rotate: 360 }}
                     transition={{ duration: 30, ease: "linear", repeat: Infinity }}
                 >
-                    <circle cx="0" cy="0" r={r1} fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="10 10" className="text-gray-400 dark:text-gray-500" />
+                    <circle cx="0" cy="0" r={r1} fill="none" stroke="currentColor" strokeWidth="2.5" strokeDasharray="10 10" className="text-gray-400 dark:text-gray-500" />
                     {/* Dots */}
-                    <circle {...getPos(r1, 150)} r="10" className="fill-black" />
-                    <circle {...getPos(r1, 270)} r="8" className="fill-black" />
-                    <circle {...getPos(r1, 30)} r="8" className="fill-black" />
+                    <circle {...getPos(r1, 150)} r="12" className="fill-black" />
+                    <circle {...getPos(r1, 270)} r="10" className="fill-black" />
+                    <circle {...getPos(r1, 30)} r="10" className="fill-black" />
                 </motion.g>
 
                 {/* Middle Ring (r2) - Rotating Counter-Clockwise - 4 Dots */}
@@ -58,12 +58,12 @@ export default function HeroFigure({ className }: { className?: string }) {
                     animate={{ rotate: -360 }}
                     transition={{ duration: 40, ease: "linear", repeat: Infinity }}
                 >
-                    <circle cx="0" cy="0" r={r2} fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="12 12" className="text-gray-400 dark:text-gray-500" />
+                    <circle cx="0" cy="0" r={r2} fill="none" stroke="currentColor" strokeWidth="2.5" strokeDasharray="12 12" className="text-gray-400 dark:text-gray-500" />
                     {/* Dots */}
-                    <circle {...getPos(r2, 0)} r="12" className="fill-black" />
-                    <circle {...getPos(r2, 90)} r="9" className="fill-black" />
-                    <circle {...getPos(r2, 180)} r="12" className="fill-black" />
-                    <circle {...getPos(r2, 270)} r="9" className="fill-black" />
+                    <circle {...getPos(r2, 0)} r="15" className="fill-black" />
+                    <circle {...getPos(r2, 90)} r="11" className="fill-black" />
+                    <circle {...getPos(r2, 180)} r="15" className="fill-black" />
+                    <circle {...getPos(r2, 270)} r="11" className="fill-black" />
                 </motion.g>
 
 
@@ -72,13 +72,13 @@ export default function HeroFigure({ className }: { className?: string }) {
                     animate={{ rotate: 360 }}
                     transition={{ duration: 50, ease: "linear", repeat: Infinity }}
                 >
-                    <circle cx="0" cy="0" r={r3} fill="none" stroke="currentColor" strokeWidth="1.5" strokeDasharray="15 15" className="text-gray-400 dark:text-gray-500" />
+                    <circle cx="0" cy="0" r={r3} fill="none" stroke="currentColor" strokeWidth="2.5" strokeDasharray="15 15" className="text-gray-400 dark:text-gray-500" />
                     {/* Dots */}
-                    <circle {...getPos(r3, 45)} r="14" className="fill-black" />
-                    <circle {...getPos(r3, 135)} r="10" className="fill-black" />
-                    <circle {...getPos(r3, 200)} r="18" className="fill-black" />
-                    <circle {...getPos(r3, 260)} r="10" className="fill-black" />
-                    <circle {...getPos(r3, 315)} r="12" className="fill-black" />
+                    <circle {...getPos(r3, 45)} r="17" className="fill-black" />
+                    <circle {...getPos(r3, 135)} r="13" className="fill-black" />
+                    <circle {...getPos(r3, 200)} r="22" className="fill-black" />
+                    <circle {...getPos(r3, 260)} r="13" className="fill-black" />
+                    <circle {...getPos(r3, 315)} r="15" className="fill-black" />
                 </motion.g>
 
             </svg>

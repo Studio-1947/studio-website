@@ -46,9 +46,13 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto">
                             <a
                                 href="#works"
-                                className="px-8 py-3 text-base font-medium rounded-full text-white bg-black dark:bg-white dark:text-black hover:opacity-80 transition-opacity"
+                                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-black dark:text-white transition duration-300 ease-out border-2 border-black dark:border-white rounded-full"
                             >
-                                Explore Our Works
+                                <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 -translate-x-full bg-black dark:bg-white group-hover:translate-x-0 ease">
+                                    <svg className="w-6 h-6 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </span>
+                                <span className="absolute flex items-center justify-center w-full h-full text-black dark:text-white transition-all duration-300 transform group-hover:translate-x-full ease">Explore Our Works</span>
+                                <span className="relative invisible">Explore Our Works</span>
                             </a>
                             <a
                                 href="#contact"
