@@ -3,11 +3,13 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import ThemeToggle from './ThemeToggle';
+import Logo from './Logo';
 
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeSpoke, setActiveSpoke] = useState<number | null>(null);
     const containerRef = useRef<HTMLDivElement>(null);
     const leftPillRef = useRef<HTMLDivElement>(null);
     const rightPillRef = useRef<HTMLDivElement>(null);
@@ -59,10 +61,12 @@ export default function Navbar() {
         { name: 'Say Hello', href: '/contact' },
     ];
 
+    // Spoke Mapping: 2 (Right/3oclock), 1 (1:30), 0 (12:00), 7 (10:30) - Anti-clockwise
     const rightLinks = [
-        { name: 'Products', href: '/products' },
-        { name: 'Solutions', href: '/solutions' },
-        { name: 'Collabs', href: '/collabs' },
+        { name: 'Products', href: '/products', spokeIndex: 2 },
+        { name: 'Solutions', href: '/solutions', spokeIndex: 1 },
+        { name: 'Collabs', href: '/collabs', spokeIndex: 0 },
+        { name: 'Initiative', href: '/initiative', spokeIndex: 7 },
     ];
 
     const allLinks = [...leftLinks, ...rightLinks];
@@ -89,8 +93,13 @@ export default function Navbar() {
                             transform: 'translateX(-15vw)'
                         }}
                     >
-                        <a href="/" className="mr-8 block">
-                            <img src="/logo.svg" alt="Studio 1947" className="h-10 w-auto object-contain" />
+                        <a
+                            href="/"
+                            className="mr-8 block group/logo"
+                            onMouseEnter={() => setActiveSpoke(2)} // Default to 'Right' spoke on logo hover
+                            onMouseLeave={() => setActiveSpoke(null)}
+                        >
+                            <Logo className="h-10 w-auto object-contain" activeSpoke={activeSpoke} />
                         </a>
                         <div className="flex space-x-6">
                             {leftLinks.map((link) => (
@@ -114,7 +123,13 @@ export default function Navbar() {
                     >
                         <div className="flex space-x-6 items-center">
                             {rightLinks.map((link) => (
-                                <a key={link.name} href={link.href} className="text-base font-medium hover:text-primary transition-colors">
+                                <a
+                                    key={link.name}
+                                    href={link.href}
+                                    className="text-base font-medium hover:text-primary transition-colors"
+                                    onMouseEnter={() => setActiveSpoke(link.spokeIndex)}
+                                    onMouseLeave={() => setActiveSpoke(null)}
+                                >
                                     {link.name}
                                 </a>
                             ))}
