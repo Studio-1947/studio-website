@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import HeroFigure from "./HeroFigure";
 
 const TICKER_WORDS = ["Create", "Innovate", "Inspire"];
 
@@ -60,14 +61,14 @@ export default function Hero() {
 
                     {/* Right Column: Key Figure */}
                     <div className="relative flex justify-center items-center w-full h-full max-h-[60vh] lg:max-h-[80vh]">
-                        <motion.img
-                            src="/Hero_right_figure.svg"
-                            alt="Studio 1947 Hero Figure"
-                            className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px] dark:invert"
+                        <motion.div
+                            className="w-full h-full flex justify-center items-center"
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                        />
+                        >
+                            <HeroFigure className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px] text-black dark:text-white dark:invert" />
+                        </motion.div>
                     </div>
                 </div>
             </div>
