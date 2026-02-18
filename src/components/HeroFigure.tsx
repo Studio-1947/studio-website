@@ -4,8 +4,6 @@ import { motion } from "framer-motion";
 export default function HeroFigure({ className }: { className?: string }) {
     return (
         <svg
-            width="700"
-            height="676"
             viewBox="0 0 700 676"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
