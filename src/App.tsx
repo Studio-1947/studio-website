@@ -4,6 +4,8 @@ import ClientsTicker from './components/ClientsTicker';
 import Services from './components/Services/Services';
 import Verticals from './components/Verticals/Verticals';
 
+
+
 function App() {
   return (
     <Layout>
@@ -40,20 +42,13 @@ function App() {
         </div>
       </section>
 
-      {/* Studio/About Section Placeholder */}
-      <section className="py-20 bg-white dark:bg-gray-900">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="lg:text-center">
-            <h2 className="text-base text-primary font-semibold tracking-wide uppercase">The Studio</h2>
-            <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-white sm:text-4xl">
-              We craft digital excellence
-            </p>
-            <p className="mt-4 max-w-2xl text-xl text-gray-500 dark:text-gray-400 lg:mx-auto">
-              Founded in 1947 (conceptually), we bring decades of timeless design principles to the modern web.
-            </p>
-          </div>
-        </div>
-      </section>
+      {/* Team Section on Home? Or remove? I'll keep it on home as a teaser or section, but maybe duplicative. Let's REMOVE AboutHero/Content from here. */}
+      
+      {/* Team Section */}
+      {/* <div id="team">
+        <TeamGrid />
+      </div> */}
+
       {/* Contact Section Placeholder */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
