@@ -3,6 +3,12 @@ import Hero from './components/Hero';
 import ClientsTicker from './components/ClientsTicker';
 import Services from './components/Services/Services';
 import Verticals from './components/Verticals/Verticals';
+import ThingsYouNeedToKnow from './components/ThingsYouNeedToKnow';
+import BuiltForImpact from './components/BuiltForImpact';
+import Testimonials from './components/Testimonials';
+import OurProcess from './components/OurProcess';
+import OurProducts from './components/OurProducts';
+import LatestBlogs from './components/LatestBlogs';
 
 function App() {
   return (
@@ -11,6 +17,12 @@ function App() {
       <ClientsTicker />
       <Services />
       <Verticals />
+      <ThingsYouNeedToKnow />
+      <BuiltForImpact />
+      <Testimonials />
+      <OurProcess />
+      <OurProducts />
+      <LatestBlogs />
 
       {/* Featured Work Section Placeholder */}
       <section className="py-20 bg-gray-50 dark:bg-gray-800">

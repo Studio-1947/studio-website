@@ -1,0 +1,72 @@
+const STEPS = [
+    {
+        number: "01",
+        title: "Discovery",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+    },
+    {
+        number: "02",
+        title: "Strategy",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+    },
+    {
+        number: "03",
+        title: "Design",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+    },
+    {
+        number: "04",
+        title: "Development",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+    },
+    {
+        number: "05",
+        title: "Testing",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+    },
+    {
+        number: "06",
+        title: "Launch",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+    }
+];
+
+export default function OurProcess() {
+    return (
+        <section className="bg-white dark:bg-black py-24">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+                {/* Header */}
+                <div className="text-center max-w-3xl mx-auto mb-16">
+                    <span className="inline-block py-1 px-3 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold tracking-wide uppercase mb-6">
+                        ● Our Process
+                    </span>
+                    <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
+                        We Not Just Only Build
+                    </h2>
+                    <p className="text-gray-500 dark:text-gray-400 text-lg">
+                        We build products with love & care so that you get the best of it
+                    </p>
+                </div>
+
+                {/* Grid Layout */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    {STEPS.map((step, index) => (
+                        <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300 group">
+                            <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-6 group-hover:bg-black group-hover:dark:bg-white group-hover:text-white group-hover:dark:text-black transition-colors duration-300">
+                                <span className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-white group-hover:dark:text-black">{step.number}</span>
+                            </div>
+                            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                                {step.title}
+                            </h3>
+                            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                                {step.description}
+                            </p>
+                        </div>
+                    ))}
+                </div>
+
+            </div>
+        </section>
+    );
+}
