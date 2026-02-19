@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -182,19 +183,19 @@ export default function Navbar() {
                             transform: 'translateX(-15vw)'
                         }}
                     >
-                        <a
-                            href="/"
+                        <Link
+                            to="/"
                             className="mr-8 block group/logo"
                             onMouseEnter={() => setActiveSpoke(2)} // Default to 'Right' spoke on logo hover
                             onMouseLeave={() => setActiveSpoke(null)}
                         >
                             <Logo className="h-10 w-auto object-contain" activeSpoke={activeSpoke} />
-                        </a>
+                        </Link>
                         <div className="flex space-x-6 items-center">
                             {leftLinks.map((link) => (
-                                <a key={link.name} href={link.href} className="text-base font-medium hover:text-primary transition-colors">
+                                <Link key={link.name} to={link.href} className="text-base font-medium hover:text-primary transition-colors">
                                     {link.name}
-                                </a>
+                                </Link>
                             ))}
 
                             {/* Search Button */}
@@ -228,8 +229,8 @@ export default function Navbar() {
                                     onMouseEnter={() => handleMouseEnter(link.name, link.spokeIndex)}
                                     onMouseLeave={handleMouseLeave}
                                 >
-                                    <a
-                                        href={link.href}
+                                    <Link
+                                        to={link.href}
                                         className={`text-base font-medium hover:text-primary transition-colors flex items-center gap-1 ${hoveredLink === link.name ? 'text-primary' : ''}`}
                                     >
                                         {link.name}
@@ -243,7 +244,7 @@ export default function Navbar() {
                                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                             </svg>
                                         )}
-                                    </a>
+                                    </Link>
 
                                     {/* Desktop Dropdown */}
                                     {link.dropdown && (
@@ -253,13 +254,13 @@ export default function Navbar() {
                                         >
                                             <div className="bg-gray-900/95 backdrop-blur-3xl border border-white/10 rounded-xl overflow-hidden shadow-xl p-2 flex flex-col gap-1">
                                                 {link.dropdown.map((item) => (
-                                                    <a
+                                                    <Link
                                                         key={item.name}
-                                                        href={item.href}
+                                                        to={item.href}
                                                         className="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
                                                     >
                                                         {item.name}
-                                                    </a>
+                                                    </Link>
                                                 ))}
                                             </div>
                                         </div>
@@ -274,9 +275,9 @@ export default function Navbar() {
 
                     {/* Mobile Nav Container - Wider */}
                     <div className="lg:hidden w-full flex justify-between items-center px-6 py-4 bg-gray-900/90 backdrop-blur-md rounded-2xl border border-white/10 pointer-events-auto min-w-[92vw] mx-auto">
-                        <a href="/" className="block">
+                        <Link to="/" className="block">
                             <Logo className="h-8 w-auto text-white" />
-                        </a>
+                        </Link>
                         <div className="flex items-center gap-4">
                             <button
                                 onClick={() => setIsSearchOpen(true)}
@@ -314,8 +315,8 @@ export default function Navbar() {
                     {allLinks.map((link, index) => (
                         <div key={link.name} className="flex flex-col items-center w-full max-w-sm">
                             <div className="flex items-center justify-center w-full relative">
-                                <a
-                                    href={link.href}
+                                <Link
+                                    to={link.href}
                                     style={{ transitionDelay: `${index * 50}ms` }}
                                     onClick={(e) => {
                                         if (link.dropdown) {
@@ -342,7 +343,7 @@ export default function Navbar() {
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                         </svg>
                                     )}
-                                </a>
+                                </Link>
                             </div>
 
                             {/* Mobile Dropdown Items */}
@@ -352,14 +353,14 @@ export default function Navbar() {
                                         }`}
                                 >
                                     {link.dropdown.map((item) => (
-                                        <a
+                                        <Link
                                             key={item.name}
-                                            href={item.href}
+                                            to={item.href}
                                             onClick={() => setIsOpen(false)}
                                             className="text-xl font-medium text-gray-400 hover:text-white transition-colors"
                                         >
                                             {item.name}
-                                        </a>
+                                        </Link>
                                     ))}
                                 </div>
                             )}
