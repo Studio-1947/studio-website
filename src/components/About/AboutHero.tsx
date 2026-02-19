@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { aboutData } from '../../data/aboutData';
+
 
 
 gsap.registerPlugin(ScrollTrigger);
