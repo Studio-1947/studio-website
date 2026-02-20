@@ -46,20 +46,22 @@ const AboutHero: React.FC = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 md:gap-y-0 md:gap-x-12 items-center h-full auto-rows-min md:auto-rows-fr">
             
-            {/* 1. "We are" + Line */}
-            <div className="flex flex-col justify-end items-center md:items-end text-center md:text-right md:row-start-1 md:col-start-1 md:self-end">
+            {/* Left Column: "We are", Line, and Tagline */}
+            <div className="flex flex-col justify-center items-center md:items-end text-center md:text-right h-full pr-0 md:pr-10">
                   <span className="block text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-bold text-gray-900 dark:text-white tracking-tighter leading-none mb-4 md:mb-6 transition-colors duration-300">
                       We are
                   </span>
-                  <div className="hidden md:block h-1 w-24 bg-amber-600 ml-auto mr-0"></div>
-                  <div className="md:hidden h-1 w-24 bg-amber-600 mx-auto"></div>
+                  <div className="h-1 w-24 bg-royal-700 mx-auto md:ml-auto md:mr-0 mb-6 md:mb-8"></div>
+                  <p className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-medium max-w-sm mx-auto md:mx-0 transition-colors duration-300 leading-relaxed">
+                    We craft ideas that live in the now and evolve with what’s next
+                  </p>
             </div>
 
-            {/* 2. "Studio 1947" (Hollow Effect) - Middle on Mobile, Right Column on Desktop */}
-            <div className="flex flex-col justify-center mix-blend-normal md:mix-blend-screen md:row-start-1 md:row-span-2 md:col-start-2"> 
+            {/* Right Column: "Studio 1947" */}
+            <div className="flex flex-col justify-center mix-blend-normal md:mix-blend-screen items-center md:items-start relative z-10"> 
                 <h1 
                 ref={textRef}
-                className="text-[18vw] md:text-[13vw] leading-[0.8] font-black text-transparent bg-clip-text bg-white bg-opacity-90 tracking-tighter select-none text-center md:text-left"
+                className="text-[18vw] md:text-[11vw] leading-[0.85] font-black text-transparent bg-clip-text bg-white bg-opacity-90 tracking-tighter select-none text-center md:text-left drop-shadow-2xl"
                 style={{ 
                     WebkitTextStroke: '1px rgba(128,128,128,0.5)', 
                     backgroundImage: 'url(/aboutus/About_us_hero.jpeg)',
@@ -67,24 +69,18 @@ const AboutHero: React.FC = () => {
                     backgroundSize: 'cover',  
                     backgroundAttachment: 'fixed', 
                     WebkitBackgroundClip: 'text',
+                    filter: 'drop-shadow(0px 10px 20px rgba(0,0,0,0.15))'
                 }}
                 >
                   {['Studio', '1947'].map((word, i) => (
                         <span 
                           key={i} 
-                          className={`block ${word === '1947' ? 'text-[28vw] md:text-[22vw] -mt-4 md:-mt-8 leading-[0.75]' : ''}`}
+                          className={`block ${word === '1947' ? 'text-[28vw] md:text-[18vw] -mt-2 md:-mt-4 leading-[0.8]' : ''}`}
                         >
                           {word}
                         </span>
                     ))}
                 </h1>
-            </div>
-
-            {/* 3. Tagline - Last on Mobile, Bottom Left on Desktop */}
-             <div className="flex flex-col justify-start items-center md:items-end text-center md:text-right md:row-start-2 md:col-start-1 md:self-start">
-                  <p className="text-base md:text-lg text-gray-600 dark:text-gray-300 font-medium tracking-[0.2em] uppercase max-w-md mx-auto md:mx-0 transition-colors duration-300 md:mt-6">
-                    Rooted in Wisdom<span className="mx-3 text-amber-600 block sm:inline my-2 sm:my-0">•</span>Designed for the Future
-                  </p>
             </div>
         </div>
       </div>

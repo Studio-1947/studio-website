@@ -9,13 +9,13 @@ const AboutContent: React.FC = () => {
           
           {/* Left Column: Heading */}
           <div className="self-center">
-            <span className="block text-amber-600 dark:text-amber-500 font-bold tracking-[0.2em] uppercase text-sm mb-4">
+            <span className="block text-royal-700 dark:text-royal-500 font-bold tracking-[0.2em] uppercase text-sm mb-4">
               Our Philosophy
             </span>
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 dark:text-white mb-6">
               {aboutData.missionHeading}
             </h2>
-            <div className="h-1.5 w-24 bg-amber-600 dark:bg-amber-500 rounded-full"></div>
+            <div className="h-1.5 w-24 bg-royal-700 dark:bg-royal-500 rounded-full"></div>
           </div>
 
           {/* Right Column: Content */}
@@ -29,7 +29,7 @@ const AboutContent: React.FC = () => {
             </div>
             
             <div className="pt-6">
-               <blockquote className="relative pl-6 border-l-4 border-amber-600 dark:border-amber-500">
+               <blockquote className="relative pl-6 border-l-4 border-royal-700 dark:border-royal-500">
                  <p className="text-xl md:text-2xl font-serif italic text-gray-800 dark:text-gray-200 leading-normal">
                    "{aboutData.closingStatement}"
                  </p>
