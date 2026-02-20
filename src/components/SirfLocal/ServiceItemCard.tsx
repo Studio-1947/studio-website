@@ -40,7 +40,7 @@ export default function ServiceItemCard({ item, isSelected, onToggle }: ServiceI
         </p>
       )}
 
-      <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mt-auto">
+      <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mt-auto whitespace-pre-line">
         {item.description}
       </p>
     </div>

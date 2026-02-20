@@ -9,6 +9,10 @@ export default {
       },
       colors: {
         primary: "#340963",
+        royal: {
+          500: "#a855f7",
+          700: "#7e22ce",
+        },
       },
     },
   },
