@@ -56,26 +56,41 @@ const TeamMember: React.FC = () => {
              {/* Content Column */}
              <div className="lg:col-span-7 space-y-8">
                <div>
-                  <h1 className="text-5xl md:text-6xl font-black tracking-tight text-gray-900 dark:text-white mb-2">
-                    {member.name}
-                  </h1>
-                  <p className="text-2xl text-amber-600 font-medium">
-                    {member.role}
-                  </p>
+                   <h1 className="text-5xl md:text-6xl font-black tracking-tight text-gray-900 dark:text-white mb-2">
+                     {member.name}
+                   </h1>
+                   <p className="text-2xl text-amber-600 font-medium">
+                     {member.role}
+                   </p>
+                   
+                   {/* Location and Hobbies */}
+                   <div className="mt-6 flex flex-wrap gap-6 text-sm font-medium text-gray-500 dark:text-gray-400">
+                     {member.location && (
+                       <div className="flex items-center gap-2">
+                         <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                         </svg>
+                         {member.location}
+                       </div>
+                     )}
+                     {member.hobbies && (
+                       <div className="flex items-center gap-2">
+                         <svg className="w-5 h-5 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                         </svg>
+                         {member.hobbies}
+                       </div>
+                     )}
+                   </div>
                </div>
 
                <div className="prose prose-lg dark:prose-invert max-w-none">
-                 <p className="lead text-xl text-gray-500 dark:text-gray-300">
-                    {member.bio}
-                 </p>
-                 <p>
-                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                   Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                 </p>
-                 <p>
-                   Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
-                   Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                 </p>
+                 {member.bio.split('\n\n').map((paragraph, idx) => (
+                   <p key={idx} className={idx === 0 ? "lead text-xl text-gray-500 dark:text-gray-300" : ""}>
+                     {paragraph}
+                   </p>
+                 ))}
                </div>
 
                <div className="pt-8 border-t border-gray-200 dark:border-gray-800">

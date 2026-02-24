@@ -127,12 +127,7 @@ export default function Navbar() {
         {
             name: 'Initiative',
             href: '/initiative',
-            spokeIndex: 7,
-            dropdown: [
-                { name: 'Himal nagirk fellowships', href: '/initiative/himal-nagirk-fellowships' },
-                { name: 'Local design', href: '/initiative/local-design' },
-                { name: 'Sirf Local', href: '/initiative/sirflocal' },
-            ]
+            spokeIndex: 7
         },
     ];
 
