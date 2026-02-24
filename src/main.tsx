@@ -2,8 +2,7 @@ import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './App.tsx';
-import SirfLocalCatalog from './pages/SirfLocalCatalog.tsx';
-import SirfLocalLanding from './pages/SirfLocalLanding.tsx';
+import Initiative from './pages/Initiative.tsx';
 import TeamMember from './pages/TeamMember.tsx';
 import About from './pages/About.tsx';
 import Layout from './components/Layout.tsx';
@@ -18,8 +17,7 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/" element={<App />} />
         
         {/* Initiative Routes */}
-        <Route path="/initiative/sirflocal" element={<Layout><SirfLocalLanding /></Layout>} />
-        <Route path="/initiative/sirflocal/catalog" element={<Layout><SirfLocalCatalog /></Layout>} />
+        <Route path="/initiative" element={<Layout><Initiative /></Layout>} />
         
         {/* Existing Routes */}
         <Route path="/team/:slug" element={<TeamMember />} />
