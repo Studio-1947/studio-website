@@ -71,7 +71,7 @@ export default function Hero() {
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                         >
-                            <HeroFigure className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px] text-black dark:text-white dark:invert" />
+                            <HeroFigure className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px] text-black dark:text-white" />
                         </motion.div>
                     </div>
                 </div>

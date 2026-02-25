@@ -200,7 +200,7 @@ export default function Navbar() {
                                 aria-label="Search"
                             >
                                 <img src="/search-02.png" alt="Search" className="w-5 h-5 opacity-80 hover:opacity-100 transition-opacity" />
-                                <span className="text-gray-500 text-sm hidden xl:inline-block font-sans">K</span>
+                                <span className="text-gray-500 text-sm hidden xl:inline-block font-sans"></span>
                             </button>
                         </div>
                     </div>
