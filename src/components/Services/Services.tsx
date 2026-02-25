@@ -1,28 +1,6 @@
 import { useRef } from "react";
 import ServiceCard from "./ServiceCard";
-
-const SERVICES = [
-  {
-    title: "Social Media Marketing",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-  },
-  {
-    title: "Content Marketing",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-  },
-  {
-    title: "Website Design & Development",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-  },
-  {
-    title: "SEO Optimization",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-  },
-   {
-    title: "Brand Strategy",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
-  },
-];
+import { solutionsData as SERVICES } from "../../data/solutionsData";
 
 export default function Services() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);

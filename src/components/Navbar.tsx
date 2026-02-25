@@ -12,6 +12,7 @@ gsap.registerPlugin(ScrollTrigger);
 interface DropdownItem {
     name: string;
     href: string;
+    logo?: string;
 }
 
 interface NavLink {
@@ -119,9 +120,9 @@ export default function Navbar() {
             href: '/collabs',
             spokeIndex: 0,
             dropdown: [
-                { name: 'Walking Project', href: '/collabs/walking-project' },
-                { name: 'Ai Crowd', href: '/collabs/ai-crowd' },
-                { name: 'The ecological foundation', href: '/collabs/ecological-foundation' },
+                { name: 'Walking Project', href: '/collabs/walking-project', logo: '/collabs/walkingproject.png' },
+                { name: 'Ai Crowd', href: '/collabs/ai-crowd', logo: '/collabs/aicrowd.png' },
+                { name: 'Ecological Foundations', href: '/collabs/ecological-foundations', logo: '/collabs/ecologicalfoundation.png' },
             ]
         },
         {
@@ -252,8 +253,13 @@ export default function Navbar() {
                                                     <Link
                                                         key={item.name}
                                                         to={item.href}
-                                                        className="block px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                                                        className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
                                                     >
+                                                        {item.logo && (
+                                                            <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center p-1 shrink-0">
+                                                                <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
+                                                            </div>
+                                                        )}
                                                         {item.name}
                                                     </Link>
                                                 ))}
@@ -352,8 +358,13 @@ export default function Navbar() {
                                             key={item.name}
                                             to={item.href}
                                             onClick={() => setIsOpen(false)}
-                                            className="text-xl font-medium text-gray-400 hover:text-white transition-colors"
+                                            className="text-xl font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-3"
                                         >
+                                            {item.logo && (
+                                                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center p-1.5 shrink-0">
+                                                    <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
+                                                </div>
+                                            )}
                                             {item.name}
                                         </Link>
                                     ))}
