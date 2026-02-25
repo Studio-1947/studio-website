@@ -1,0 +1,111 @@
+﻿
+> temp-project@0.0.0 build
+> tsc -b && vite build
+
+[36mvite v7.3.1 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 2042 modules transformed.
+node.exe : 
+[31mΓ£ù[39m Build 
+failed in 2.73s
+At C:\Program Files\n
+odejs\npm.ps1:29 
+char:3
++   & $NODE_EXE 
+$NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~
+    + CategoryInfo   
+           : NotSpe  
+  cified: ([31mΓ£   
+ ù[39m Build fai    
+led in 2.73s:Str    
+ing) [], RemoteE    
+xception
+    + FullyQualified 
+   ErrorId : Native  
+  CommandError
+ 
+[31merror during 
+build:
+[31m[vite]: Rollup 
+failed to resolve 
+import "react" from "
+C:/Users/soumi/node_m
+odules/lucide-react/d
+ist/esm/createLucideI
+con.js".
+This is most likely 
+unintended because 
+it can break your 
+application at 
+runtime.
+If you do want to 
+externalize this 
+module explicitly 
+add it to
+`build.rollupOptions.
+external`[31m
+    at viteLog (file:
+///C:/Users/soumi/Des
+ktop/studio-website/n
+ode_modules/vite/dist
+/node/chunks/config.j
+s:33635:57)
+    at file:///C:/Use
+rs/soumi/Desktop/stud
+io-website/node_modul
+es/vite/dist/node/chu
+nks/config.js:33669:7
+3
+    at onwarn (file:/
+//C:/Users/soumi/Desk
+top/studio-website/no
+de_modules/@vitejs/pl
+ugin-react/dist/index
+.js:76:7)
+    at file:///C:/Use
+rs/soumi/Desktop/stud
+io-website/node_modul
+es/vite/dist/node/chu
+nks/config.js:33669:2
+8
+    at onRollupLog (f
+ile:///C:/Users/soumi
+/Desktop/studio-websi
+te/node_modules/vite/
+dist/node/chunks/conf
+ig.js:33664:63)
+    at onLog (file://
+/C:/Users/soumi/Deskt
+op/studio-website/nod
+e_modules/vite/dist/n
+ode/chunks/config.js:
+33467:4)
+    at file:///C:/Use
+rs/soumi/Desktop/stud
+io-website/node_modul
+es/rollup/dist/es/sha
+red/node-entry.js:209
+58:32
+    at Object.logger 
+[as onLog] (file:///C
+:/Users/soumi/Desktop
+/studio-website/node_
+modules/rollup/dist/e
+s/shared/node-entry.j
+s:22945:9)
+    at ModuleLoader.h
+andleInvalidResolvedI
+d (file:///C:/Users/s
+oumi/Desktop/studio-w
+ebsite/node_modules/r
+ollup/dist/es/shared/
+node-entry.js:21689:2
+6)
+    at file:///C:/Use
+rs/soumi/Desktop/stud
+io-website/node_modul
+es/rollup/dist/es/sha
+red/node-entry.js:216
+47:26[39m

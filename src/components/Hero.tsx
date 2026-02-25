@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import HeroFigure from "./HeroFigure";
 
 const TICKER_WORDS = ["Create", "Innovate", "Inspire"];
 
@@ -14,12 +15,12 @@ export default function Hero() {
     }, []);
 
     return (
-        <div className="relative bg-white dark:bg-gray-900 overflow-hidden min-h-screen flex items-center pt-24 lg:pt-32">
+        <div className="relative bg-white dark:bg-gray-900 overflow-hidden min-h-[calc(100vh-6rem)] flex items-center pt-24 pb-12 lg:pt-32 lg:pb-0">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full">
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center h-full">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
                     {/* Left Column: Text Content */}
-                    <div className="text-left z-10 flex flex-col justify-center">
-                        <div className="flex items-baseline gap-2 text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium mb-4">
+                    <div className="text-center lg:text-left z-10 flex flex-col justify-center items-center lg:items-start order-2 lg:order-1">
+                        <div className="flex flex-wrap justify-center lg:justify-start items-baseline gap-2 text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium mb-4">
                             <span>With the freedom to</span>
                             <div className="relative h-8 w-32 overflow-hidden">
                                 <AnimatePresence mode="wait">
@@ -37,17 +38,21 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight mb-8">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight mb-6 lg:mb-8">
                             Local Wisdom
-                            <span className="block">for Global Impact</span>
+                            <span className="block mt-1 lg:mt-0">for Global Impact</span>
                         </h1>
 
-                        <div className="flex flex-wrap gap-4">
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto">
                             <a
-                                href="/solutions"
-                                className="px-8 py-3 text-base font-medium rounded-full text-white bg-black dark:bg-white dark:text-black hover:opacity-80 transition-opacity"
+                                href="#works"
+                                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-black dark:text-white transition duration-300 ease-out border-2 border-black dark:border-white rounded-full"
                             >
-                                Explore Our Works
+                                <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 -translate-x-full bg-black dark:bg-white group-hover:translate-x-0 ease">
+                                    <svg className="w-6 h-6 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                </span>
+                                <span className="absolute flex items-center justify-center w-full h-full text-black dark:text-white transition-all duration-300 transform group-hover:translate-x-full ease">Explore Our Works</span>
+                                <span className="relative invisible">Explore Our Works</span>
                             </a>
                             <a
                                 href="#contact"
@@ -59,15 +64,15 @@ export default function Hero() {
                     </div>
 
                     {/* Right Column: Key Figure */}
-                    <div className="relative flex justify-center items-center w-full h-full max-h-[60vh] lg:max-h-[80vh]">
-                        <motion.img
-                            src="/Hero_right_figure.svg"
-                            alt="Studio 1947 Hero Figure"
-                            className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px] dark:invert"
+                    <div className="relative flex justify-center items-center w-full h-full max-h-[40vh] sm:max-h-[50vh] lg:max-h-[80vh] order-1 lg:order-2 mb-8 lg:mb-0">
+                        <motion.div
+                            className="w-full h-full flex justify-center items-center"
                             initial={{ opacity: 0, scale: 0.9 }}
                             animate={{ opacity: 1, scale: 1 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
-                        />
+                        >
+                            <HeroFigure className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px] text-black dark:text-white dark:invert" />
+                        </motion.div>
                     </div>
                 </div>
             </div>
