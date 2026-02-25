@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Logo from './Logo';
 import GoldenSprinkles from './GoldenSprinkles';
 
@@ -22,9 +23,11 @@ export default function Footer() {
     };
 
     const footerLinks = [
-        { title: "Sitemap", links: ["Home", "Work", "Studio", "Contact"] },
-        { title: "Socials", links: ["Twitter", "LinkedIn", "Instagram", "GitHub"] },
-        { title: "Legal", links: ["Privacy Policy", "Terms of Service", "Cookie Policy"] }
+        { title: "Sitemap", links: [{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Products", href: "/products" }, { label: "About Us", href: "/about" }] },
+        { title: "Connect", links: [{ label: "Careers", href: "/careers" }, { label: "Instagram", href: "https://www.instagram.com/1947.io/" }, { label: "Facebook", href: "https://www.facebook.com/1947.io/?ref=PROFILE_EDIT_xav_ig_profile_page_web#" }] },
+        { title: "Legal", links: [{ label: "Privacy Policy", href: "/privacy-policy" }, { label: "Terms of Service", href: "/terms-of-service" }, 
+            // { label: "Cookie Policy", href: "#" }
+        ] }
     ];
 
     return (
@@ -49,7 +52,7 @@ export default function Footer() {
                             Crafting digital experiences that merge timeless design with cutting-edge technology.
                         </p>
                         <div className="pt-8">
-                            <a href="/contact" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border border-gray-700 rounded-full hover:border-white">
+                            <a href="/#contact" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border border-gray-700 rounded-full hover:border-white">
                                 <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
                                     <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </span>
@@ -74,14 +77,20 @@ export default function Footer() {
                                 <ul className="space-y-3">
                                     {section.links.map((link, linkIdx) => (
                                         <motion.li
-                                            key={link}
+                                            key={link.label}
                                             initial={{ opacity: 0, x: -10 }}
                                             whileInView={{ opacity: 1, x: 0 }}
                                             transition={{ duration: 0.3, delay: (idx * 0.1) + (linkIdx * 0.05) }}
                                         >
-                                            <a href="#" className="text-gray-300 hover:text-white transition-colors hover:underline decoration-gray-700 underline-offset-4">
-                                                {link}
-                                            </a>
+                                            {link.href.startsWith('/') ? (
+                                                <Link to={link.href} className="text-gray-300 hover:text-white transition-colors hover:underline decoration-gray-700 underline-offset-4">
+                                                    {link.label}
+                                                </Link>
+                                            ) : (
+                                                <a href={link.href} className="text-gray-300 hover:text-white transition-colors hover:underline decoration-gray-700 underline-offset-4">
+                                                    {link.label}
+                                                </a>
+                                            )}
                                         </motion.li>
                                     ))}
                                 </ul>
