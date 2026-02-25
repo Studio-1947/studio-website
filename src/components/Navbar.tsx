@@ -105,7 +105,7 @@ export default function Navbar() {
     const rightLinks: NavLink[] = [
         {
             name: 'Products',
-            href: '/products',
+            href: '#',
             spokeIndex: 2,
             dropdown: [
                 { name: 'Doptor', href: '/products/doptor' },
@@ -117,7 +117,7 @@ export default function Navbar() {
         { name: 'Solutions', href: '/solutions', spokeIndex: 1 },
         {
             name: 'Collabs',
-            href: '/collabs',
+            href: '#',
             spokeIndex: 0,
             dropdown: [
                 { name: 'Walking Project', href: '/collabs/walking-project', logo: '/collabs/walkingproject.png' },
@@ -225,22 +225,40 @@ export default function Navbar() {
                                     onMouseEnter={() => handleMouseEnter(link.name, link.spokeIndex)}
                                     onMouseLeave={handleMouseLeave}
                                 >
-                                    <Link
-                                        to={link.href}
-                                        className={`text-base font-medium hover:text-primary transition-colors flex items-center gap-1 ${hoveredLink === link.name ? 'text-primary' : ''}`}
-                                    >
-                                        {link.name}
-                                        {link.dropdown && (
-                                            <svg
-                                                className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                            </svg>
-                                        )}
-                                    </Link>
+                                    {link.href === '#' ? (
+                                        <div
+                                            className={`text-base font-medium hover:text-primary transition-colors flex items-center gap-1 cursor-default ${hoveredLink === link.name ? 'text-primary' : ''}`}
+                                        >
+                                            {link.name}
+                                            {link.dropdown && (
+                                                <svg
+                                                    className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            to={link.href}
+                                            className={`text-base font-medium hover:text-primary transition-colors flex items-center gap-1 ${hoveredLink === link.name ? 'text-primary' : ''}`}
+                                        >
+                                            {link.name}
+                                            {link.dropdown && (
+                                                <svg
+                                                    className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            )}
+                                        </Link>
+                                    )}
 
                                     {/* Desktop Dropdown */}
                                     {link.dropdown && (
@@ -316,35 +334,66 @@ export default function Navbar() {
                     {allLinks.map((link, index) => (
                         <div key={link.name} className="flex flex-col items-center w-full max-w-sm">
                             <div className="flex items-center justify-center w-full relative">
-                                <Link
-                                    to={link.href}
-                                    style={{ transitionDelay: `${index * 50}ms` }}
-                                    onClick={(e) => {
-                                        if (link.dropdown) {
-                                            e.preventDefault();
-                                            toggleMobileSubmenu(link.name);
-                                        } else {
-                                            if (link.onClick) {
+                                {link.href === '#' ? (
+                                    <div
+                                        style={{ transitionDelay: `${index * 50}ms` }}
+                                        onClick={(e) => {
+                                            if (link.dropdown) {
                                                 e.preventDefault();
-                                                link.onClick();
+                                                toggleMobileSubmenu(link.name);
+                                            } else {
+                                                if (link.onClick) {
+                                                    e.preventDefault();
+                                                    link.onClick();
+                                                }
+                                                setIsOpen(false);
                                             }
-                                            setIsOpen(false);
-                                        }
-                                    }}
-                                    className={`text-3xl font-bold text-white hover:text-primary transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                                >
-                                    {link.name}
-                                    {link.dropdown && (
-                                        <svg
-                                            className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            stroke="currentColor"
-                                        >
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                        </svg>
-                                    )}
-                                </Link>
+                                        }}
+                                        className={`text-3xl font-bold text-white hover:text-primary transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                                    >
+                                        {link.name}
+                                        {link.dropdown && (
+                                            <svg
+                                                className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        )}
+                                    </div>
+                                ) : (
+                                    <Link
+                                        to={link.href}
+                                        style={{ transitionDelay: `${index * 50}ms` }}
+                                        onClick={(e) => {
+                                            if (link.dropdown) {
+                                                e.preventDefault();
+                                                toggleMobileSubmenu(link.name);
+                                            } else {
+                                                if (link.onClick) {
+                                                    e.preventDefault();
+                                                    link.onClick();
+                                                }
+                                                setIsOpen(false);
+                                            }
+                                        }}
+                                        className={`text-3xl font-bold text-white hover:text-primary transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                                    >
+                                        {link.name}
+                                        {link.dropdown && (
+                                            <svg
+                                                className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                stroke="currentColor"
+                                            >
+                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                            </svg>
+                                        )}
+                                    </Link>
+                                )}
                             </div>
 
                             {/* Mobile Dropdown Items */}

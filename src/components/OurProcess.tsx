@@ -2,32 +2,32 @@ const STEPS = [
     {
         number: "01",
         title: "Discovery",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        description: "We dive deep into your brand, market, and audience to uncover key insights and define clear, actionable project objectives."
     },
     {
         number: "02",
         title: "Strategy",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        description: "We craft a comprehensive roadmap that aligns your business goals with user needs, establishing a strong foundation for success."
     },
     {
         number: "03",
         title: "Design",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        description: "Our creative team translates strategy into intuitive, visually stunning interfaces that engage users and elevate your brand identity."
     },
     {
         number: "04",
         title: "Development",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        description: "We bring designs to life using cutting-edge technologies, building robust, scalable, and high-performing digital solutions."
     },
     {
         number: "05",
         title: "Testing",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        description: "Rigorous quality assurance ensures every feature works flawlessly across all devices and platforms before we push it live."
     },
     {
         number: "06",
         title: "Launch",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
+        description: "We seamlessly deploy your product to the world, providing ongoing support and optimization to guarantee long-term impact."
     }
 ];
 
@@ -42,7 +42,7 @@ export default function OurProcess() {
                         ● Our Process
                     </span>
                     <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                        We Not Just Only Build
+                        We Do More Than Just Build
                     </h2>
                     <p className="text-gray-500 dark:text-gray-400 text-lg">
                         We build products with love & care so that you get the best of it

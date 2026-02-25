@@ -35,11 +35,11 @@ const AboutHero: React.FC = () => {
       className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gray-50 dark:bg-gray-900 transition-colors duration-300"
     >
       {/* Background Layer - Large Vertical Text */}
-      <div className="absolute inset-0 flex items-center justify-center md:justify-start overflow-hidden pointer-events-none select-none z-0">
+      {/* <div className="absolute inset-0 flex items-center justify-center md:justify-start overflow-hidden pointer-events-none select-none z-0">
          <span className="text-[25vw] md:text-[20vh] leading-none font-bold text-gray-200 dark:text-white/5 origin-center -rotate-90 md:translate-x-[-20%] whitespace-nowrap transition-colors duration-300">
            ABOUT
          </span>
-      </div>
+      </div> */}
 
        {/* Main Content Container - Grid Layout */}
       <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex flex-col justify-center py-20 md:py-0">
