@@ -2,20 +2,28 @@ import VerticalCard from "./VerticalCard";
 
 const VERTICALS = [
   {
-    title: "Our Collaborations",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+    title: "Collaborations",
+    description: "We collaborate with NGOs and other businesses who aim for local impact with greater minds.",
+    href: "/collabs",
+    linkText: "View Collaborations"
   },
   {
-    title: "Our Products",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+    title: "Products",
+    description: "We build scalable, robust software solutions tailored to solve complex challenges. Explore our suite of enterprise products.",
+    href: "/products",
+    linkText: "Explore Products"
   },
   {
-    title: "Our Solutions",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+    title: "Solutions",
+    description: "From research to deployment, we build bespoke platforms and workflows tailored exactly to your organizational volume and scale.",
+    href: "/solutions",
+    linkText: "See Solutions"
   },
   {
-    title: "Our Initiatives",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna.",
+    title: "Initiatives",
+    description: "Pioneering meaningful change through localized, sustainable, and culturally rooted projects.",
+    href: "/initiative",
+    linkText: "Discover Initiatives"
   },
 ];
 

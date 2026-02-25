@@ -29,7 +29,7 @@ export const teamData: TeamMember[] = [
   {
     id: "ankita",
     name: "Ankita Chettri",
-    role: "Data Analyst",
+    role: "Research Associate",
     slug: "ankita-chettri",
     image: "/team/Ankita.webp",
     location: "Mirik",

@@ -48,7 +48,7 @@ export default function ClientsTicker() {
         <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left z-10 relative">
           <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white relative inline-block">
             <span className="relative z-10">{CONTENT.title}</span>
-            <span className="absolute bottom-1 left-0 w-full h-3 bg-blue-100 dark:bg-blue-900/30 -z-10 transform -rotate-1 rounded-sm"></span>
+            {/* <span className="absolute bottom-1 left-0 w-full h-3 bg-blue-100 dark:bg-blue-900/30 -z-10 transform -rotate-1 rounded-sm"></span> */}
           </h3>
           <p className="mt-2 text-sm text-gray-500 dark:text-gray-400 max-w-xs">
             {CONTENT.description}
