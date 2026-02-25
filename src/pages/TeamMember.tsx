@@ -1,12 +1,18 @@
-import React from 'react';
-import { useParams, Link } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { teamData } from '../data/teamData';
 import Layout from '../components/Layout'; // Assuming Layout is in components
 
 const TeamMember: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
+  const navigate = useNavigate();
   
   const member = teamData.find(m => m.slug === slug);
+
+  // Scroll to top when this page mounts
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, [slug]);
 
   if (!member) {
     return (
@@ -15,8 +21,8 @@ const TeamMember: React.FC = () => {
           <div className="text-center">
             <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">404</h1>
             <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">Team member not found.</p>
-            <Link to="/" className="text-amber-600 hover:text-amber-500 font-medium">
-              &larr; Back to Home
+            <Link to="/about" className="text-amber-600 hover:text-amber-500 font-medium">
+              &larr; Back to About
             </Link>
           </div>
         </div>
@@ -26,15 +32,18 @@ const TeamMember: React.FC = () => {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-white dark:bg-gray-900 py-24">
+      <div className="min-h-screen bg-white dark:bg-gray-900 pt-32 pb-24">
          {/* Back Link */}
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-            <Link to="/" className="inline-flex items-center text-gray-500 hover:text-amber-600 transition-colors">
+            <button 
+              onClick={() => navigate(-1)} 
+              className="inline-flex items-center text-gray-500 hover:text-amber-600 transition-colors"
+            >
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
               </svg>
-              Back to Team
-            </Link>
+              Back
+            </button>
          </div>
 
          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

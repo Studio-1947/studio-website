@@ -44,7 +44,7 @@ export default function Hero() {
 
                         <div className="flex flex-wrap gap-4">
                             <a
-                                href="#works"
+                                href="/solutions"
                                 className="px-8 py-3 text-base font-medium rounded-full text-white bg-black dark:bg-white dark:text-black hover:opacity-80 transition-opacity"
                             >
                                 Explore Our Works

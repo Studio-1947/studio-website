@@ -14,34 +14,6 @@ function App() {
       <Services />
       <Verticals />
 
-      {/* Featured Work Section Placeholder */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <h2 className="text-3xl font-extrabold text-gray-900 dark:text-white sm:text-4xl">
-              Featured Work
-            </h2>
-            <p className="mt-4 text-lg text-gray-500 dark:text-gray-400">
-              A selection of our recent projects.
-            </p>
-          </div>
-          <div className="mt-12 grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-            {/* Placeholders for project cards */}
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="bg-white dark:bg-gray-700 overflow-hidden shadow rounded-lg">
-                <div className="h-48 bg-gray-300 dark:bg-gray-600 w-full object-cover"></div>
-                <div className="px-4 py-5 sm:p-6">
-                  <h3 className="text-lg leading-6 font-medium text-gray-900 dark:text-white">Project {item}</h3>
-                  <div className="mt-2 max-w-xl text-sm text-gray-500 dark:text-gray-300">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, tempore!</p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Team Section on Home? Or remove? I'll keep it on home as a teaser or section, but maybe duplicative. Let's REMOVE AboutHero/Content from here. */}
       
       {/* Team Section */}
@@ -49,8 +21,8 @@ function App() {
         <TeamGrid />
       </div> */}
 
-      {/* Contact Section Placeholder */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800">
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gray-50 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-lg mx-auto md:max-w-none md:grid md:grid-cols-2 md:gap-8">
             <div>
@@ -70,8 +42,10 @@ function App() {
                     </svg>
                   </div>
                   <div className="ml-3 text-base text-gray-500 dark:text-gray-400">
-                    <p>+1 (555) 123-4567</p>
-                    <p className="mt-1">hello@studio1947.io</p>
+                    <a href="tel:+917207680813" className="hover:text-primary transition-colors">+91 72076 80813</a>
+                    <p className="mt-1">
+                        <a href="mailto:studio@1947.io" className="hover:text-primary transition-colors">studio@1947.io</a>
+                    </p>
                   </div>
                 </div>
               </div>
