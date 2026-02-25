@@ -64,7 +64,7 @@ const AboutHero: React.FC = () => {
                 className="text-[18vw] md:text-[11vw] leading-[0.85] font-black text-transparent bg-clip-text bg-white bg-opacity-90 tracking-tighter select-none text-center md:text-left drop-shadow-2xl"
                 style={{ 
                     WebkitTextStroke: '1px rgba(128,128,128,0.5)', 
-                    backgroundImage: 'url(/aboutus/About_us_hero.jpeg)',
+                    backgroundImage: 'url(/aboutus/About_us_hero.webp)',
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',  
                     backgroundAttachment: 'fixed', 
