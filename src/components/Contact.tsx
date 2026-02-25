@@ -16,21 +16,16 @@ export default function Contact() {
                         <span className="text-gray-400">great together.</span>
                     </h2>
 
-                    {/* Email Input */}
-                    <div className="w-full max-w-md mt-16 group">
-                        <div className="relative flex items-center">
-                            <input
-                                type="email"
-                                placeholder="Enter your email address"
-                                className="w-full px-6 py-4 bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded-full text-lg text-gray-900 dark:text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-white transition-all pl-6 pr-16"
-                            />
-                            <button
-                                className="absolute right-2 p-3 bg-black dark:bg-white text-white dark:text-black rounded-full hover:scale-105 transition-transform"
-                                aria-label="Submit email"
-                            >
-                                <ArrowRight className="w-5 h-5" />
-                            </button>
-                        </div>
+                    <div className="mt-16 group">
+                        <a
+                            href="https://forms.cloud.microsoft/r/bUGU0yzPSc"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full hover:scale-105 transition-transform text-lg font-medium"
+                        >
+                            Start a Project
+                            <ArrowRight className="w-5 h-5 ml-2" />
+                        </a>
                     </div>
 
                     <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8 text-left md:text-center w-full max-w-4xl border-t border-gray-100 dark:border-gray-800 pt-12">
@@ -40,7 +35,7 @@ export default function Contact() {
                         </div>
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Phone</h4>
-                            <p className="text-gray-500 dark:text-gray-400">+1 (555) 123-4567</p>
+                            <p className="text-gray-500 dark:text-gray-400">+917207680813</p>
                         </div>
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Studio</h4>

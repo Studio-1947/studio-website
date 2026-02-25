@@ -1,45 +1,24 @@
 import { useRef, useEffect } from "react";
 import gsap from "gsap";
 
-const CASE_STUDIES = [
+const TESTIMONIALS = [
     {
-        client: "bazmkaar",
-        title: "Secured $250K from Venture Partners",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula.",
-        color: "bg-gray-100 dark:bg-gray-800"
+        quote: "Studio 1947 delivered exceptional promotional designs for our cultural programmes. Their unique emphasis on visual storytelling added a fascinating, artistic layer to our work that we hadn't seen before.",
+        author: "Suranya Aiyaar",
+        role: "CEO",
+        company: "Bhagyam Arts & Aesthetic"
     },
     {
-        client: "bazmkaar",
-        title: "Secured $250K from Venture Partners",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula.",
-        color: "bg-gray-100 dark:bg-gray-800"
+        quote: "Working with the team has been a treat. They did an amazing job simplifying technical jargon into thoughtful illustrations, making our challenging concepts genuinely engaging and effective for our audience.",
+        author: "Sharda Mohanty",
+        role: "CEO",
+        company: "AIcrowd"
     },
     {
-        client: "bazmkaar",
-        title: "Secured $250K from Venture Partners",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula.",
-        color: "bg-gray-100 dark:bg-gray-800"
-    }
-];
-
-const REVIEWS = [
-    {
-        title: "Efficient & Thorough",
-        quote: "\"Direct ping exceeded our expectations with their quality of work and professionalism.\"",
-        author: "Joseph Kumar",
-        role: "CEO at Microsoft"
-    },
-    {
-        title: "Efficient & Thorough",
-        quote: "\"Direct ping exceeded our expectations with their quality of work and professionalism.\"",
-        author: "Joseph Kumar",
-        role: "CEO at Microsoft"
-    },
-    {
-        title: "Efficient & Thorough",
-        quote: "\"Direct ping exceeded our expectations with their quality of work and professionalism.\"",
-        author: "Joseph Kumar",
-        role: "CEO at Microsoft"
+        quote: "As a development organization, we often struggle to make abstract research accessible. Studio 1947 translated our complex vision into visually meaningful products that made our findings exciting and easy to understand.",
+        author: "Mandvi Kulshreshtha",
+        role: "Senior Program Adviser",
+        company: "Friedrich-Ebert-Stiftung, India"
     }
 ];
 
@@ -56,7 +35,7 @@ export default function Testimonials() {
             animationRef.current = gsap.to(track, {
                 xPercent: -50,
                 repeat: -1,
-                duration: 40,
+                duration: 45,
                 ease: "linear",
             });
         }, tickerRef);
@@ -82,80 +61,56 @@ export default function Testimonials() {
                     What Our Clients Are Saying
                 </h2>
                 <p className="text-gray-500 dark:text-gray-400 text-lg">
-                    Let's see what our clients are saying about us
+                    Don't just take our word for it—hear from the people we've worked with.
                 </p>
             </div>
 
             {/* Ticker Section */}
             <div
-                className="mb-20"
+                className="mb-10 w-full"
                 ref={tickerRef}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
             >
-                <div className="flex w-max gap-8" ref={trackRef}>
-                    {/* Original Set */}
-                    {CASE_STUDIES.map((study, index) => (
-                        <div key={`orig-${index}`} className="w-[400px] md:w-[600px] flex-shrink-0 bg-white dark:bg-gray-900 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm transition-transform duration-300 hover:scale-105">
-                            <h3 className="font-bold text-gray-400 uppercase mb-4 tracking-wider">{study.client}</h3>
-                            <h4 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">{study.title}</h4>
-                            <p className="text-gray-500 dark:text-gray-400 mb-8">{study.description}</p>
-                            {/* Image Placeholder */}
-                            <div className="w-full h-48 md:h-64 bg-gray-100 dark:bg-gray-800 rounded-xl relative flex items-center justify-center overflow-hidden">
-                                <div className="flex items-center gap-4 opacity-50">
-                                    <div className="w-12 h-12 bg-gray-300 dark:bg-gray-700 rounded-sm"></div>
-                                    <div className="w-12 h-12 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
-                                    <div className="w-0 h-0 border-l-[24px] border-l-transparent border-b-[48px] border-b-gray-300 dark:border-b-gray-700 border-r-[24px] border-r-transparent"></div>
-                                </div>
+                <div className="flex w-max gap-6 px-4" ref={trackRef}>
+                    {/* First Half */}
+                    {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
+                        <div key={`first-${index}`} className="w-[320px] md:w-[450px] flex-shrink-0 bg-gray-50 dark:bg-gray-900/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm transition-colors hover:border-gray-200 dark:hover:border-gray-700 flex flex-col justify-between cursor-default">
+                            <div className="mb-8">
+                                <svg className="w-8 h-8 text-gray-300 dark:text-gray-700 mb-6" fill="currentColor" viewBox="0 0 32 32">
+                                    <path d="M9.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H9.333zM25.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H25.333z" />
+                                </svg>
+                                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed font-medium">
+                                    "{testimonial.quote}"
+                                </p>
                             </div>
-                        </div>
-                    ))}
-                    {/* Duplicate Set for Loop */}
-                    {CASE_STUDIES.map((study, index) => (
-                        <div key={`dup-${index}`} className="w-[400px] md:w-[600px] flex-shrink-0 bg-white dark:bg-gray-900 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm transition-transform duration-300 hover:scale-105">
-                            <h3 className="font-bold text-gray-400 uppercase mb-4 tracking-wider">{study.client}</h3>
-                            <h4 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">{study.title}</h4>
-                            <p className="text-gray-500 dark:text-gray-400 mb-8">{study.description}</p>
-                            {/* Image Placeholder */}
-                            <div className="w-full h-48 md:h-64 bg-gray-100 dark:bg-gray-800 rounded-xl relative flex items-center justify-center overflow-hidden">
-                                <div className="flex items-center gap-4 opacity-50">
-                                    <div className="w-12 h-12 bg-gray-300 dark:bg-gray-700 rounded-sm"></div>
-                                    <div className="w-12 h-12 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
-                                    <div className="w-0 h-0 border-l-[24px] border-l-transparent border-b-[48px] border-b-gray-300 dark:border-b-gray-700 border-r-[24px] border-r-transparent"></div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-
-            {/* Grid Section */}
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {REVIEWS.map((review, index) => (
-                        <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-2xl border border-gray-100 dark:border-gray-800 shadow-sm flex flex-col">
-                            <div className="w-12 h-12 bg-gray-100 dark:bg-gray-800 rounded-lg mb-6 flex items-center justify-center">
-                                <div className="flex gap-1">
-                                    <div className="w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
-                                    <div className="w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-sm"></div>
-                                    <div className="w-2 h-2 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
-                                </div>
-                            </div>
-                            <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
-                                {review.title}
-                            </h4>
-                            <p className="text-gray-500 dark:text-gray-400 text-sm mb-6 flex-grow">
-                                {review.quote}
-                            </p>
                             <div>
-                                <p className="text-gray-900 dark:text-white font-semibold text-sm">{review.author}</p>
-                                <p className="text-gray-400 dark:text-gray-500 text-xs">{review.role}</p>
+                                <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{testimonial.role}</p>
+                                <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">{testimonial.company}</p>
+                            </div>
+                        </div>
+                    ))}
+                    {/* Second Half */}
+                    {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
+                        <div key={`second-${index}`} className="w-[320px] md:w-[450px] flex-shrink-0 bg-gray-50 dark:bg-gray-900/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm transition-colors hover:border-gray-200 dark:hover:border-gray-700 flex flex-col justify-between cursor-default">
+                            <div className="mb-8">
+                                <svg className="w-8 h-8 text-gray-300 dark:text-gray-700 mb-6" fill="currentColor" viewBox="0 0 32 32">
+                                    <path d="M9.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H9.333zM25.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H25.333z" />
+                                </svg>
+                                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed font-medium">
+                                    "{testimonial.quote}"
+                                </p>
+                            </div>
+                            <div>
+                                <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
+                                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{testimonial.role}</p>
+                                <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">{testimonial.company}</p>
                             </div>
                         </div>
                     ))}
                 </div>
             </div>
-
         </section>
     );
 }

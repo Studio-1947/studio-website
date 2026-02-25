@@ -55,7 +55,9 @@ export default function Hero() {
                                 <span className="relative invisible">Explore Our Works</span>
                             </a>
                             <a
-                                href="#contact"
+                                href="https://forms.cloud.microsoft/r/bUGU0yzPSc"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="px-8 py-3 text-base font-medium rounded-full text-gray-900 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition-colors"
                             >
                                 Schedule a Call

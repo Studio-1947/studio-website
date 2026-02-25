@@ -52,7 +52,7 @@ export default function Footer() {
                             Crafting digital experiences that merge timeless design with cutting-edge technology.
                         </p>
                         <div className="pt-8">
-                            <a href="/#contact" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border border-gray-700 rounded-full hover:border-white">
+                            <a href="https://forms.cloud.microsoft/r/bUGU0yzPSc" target="_blank" rel="noopener noreferrer" className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border border-gray-700 rounded-full hover:border-white">
                                 <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
                                     <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </span>

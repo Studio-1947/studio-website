@@ -2,21 +2,21 @@ import { useRef } from 'react';
 
 const PROJECTS = [
     {
-        client: "Client Name",
-        category: "Branding",
-        date: "Data Of Completion",
+        client: "RemodelUN",
+        category: "Brand Identity & Design Guideline",
+        image: "/client/RemodelUN.avif",
         color: "bg-gray-100 dark:bg-gray-800"
     },
     {
-        client: "Client Name",
-        category: "Branding",
-        date: "Data Of Completion",
+        client: "Madly in LOVE",
+        category: "Event Branding & Social Media Promotional Creatives",
+        image: "/client/madly_in_love.avif",
         color: "bg-gray-100 dark:bg-gray-800"
     },
     {
-        client: "Client Name",
-        category: "Branding",
-        date: "Data Of Completion",
+        client: "Rajkamal Prakashan",
+        category: "Kitavtosav - Yearly Book Festival Branding",
+        image: "/client/rajkamal.jpeg",
         color: "bg-gray-100 dark:bg-gray-800"
     }
 ];
@@ -56,11 +56,7 @@ export default function BuiltForImpact() {
                             <div key={index} className="flex flex-col gap-4">
                                 {/* Large Image Area */}
                                 <div className={`aspect-[4/3] w-full ${project.color} rounded-2xl relative overflow-hidden group flex items-center justify-center`}>
-                                    <div className="flex items-center justify-center gap-4 opacity-30">
-                                        <div className="w-24 h-24 bg-gray-300 dark:bg-gray-600 rounded-sm"></div>
-                                        <div className="w-24 h-24 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
-                                        <div className="w-0 h-0 border-l-[48px] border-l-transparent border-b-[96px] border-b-gray-300 dark:border-b-gray-600 border-r-[48px] border-r-transparent"></div>
-                                    </div>
+                                    <img src={project.image} alt={project.client} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                 </div>
 
                                 {/* Project Details */}
@@ -69,9 +65,6 @@ export default function BuiltForImpact() {
                                         <span className="font-bold text-gray-900 dark:text-white">{project.client}</span>
                                         <span className="text-gray-400 dark:text-gray-500">{project.category}</span>
                                     </div>
-                                    <span className="text-gray-400 dark:text-gray-500 text-xs md:text-sm uppercase tracking-wide">
-                                        {project.date}
-                                    </span>
                                 </div>
                             </div>
                         ))}
