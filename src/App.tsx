@@ -25,7 +25,7 @@ function App() {
       <Testimonials />
       <OurProcess />
       <OurProducts />
-      <LatestBlogs />
+      {/* <LatestBlogs /> */}
 
       {/* Featured Work Section Placeholder */}
 

@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import HeroFigure from "./HeroFigure";
+import ContactModal from "./ContactModal";
 
 const TICKER_WORDS = ["Create", "Innovate", "Inspire"];
 
 export default function Hero() {
     const [index, setIndex] = useState(0);
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -54,14 +56,12 @@ export default function Hero() {
                                 <span className="absolute flex items-center justify-center w-full h-full text-black dark:text-white transition-all duration-300 transform group-hover:translate-x-full ease">Explore Our Works</span>
                                 <span className="relative invisible">Explore Our Works</span>
                             </a>
-                            <a
-                                href="https://forms.cloud.microsoft/r/bUGU0yzPSc"
-                                target="_blank"
-                                rel="noopener noreferrer"
+                            <button
+                                onClick={() => setIsContactModalOpen(true)}
                                 className="px-8 py-3 text-base font-medium rounded-full text-gray-900 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition-colors"
                             >
                                 Schedule a Call
-                            </a>
+                            </button>
                         </div>
                     </div>
 
@@ -78,6 +78,11 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
+            
+            <ContactModal 
+                isOpen={isContactModalOpen} 
+                onClose={() => setIsContactModalOpen(false)} 
+            />
         </div>
     );
 }

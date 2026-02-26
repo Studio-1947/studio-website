@@ -1,6 +1,9 @@
 import { ArrowRight } from "lucide-react";
+import { useState } from "react";
+import ContactModal from "./ContactModal";
 
 export default function Contact() {
+    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     return (
         <section className="bg-white dark:bg-black py-32 border-t border-gray-100 dark:border-gray-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -17,15 +20,13 @@ export default function Contact() {
                     </h2>
 
                     <div className="mt-16 group">
-                        <a
-                            href="https://forms.cloud.microsoft/r/bUGU0yzPSc"
-                            target="_blank"
-                            rel="noopener noreferrer"
+                        <button
+                            onClick={() => setIsContactModalOpen(true)}
                             className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full hover:scale-105 transition-transform text-lg font-medium"
                         >
                             Start a Project
                             <ArrowRight className="w-5 h-5 ml-2" />
-                        </a>
+                        </button>
                     </div>
 
                     <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8 text-left md:text-center w-full max-w-4xl border-t border-gray-100 dark:border-gray-800 pt-12">
@@ -54,6 +55,11 @@ export default function Contact() {
                 </div>
 
             </div>
+            
+            <ContactModal 
+                isOpen={isContactModalOpen} 
+                onClose={() => setIsContactModalOpen(false)} 
+            />
         </section>
     );
 }
