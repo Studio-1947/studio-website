@@ -1,15 +1,3 @@
-const PRODUCTS = [
-    {
-        title: "Doptor",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
-    },
-    {
-        title: "Aangan",
-        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut et massa mi. Aliquam in hendrerit urna. Pellentesque sit amet sapien fringilla, mattis ligula consectetur, ultrices mauris. Maecenas vitae mattis tellus."
-    },
-   
-];
-
 export default function OurProducts() {
     return (
         <section className="bg-white dark:bg-black py-24">
@@ -24,39 +12,27 @@ export default function OurProducts() {
                         We Also Build Our Own In-House Products
                     </h2>
                     <p className="text-gray-500 dark:text-gray-400 text-lg">
-                        we care about for everyone so we build product only for local enthusiasts.
+                        We care about solving real problems, so we build products tailored for our community.
                     </p>
                 </div>
 
-                {/* Grid Layout */}
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    {PRODUCTS.map((product, index) => (
-                        <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300 group">
-
-                            {/* Logo/Icon Placeholder */}
-                            <div className="flex gap-2 mb-6 opacity-60">
-                                <div className="w-8 h-8 bg-gray-400 dark:bg-gray-600 rounded-sm"></div>
-                                <div className="w-8 h-8 bg-gray-400 dark:bg-gray-600 rounded-full"></div>
-                                <div className="w-0 h-0 border-l-[16px] border-l-transparent border-b-[32px] border-b-gray-400 dark:border-b-gray-600 border-r-[16px] border-r-transparent"></div>
-                            </div>
-
-                            <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                                {product.title}
-                            </h3>
-                            <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">
-                                {product.description}
-                            </p>
-
-                            {/* Large Image Placeholder */}
-                            <div className="w-full aspect-[4/3] bg-gray-100 dark:bg-gray-800 rounded-2xl relative flex items-center justify-center overflow-hidden">
-                                <div className="flex items-center gap-4 opacity-30">
-                                    <div className="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-sm"></div>
-                                    <div className="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
-                                    <div className="w-0 h-0 border-l-[32px] border-l-transparent border-b-[64px] border-b-gray-300 dark:border-b-gray-600 border-r-[32px] border-r-transparent"></div>
-                                </div>
+                {/* Coming Soon Section */}
+                <div className="flex items-center justify-center w-full py-16">
+                    <div className="bg-gray-50 dark:bg-gray-900/50 rounded-3xl p-12 text-center border border-gray-100 dark:border-gray-800 w-full max-w-2xl shadow-sm">
+                        <div className="flex justify-center mb-8">
+                            <div className="w-16 h-16 bg-black dark:bg-white rounded-full flex items-center justify-center animate-pulse">
+                                <svg className="w-8 h-8 text-white dark:text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                                </svg>
                             </div>
                         </div>
-                    ))}
+                        <h3 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                            Brewing Something Special
+                        </h3>
+                        <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-0">
+                            Our team is currently working hard behind the scenes to launch some incredibly exciting new products. Stay tuned!
+                        </p>
+                    </div>
                 </div>
 
             </div>

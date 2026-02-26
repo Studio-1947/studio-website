@@ -219,7 +219,7 @@ export default function Navbar() {
                             onMouseEnter={() => setActiveSpoke(2)} // Default to 'Right' spoke on logo hover
                             onMouseLeave={() => setActiveSpoke(null)}
                         >
-                            <Logo className="h-10 w-auto object-contain" activeSpoke={activeSpoke} />
+                            <Logo className="h-6 w-auto object-contain" activeSpoke={activeSpoke} />
                         </Link>
                         <div className="flex space-x-6 items-center">
                             {leftLinks.map((link) => {

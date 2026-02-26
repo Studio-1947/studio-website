@@ -1,3 +1,108 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ===================================
+   DESIGN SYSTEM - CSS VARIABLES
+   Base Color: #4D00DF (Deep Purple)
+   =================================== */
+
+:root {
+  /* --- PRIMARY COLOR (MAIN BRAND) --- */
+  --color-primary: #4D00DF;
+  --color-primary-50: #F3EBFF;
+  --color-primary-100: #E8D7FF;
+  --color-primary-200: #D1B0FF;
+  --color-primary-300: #B988FF;
+  --color-primary-400: #A260FF;
+  --color-primary-500: #8B39FF;
+  --color-primary-600: #6B1FC8;
+  --color-primary-700: #5A1AAB;
+  --color-primary-800: #49158E;
+  --color-primary-900: #2D0D56;
+
+  /* --- SECONDARY COLORS --- */
+  /* Complementary orange/yellow for contrast */
+  --color-secondary: #FF9D3C;
+  --color-secondary-50: #FFF8F0;
+  --color-secondary-100: #FFE8D6;
+  --color-secondary-200: #FFD4AD;
+  --color-secondary-300: #FFC084;
+  --color-secondary-400: #FFAC5B;
+  --color-secondary-500: #FF9D3C;
+  --color-secondary-600: #E67E2B;
+  --color-secondary-700: #CC601F;
+  --color-secondary-800: #B34814;
+  --color-secondary-900: #7A2F0A;
+
+  /* --- ACCENT COLOR --- */
+  /* Teal/cyan for interactive elements */
+  --color-accent: #00BCD4;
+  --color-accent-50: #E0F7FA;
+  --color-accent-100: #B2EBF2;
+  --color-accent-200: #80DEEA;
+  --color-accent-300: #4DD0E1;
+  --color-accent-400: #26C6DA;
+  --color-accent-500: #00BCD4;
+  --color-accent-600: #00ACC1;
+  --color-accent-700: #0097A7;
+  --color-accent-800: #00838F;
+  --color-accent-900: #006064;
+
+  /* --- NEUTRAL COLORS --- */
+  --color-white: #FFFFFF;
+  --color-black: #000000;
+  --color-gray-50: #F9FAFB;
+  --color-gray-100: #F3F4F6;
+  --color-gray-200: #E5E7EB;
+  --color-gray-300: #D1D5DB;
+  --color-gray-400: #9CA3AF;
+  --color-gray-500: #6B7280;
+  --color-gray-600: #4B5563;
+  --color-gray-700: #374151;
+  --color-gray-800: #1F2937;
+  --color-gray-900: #111827;
+
+  /* --- SEMANTIC COLORS --- */
+  --color-success: #10B981;
+  --color-success-light: #D1FAE5;
+  --color-warning: #F59E0B;
+  --color-warning-light: #FEF3C7;
+  --color-error: #EF4444;
+  --color-error-light: #FEE2E2;
+  --color-info: #3B82F6;
+  --color-info-light: #DBEAFE;
+
+  /* --- BACKGROUND & TEXT --- */
+  --color-bg-primary: #FFFFFF;
+  --color-bg-secondary: #F9FAFB;
+  --color-bg-tertiary: #F3F4F6;
+  
+  --color-text-primary: #111827;
+  --color-text-secondary: #374151;
+  --color-text-tertiary: #6B7280;
+  --color-text-inverse: #FFFFFF;
+
+  /* --- DARK MODE --- */
+  --color-dark-bg-primary: #111827;
+  --color-dark-bg-secondary: #1F2937;
+  --color-dark-bg-tertiary: #374151;
+  
+  --color-dark-text-primary: #F9FAFB;
+  --color-dark-text-secondary: #E5E7EB;
+  --color-dark-text-tertiary: #9CA3AF;
+
+}
+
+/* Dark mode overrides */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-primary: #111827;
+    --color-bg-secondary: #1F2937;
+    --color-bg-tertiary: #374151;
+    
+    --color-text-primary: #F9FAFB;
+    --color-text-secondary: #E5E7EB;
+    --color-text-tertiary: #9CA3AF;
+  }
+}

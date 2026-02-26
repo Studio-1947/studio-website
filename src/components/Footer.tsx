@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { toast } from 'sonner';
 import Logo from './Logo';
 import GoldenSprinkles from './GoldenSprinkles';
 import ContactModal from './ContactModal';
@@ -22,6 +23,25 @@ export default function Footer() {
             timeZone,
             hour12: false
         }).format(date);
+    };
+
+    const handleSitemapClick = (e: React.MouseEvent<HTMLButtonElement>, name: string) => {
+        e.preventDefault();
+        
+        const maintenanceMessages = [
+            `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
+            `${name} is currently in the creative oven getting baked to perfection 🥐`,
+            `Our pixies are putting the final touches on ${name}. Check back soon! 🧚`,
+            `${name} is currently taking a beauty sleep 😴 Be right back!`,
+            `We're leveling up the ${name} experience. Thank you for your patience! 🚀`
+        ];
+        
+        const randomMsg = maintenanceMessages[Math.floor(Math.random() * maintenanceMessages.length)];
+        
+        toast(randomMsg, {
+            icon: '🚧',
+            duration: 4000,
+        });
     };
 
     const footerLinks = [
@@ -47,7 +67,7 @@ export default function Footer() {
                             transition={{ duration: 0.6 }}
                             className="text-3xl font-bold tracking-tight"
                         >
-                            <Logo className="h-10 w-auto text-white" />
+                            <Logo className="h-6 w-auto text-white" />
 
                         </motion.h2>
                         <p className="text-gray-400 max-w-sm text-lg leading-relaxed">
@@ -84,12 +104,19 @@ export default function Footer() {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             transition={{ duration: 0.3, delay: (idx * 0.1) + (linkIdx * 0.05) }}
                                         >
-                                            {link.href.startsWith('/') ? (
-                                                <Link to={link.href} className="text-gray-300 hover:text-white transition-colors hover:underline decoration-gray-700 underline-offset-4">
+                                            {section.title === "Sitemap" && link.label !== "Home" ? (
+                                                <button
+                                                    onClick={(e) => handleSitemapClick(e, link.label)}
+                                                    className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"
+                                                >
+                                                    {link.label}
+                                                </button>
+                                            ) : link.href.startsWith('/') ? (
+                                                <Link to={link.href} className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">
                                                     {link.label}
                                                 </Link>
                                             ) : (
-                                                <a href={link.href} className="text-gray-300 hover:text-white transition-colors hover:underline decoration-gray-700 underline-offset-4">
+                                                <a href={link.href} className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium">
                                                     {link.label}
                                                 </a>
                                             )}
