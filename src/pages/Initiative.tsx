@@ -1,13 +1,11 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-
 const initiatives = [
     {
         id: 'local-design',
         title: 'Local Design',
         description: 'Empowering communities through context-aware and sustainable design practices that honor local heritage and environmental realities.',
-        href: '/initiative/local-design',
+        href: 'https://www.localdesign.in/',
         image: 'https://images.unsplash.com/photo-1541888075840-0c466046e033?q=80&w=2000&auto=format&fit=crop', // Replace with actual image later
         color: 'from-amber-500/20 to-orange-600/20'
     },
@@ -15,7 +13,7 @@ const initiatives = [
         id: 'sirf-local',
         title: 'Sirf Local',
         description: 'A dedicated platform showcasing exclusively local products, artisans, and experiences, fostering micro-economies and cultural pride.',
-        href: 'https:sirflocal.in',
+        href: 'https://www.sirflocal.in/',
         image: 'https://images.unsplash.com/photo-1558522195-e1201b090344?q=80&w=2000&auto=format&fit=crop', // Replace with actual image later
         color: 'from-emerald-500/20 to-teal-600/20'
     }
@@ -63,7 +61,7 @@ export default function Initiative() {
                             className="relative group rounded-[2.5rem] overflow-hidden bg-gray-900/40 border border-white/10 backdrop-blur-xl aspect-[4/5] md:aspect-square flex flex-col"
                         >
                             {/* Card Link Overlay */}
-                            <Link to={initiative.href} className="absolute inset-0 z-20" aria-label={`View ${initiative.title}`} />
+                            <a href={initiative.href} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-20" aria-label={`View ${initiative.title}`} />
 
                             {/* Background Image & Gradient */}
                             <div className="absolute inset-0 overflow-hidden">

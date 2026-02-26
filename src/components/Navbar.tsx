@@ -107,23 +107,23 @@ export default function Navbar() {
             name: 'Products',
             href: '#',
             spokeIndex: 2,
-            dropdown: [
+            /* dropdown: [
                 { name: 'Doptor', href: '/products/doptor' },
                 { name: 'Angan', href: '/products/angan' },
                 { name: 'Data analysis dashboards', href: '/products/data-analysis' },
                 { name: 'Social media dashboards', href: '/products/social-media' },
-            ]
+            ] */
         },
         { name: 'Solutions', href: '/solutions', spokeIndex: 1 },
         {
             name: 'Collabs',
             href: '#',
             spokeIndex: 0,
-            dropdown: [
+            /* dropdown: [
                 { name: 'Walking Project', href: '/collabs/walking-project', logo: '/collabs/walkingproject.png' },
                 { name: 'Ai Crowd', href: '/collabs/ai-crowd', logo: '/collabs/aicrowd.png' },
                 { name: 'Ecological Foundations', href: '/collabs/ecological-foundations', logo: '/collabs/ecologicalfoundation.png' },
-            ]
+            ] */
         },
         {
             name: 'Initiative',
