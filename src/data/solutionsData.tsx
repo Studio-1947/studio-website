@@ -1,4 +1,3 @@
-
 export const solutionsData = [
   {
     title: 'Survey & Research',
@@ -10,8 +9,8 @@ export const solutionsData = [
     ),
     color: 'from-blue-500 to-cyan-400',
     bgImage: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-blue-500/10',
-    iconColor: 'text-cyan-500'
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   },
   {
     title: 'Service Blueprinting',
@@ -23,8 +22,8 @@ export const solutionsData = [
     ),
     color: 'from-emerald-500 to-teal-400',
     bgImage: 'https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-emerald-500/10',
-    iconColor: 'text-emerald-500'
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   },
   {
     title: 'Data & Dashboards',
@@ -37,8 +36,8 @@ export const solutionsData = [
     ),
     color: 'from-indigo-500 to-purple-500',
     bgImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-indigo-500/10',
-    iconColor: 'text-indigo-400'
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   },
   {
     title: 'AI/ML Automations',
@@ -50,8 +49,8 @@ export const solutionsData = [
     ),
     color: 'from-rose-500 to-pink-500',
     bgImage: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-rose-500/10',
-    iconColor: 'text-rose-500'
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   },
   {
     title: 'ERP & Cloud Systems',
@@ -63,8 +62,8 @@ export const solutionsData = [
     ),
     color: 'from-amber-500 to-orange-400',
     bgImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-amber-500/10',
-    iconColor: 'text-amber-500'
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   },
   {
     title: 'Web & App Development',
@@ -75,9 +74,9 @@ export const solutionsData = [
       </svg>
     ),
     color: 'from-violet-500 to-fuchsia-500',
-    bgImage: 'https://images.unsplash.com/photo-1627398246654-4f81006528d2?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-violet-500/10',
-    iconColor: 'text-violet-400'
+    bgImage: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6?q=80&w=800&auto=format&fit=crop',
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   },
   {
     title: 'Print to Digital Design',
@@ -89,8 +88,8 @@ export const solutionsData = [
     ),
     color: 'from-yellow-400 to-orange-500',
     bgImage: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-yellow-500/10',
-    iconColor: 'text-yellow-500'
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   },
   {
     title: 'Social, Comms & Ads',
@@ -102,8 +101,8 @@ export const solutionsData = [
     ),
     color: 'from-orange-500 to-red-500',
     bgImage: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-red-500/10',
-    iconColor: 'text-red-500'
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   },
   {
     title: 'Film & Video Production',
@@ -115,7 +114,7 @@ export const solutionsData = [
     ),
     color: 'from-slate-500 to-gray-700',
     bgImage: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b?q=80&w=800&auto=format&fit=crop',
-    iconBg: 'bg-slate-500/20',
-    iconColor: 'text-slate-300'
+    iconBg: 'bg-primary/10',
+    iconColor: 'text-primary'
   }
 ];

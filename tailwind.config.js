@@ -8,7 +8,7 @@ export default {
         sans: ['"Bricolage Grotesque"', "sans-serif"],
       },
       colors: {
-        primary: "#340963",
+        primary: "#4D00DF",
         royal: {
           500: "#a855f7",
           700: "#7e22ce",

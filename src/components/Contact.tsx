@@ -1,4 +1,4 @@
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Instagram, Facebook, Linkedin } from "lucide-react";
 import { useState } from "react";
 import ContactModal from "./ContactModal";
 
@@ -40,14 +40,38 @@ export default function Contact() {
                         </div>
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Studio</h4>
-                            <p className="text-gray-500 dark:text-gray-400">Washington, DC</p>
+                            <p className="text-gray-500 dark:text-gray-400">Mirik, Darjeeling</p>
                         </div>
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Socials</h4>
                             <div className="flex gap-4 md:justify-center">
-                                <a href="#" className="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Li</a>
-                                <a href="#" className="text-gray-500 hover:text-black dark:hover:text-white transition-colors">Tw</a>
-                                <a href="#" className="text-gray-500 hover:text-black dark:hover:text-white transition-colors">In</a>
+                                <a
+                                    href="https://www.instagram.com/1947.io/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Instagram"
+                                    className="text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+                                >
+                                    <Instagram className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href="https://www.facebook.com/1947.io/?ref=PROFILE_EDIT_xav_ig_profile_page_web#"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="Facebook"
+                                    className="text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+                                >
+                                    <Facebook className="w-5 h-5" />
+                                </a>
+                                <a
+                                    href="https://www.linkedin.com/company/studio1947/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    aria-label="LinkedIn"
+                                    className="text-gray-500 hover:text-black dark:hover:text-white transition-colors"
+                                >
+                                    <Linkedin className="w-5 h-5" />
+                                </a>
                             </div>
                         </div>
                     </div>

@@ -22,9 +22,10 @@ export default function Hero() {
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
                     {/* Left Column: Text Content */}
                     <div className="text-center lg:text-left z-10 flex flex-col justify-center items-center lg:items-start order-2 lg:order-1">
-                        <div className="flex flex-wrap justify-center lg:justify-start items-baseline gap-2 text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium mb-4">
-                            <span>With the freedom to</span>
-                            <div className="relative h-8 w-32 overflow-hidden">
+                        <div className="text-center lg:text-left">
+                            <div className="flex items-center  text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium mb-4 justify-center lg:justify-start text-center">
+                                <span>With the freedom to</span>
+                                <div className="relative h-8 w-32 sm:w-40 md:w-48 flex-shrink-0 overflow-hidden">
                                 <AnimatePresence mode="wait">
                                     <motion.span
                                         key={index}
@@ -32,15 +33,16 @@ export default function Hero() {
                                         animate={{ y: 0, opacity: 1 }}
                                         exit={{ y: -20, opacity: 0 }}
                                         transition={{ duration: 0.3, ease: "easeInOut" }}
-                                        className="absolute inset-0 text-gray-400 font-semibold mt-1.5"
+                                        className="absolute inset-0 text-gray-400 font-semibold sm:mt-1 md:mt-0 pl-2 text-left"
                                     >
                                         {TICKER_WORDS[index]}
                                     </motion.span>
                                 </AnimatePresence>
+                                </div>
                             </div>
                         </div>
 
-                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 dark:text-white leading-tight tracking-tight mb-6 lg:mb-8">
+                        <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent leading-tight tracking-tight mb-6 lg:mb-8">
                             Local Wisdom
                             <span className="block mt-1 lg:mt-0">for Global Impact</span>
                         </h1>
@@ -48,12 +50,12 @@ export default function Hero() {
                         <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start w-full sm:w-auto">
                             <a
                                 href="#works"
-                                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-black dark:text-white transition duration-300 ease-out border-2 border-black dark:border-white rounded-full"
+                                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-primary rounded-full hover:border-primary"
                             >
-                                <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 -translate-x-full bg-black dark:bg-white group-hover:translate-x-0 ease">
-                                    <svg className="w-6 h-6 text-white dark:text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 -translate-x-full bg-primary dark:bg-primary group-hover:translate-x-0 ease">
+                                    <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </span>
-                                <span className="absolute flex items-center justify-center w-full h-full text-black dark:text-white transition-all duration-300 transform group-hover:translate-x-full ease">Explore Our Works</span>
+                                <span className="absolute flex items-center justify-center w-full h-full text-primary dark:text-primary transition-all duration-300 transform group-hover:translate-x-full ease">Explore Our Works</span>
                                 <span className="relative invisible">Explore Our Works</span>
                             </a>
                             <button
