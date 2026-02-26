@@ -18,6 +18,24 @@ const PROJECTS = [
         category: "Kitavtosav - Yearly Book Festival Branding",
         image: "/client/rajkamal.jpeg",
         color: "bg-gray-100 dark:bg-gray-800"
+    },
+    {
+        client: "FES-MANIPAL-UNESCO",
+        category: "Green Energy Meetup Report",
+        image: "/collabs/FES.avif",
+        color: "bg-emerald-50 dark:bg-emerald-900/20"
+    },
+    {
+        client: "Nest Homes Rebranding",
+        category: "Brochure & Event Branding",
+        image: "/collabs/Nest_Homes.avif",
+        color: "bg-orange-50 dark:bg-orange-900/20"
+    },
+    {
+        client: "Mirik College",
+        category: "Capacity Building through trainings beyond the Classroom",
+        image: "/collabs/mirikcollege.avif",
+        color: "bg-blue-50 dark:bg-blue-900/20"
     }
 ];
 
@@ -25,7 +43,7 @@ export default function BuiltForImpact() {
     const containerRef = useRef<HTMLDivElement>(null);
 
     return (
-        <section ref={containerRef} className="bg-white dark:bg-black py-24 relative">
+        <section id="works" ref={containerRef} className="bg-white dark:bg-black py-24 relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
@@ -41,13 +59,13 @@ export default function BuiltForImpact() {
                             As a transparent agency we always want our clients to know how we work?, what we do? & how we do?
                         </p>
 
-                        <button className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-medium w-fit hover:opacity-80 transition-opacity">
+                        {/* <button className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-medium w-fit hover:opacity-80 transition-opacity">
                             All Projects
                             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                                 <line x1="5" y1="12" x2="19" y2="12"></line>
                                 <polyline points="12 5 19 12 12 19"></polyline>
                             </svg>
-                        </button>
+                        </button> */}
                     </div>
 
                     {/* Scrollable Right Content */}

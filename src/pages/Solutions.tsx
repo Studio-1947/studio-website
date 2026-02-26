@@ -1,9 +1,13 @@
 import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
+import { useState } from 'react';
 
 import { solutionsData as solutions } from '../data/solutionsData';
+import ContactModal from '../components/ContactModal';
 
 const Solutions: React.FC = () => {
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
@@ -113,10 +117,8 @@ const Solutions: React.FC = () => {
                 Let's discuss how our integrated solutions can bridge the gap between where you are and where you want to be.
               </p>
               
-              <a 
-                href="https://forms.cloud.microsoft/r/bUGU0yzPSc" 
-                target="_blank"
-                rel="noopener noreferrer"
+              <button 
+                onClick={() => setIsContactModalOpen(true)}
                 className="group/btn relative overflow-hidden px-12 py-5 bg-royal-600 text-white dark:bg-royal-500 dark:text-royal-900 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl dark:shadow-[0_0_40px_-10px_rgba(255,255,255,0.2)] flex items-center gap-3"
               >
                 <span className="relative z-10 flex items-center gap-3">
@@ -127,12 +129,16 @@ const Solutions: React.FC = () => {
                 </span>
                 {/* Inner button hover gradient */}
                 <div className="absolute inset-0 bg-gradient-to-r from-royal-700 to-royal-600 dark:from-royal-50 dark:to-white opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 z-0"></div>
-              </a>
+              </button>
             </div>
           </div>
 
         </div>
       </div>
+      <ContactModal 
+        isOpen={isContactModalOpen} 
+        onClose={() => setIsContactModalOpen(false)} 
+      />
     </Layout>
   );
 };

@@ -8,7 +8,6 @@ import BuiltForImpact from './components/BuiltForImpact';
 import Testimonials from './components/Testimonials';
 import OurProcess from './components/OurProcess';
 import OurProducts from './components/OurProducts';
-import LatestBlogs from './components/LatestBlogs';
 import Contact from './components/Contact';
 import { Analytics } from '@vercel/analytics/react';
 
@@ -26,7 +25,7 @@ function App() {
       <Testimonials />
       <OurProcess />
       <OurProducts />
-      <LatestBlogs />
+      {/* <LatestBlogs /> */}
 
       {/* Featured Work Section Placeholder */}
 

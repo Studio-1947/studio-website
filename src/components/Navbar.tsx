@@ -1,8 +1,9 @@
 import { useState, useRef, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import { toast } from 'sonner';
 import ThemeToggle from './ThemeToggle';
 import Logo from './Logo';
 import SearchModal from './SearchModal';
@@ -30,11 +31,44 @@ export default function Navbar() {
     const [hoveredLink, setHoveredLink] = useState<string | null>(null);
     const [expandedMobileLinks, setExpandedMobileLinks] = useState<string[]>([]);
 
+    const location = useLocation();
+
     const containerRef = useRef<HTMLDivElement>(null);
     const leftPillRef = useRef<HTMLDivElement>(null);
     const rightPillRef = useRef<HTMLDivElement>(null);
     const navRef = useRef<HTMLElement>(null);
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+    const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string, name: string) => {
+        if (href === '/' || name === 'Logo' || name === 'Search') {
+            // Let normal navigation proceed for home
+            if (href === '/') {
+                if (isOpen) setIsOpen(false);
+            }
+            return;
+        }
+
+        e.preventDefault();
+        
+        const maintenanceMessages = [
+            `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
+            `${name} is currently in the creative oven getting baked to perfection 🥐`,
+            `Our pixies are putting the final touches on ${name}. Check back soon! 🧚`,
+            `${name} is currently taking a beauty sleep 😴 Be right back!`,
+            `We're leveling up the ${name} experience. Thank you for your patience! 🚀`
+        ];
+        
+        const randomMsg = maintenanceMessages[Math.floor(Math.random() * maintenanceMessages.length)];
+        
+        toast(randomMsg, {
+            icon: '🚧',
+            duration: 4000,
+        });
+        
+        if (isOpen) {
+            setIsOpen(false);
+        }
+    };
 
     // Keyboard shortcut for search
     useEffect(() => {
@@ -139,7 +173,7 @@ export default function Navbar() {
     ];
 
     // Increased padding and adjusted max-width for "proper screen fill"
-    const pillBaseClass = "flex items-center space-x-10 px-12 py-5 bg-gray-900/80 dark:bg-black/80 backdrop-blur-3xl border border-gray-200/10 dark:border-white/10 text-gray-100 transition-colors duration-300";
+    const pillBaseClass = "flex items-center space-x-10 px-12 py-5 bg-white/90 dark:bg-black/80 backdrop-blur-3xl border border-black/20 dark:border-white/10 text-gray-900 dark:text-gray-100 transition-colors duration-300";
 
     const handleMouseEnter = (linkName: string, spokeIndex?: number) => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -188,11 +222,18 @@ export default function Navbar() {
                             <Logo className="h-10 w-auto object-contain" activeSpoke={activeSpoke} />
                         </Link>
                         <div className="flex space-x-6 items-center">
-                            {leftLinks.map((link) => (
-                                <Link key={link.name} to={link.href} className="text-base font-medium hover:text-primary transition-colors">
+                            {leftLinks.map((link) => {
+                                const isActive = location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
+                                return (
+                                <Link 
+                                    key={link.name} 
+                                    to={link.href} 
+                                    onClick={(e) => handleNavClick(e, link.href, link.name)}
+                                    className={`text-base font-medium transition-colors ${isActive ? 'text-primary underline decoration-2 underline-offset-8' : 'hover:text-primary'}`}
+                                >
                                     {link.name}
                                 </Link>
-                            ))}
+                            )})}
 
                             {/* Search Button */}
                             <button
@@ -200,7 +241,7 @@ export default function Navbar() {
                                 className="text-base font-medium hover:text-primary transition-colors focus:outline-none flex items-center gap-2"
                                 aria-label="Search"
                             >
-                                <img src="/search-02.png" alt="Search" className="w-5 h-5 opacity-80 hover:opacity-100 transition-opacity" />
+                                <img src="/search-02.png" alt="Search" className="w-5 h-5 opacity-80 hover:opacity-100 transition-opacity invert dark:invert-0" />
                                 <span className="text-gray-500 text-sm hidden xl:inline-block font-sans"></span>
                             </button>
                         </div>
@@ -218,7 +259,14 @@ export default function Navbar() {
                         }}
                     >
                         <div className="flex space-x-6 items-center">
-                            {rightLinks.map((link) => (
+                            {rightLinks.map((link) => {
+                                const isActive = 
+                                    location.pathname === link.href || 
+                                    (link.href !== '/' && link.href !== '#' && location.pathname.startsWith(link.href)) || 
+                                    link.dropdown?.some(item => location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href))) ||
+                                    (link.href === '#' && link.name !== 'Search' && location.pathname.startsWith(`/${link.name.toLowerCase()}`));
+                                    
+                                return (
                                 <div
                                     key={link.name}
                                     className="relative group"
@@ -227,7 +275,8 @@ export default function Navbar() {
                                 >
                                     {link.href === '#' ? (
                                         <div
-                                            className={`text-base font-medium hover:text-primary transition-colors flex items-center gap-1 cursor-default ${hoveredLink === link.name ? 'text-primary' : ''}`}
+                                            onClick={(e) => handleNavClick(e, link.href, link.name)}
+                                            className={`text-base font-medium transition-colors flex items-center gap-1 cursor-pointer ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
                                         >
                                             {link.name}
                                             {link.dropdown && (
@@ -244,7 +293,8 @@ export default function Navbar() {
                                     ) : (
                                         <Link
                                             to={link.href}
-                                            className={`text-base font-medium hover:text-primary transition-colors flex items-center gap-1 ${hoveredLink === link.name ? 'text-primary' : ''}`}
+                                            onClick={(e) => handleNavClick(e, link.href, link.name)}
+                                            className={`text-base font-medium transition-colors flex items-center gap-1 ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
                                         >
                                             {link.name}
                                             {link.dropdown && (
@@ -266,26 +316,29 @@ export default function Navbar() {
                                             className={`absolute left-0 top-full pt-4 w-64 transition-all duration-300 transform origin-top ${hoveredLink === link.name ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'
                                                 }`}
                                         >
-                                            <div className="bg-gray-900/95 backdrop-blur-3xl border border-white/10 rounded-xl overflow-hidden shadow-xl p-2 flex flex-col gap-1">
-                                                {link.dropdown.map((item) => (
+                                            <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl border border-black/10 dark:border-white/10 rounded-xl overflow-hidden shadow-xl p-2 flex flex-col gap-1">
+                                                {link.dropdown.map((item) => {
+                                                    const isItemActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
+                                                    return (
                                                     <Link
                                                         key={item.name}
                                                         to={item.href}
-                                                        className="flex items-center gap-3 px-4 py-2.5 text-sm text-gray-300 hover:text-white hover:bg-white/10 rounded-lg transition-colors"
+                                                        onClick={(e) => handleNavClick(e, item.href, item.name)}
+                                                        className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-lg transition-colors ${isItemActive ? 'text-primary bg-primary/10' : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
                                                     >
                                                         {item.logo && (
-                                                            <div className="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center p-1 shrink-0">
+                                                            <div className="w-6 h-6 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center p-1 shrink-0">
                                                                 <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
                                                             </div>
                                                         )}
                                                         {item.name}
                                                     </Link>
-                                                ))}
+                                                )})}
                                             </div>
                                         </div>
                                     )}
                                 </div>
-                            ))}
+                            )})}
                             <div className="pl-6 ml-6 border-l border-gray-700">
                                 <ThemeToggle />
                             </div>
@@ -293,21 +346,21 @@ export default function Navbar() {
                     </div>
 
                     {/* Mobile Nav Container - Wider */}
-                    <div className="lg:hidden w-full flex justify-between items-center px-6 py-4 bg-gray-900/90 backdrop-blur-md rounded-2xl border border-white/10 pointer-events-auto min-w-[92vw] mx-auto">
+                    <div className="lg:hidden w-full flex justify-between items-center px-6 py-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl border border-black/10 dark:border-white/10 pointer-events-auto min-w-[92vw] mx-auto">
                         <Link to="/" className="block">
-                            <Logo className="h-8 w-auto text-white" />
+                            <Logo className="h-8 w-auto text-gray-900 dark:text-white" />
                         </Link>
                         <div className="flex items-center gap-4">
                             <button
                                 onClick={() => setIsSearchOpen(true)}
-                                className="p-2 text-white hover:text-primary"
+                                className="p-2 text-gray-900 dark:text-white hover:text-primary"
                             >
                                 <img src="/search-02.png" alt="Search" className="w-5 h-5 invert dark:invert-0" />
                             </button>
                             <ThemeToggle />
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
-                                className="text-white hover:text-primary focus:outline-none"
+                                className="text-gray-900 dark:text-white hover:text-primary focus:outline-none"
                             >
                                 {isOpen ? (
                                     <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -326,12 +379,19 @@ export default function Navbar() {
 
             {/* Mobile Menu Overlay */}
             <div
-                className={`fixed inset-0 z-40 bg-gray-900/95 backdrop-blur-3xl transition-all duration-500 lg:hidden flex flex-col ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-10'
+                className={`fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl transition-all duration-500 lg:hidden flex flex-col ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-10'
                     }`}
             >
                 <div className="flex flex-col items-center justify-center min-h-screen w-full p-8 space-y-6 overflow-y-auto">
 
-                    {allLinks.map((link, index) => (
+                    {allLinks.map((link, index) => {
+                        const isActive = 
+                            location.pathname === link.href || 
+                            (link.href !== '/' && link.href !== '#' && location.pathname.startsWith(link.href)) || 
+                            link.dropdown?.some(item => location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href))) ||
+                            (link.href === '#' && link.name !== 'Search' && location.pathname.startsWith(`/${link.name.toLowerCase()}`));
+                            
+                        return (
                         <div key={link.name} className="flex flex-col items-center w-full max-w-sm">
                             <div className="flex items-center justify-center w-full relative">
                                 {link.href === '#' ? (
@@ -349,7 +409,7 @@ export default function Navbar() {
                                                 setIsOpen(false);
                                             }
                                         }}
-                                        className={`text-3xl font-bold text-white hover:text-primary transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
+                                        className={`text-3xl font-bold transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
                                     >
                                         {link.name}
                                         {link.dropdown && (
@@ -365,22 +425,23 @@ export default function Navbar() {
                                     </div>
                                 ) : (
                                     <Link
-                                        to={link.href}
-                                        style={{ transitionDelay: `${index * 50}ms` }}
-                                        onClick={(e) => {
-                                            if (link.dropdown) {
-                                                e.preventDefault();
-                                                toggleMobileSubmenu(link.name);
-                                            } else {
-                                                if (link.onClick) {
-                                                    e.preventDefault();
-                                                    link.onClick();
-                                                }
-                                                setIsOpen(false);
-                                            }
-                                        }}
-                                        className={`text-3xl font-bold text-white hover:text-primary transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
-                                    >
+                                                        to={link.href}
+                                                        style={{ transitionDelay: `${index * 50}ms` }}
+                                                        onClick={(e) => {
+                                                            if (link.dropdown) {
+                                                                e.preventDefault();
+                                                                toggleMobileSubmenu(link.name);
+                                                            } else {
+                                                                if (link.onClick) {
+                                                                    e.preventDefault();
+                                                                    link.onClick();
+                                                                } else {
+                                                                    handleNavClick(e, link.href, link.name);
+                                                                }
+                                                            }
+                                                        }}
+                                                        className={`text-3xl font-bold transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
+                                                    >
                                         {link.name}
                                         {link.dropdown && (
                                             <svg
@@ -402,25 +463,27 @@ export default function Navbar() {
                                     className={`flex flex-col items-center space-y-4 w-full transition-all duration-300 overflow-hidden ${expandedMobileLinks.includes(link.name) ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
                                         }`}
                                 >
-                                    {link.dropdown.map((item) => (
+                                    {link.dropdown.map((item) => {
+                                        const isItemActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
+                                        return (
                                         <Link
                                             key={item.name}
                                             to={item.href}
-                                            onClick={() => setIsOpen(false)}
-                                            className="text-xl font-medium text-gray-400 hover:text-white transition-colors flex items-center gap-3"
+                                            onClick={(e) => handleNavClick(e, item.href, item.name)}
+                                            className={`text-xl font-medium transition-colors flex items-center gap-3 ${isItemActive ? 'text-primary' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
                                         >
                                             {item.logo && (
-                                                <div className="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center p-1.5 shrink-0">
+                                                <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center p-1.5 shrink-0">
                                                     <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
                                                 </div>
                                             )}
                                             {item.name}
                                         </Link>
-                                    ))}
+                                    )})}
                                 </div>
                             )}
                         </div>
-                    ))}
+                    )})}
                 </div>
             </div>
 
