@@ -10,6 +10,7 @@ import OurProcess from './components/OurProcess';
 import OurProducts from './components/OurProducts';
 import LatestBlogs from './components/LatestBlogs';
 import Contact from './components/Contact';
+import { Analytics } from '@vercel/analytics/react';
 
 
 
@@ -40,6 +41,7 @@ function App() {
 
       {/* Contact Section */}
       <Contact />
+      <Analytics />
     </Layout>
   );
 }
