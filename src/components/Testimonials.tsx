@@ -6,19 +6,22 @@ const TESTIMONIALS = [
         quote: "Studio 1947 delivered exceptional promotional designs for our cultural programmes. Their unique emphasis on visual storytelling added a fascinating, artistic layer to our work that we hadn't seen before.",
         author: "Suranya Aiyaar",
         role: "CEO",
-        company: "Bhagyam Arts & Aesthetic"
+        company: "Bhagyam Arts & Aesthetic",
+        image: "/client/Suranya.avif"
     },
     {
         quote: "Working with the team has been a treat. They did an amazing job simplifying technical jargon into thoughtful illustrations, making our challenging concepts genuinely engaging and effective for our audience.",
         author: "Sharda Mohanty",
         role: "CEO",
-        company: "AIcrowd"
+        company: "AIcrowd",
+        image: "/client/Sharda.avif"
     },
     {
         quote: "As a development organization, we often struggle to make abstract research accessible. Studio 1947 translated our complex vision into visually meaningful products that made our findings exciting and easy to understand.",
         author: "Mandvi Kulshreshtha",
         role: "Senior Program Adviser",
-        company: "Friedrich-Ebert-Stiftung, India"
+        company: "Friedrich-Ebert-Stiftung, India",
+        image: "/client/Mandvi.avif"
     }
 ];
 
@@ -84,10 +87,15 @@ export default function Testimonials() {
                                     "{testimonial.quote}"
                                 </p>
                             </div>
-                            <div>
-                                <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
-                                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{testimonial.role}</p>
-                                <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">{testimonial.company}</p>
+                            <div className="flex items-center gap-4">
+                                {testimonial.image && (
+                                    <img src={testimonial.image} alt={testimonial.author} className="w-12 h-12 rounded-full object-cover" />
+                                )}
+                                <div>
+                                    <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{testimonial.role}</p>
+                                    <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">{testimonial.company}</p>
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -102,10 +110,15 @@ export default function Testimonials() {
                                     "{testimonial.quote}"
                                 </p>
                             </div>
-                            <div>
-                                <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
-                                <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{testimonial.role}</p>
-                                <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">{testimonial.company}</p>
+                            <div className="flex items-center gap-4">
+                                {testimonial.image && (
+                                    <img src={testimonial.image} alt={testimonial.author} className="w-12 h-12 rounded-full object-cover" />
+                                )}
+                                <div>
+                                    <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{testimonial.role}</p>
+                                    <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">{testimonial.company}</p>
+                                </div>
                             </div>
                         </div>
                     ))}

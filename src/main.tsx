@@ -23,10 +23,12 @@ import AiCrowd from './pages/AiCrowd.tsx';
 import EcologicalFoundations from './pages/EcologicalFoundations.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
+import ScrollToTop from './components/ScrollToTop.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
         
