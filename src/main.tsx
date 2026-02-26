@@ -23,47 +23,50 @@ import AiCrowd from './pages/AiCrowd.tsx';
 import EcologicalFoundations from './pages/EcologicalFoundations.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
+import MaintenanceGuard from './components/MaintenanceGuard.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<App />} />
-        
-        {/* Initiative Routes */}
-        <Route path="/initiative" element={<Layout><Initiative /></Layout>} />
-        
-        {/* Existing Routes */}
-        <Route path="/team/:slug" element={<TeamMember />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/careers" element={<Careers />} />
-        <Route path="/blogs" element={<Blogs />} />
-        <Route path="/blogs/:slug" element={<BlogPost />} />
+      <MaintenanceGuard>
+        <Routes>
+          <Route path="/" element={<App />} />
 
-        {/* Product Routes */}
-        <Route path="/products" element={<Products />} />
-        <Route path="/products/doptor" element={<Doptor />} />
-        <Route path="/products/angan" element={<Angan />} />
-        <Route path="/products/data-analysis" element={<DataAnalysis />} />
-        <Route path="/products/social-media" element={<SocialMedia />} />
+          {/* Initiative Routes */}
+          <Route path="/initiative" element={<Layout><Initiative /></Layout>} />
 
-        {/* Solutions Route */}
-        <Route path="/solutions" element={<Solutions />} />
+          {/* Existing Routes */}
+          <Route path="/team/:slug" element={<TeamMember />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/careers" element={<Careers />} />
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blogs/:slug" element={<BlogPost />} />
 
-        {/* Collabs Routes */}
-        <Route path="/collabs" element={<Collabs />} />
-        <Route path="/collabs/walking-project" element={<WalkingProject />} />
-        <Route path="/collabs/ai-crowd" element={<AiCrowd />} />
-        <Route path="/collabs/ecological-foundations" element={<EcologicalFoundations />} />
+          {/* Product Routes */}
+          <Route path="/products" element={<Products />} />
+          <Route path="/products/doptor" element={<Doptor />} />
+          <Route path="/products/angan" element={<Angan />} />
+          <Route path="/products/data-analysis" element={<DataAnalysis />} />
+          <Route path="/products/social-media" element={<SocialMedia />} />
 
-        {/* Legal Routes */}
-        <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-        <Route path="/terms-of-service" element={<TermsOfService />} />
+          {/* Solutions Route */}
+          <Route path="/solutions" element={<Solutions />} />
 
-        {/* Catch-all for sections not yet implemented */}
-        <Route path="/collabs/*" element={<ComingSoon />} />
-        <Route path="/initiative/*" element={<ComingSoon />} />
-      </Routes>
+          {/* Collabs Routes */}
+          <Route path="/collabs" element={<Collabs />} />
+          <Route path="/collabs/walking-project" element={<WalkingProject />} />
+          <Route path="/collabs/ai-crowd" element={<AiCrowd />} />
+          <Route path="/collabs/ecological-foundations" element={<EcologicalFoundations />} />
+
+          {/* Legal Routes */}
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
+
+          {/* Catch-all for sections not yet implemented */}
+          <Route path="/collabs/*" element={<ComingSoon />} />
+          <Route path="/initiative/*" element={<ComingSoon />} />
+        </Routes>
+      </MaintenanceGuard>
     </BrowserRouter>
   </StrictMode>,
 );
