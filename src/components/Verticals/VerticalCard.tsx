@@ -4,7 +4,6 @@ interface VerticalCardProps {
   title: string;
   description: string;
   href?: string;
-  linkText?: string;
 }
 
 const generateImageSvg = (title: string): string => {
@@ -82,7 +81,7 @@ const generateImageSvg = (title: string): string => {
   return `data:image/svg+xml;base64,${btoa(svg)}`;
 };
 
-export default function VerticalCard({ title, description, href, linkText }: VerticalCardProps) {
+export default function VerticalCard({ title, description, href }: VerticalCardProps) {
   const imageSrc = generateImageSvg(title);
   
   const content = (
