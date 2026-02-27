@@ -74,7 +74,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                 {isSuccess ? (
                     <div className="flex flex-col items-center w-full">
                         <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 text-center mt-4">Thank You!</h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6 text-center">As promised, here is our presentation deck.(If you're in mobile please rotate your device to view the deck properly)</p>
+                        <p className="text-gray-600 dark:text-gray-400 mb-6 text-center">As promised, here is our presentation deck. (If you're in mobile please rotate your device to view the deck properly).</p>
 
                         <div className="w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 mb-6 bg-gray-50 dark:bg-gray-950">
                             <iframe
