@@ -71,58 +71,46 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
 
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            Name <span className="text-red-500">*</span>
-                        </label>
                         <input
                             type="text"
                             name="name"
                             id="name"
                             required
                             className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                            placeholder="John Doe"
+                            placeholder="Your Name *"
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="number" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            Phone Number <span className="text-red-500">*</span>
-                        </label>
                         <input
                             type="tel"
                             name="phone_number"
                             id="number"
                             required
                             className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                            placeholder="+1 (555) 000-0000"
+                            placeholder="Phone Number *"
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            Email Address <span className="text-red-500">*</span>
-                        </label>
                         <input
                             type="email"
                             name="email"
                             id="email"
                             required
                             className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                            placeholder="john@example.com"
+                            placeholder="Email Address *"
                         />
                     </div>
 
                     <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-                            Message <span className="text-red-500">*</span>
-                        </label>
                         <textarea
                             name="message"
                             id="message"
                             rows={4}
                             required
                             className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-y"
-                            placeholder="Tell us about your project..."
+                            placeholder="Your Message *"
                         ></textarea>
                     </div>
 
