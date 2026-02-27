@@ -196,15 +196,7 @@ export default function Footer() {
                     <div className="flex flex-wrap justify-center md:justify-end items-center gap-3 md:gap-4 mt-4 md:mt-0">
                         <div className="flex items-center space-x-2">
                             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                            <span>IND {formatTime(time, 'Asia/Kolkata')}</span>
-                        </div>
-                        <div className="hidden md:block w-px h-3 bg-gray-800" />
-                        <div className="flex items-center space-x-2">
-                            <span>US {formatTime(time, 'America/New_York')}</span>
-                        </div>
-                        <div className="hidden md:block w-px h-3 bg-gray-800" />
-                        <div className="flex items-center space-x-2">
-                            <span>BER {formatTime(time, 'Europe/Berlin')}</span>
+                            <span>Darjeeling/IND {formatTime(time, 'Asia/Kolkata')}</span>
                         </div>
                         {mirikAqi !== null && (
                             <>
@@ -214,6 +206,14 @@ export default function Footer() {
                                 </div>
                             </>
                         )}
+                        <div className="hidden md:block w-px h-3 bg-gray-800" />
+                        <div className="flex items-center space-x-2">
+                            <span>US {formatTime(time, 'America/New_York')}</span>
+                        </div>
+                        <div className="hidden md:block w-px h-3 bg-gray-800" />
+                        <div className="flex items-center space-x-2">
+                            <span>BER {formatTime(time, 'Europe/Berlin')}</span>
+                        </div>
                     </div>
                 </div>
             </div>
