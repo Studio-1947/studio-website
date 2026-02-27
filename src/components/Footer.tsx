@@ -1,6 +1,6 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { toast } from 'sonner';
 import Logo from './Logo';
 import GoldenSprinkles from './GoldenSprinkles';
@@ -10,6 +10,28 @@ import ContactModal from './ContactModal';
 export default function Footer() {
     const [time, setTime] = useState(new Date());
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const location = useLocation();
+
+    useEffect(() => {
+        if (location.hash === '#contact' || location.search.includes('contact=true')) {
+            setIsContactModalOpen(true);
+        }
+    }, [location]);
+
+    const handleCloseModal = () => {
+        setIsContactModalOpen(false);
+        if (location.hash === '#contact' || location.search.includes('contact=true')) {
+            const url = new URL(window.location.href);
+            url.hash = '';
+            url.searchParams.delete('contact');
+
+            let newUrl = url.toString();
+            if (newUrl.endsWith('?')) {
+                newUrl = newUrl.slice(0, -1);
+            }
+            window.history.replaceState({}, '', newUrl);
+        }
+    };
 
     useEffect(() => {
         const timer = setInterval(() => setTime(new Date()), 1000);
@@ -27,7 +49,7 @@ export default function Footer() {
 
     const handleSitemapClick = (e: React.MouseEvent<HTMLButtonElement>, name: string) => {
         e.preventDefault();
-        
+
         const maintenanceMessages = [
             `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
             `${name} is currently in the creative oven getting baked to perfection 🥐`,
@@ -35,9 +57,9 @@ export default function Footer() {
             `${name} is currently taking a beauty sleep 😴 Be right back!`,
             `We're leveling up the ${name} experience. Thank you for your patience! 🚀`
         ];
-        
+
         const randomMsg = maintenanceMessages[Math.floor(Math.random() * maintenanceMessages.length)];
-        
+
         toast(randomMsg, {
             icon: '🚧',
             duration: 4000,
@@ -47,9 +69,11 @@ export default function Footer() {
     const footerLinks = [
         { title: "Sitemap", links: [{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Products", href: "/products" }, { label: "About Us", href: "/about" }] },
         { title: "Connect", links: [{ label: "Careers", href: "/careers" }, { label: "Instagram", href: "https://www.instagram.com/1947.io/" }, { label: "Facebook", href: "https://www.facebook.com/1947.io/?ref=PROFILE_EDIT_xav_ig_profile_page_web#" }] },
-        { title: "Legal", links: [{ label: "Privacy Policy", href: "/privacy-policy" }, { label: "Terms of Service", href: "/terms-of-service" }, 
-            // { label: "Cookie Policy", href: "#" }
-        ] }
+        {
+            title: "Legal", links: [{ label: "Privacy Policy", href: "/privacy-policy" }, { label: "Terms of Service", href: "/terms-of-service" },
+                // { label: "Cookie Policy", href: "#" }
+            ]
+        }
     ];
 
     return (
@@ -165,9 +189,9 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <ContactModal 
-                isOpen={isContactModalOpen} 
-                onClose={() => setIsContactModalOpen(false)} 
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={handleCloseModal}
             />
         </footer>
     );
