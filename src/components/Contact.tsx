@@ -5,7 +5,7 @@ import ContactModal from "./ContactModal";
 export default function Contact() {
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
     return (
-        <section className="bg-white dark:bg-black py-32 border-t border-gray-100 dark:border-gray-900">
+        <section className="bg-white dark:bg-gray-900 py-32 border-t border-gray-100 dark:border-gray-900">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <div className="flex flex-col items-center text-center">

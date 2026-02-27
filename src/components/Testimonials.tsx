@@ -55,9 +55,9 @@ export default function Testimonials() {
     };
 
     return (
-        <section className="bg-white dark:bg-black py-24 overflow-hidden">
+        <section className="bg-white dark:bg-gray-900 py-24 overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
-                <span className="inline-block py-1 px-3 rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold tracking-wide uppercase mb-6">
+                <span className="inline-block py-1 px-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold tracking-wide uppercase mb-6">
                     ● Testimonials
                 </span>
                 <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
