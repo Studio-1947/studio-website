@@ -1,117 +1,107 @@
-import { Link } from 'react-router-dom';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import gsap from 'gsap';
 
 interface VerticalCardProps {
   title: string;
   description: string;
   href?: string;
+  linkText?: string;
 }
 
-const generateImageSvg = (title: string): string => {
-  // Generate a deterministic color based on the title
-  const hash = title.split('').reduce((acc, char) => {
-    return ((acc << 5) - acc) + char.charCodeAt(0);
-  }, 0);
-  
-  const hue = Math.abs(hash) % 360;
-  const colors = [
-    [`hsl(${hue}, 70%, 60%)`, `hsl(${(hue + 30) % 360}, 70%, 50%)`],
-    [`hsl(${hue}, 75%, 65%)`, `hsl(${(hue + 60) % 360}, 75%, 55%)`],
-    [`hsl(${hue}, 80%, 70%)`, `hsl(${(hue + 90) % 360}, 80%, 60%)`],
-  ];
-  
-  const colorPair = colors[Math.abs(hash) % colors.length];
-  
-  // Create diverse patterns based on title length
-  const patternType = Math.abs(hash) % 4;
-  
-  const getSvgPattern = () => {
-    switch(patternType) {
-      case 0: // Grid pattern
-        return `
-          <defs>
-            <pattern id="grid-${hash}" x="20" y="20" width="40" height="40" patternUnits="userSpaceOnUse">
-              <rect x="5" y="5" width="20" height="20" fill="${colorPair[0]}" opacity="0.6"/>
-              <circle cx="25" cy="25" r="8" fill="${colorPair[1]}" opacity="0.8"/>
-            </pattern>
-          </defs>
-          <rect width="400" height="400" fill="${colorPair[1]}" opacity="0.15"/>
-          <rect width="400" height="400" fill="url(#grid-${hash})"/>
-        `;
-      case 1: // Wave pattern
-        return `
-          <defs>
-            <linearGradient id="wave-${hash}" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:${colorPair[0]};stop-opacity:0.4" />
-              <stop offset="100%" style="stop-color:${colorPair[1]};stop-opacity:0.6" />
-            </linearGradient>
-          </defs>
-          <rect width="400" height="400" fill="url(#wave-${hash})"/>
-          <circle cx="100" cy="100" r="80" fill="${colorPair[0]}" opacity="0.3"/>
-          <circle cx="300" cy="300" r="100" fill="${colorPair[1]}" opacity="0.2"/>
-        `;
-      case 2: // Abstract shapes
-        return `
-          <rect width="400" height="400" fill="${colorPair[1]}" opacity="0.1"/>
-          <rect x="50" y="50" width="120" height="120" fill="${colorPair[0]}" opacity="0.5" transform="rotate(25 110 110)"/>
-          <circle cx="280" cy="120" r="60" fill="${colorPair[1]}" opacity="0.4"/>
-          <polygon points="100,300 200,250 280,320" fill="${colorPair[0]}" opacity="0.3"/>
-        `;
-      default: // Gradient blend
-        return `
-          <defs>
-            <radialGradient id="blend-${hash}" cx="30%" cy="30%">
-              <stop offset="0%" style="stop-color:${colorPair[0]};stop-opacity:0.6" />
-              <stop offset="100%" style="stop-color:${colorPair[1]};stop-opacity:0.2" />
-            </radialGradient>
-          </defs>
-          <rect width="400" height="400" fill="url(#blend-${hash})"/>
-          <rect x="80" y="80" width="240" height="240" fill="none" stroke="${colorPair[0]}" stroke-width="3" opacity="0.4"/>
-          <circle cx="200" cy="200" r="70" fill="none" stroke="${colorPair[1]}" stroke-width="2" opacity="0.6"/>
-        `;
+export default function VerticalCard({ title, description }: VerticalCardProps) {
+  const cardRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const textRef = useRef<HTMLDivElement>(null);
+  const circleRef = useRef<HTMLDivElement>(null);
+
+  useGSAP(() => {
+    const card = cardRef.current;
+    if (!card) return;
+
+    // Hover Animation Setup
+    const tl = gsap.timeline({ paused: true, defaults: { ease: "power3.out", duration: 0.6 } });
+    
+    tl.to(card, {
+      y: -8,
+      boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)",
+      borderColor: "rgba(59, 130, 246, 0.4)", // Blue tint border on hover
+      duration: 0.4
+    }, 0)
+    .to(imageRef.current, {
+      scale: 0.95,
+      borderRadius: "24px",
+      filter: "grayscale(0%) contrast(1.1)",
+      duration: 0.5
+    }, 0)
+    .to(circleRef.current, {
+      scale: 4,
+      opacity: 0.05,
+      duration: 0.5
+    }, 0)
+    .to(textRef.current, {
+      y: -5,
+      duration: 0.4
+    }, 0.1);
+
+    const handleMouseEnter = () => tl.play();
+    const handleMouseLeave = () => tl.reverse();
+
+    card.addEventListener('mouseenter', handleMouseEnter);
+    card.addEventListener('mouseleave', handleMouseLeave);
+
+    return () => {
+      card.removeEventListener('mouseenter', handleMouseEnter);
+      card.removeEventListener('mouseleave', handleMouseLeave);
+      tl.kill();
+    };
+  }, { scope: cardRef });
+
+  const getGradientByTitle = () => {
+    switch (title) {
+      case 'Collaborations': return 'from-amber-100 to-orange-50 dark:from-amber-900/40 dark:to-orange-900/20';
+      case 'Products': return 'from-blue-100 to-indigo-50 dark:from-blue-900/40 dark:to-indigo-900/20';
+      case 'Solutions': return 'from-emerald-100 to-teal-50 dark:from-emerald-900/40 dark:to-teal-900/20';
+      case 'Initiatives': return 'from-purple-100 to-pink-50 dark:from-purple-900/40 dark:to-pink-900/20';
+      default: return 'from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900';
     }
   };
-  
-  const svg = `
-    <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-      <rect width="400" height="400" fill="#fafafa"/>
-      ${getSvgPattern()}
-    </svg>
-  `;
-  
-  return `data:image/svg+xml;base64,${btoa(svg)}`;
-};
 
-export default function VerticalCard({ title, description, href }: VerticalCardProps) {
-  const imageSrc = generateImageSvg(title);
-  
   const content = (
     <>
-      {/* Generated Image */}
-      <div className="w-full aspect-square bg-gray-100 dark:bg-gray-700 rounded-xl flex items-center justify-center relative overflow-hidden mb-2">
-        <img 
-          src={imageSrc}
-          alt={title}
-          className="w-full h-full object-cover"
+      {/* Visual Area */}
+      <div 
+        ref={imageRef}
+        className={`w-full aspect-[4/3] rounded-xl flex items-center justify-center relative overflow-hidden mb-6 bg-gradient-to-br ${getGradientByTitle()} transform-gpu grayscale-[0.3]`}
+      >
+        {/* Animated Background Element */}
+        <div 
+          ref={circleRef}
+          className="absolute w-32 h-32 rounded-full bg-black dark:bg-white opacity-0 blur-2xl transform-gpu"
         />
+        
+        <div className="text-4xl font-black text-gray-900/20 dark:text-white/20 tracking-tighter mix-blend-overlay">
+          {title.substring(0, 2).toUpperCase()}
+        </div>
       </div>
 
-      <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-        {title}
-      </h3>
-      <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4">
-        {description}
-      </p>
+      {/* Text Content Area */}
+      <div ref={textRef} className="flex flex-col flex-1 transform-gpu">
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">
+          {title}
+        </h3>
+        <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-4 flex-1">
+          {description}
+        </p>
+      </div>
     </>
   );
 
-  const cardClasses = "bg-white dark:bg-gray-800 rounded-2xl p-6 h-full flex flex-col gap-4 text-left group hover:-translate-y-1 hover:shadow-xl border border-transparent hover:border-gray-200 dark:hover:border-gray-700 transition-all duration-300";
+  const cardClasses = "relative bg-white dark:bg-[#121212] rounded-3xl p-6 md:p-8 h-full flex flex-col group border border-gray-100 dark:border-gray-800 transition-colors transform-gpu will-change-transform";
 
-  return href ? (
-    <Link to={href} className={cardClasses}>
-      {content}
-    </Link>
-  ) : (
-    <div className={cardClasses}>
+  // Removing link wrapper to remove default pointer and link behavior requested by user
+  return (
+    <div ref={cardRef} className={cardClasses}>
       {content}
     </div>
   );
