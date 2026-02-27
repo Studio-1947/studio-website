@@ -10,6 +10,7 @@ import ContactModal from './ContactModal';
 export default function Footer() {
     const [time, setTime] = useState(new Date());
     const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [mirikAqi, setMirikAqi] = useState<number | null>(null);
     const location = useLocation();
 
     useEffect(() => {
@@ -36,6 +37,21 @@ export default function Footer() {
     useEffect(() => {
         const timer = setInterval(() => setTime(new Date()), 1000);
         return () => clearInterval(timer);
+    }, []);
+
+    useEffect(() => {
+        const fetchAqi = async () => {
+            try {
+                const res = await fetch('https://air-quality-api.open-meteo.com/v1/air-quality?latitude=26.8864&longitude=88.1793&current=us_aqi');
+                const data = await res.json();
+                if (data?.current?.us_aqi) {
+                    setMirikAqi(data.current.us_aqi);
+                }
+            } catch (error) {
+                console.error("Failed to fetch AQI", error);
+            }
+        };
+        fetchAqi();
     }, []);
 
     const formatTime = (date: Date, timeZone: string) => {
@@ -177,15 +193,27 @@ export default function Footer() {
                 <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-gray-800 text-sm text-gray-500">
                     <p>&copy; {new Date().getFullYear()} Studio 1947. All rights reserved.</p>
 
-                    <div className="flex items-center space-x-6 mt-4 md:mt-0">
+                    <div className="flex flex-wrap justify-center md:justify-end items-center gap-3 md:gap-4 mt-4 md:mt-0">
                         <div className="flex items-center space-x-2">
                             <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                            <span>NY {formatTime(time, 'America/New_York')}</span>
+                            <span>IND {formatTime(time, 'Asia/Kolkata')}</span>
                         </div>
                         <div className="hidden md:block w-px h-3 bg-gray-800" />
                         <div className="flex items-center space-x-2">
-                            <span>LON {formatTime(time, 'Europe/London')}</span>
+                            <span>US {formatTime(time, 'America/New_York')}</span>
                         </div>
+                        <div className="hidden md:block w-px h-3 bg-gray-800" />
+                        <div className="flex items-center space-x-2">
+                            <span>BER {formatTime(time, 'Europe/Berlin')}</span>
+                        </div>
+                        {mirikAqi !== null && (
+                            <>
+                                <div className="hidden md:block w-px h-3 bg-gray-800" />
+                                <div className="flex items-center space-x-2">
+                                    <span>Mirik AQI {mirikAqi}</span>
+                                </div>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
