@@ -13,17 +13,17 @@ export default function Footer() {
     const location = useLocation();
 
     useEffect(() => {
-        if (location.hash === '#contact' || location.search.includes('contact=true')) {
+        if (location.hash === '#pitch' || location.search.includes('pitch=true')) {
             setIsContactModalOpen(true);
         }
     }, [location]);
 
     const handleCloseModal = () => {
         setIsContactModalOpen(false);
-        if (location.hash === '#contact' || location.search.includes('contact=true')) {
+        if (location.hash === '#pitch' || location.search.includes('pitch=true')) {
             const url = new URL(window.location.href);
             url.hash = '';
-            url.searchParams.delete('contact');
+            url.searchParams.delete('pitch');
 
             let newUrl = url.toString();
             if (newUrl.endsWith('?')) {
