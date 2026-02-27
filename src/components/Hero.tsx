@@ -1,13 +1,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import HeroFigure from "./HeroFigure";
-import ContactModal from "./ContactModal";
+import TalkToUsModal from "./TalkToUsModal";
 
 const TICKER_WORDS = ["Create", "Innovate", "Inspire"];
 
 export default function Hero() {
     const [index, setIndex] = useState(0);
-    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+    const [isTalkToUsModalOpen, setIsTalkToUsModalOpen] = useState(false);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -26,18 +26,18 @@ export default function Hero() {
                             <div className="flex items-center  text-lg sm:text-xl md:text-2xl text-gray-600 dark:text-gray-300 font-medium mb-4 justify-center lg:justify-start text-center">
                                 <span>With the freedom to</span>
                                 <div className="relative h-8 w-32 sm:w-40 md:w-48 flex-shrink-0 overflow-hidden">
-                                <AnimatePresence mode="wait">
-                                    <motion.span
-                                        key={index}
-                                        initial={{ y: 20, opacity: 0 }}
-                                        animate={{ y: 0, opacity: 1 }}
-                                        exit={{ y: -20, opacity: 0 }}
-                                        transition={{ duration: 0.3, ease: "easeInOut" }}
-                                        className="absolute inset-0 text-gray-400 font-semibold sm:mt-1 md:mt-0 pl-2 text-left"
-                                    >
-                                        {TICKER_WORDS[index]}
-                                    </motion.span>
-                                </AnimatePresence>
+                                    <AnimatePresence mode="wait">
+                                        <motion.span
+                                            key={index}
+                                            initial={{ y: 20, opacity: 0 }}
+                                            animate={{ y: 0, opacity: 1 }}
+                                            exit={{ y: -20, opacity: 0 }}
+                                            transition={{ duration: 0.3, ease: "easeInOut" }}
+                                            className="absolute inset-0 text-gray-400 font-semibold sm:mt-1 md:mt-0 pl-2 text-left"
+                                        >
+                                            {TICKER_WORDS[index]}
+                                        </motion.span>
+                                    </AnimatePresence>
                                 </div>
                             </div>
                         </div>
@@ -59,7 +59,7 @@ export default function Hero() {
                                 <span className="relative invisible">Explore Our Works</span>
                             </a>
                             <button
-                                onClick={() => setIsContactModalOpen(true)}
+                                onClick={() => setIsTalkToUsModalOpen(true)}
                                 className="px-8 py-3 text-base font-medium rounded-full text-gray-900 bg-gray-100 hover:bg-gray-200 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700 transition-colors"
                             >
                                 Talk to us
@@ -80,10 +80,9 @@ export default function Hero() {
                     </div>
                 </div>
             </div>
-            
-            <ContactModal 
-                isOpen={isContactModalOpen} 
-                onClose={() => setIsContactModalOpen(false)} 
+            <TalkToUsModal
+                isOpen={isTalkToUsModalOpen}
+                onClose={() => setIsTalkToUsModalOpen(false)}
             />
         </div>
     );
