@@ -173,7 +173,7 @@ export default function Navbar() {
     ];
 
     // Increased padding and adjusted max-width for "proper screen fill"
-    const pillBaseClass = "flex items-center space-x-10 px-12 py-5 bg-white/90 dark:bg-black/80 backdrop-blur-3xl border border-black/20 dark:border-white/10 text-gray-900 dark:text-gray-100 transition-colors duration-300";
+    const pillBaseClass = "flex items-center space-x-10 px-12 py-5 bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl border border-black/20 dark:border-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300";
 
     const handleMouseEnter = (linkName: string, spokeIndex?: number) => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -234,16 +234,6 @@ export default function Navbar() {
                                     {link.name}
                                 </Link>
                             )})}
-
-                            {/* Search Button */}
-                            <button
-                                onClick={() => setIsSearchOpen(true)}
-                                className="text-base font-medium hover:text-primary transition-colors focus:outline-none flex items-center gap-2"
-                                aria-label="Search"
-                            >
-                                <img src="/search-02.png" alt="Search" className="w-5 h-5 opacity-80 hover:opacity-100 transition-opacity invert dark:invert-0" />
-                                <span className="text-gray-500 text-sm hidden xl:inline-block font-sans"></span>
-                            </button>
                         </div>
                     </div>
 
@@ -339,14 +329,21 @@ export default function Navbar() {
                                     )}
                                 </div>
                             )})}
-                            <div className="pl-6 ml-6 border-l border-gray-700">
+                            <div className="flex items-center gap-4 pl-6 ml-6 border-l border-gray-300 dark:border-gray-700">
+                                <button
+                                    onClick={() => setIsSearchOpen(true)}
+                                    className="text-base font-medium hover:text-primary transition-colors focus:outline-none flex items-center gap-2"
+                                    aria-label="Search"
+                                >
+                                    <img src="/search-02.png" alt="Search" className="w-5 h-5 opacity-80 hover:opacity-100 transition-opacity invert dark:invert-0" />
+                                </button>
                                 <ThemeToggle />
                             </div>
                         </div>
                     </div>
 
                     {/* Mobile Nav Container - Wider */}
-                    <div className="lg:hidden w-full flex justify-between items-center px-6 py-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl border border-black/10 dark:border-white/10 pointer-events-auto min-w-[92vw] mx-auto">
+                    <div className="lg:hidden w-full flex justify-between items-center px-6 py-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl border border-black/10 dark:border-gray-800 pointer-events-auto min-w-[92vw] mx-auto">
                         <Link to="/" className="block">
                             <Logo className="h-8 w-auto text-gray-900 dark:text-white" />
                         </Link>

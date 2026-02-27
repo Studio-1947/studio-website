@@ -7,6 +7,7 @@ const initiatives = [
         description: 'Empowering communities through context-aware and sustainable design practices that honor local heritage and environmental realities.',
         href: 'https://www.localdesign.in/',
         image: 'https://images.unsplash.com/photo-1541888075840-0c466046e033?q=80&w=2000&auto=format&fit=crop', // Replace with actual image later
+        video: '/gif/localdesignstomp.mp4',
         color: 'from-amber-500/20 to-orange-600/20'
     },
     {
@@ -63,7 +64,7 @@ export default function Initiative() {
                             {/* Card Link Overlay */}
                             <a href={initiative.href} target="_blank" rel="noopener noreferrer" className="absolute inset-0 z-20" aria-label={`View ${initiative.title}`} />
 
-                            {/* Background Image & Gradient */}
+                            {/* Background Image/Video & Gradient */}
                             <div className="absolute inset-0 overflow-hidden">
                                 <motion.div
                                     animate={{ 
@@ -74,11 +75,22 @@ export default function Initiative() {
                                 >
                                     <div className="absolute inset-0 bg-black/60 z-10 transition-opacity duration-500 group-hover:bg-black/40" />
                                     <div className={`absolute inset-0 bg-gradient-to-b ${initiative.color} mix-blend-overlay z-10 transition-opacity duration-500 opacity-50 group-hover:opacity-80`} />
-                                    <img 
-                                        src={initiative.image} 
-                                        alt={initiative.title} 
-                                        className="w-full h-full object-cover"
-                                    />
+                                    {initiative.video ? (
+                                        <video
+                                            src={initiative.video}
+                                            autoPlay
+                                            loop
+                                            muted
+                                            playsInline
+                                            className="w-full h-full object-cover"
+                                        />
+                                    ) : (
+                                        <img 
+                                            src={initiative.image} 
+                                            alt={initiative.title} 
+                                            className="w-full h-full object-cover"
+                                        />
+                                    )}
                                 </motion.div>
                             </div>
 
