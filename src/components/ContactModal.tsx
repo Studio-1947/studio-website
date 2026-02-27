@@ -58,9 +58,12 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     };
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
+        <div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto"
+            onClick={handleClose}
+        >
             <div
-                className={`bg-white dark:bg-gray-900 rounded-3xl w-full ${isSuccess ? 'max-w-5xl' : 'max-w-lg'} p-8 relative shadow-2xl border border-gray-200 dark:border-gray-800 animate-in fade-in zoom-in duration-300 my-8 flex flex-col`}
+                className={`bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl w-full ${isSuccess ? 'max-w-5xl' : 'max-w-lg'} p-6 sm:p-8 relative shadow-2xl border border-gray-200 dark:border-gray-800 animate-in fade-in zoom-in duration-300 my-4 sm:my-8 flex flex-col`}
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
@@ -73,8 +76,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
 
                 {isSuccess ? (
                     <div className="flex flex-col items-center w-full">
-                        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 text-center mt-4">Thank You!</h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6 text-center">As promised, here is our presentation deck. (If you're in mobile please rotate your device to view the deck properly).</p>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2 text-center mt-2 sm:mt-4">Thank You!</h3>
+                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 text-center">As promised, here is our presentation deck. (If you're on mobile, please rotate your device to view the deck properly).</p>
 
                         <div className="w-full aspect-video rounded-xl overflow-hidden border border-gray-200 dark:border-gray-800 mb-6 bg-gray-50 dark:bg-gray-950">
                             <iframe
@@ -102,8 +105,8 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                     </div>
                 ) : (
                     <>
-                        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Let's View Our Pitch Deck</h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-6">Fill in your basic details, We collect only essential information for communication hygiene, and your details remain confidential.</p>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">Let's View Our Pitch Deck</h3>
+                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6">Fill in your basic details. We collect only essential information for communication hygiene, and your details remain confidential.</p>
 
                         <div className="bg-gradient-to-r from-gray-100 to-gray-50 dark:from-gray-800 dark:to-gray-900 border border-gray-200 dark:border-gray-700 px-4 py-3 rounded-xl mb-8 flex items-start sm:items-center gap-3 shadow-sm">
                             <div className="bg-white dark:bg-black p-2 rounded-lg shadow-sm border border-gray-100 dark:border-gray-800 shrink-0">

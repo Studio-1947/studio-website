@@ -56,9 +56,12 @@ export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
     };
 
     return (
-        <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 overflow-y-auto">
+        <div
+            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto"
+            onClick={handleClose}
+        >
             <div
-                className={`bg-white dark:bg-gray-900 rounded-3xl w-full max-w-lg p-8 relative shadow-2xl border border-gray-200 dark:border-gray-800 animate-in fade-in zoom-in duration-300 my-8 flex flex-col`}
+                className={`bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl w-full max-w-lg p-6 sm:p-8 relative shadow-2xl border border-gray-200 dark:border-gray-800 animate-in fade-in zoom-in duration-300 my-4 sm:my-8 flex flex-col`}
                 onClick={(e) => e.stopPropagation()}
             >
                 <button
@@ -81,8 +84,8 @@ export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
                     </div>
                 ) : (
                     <>
-                        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Talk to Us</h3>
-                        <p className="text-gray-600 dark:text-gray-400 mb-8">Let's discuss how we can help you achieve your goals. Fill in your details below and we'll get in touch with you shortly.</p>
+                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">Talk to Us</h3>
+                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 sm:mb-8">Let's discuss how we can help you achieve your goals. Fill in your details below and we'll get in touch with you shortly.</p>
 
                         <form onSubmit={handleSubmit} className="space-y-6">
                             {/* Honeypot Spam Protection */}
