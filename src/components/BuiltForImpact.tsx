@@ -1,41 +1,62 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 
 const PROJECTS = [
+    {
+        client: "Vanya Branding",
+        category: "UI Screens & Packaging",
+        image: "/ourworks/vanya/thumbnail.avif",
+        color: "bg-[#eef0ec] dark:bg-[#1c2321]",
+        link: "/ourwork/vanya"
+    },
+    {
+        client: "AIcrowd Badge & Reputation System",
+        category: "A Design System for 75K+ Members",
+        image: "/ourworks/aicrowd/thumbnail.avif",
+        color: "bg-[#0b0c10] dark:bg-[#0b0c10]",
+        link: "/ourwork/aicrowd-badge"
+    },
     {
         client: "RemodelUN",
         category: "Brand Identity & Design Guideline",
         image: "/client/RemodelUN.avif",
-        color: "bg-gray-100 dark:bg-gray-800"
+        color: "bg-gray-100 dark:bg-gray-800",
+        link: "/ourwork/remodel-un"
     },
     {
         client: "Madly in LOVE",
         category: "Event Branding & Social Media Promotional Creatives",
         image: "/client/madly_in_love.avif",
-        color: "bg-gray-100 dark:bg-gray-800"
+        color: "bg-gray-100 dark:bg-gray-800",
+        link: "/ourwork/madly-in-love"
     },
     {
         client: "Rajkamal Prakashan",
         category: "Kitavtosav - Yearly Book Festival Branding",
         image: "/client/rajkamal.jpeg",
-        color: "bg-gray-100 dark:bg-gray-800"
+        color: "bg-gray-100 dark:bg-gray-800",
+        link: "/ourwork/rajkamal"
     },
     {
         client: "FES-MANIPAL-UNESCO",
         category: "Green Energy Meetup Report",
         image: "/collabs/FES.avif",
-        color: "bg-emerald-50 dark:bg-emerald-900/20"
+        color: "bg-emerald-50 dark:bg-emerald-900/20",
+        link: "/ourwork/fes-india"
     },
     {
         client: "Nest Homes Rebranding",
         category: "Brochure & Event Branding",
         image: "/collabs/Nest_Homes.avif",
-        color: "bg-orange-50 dark:bg-orange-900/20"
+        color: "bg-orange-50 dark:bg-orange-900/20",
+        link: "/ourwork/nest-homes"
     },
     {
         client: "Mirik College",
         category: "Capacity Building through trainings beyond the Classroom",
         image: "/collabs/mirikcollege.avif",
-        color: "bg-blue-50 dark:bg-blue-900/20"
+        color: "bg-blue-50 dark:bg-blue-900/20",
+        link: "/ourwork/mirik-college"
     }
 ];
 
@@ -70,22 +91,34 @@ export default function BuiltForImpact() {
 
                     {/* Scrollable Right Content */}
                     <div className="w-full lg:w-2/3 flex flex-col gap-8 lg:gap-12">
-                        {PROJECTS.map((project, index) => (
-                            <div key={index} className="flex flex-col gap-4">
-                                {/* Large Image Area */}
-                                <div className={`aspect-[4/3] w-full ${project.color} rounded-2xl relative overflow-hidden group flex items-center justify-center`}>
-                                    <img src={project.image} alt={project.client} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                </div>
-
-                                {/* Project Details */}
-                                <div className="flex justify-between items-center text-sm md:text-base">
-                                    <div className="flex items-center gap-2">
-                                        <span className="font-bold text-gray-900 dark:text-white">{project.client}</span>
-                                        <span className="text-gray-400 dark:text-gray-500">{project.category}</span>
+                        {PROJECTS.map((project, index) => {
+                            const content = (
+                                <>
+                                    {/* Large Image Area */}
+                                    <div className={`aspect-[4/3] w-full ${project.color} rounded-2xl relative overflow-hidden group flex items-center justify-center`}>
+                                        <img src={project.image} alt={project.client} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
                                     </div>
+
+                                    {/* Project Details */}
+                                    <div className="flex justify-between items-center text-sm md:text-base">
+                                        <div className="flex items-center gap-2">
+                                            <span className="font-bold text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-royal-600 dark:group-hover:text-royal-400">{project.client}</span>
+                                            <span className="text-gray-400 dark:text-gray-500">{project.category}</span>
+                                        </div>
+                                    </div>
+                                </>
+                            );
+
+                            return project.link ? (
+                                <Link key={index} to={project.link} className="flex flex-col gap-4 group cursor-pointer block">
+                                    {content}
+                                </Link>
+                            ) : (
+                                <div key={index} className="flex flex-col gap-4">
+                                    {content}
                                 </div>
-                            </div>
-                        ))}
+                            );
+                        })}
                     </div>
 
                 </div>

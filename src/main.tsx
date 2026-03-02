@@ -24,6 +24,14 @@ import EcologicalFoundations from './pages/EcologicalFoundations.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
 import ScrollToTop from './components/ScrollToTop.tsx';
+import MirikCollege from './pages/MirikCollege.tsx';
+import MadlyInLove from './pages/MadlyInLove.tsx';
+import FesIndia from './pages/FesIndia.tsx';
+import NestHomes from './pages/NestHomes.tsx';
+import RemodelUn from './pages/RemodelUn.tsx';
+import Rajkamal from './pages/Rajkamal.tsx';
+import AiCrowdBadge from './pages/AiCrowdBadge.tsx';
+import Vanya from './pages/Vanya.tsx';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -31,10 +39,10 @@ createRoot(document.getElementById('root')!).render(
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />} />
-        
+
         {/* Initiative Routes */}
         <Route path="/initiative" element={<Layout><Initiative /></Layout>} />
-        
+
         {/* Existing Routes */}
         <Route path="/team/:slug" element={<TeamMember />} />
         <Route path="/about" element={<About />} />
@@ -57,6 +65,14 @@ createRoot(document.getElementById('root')!).render(
         <Route path="/collabs/walking-project" element={<WalkingProject />} />
         <Route path="/collabs/ai-crowd" element={<AiCrowd />} />
         <Route path="/collabs/ecological-foundations" element={<EcologicalFoundations />} />
+        <Route path="/ourwork/mirik-college" element={<MirikCollege />} />
+        <Route path="/ourwork/madly-in-love" element={<MadlyInLove />} />
+        <Route path="/ourwork/fes-india" element={<FesIndia />} />
+        <Route path="/ourwork/nest-homes" element={<NestHomes />} />
+        <Route path="/ourwork/remodel-un" element={<RemodelUn />} />
+        <Route path="/ourwork/rajkamal" element={<Rajkamal />} />
+        <Route path="/ourwork/aicrowd-badge" element={<AiCrowdBadge />} />
+        <Route path="/ourwork/vanya" element={<Vanya />} />
 
         {/* Legal Routes */}
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
