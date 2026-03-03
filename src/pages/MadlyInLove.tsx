@@ -8,7 +8,7 @@ export default function MadlyInLove() {
 
     return (
         <Layout>
-            <div className="bg-[#050505] text-[#f4eee0] min-h-screen selection:bg-red-800 selection:text-white pb-32 font-sans">
+            <div className="bg-[#050505] text-[#f4eee0] min-h-screen selection:bg-red-800 selection:text-white pb-32 font-sans overflow-x-hidden">
                 {/* Navigation */}
                 <div className="pt-32 px-6 lg:px-12 max-w-[1600px] mx-auto">
                     <a
@@ -79,16 +79,16 @@ export default function MadlyInLove() {
                 {/* Large Bleed Image Section */}
                 <section className="w-full h-[60vh] md:h-[80vh] relative overflow-hidden mb-32 border-y border-[#f4eee0]/10">
                     <img
-                        src="/ourworks/madlyinnlove/madly_in_love.avif"
+                        src="/ourworks/madlyinnlove/Uqzbd6p675J6UrZZlv6rVtM3u8.avif"
                         alt="Himanshu Srivastava Poster"
                         className="w-full h-full object-cover object-center"
                         fetchPriority="high"
                         decoding="async"
                     />
-                    <div className="absolute inset-0 bg-black/40"></div>
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center px-6 mix-blend-difference">
-                        <p className="text-4xl md:text-6xl font-black uppercase text-white tracking-widest whitespace-nowrap overflow-hidden text-clip">
-                            TRADITION × CONTEMPORARY
+                    <div className="absolute inset-0 bg-black/50"></div>
+                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full text-center px-6 z-10">
+                        <p className="text-4xl md:text-6xl font-black uppercase text-white tracking-widest drop-shadow-xl">
+                            TRADITION ×<br className="md:hidden" /> CONTEMPORARY
                         </p>
                     </div>
                 </section>
