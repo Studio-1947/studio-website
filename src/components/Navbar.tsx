@@ -49,7 +49,7 @@ export default function Navbar() {
         }
 
         e.preventDefault();
-        
+
         const maintenanceMessages = [
             `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
             `${name} is currently in the creative oven getting baked to perfection 🥐`,
@@ -57,14 +57,14 @@ export default function Navbar() {
             `${name} is currently taking a beauty sleep 😴 Be right back!`,
             `We're leveling up the ${name} experience. Thank you for your patience! 🚀`
         ];
-        
+
         const randomMsg = maintenanceMessages[Math.floor(Math.random() * maintenanceMessages.length)];
-        
+
         toast(randomMsg, {
             icon: '🚧',
             duration: 4000,
         });
-        
+
         if (isOpen) {
             setIsOpen(false);
         }
@@ -108,7 +108,7 @@ export default function Navbar() {
                     borderTopRightRadius: 0,
                     borderBottomRightRadius: 0,
                     borderRightWidth: 0,
-                    paddingRight: "2rem", // Animate to final padding
+                    paddingRight: "0.75rem", // Animate to final padding
                     duration: 1,
                     ease: "power2.inOut"
                 }, 0
@@ -121,7 +121,7 @@ export default function Navbar() {
                     borderTopLeftRadius: 0,
                     borderBottomLeftRadius: 0,
                     borderLeftWidth: 0,
-                    paddingLeft: "2rem",
+                    paddingLeft: "0.75rem",
                     duration: 1,
                     ease: "power2.inOut"
                 }, 0
@@ -225,15 +225,16 @@ export default function Navbar() {
                             {leftLinks.map((link) => {
                                 const isActive = location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
                                 return (
-                                <Link 
-                                    key={link.name} 
-                                    to={link.href} 
-                                    onClick={(e) => handleNavClick(e, link.href, link.name)}
-                                    className={`text-base font-medium transition-colors ${isActive ? 'text-primary underline decoration-2 underline-offset-8' : 'hover:text-primary'}`}
-                                >
-                                    {link.name}
-                                </Link>
-                            )})}
+                                    <Link
+                                        key={link.name}
+                                        to={link.href}
+                                        onClick={(e) => handleNavClick(e, link.href, link.name)}
+                                        className={`text-base font-medium transition-colors ${isActive ? 'text-primary underline decoration-2 underline-offset-8' : 'hover:text-primary'}`}
+                                    >
+                                        {link.name}
+                                    </Link>
+                                )
+                            })}
                         </div>
                     </div>
 
@@ -250,85 +251,87 @@ export default function Navbar() {
                     >
                         <div className="flex space-x-6 items-center">
                             {rightLinks.map((link) => {
-                                const isActive = 
-                                    location.pathname === link.href || 
-                                    (link.href !== '/' && link.href !== '#' && location.pathname.startsWith(link.href)) || 
+                                const isActive =
+                                    location.pathname === link.href ||
+                                    (link.href !== '/' && link.href !== '#' && location.pathname.startsWith(link.href)) ||
                                     link.dropdown?.some(item => location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href))) ||
                                     (link.href === '#' && link.name !== 'Search' && location.pathname.startsWith(`/${link.name.toLowerCase()}`));
-                                    
-                                return (
-                                <div
-                                    key={link.name}
-                                    className="relative group"
-                                    onMouseEnter={() => handleMouseEnter(link.name, link.spokeIndex)}
-                                    onMouseLeave={handleMouseLeave}
-                                >
-                                    {link.href === '#' ? (
-                                        <div
-                                            onClick={(e) => handleNavClick(e, link.href, link.name)}
-                                            className={`text-base font-medium transition-colors flex items-center gap-1 cursor-pointer ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
-                                        >
-                                            {link.name}
-                                            {link.dropdown && (
-                                                <svg
-                                                    className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            )}
-                                        </div>
-                                    ) : (
-                                        <Link
-                                            to={link.href}
-                                            onClick={(e) => handleNavClick(e, link.href, link.name)}
-                                            className={`text-base font-medium transition-colors flex items-center gap-1 ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
-                                        >
-                                            {link.name}
-                                            {link.dropdown && (
-                                                <svg
-                                                    className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            )}
-                                        </Link>
-                                    )}
 
-                                    {/* Desktop Dropdown */}
-                                    {link.dropdown && (
-                                        <div
-                                            className={`absolute left-0 top-full pt-4 w-64 transition-all duration-300 transform origin-top ${hoveredLink === link.name ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'
-                                                }`}
-                                        >
-                                            <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl border border-black/10 dark:border-white/10 rounded-xl overflow-hidden shadow-xl p-2 flex flex-col gap-1">
-                                                {link.dropdown.map((item) => {
-                                                    const isItemActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
-                                                    return (
-                                                    <Link
-                                                        key={item.name}
-                                                        to={item.href}
-                                                        onClick={(e) => handleNavClick(e, item.href, item.name)}
-                                                        className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-lg transition-colors ${isItemActive ? 'text-primary bg-primary/10' : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
+                                return (
+                                    <div
+                                        key={link.name}
+                                        className="relative group"
+                                        onMouseEnter={() => handleMouseEnter(link.name, link.spokeIndex)}
+                                        onMouseLeave={handleMouseLeave}
+                                    >
+                                        {link.href === '#' ? (
+                                            <div
+                                                onClick={(e) => handleNavClick(e, link.href, link.name)}
+                                                className={`text-base font-medium transition-colors flex items-center gap-1 cursor-pointer ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
+                                            >
+                                                {link.name}
+                                                {link.dropdown && (
+                                                    <svg
+                                                        className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
                                                     >
-                                                        {item.logo && (
-                                                            <div className="w-6 h-6 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center p-1 shrink-0">
-                                                                <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
-                                                            </div>
-                                                        )}
-                                                        {item.name}
-                                                    </Link>
-                                                )})}
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                    </svg>
+                                                )}
                                             </div>
-                                        </div>
-                                    )}
-                                </div>
-                            )})}
+                                        ) : (
+                                            <Link
+                                                to={link.href}
+                                                onClick={(e) => handleNavClick(e, link.href, link.name)}
+                                                className={`text-base font-medium transition-colors flex items-center gap-1 ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
+                                            >
+                                                {link.name}
+                                                {link.dropdown && (
+                                                    <svg
+                                                        className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
+                                                        fill="none"
+                                                        viewBox="0 0 24 24"
+                                                        stroke="currentColor"
+                                                    >
+                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                    </svg>
+                                                )}
+                                            </Link>
+                                        )}
+
+                                        {/* Desktop Dropdown */}
+                                        {link.dropdown && (
+                                            <div
+                                                className={`absolute left-0 top-full pt-4 w-64 transition-all duration-300 transform origin-top ${hoveredLink === link.name ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'
+                                                    }`}
+                                            >
+                                                <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl border border-black/10 dark:border-white/10 rounded-xl overflow-hidden shadow-xl p-2 flex flex-col gap-1">
+                                                    {link.dropdown.map((item) => {
+                                                        const isItemActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
+                                                        return (
+                                                            <Link
+                                                                key={item.name}
+                                                                to={item.href}
+                                                                onClick={(e) => handleNavClick(e, item.href, item.name)}
+                                                                className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-lg transition-colors ${isItemActive ? 'text-primary bg-primary/10' : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
+                                                            >
+                                                                {item.logo && (
+                                                                    <div className="w-6 h-6 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center p-1 shrink-0">
+                                                                        <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
+                                                                    </div>
+                                                                )}
+                                                                {item.name}
+                                                            </Link>
+                                                        )
+                                                    })}
+                                                </div>
+                                            </div>
+                                        )}
+                                    </div>
+                                )
+                            })}
                             <div className="flex items-center gap-4 pl-6 ml-6 border-l border-gray-300 dark:border-gray-700">
                                 <button
                                     onClick={() => setIsSearchOpen(true)}
@@ -382,105 +385,107 @@ export default function Navbar() {
                 <div className="flex flex-col items-center justify-center min-h-screen w-full p-8 space-y-6 overflow-y-auto">
 
                     {allLinks.map((link, index) => {
-                        const isActive = 
-                            location.pathname === link.href || 
-                            (link.href !== '/' && link.href !== '#' && location.pathname.startsWith(link.href)) || 
+                        const isActive =
+                            location.pathname === link.href ||
+                            (link.href !== '/' && link.href !== '#' && location.pathname.startsWith(link.href)) ||
                             link.dropdown?.some(item => location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href))) ||
                             (link.href === '#' && link.name !== 'Search' && location.pathname.startsWith(`/${link.name.toLowerCase()}`));
-                            
+
                         return (
-                        <div key={link.name} className="flex flex-col items-center w-full max-w-sm">
-                            <div className="flex items-center justify-center w-full relative">
-                                {link.href === '#' ? (
-                                    <div
-                                        style={{ transitionDelay: `${index * 50}ms` }}
-                                        onClick={(e) => {
-                                            if (link.dropdown) {
-                                                e.preventDefault();
-                                                toggleMobileSubmenu(link.name);
-                                            } else {
-                                                if (link.onClick) {
+                            <div key={link.name} className="flex flex-col items-center w-full max-w-sm">
+                                <div className="flex items-center justify-center w-full relative">
+                                    {link.href === '#' ? (
+                                        <div
+                                            style={{ transitionDelay: `${index * 50}ms` }}
+                                            onClick={(e) => {
+                                                if (link.dropdown) {
                                                     e.preventDefault();
-                                                    link.onClick();
+                                                    toggleMobileSubmenu(link.name);
+                                                } else {
+                                                    if (link.onClick) {
+                                                        e.preventDefault();
+                                                        link.onClick();
+                                                    }
+                                                    setIsOpen(false);
                                                 }
-                                                setIsOpen(false);
-                                            }
-                                        }}
-                                        className={`text-3xl font-bold transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
+                                            }}
+                                            className={`text-3xl font-bold transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
+                                        >
+                                            {link.name}
+                                            {link.dropdown && (
+                                                <svg
+                                                    className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            )}
+                                        </div>
+                                    ) : (
+                                        <Link
+                                            to={link.href}
+                                            style={{ transitionDelay: `${index * 50}ms` }}
+                                            onClick={(e) => {
+                                                if (link.dropdown) {
+                                                    e.preventDefault();
+                                                    toggleMobileSubmenu(link.name);
+                                                } else {
+                                                    if (link.onClick) {
+                                                        e.preventDefault();
+                                                        link.onClick();
+                                                    } else {
+                                                        handleNavClick(e, link.href, link.name);
+                                                    }
+                                                }
+                                            }}
+                                            className={`text-3xl font-bold transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
+                                        >
+                                            {link.name}
+                                            {link.dropdown && (
+                                                <svg
+                                                    className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    stroke="currentColor"
+                                                >
+                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                                </svg>
+                                            )}
+                                        </Link>
+                                    )}
+                                </div>
+
+                                {/* Mobile Dropdown Items */}
+                                {link.dropdown && (
+                                    <div
+                                        className={`flex flex-col items-center space-y-4 w-full transition-all duration-300 overflow-hidden ${expandedMobileLinks.includes(link.name) ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
+                                            }`}
                                     >
-                                        {link.name}
-                                        {link.dropdown && (
-                                            <svg
-                                                className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                            </svg>
-                                        )}
+                                        {link.dropdown.map((item) => {
+                                            const isItemActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
+                                            return (
+                                                <Link
+                                                    key={item.name}
+                                                    to={item.href}
+                                                    onClick={(e) => handleNavClick(e, item.href, item.name)}
+                                                    className={`text-xl font-medium transition-colors flex items-center gap-3 ${isItemActive ? 'text-primary' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+                                                >
+                                                    {item.logo && (
+                                                        <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center p-1.5 shrink-0">
+                                                            <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
+                                                        </div>
+                                                    )}
+                                                    {item.name}
+                                                </Link>
+                                            )
+                                        })}
                                     </div>
-                                ) : (
-                                    <Link
-                                                        to={link.href}
-                                                        style={{ transitionDelay: `${index * 50}ms` }}
-                                                        onClick={(e) => {
-                                                            if (link.dropdown) {
-                                                                e.preventDefault();
-                                                                toggleMobileSubmenu(link.name);
-                                                            } else {
-                                                                if (link.onClick) {
-                                                                    e.preventDefault();
-                                                                    link.onClick();
-                                                                } else {
-                                                                    handleNavClick(e, link.href, link.name);
-                                                                }
-                                                            }
-                                                        }}
-                                                        className={`text-3xl font-bold transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
-                                                    >
-                                        {link.name}
-                                        {link.dropdown && (
-                                            <svg
-                                                className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                stroke="currentColor"
-                                            >
-                                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                            </svg>
-                                        )}
-                                    </Link>
                                 )}
                             </div>
-
-                            {/* Mobile Dropdown Items */}
-                            {link.dropdown && (
-                                <div
-                                    className={`flex flex-col items-center space-y-4 w-full transition-all duration-300 overflow-hidden ${expandedMobileLinks.includes(link.name) ? 'max-h-96 opacity-100 mt-6' : 'max-h-0 opacity-0 mt-0'
-                                        }`}
-                                >
-                                    {link.dropdown.map((item) => {
-                                        const isItemActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
-                                        return (
-                                        <Link
-                                            key={item.name}
-                                            to={item.href}
-                                            onClick={(e) => handleNavClick(e, item.href, item.name)}
-                                            className={`text-xl font-medium transition-colors flex items-center gap-3 ${isItemActive ? 'text-primary' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
-                                        >
-                                            {item.logo && (
-                                                <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center p-1.5 shrink-0">
-                                                    <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
-                                                </div>
-                                            )}
-                                            {item.name}
-                                        </Link>
-                                    )})}
-                                </div>
-                            )}
-                        </div>
-                    )})}
+                        )
+                    })}
                 </div>
             </div>
 

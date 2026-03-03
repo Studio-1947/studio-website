@@ -3,6 +3,7 @@ import Layout from '../components/Layout';
 import AboutHero from '../components/About/AboutHero';
 import AboutContent from '../components/About/AboutContent';
 import CeoVoice from '../components/About/CeoVoice';
+import HelipadSection from '../components/About/HelipadSection';
 import TeamGrid from '../components/Team/TeamGrid';
 import TeamHubs from '../components/Team/TeamHubs';
 import Culture from '../components/About/Culture';
@@ -14,6 +15,7 @@ const About: React.FC = () => {
             <AboutHero />
             <AboutContent />
             <CeoVoice />
+            <HelipadSection />
             <TeamGrid />
             <TeamHubs />
             <Culture />
