@@ -60,7 +60,7 @@ export default function Rajkamal() {
                                     </div>
                                     <div>
                                         <span className="block text-[#d94a38] font-bold mb-1">Layout Design</span>
-                                        Zahid & Pragya
+                                        Zahid & Nikhil R
                                     </div>
                                     <div>
                                         <span className="block text-[#d94a38] font-bold mb-1">Content</span>

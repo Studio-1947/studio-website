@@ -9,13 +9,13 @@ const PROJECTS = [
         color: "bg-[#eef0ec] dark:bg-[#1c2321]",
         link: "/ourwork/vanya"
     },
-    {
-        client: "AIcrowd Badge & Reputation System",
-        category: "A Design System for 75K+ Members",
-        image: "/ourworks/aicrowd/thumbnail.avif",
-        color: "bg-[#0b0c10] dark:bg-[#0b0c10]",
-        link: "/ourwork/aicrowd-badge"
-    },
+    // {
+    //     client: "AIcrowd Badge & Reputation System",
+    //     category: "A Design System for 75K+ Members",
+    //     image: "/ourworks/aicrowd/thumbnail.avif",
+    //     color: "bg-[#0b0c10] dark:bg-[#0b0c10]",
+    //     link: "/ourwork/aicrowd-badge"
+    // },
     {
         client: "RemodelUN",
         category: "Brand Identity & Design Guideline",

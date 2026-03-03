@@ -8,7 +8,7 @@ export default function MirikCollege() {
 
     return (
         <Layout>
-            <div className="bg-[#0a0a0a] text-white min-h-screen selection:bg-orange-500 selection:text-white pb-32">
+            <div className="bg-[#0a0a0a] text-white min-h-screen selection:bg-orange-500 selection:text-white pb-32 overflow-x-hidden">
                 {/* Navigation */}
                 <div className="pt-32 px-6 lg:px-12 max-w-[1600px] mx-auto">
                     <a
@@ -41,15 +41,15 @@ export default function MirikCollege() {
                     </div>
 
                     <div className="mt-16 bg-zinc-900 border border-zinc-800 p-2">
-                        <div className="aspect-[21/9] relative overflow-hidden group">
+                        <div className="aspect-[4/5] sm:aspect-square md:aspect-[21/9] relative overflow-hidden group">
                             <img
                                 src="/ourworks/mirikCollege/hPsp1gqsEAKqySTgcQxHEDH6k.avif"
                                 alt="Mirik College Students"
                                 className="w-full h-full object-cover transform duration-1000 group-hover:scale-105 filter grayscale hover:grayscale-0"
                             />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
-                            <div className="absolute bottom-6 left-6 max-w-xl">
-                                <p className="text-sm font-medium leading-relaxed drop-shadow-md">
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+                            <div className="absolute bottom-6 left-6 right-6 lg:right-auto max-w-2xl z-10">
+                                <p className="text-sm md:text-base font-medium leading-relaxed text-gray-100 drop-shadow-xl">
                                     What happens when you take geography out of the textbook and drop it right in the middle of the hills of Darjeeling? That’s exactly what we’re doing with Mirik College. Together, we designed a 60-hour intensive program that blended classroom learning, hands-on workshops, and fieldwork into one big cauldron. Just being a part of academic activity, practical training, and on-ground discovery, it is built around curiosity and experience.
                                 </p>
                             </div>

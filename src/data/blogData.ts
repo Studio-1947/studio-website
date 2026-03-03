@@ -19,7 +19,7 @@ export const blogs: BlogPost[] = [
     language: "English",
     tags: [],
     excerpt: "Introduction Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken, and the crisp, golden crust of kulchas—all of these culin...",
-    coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/litti chokha.png",
     content: `
 Introduction
 Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken,
@@ -116,7 +116,7 @@ has truly shaped global cuisine.
     language: "English",
     tags: [],
     excerpt: "The Lost Math of Kolam #GenderEquality Mornings in the southern states of India are much the same as anywhere else, with only a small twist—women rise...",
-    coverImage: "https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/kolam.png",
     content: `
 The Lost Math of Kolam
 #GenderEquality
@@ -240,7 +240,7 @@ the morning light, that we find a wisdom we are only beginning to fathom.
     language: "Hindi",
     tags: [],
     excerpt: "#Gender-Equality                  #Constitutional_Right                              #Youth CLOTHES HAVE \"NO\" GENDER . ISN'T IT ??? एक स\$ची कहानी से ...",
-    coverImage: "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/sendra parva.png",
     content: `
 #Gender-Equality                  #Constitutional_Right                              #Youth
 CLOTHES HAVE "NO" GENDER . ISN'T IT ???
@@ -332,7 +332,7 @@ Email :- ali2011pf@gmail.com
     language: "English",
     tags: [],
     excerpt: "Childhood Rituals (rituals childhoodrituals belonging)  word count 1023 I grew up in nineties Bombay. A Bombay that was going to soon be called Mumbai...",
-    coverImage: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story - 29.png",
     content: `
 Childhood Rituals
 (rituals childhoodrituals belonging)
@@ -424,7 +424,7 @@ banana, milk and sugar.
     language: "Nepali",
     tags: [],
     excerpt: "साधु जङ्गलबीचमा साधुको एउटा कुटीर थियो। यिनी दयालु थिए। आँखामा भस्म गर्ने, सराप वा वरदान दिने शक्तिदान तपस्याद्वारा यिनले पाएका थिए। जङ्गलका सारा पशुप...",
-    coverImage: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/sadhu.png",
     content: `
 साधु
 जङ्गलबीचमा साधुको एउटा कुटीर थियो। यिनी दयालु थिए। आँखामा भस्म गर्ने, सराप
@@ -458,7 +458,7 @@ banana, milk and sugar.
     language: "English",
     tags: [],
     excerpt: "Brewing Beer And Memories   Aliya and her cousins were travelling back from Delhi to their hometown in Arunachal​ Pradesh. Aliya had bought her naniap...",
-    coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/yu beer.png",
     content: `
 Brewing Beer And
 Memories
@@ -596,7 +596,7 @@ h&&cgrp=1&&cid=2047
     language: "English",
     tags: [],
     excerpt: "Bishnu Sendra Parv(Hunting Festival) #traditionalfestival#clim ate#indigenousfestival ___________________________________ A hunting festival called Bi...",
-    coverImage: "https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Sendra parv.png",
     content: `
 Bishnu Sendra
 Parv(Hunting Festival)
@@ -701,7 +701,7 @@ the worshipping, animal hunting is on a rapid rate of decline.
     language: "English",
     tags: [],
     excerpt: "My ‘boring’ traditional attire was never ‘boring’ at all  Packing for college was an exciting activity for Imu considering that this was going to be h...",
-    coverImage: "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story Copy for Video - 5.png",
     content: `
 My ‘boring’ traditional attire was never ‘boring’ at all
 
@@ -845,7 +845,7 @@ https://www.ijfmr.com/papers/2023/5/7112.pdf
     language: "English",
     tags: [],
     excerpt: "In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It enables designers to comprehend people’s feelings and experi...",
-    coverImage: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story - 33.png",
     content: `
 In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It
 enables designers to comprehend people’s feelings and experiences, empowering
@@ -889,7 +889,7 @@ for everyone.
     language: "English",
     tags: [],
     excerpt: "Litti Chokha: A Culinary Treasure Rooted in Ayurveda and Sustainability  Introduction: More Than Just a Street Food What if I told you that one of Bih...",
-    coverImage: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/litti chokha.png",
     content: `
 Litti Chokha: A Culinary
 Treasure Rooted in
@@ -1004,7 +1004,7 @@ deserves to be celebrated globally.
     language: "English",
     tags: [],
     excerpt: "Timekeeping Before Clocks: Tracing Ancient Indian andBengali Timekeeping Traditions #Traditional Knowledge \"Time was once told by tides and twilight, ...",
-    coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story - 34.png",
     content: `
 Timekeeping Before Clocks: Tracing Ancient Indian andBengali
 Timekeeping Traditions
@@ -1102,7 +1102,7 @@ systems that we honour rhythm over rush, and community over clockwork.
     language: "Nepali",
     tags: [],
     excerpt: "निष्पक्षताको प्रयोग । बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को दशकमा फेलोसिप अफ रिकन्सिलिएसन संस्था मार्फत् र...",
-    coverImage: "https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story - 31.png",
     content: `
 निष्पक्षताको प्रयोग ।
 बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को
@@ -1145,7 +1145,7 @@ systems that we honour rhythm over rush, and community over clockwork.
     language: "English",
     tags: [],
     excerpt: "The plow, in its most basic form, is a tool designed to cultivate and prepare soil for planting. Its origins can be traced back to ancient civilizatio...",
-    coverImage: "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Plow story.png",
     content: `
 The plow, in its most basic form, is a tool designed to cultivate and prepare
 soil for planting. Its origins can be traced back to ancient civilizations across
@@ -1263,7 +1263,7 @@ environmental stewardship, and cultural continuity for future generations.
     language: "Bengali",
     tags: [],
     excerpt: "এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শ...",
-    coverImage: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story - 35.png",
     content: `
 এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে
 চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শেষ কি? দুই আর চারে? দুই আর চারে কত? না,
@@ -1390,7 +1390,7 @@ thought disorder এ ভুগছে। অন্তত ডাক্তার �
     language: "English",
     tags: [],
     excerpt: "The Desert’s Alchemy #LocalSolution Long before industrial salt refineries cropped up to dominate supply chains globally, the indigenous communities a...",
-    coverImage: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story - 32.png",
     content: `
 The Desert’s Alchemy
 #LocalSolution
@@ -1496,7 +1496,7 @@ imagination.
     language: "English",
     tags: [],
     excerpt: "“Just a slap, but he can't hit me.\" This dialogue from the movie Thappad, directed by Anubhav Sinha, is not just a dialogue, it’s an inspiration for m...",
-    coverImage: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story - 36.png",
     content: `
 “Just a slap, but he can't hit me." This dialogue from the movie Thappad, directed
 by Anubhav Sinha, is not just a dialogue, it’s an inspiration for many women in the
@@ -1585,7 +1585,7 @@ anyone. Stay in your lane. Drive slow, drive safe, but drive.”
     language: "Bengali",
     tags: [],
     excerpt: "আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক...",
-    coverImage: "https://images.unsplash.com/photo-1455390582262-044cdead2708?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Instagram story - 37.png",
     content: `
 আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম
 যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক্ষ্য করেছি—কাঁচ জিনিসটা
@@ -1635,7 +1635,7 @@ thinking-এর মততো, যেখানে শুধুমাত্র প
     language: "English",
     tags: [],
     excerpt: "When Birth Belonged to Women: Stories of Dais and Displacement #GenderEquality “We did not have machines, but we had hands that knew. We watched the m...",
-    coverImage: "https://images.unsplash.com/photo-1542435503-956c469947f6?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Dais.png",
     content: `
 When Birth Belonged to
 Women: Stories of Dais
@@ -1736,7 +1736,7 @@ letting this improved knowledge system guide us on our path ahead.
     language: "English",
     tags: [],
     excerpt: "The Lost Art of Bengal’s Nakshi Kantha Embroidery Stories Sewn into Fabric  When you hear about Nakshi Kantha, you might think it’s just an old quilt....",
-    coverImage: "https://images.unsplash.com/photo-1512314889357-e157c22f938d?q=80&w=800&auto=format&fit=crop",
+    coverImage: "/blogs/Nakshi Kantha.png",
     content: `
 The Lost Art of Bengal’s
 Nakshi Kantha

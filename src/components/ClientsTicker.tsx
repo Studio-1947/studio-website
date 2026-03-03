@@ -43,7 +43,7 @@ export default function ClientsTicker() {
   return (
     <section className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800 py-8">
       <div className="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-8 lg:gap-12 px-4 sm:px-6 lg:px-8">
-        
+
         {/* Left Section: Trusted Text */}
         <div className="w-full lg:w-1/3 flex flex-col items-center lg:items-start text-center lg:text-left z-10 relative">
           <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white relative inline-block">
@@ -57,7 +57,7 @@ export default function ClientsTicker() {
 
         {/* Right Section: Ticker */}
         <div className="w-full lg:w-2/3 overflow-hidden relative" ref={tickerRef}>
-          
+
           {/* Gradient Masks for Fade Effect */}
           <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white dark:from-gray-900 to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white dark:from-gray-900 to-transparent z-10 pointer-events-none"></div>
@@ -66,22 +66,22 @@ export default function ClientsTicker() {
             {/* Original List */}
             {logos.map((logo, index) => (
               <div key={`original-${index}`} className="flex-shrink-0 px-8 transition-all duration-300 cursor-pointer group">
-                <img 
-                  src={logo.src} 
-                  alt={logo.alt} 
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
                   // Light Message: White logo + Invert = Black Logo
                   // Dark Message: White logo + No Invert = White Logo
-                  className="h-16 md:h-20 w-auto object-contain invert dark:invert-0 opacity-70 hover:opacity-100 transition-all duration-300" 
+                  className="h-16 md:h-20 w-auto object-contain invert dark:invert-0 opacity-70 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
             {/* Duplicated List for Loop */}
             {logos.map((logo, index) => (
               <div key={`duplicate-${index}`} className="flex-shrink-0 px-8 transition-all duration-300 cursor-pointer group">
-                  <img 
-                  src={logo.src} 
-                  alt={logo.alt} 
-                  className="h-16 md:h-20 w-auto object-contain invert dark:invert-0 opacity-70 hover:opacity-100 transition-all duration-300" 
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  className="h-16 md:h-20 w-auto object-contain invert dark:invert-0 opacity-70 hover:opacity-100 transition-all duration-300"
                 />
               </div>
             ))}
