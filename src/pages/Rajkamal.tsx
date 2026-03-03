@@ -38,7 +38,7 @@ export default function Rajkamal() {
                             {/* Right Overlay Image */}
                             <div className="block lg:absolute lg:top-16 lg:-right-32 w-full lg:w-[120%] aspect-video lg:aspect-[4/3] z-10 p-2 bg-white shadow-2xl transform lg:rotate-2 hover:rotate-0 transition-transform duration-700">
                                 <img
-                                    src="/ourworks/rajkamal/rajkamal_main.avif"
+                                    src="/ourworks/rajkamal/wWr5TZOCpGyP9DxVjHXXcjX6Kc.avif"
                                     alt="Kitab Utsav Branding"
                                     className="w-full aspect-square md:aspect-[4/3] object-cover"
                                     fetchPriority="high"
@@ -92,7 +92,7 @@ export default function Rajkamal() {
                             {/* Collage Style Images */}
                             <div className="space-y-6">
                                 <div className="aspect-[3/4] p-3 bg-white shadow-lg border border-[#2c1810]/5 transform -rotate-2 hover:rotate-0 transition-transform duration-500">
-                                    <img src="/ourworks/rajkamal/0B2A0667.jpg" alt="Kitab Utsav Details" className="w-full h-full object-cover" loading="lazy" decoding="async" />
+                                    <img src="/ourworks/rajkamal/ueGsK5St0ZTr0DmA7c2i1HrsE.webp" alt="Kitab Utsav Details" className="w-full h-full object-cover" loading="lazy" decoding="async" />
                                     <div className="mt-4 text-center">
                                         <span className="text-xs font-sans tracking-widest uppercase text-[#2c1810]/50 font-bold">Print Media</span>
                                     </div>
