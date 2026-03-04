@@ -27,89 +27,122 @@ const Blogs: React.FC = () => {
             </p>
           </div>
 
-          {/* Featured Blog (The first one) */}
-          {blogs.length > 0 && (
-            <div className="mb-16 md:mb-24 relative group">
-              <Link to={`/blogs/${blogs[0].slug}`} className="block h-full relative rounded-3xl overflow-hidden shadow-xl">
-                <div className="aspect-w-16 aspect-h-9 md:aspect-h-7 lg:aspect-h-6">
-                  <img
-                    src={blogs[0].coverImage}
-                    alt={blogs[0].title}
-                    className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
-                </div>
-                <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 z-10">
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="px-3 py-1 bg-royal-600/20 text-royal-300 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide uppercase border border-royal-500/30">
-                      Featured
-                    </span>
-                    <span className="text-gray-300 text-sm font-medium">{blogs[0].date}</span>
-                    <span className="hidden sm:inline text-gray-400">•</span>
-                    <span className="hidden sm:inline text-gray-300 text-sm">{blogs[0].author}</span>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 line-clamp-2 leading-tight">
-                    {blogs[0].title}
-                  </h2>
-                  <p className="text-gray-300 md:text-lg mb-6 line-clamp-2 md:line-clamp-3 max-w-3xl">
-                    {blogs[0].excerpt}
-                  </p>
-                  <span className="inline-flex items-center text-royal-400 font-semibold group-hover:text-royal-300 transition-colors">
-                    Read Article
-                    <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                    </svg>
-                  </span>
-                </div>
-              </Link>
-            </div>
-          )}
+          {/* Featured Blog */}
+          {(() => {
+            const featuredBlog = blogs.find(blog => blog.coverImage && blog.coverImage !== '/logo.svg') || blogs[0];
+            const otherBlogs = blogs.filter(blog => blog.slug !== (featuredBlog?.slug || ''));
 
-          {/* Blog Grid (The rest) */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
-            {blogs.slice(1).map((blog) => (
-              <article key={blog.slug} className="group flex flex-col h-full">
-                <Link to={`/blogs/${blog.slug}`} className="block relative rounded-2xl overflow-hidden mb-6 shadow-md shadow-gray-200 dark:shadow-none aspect-[4/3] bg-gray-100 dark:bg-gray-800">
-                  <img
-                    src={blog.coverImage}
-                    alt={blog.title}
-                    className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                  {blog.language && blog.language !== 'English' && (
-                    <div className="absolute top-4 right-4 z-10">
-                      <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-white/20">
-                        {blog.language}
-                      </span>
-                    </div>
-                  )}
-                </Link>
-                <div className="flex-1 flex flex-col">
-                  <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                    <time dateTime={blog.date}>{blog.date}</time>
-                    <span>•</span>
-                    <span>{blog.author}</span>
-                  </div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-royal-600 dark:group-hover:text-royal-400 transition-colors">
-                    <Link to={`/blogs/${blog.slug}`}>
-                      {blog.title}
+            return (
+              <>
+                {featuredBlog && (
+                  <div className="mb-16 md:mb-24 relative group">
+                    <Link to={`/blogs/${featuredBlog.slug}`} className="block h-full relative rounded-3xl overflow-hidden shadow-xl">
+                      <div className="aspect-w-16 aspect-h-9 md:aspect-h-7 lg:aspect-h-6">
+                        {featuredBlog.coverImage === '/logo.svg' ? (
+                          <div className="absolute inset-0 w-full h-[400px] md:h-[500px] lg:h-[600px] bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center transition-transform duration-700 group-hover:scale-105">
+                            <span className="text-white/20 text-8xl md:text-9xl mb-8 block">✧</span>
+                            <span className="text-3xl md:text-5xl font-black text-white tracking-widest uppercase">
+                              Studio 1947
+                            </span>
+                            <span className="text-royal-200 text-xl md:text-2xl font-light tracking-widest uppercase mt-4">
+                              Blogs
+                            </span>
+                          </div>
+                        ) : (
+                          <img
+                            src={featuredBlog.coverImage}
+                            alt={featuredBlog.title}
+                            className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                        )}
+                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
+                      </div>
+                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 z-10">
+                        <div className="flex items-center gap-4 mb-4">
+                          <span className="px-3 py-1 bg-royal-600/20 text-royal-300 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide uppercase border border-royal-500/30">
+                            Featured
+                          </span>
+                          <span className="text-gray-300 text-sm font-medium">{featuredBlog.date}</span>
+                          <span className="hidden sm:inline text-gray-400">•</span>
+                          <span className="hidden sm:inline text-gray-300 text-sm">{featuredBlog.author}</span>
+                        </div>
+                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 line-clamp-2 leading-tight">
+                          {featuredBlog.title}
+                        </h2>
+                        <p className="text-gray-300 md:text-lg mb-6 line-clamp-2 md:line-clamp-3 max-w-3xl">
+                          {featuredBlog.excerpt}
+                        </p>
+                        <span className="inline-flex items-center text-royal-400 font-semibold group-hover:text-royal-300 transition-colors">
+                          Read Article
+                          <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                          </svg>
+                        </span>
+                      </div>
                     </Link>
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-400 line-clamp-3 mb-4 flex-1">
-                    {blog.excerpt}
-                  </p>
-                  <Link 
-                    to={`/blogs/${blog.slug}`}
-                    className="inline-flex items-center text-sm font-bold text-royal-600 dark:text-royal-400 group-hover:text-royal-700 dark:group-hover:text-royal-300"
-                  >
-                    Read More 
-                    <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                    </svg>
-                  </Link>
+                  </div>
+                )}
+
+                {/* Blog Grid (The rest) */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
+                  {otherBlogs.map((blog) => (
+                    <article key={blog.slug} className="group flex flex-col h-full">
+                      <Link to={`/blogs/${blog.slug}`} className="block relative rounded-2xl overflow-hidden mb-6 shadow-md shadow-gray-200 dark:shadow-none aspect-[4/3] bg-gray-100 dark:bg-gray-800">
+                        {blog.coverImage === '/logo.svg' ? (
+                          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center transition-transform duration-700 group-hover:scale-105">
+                            <span className="text-white/30 text-6xl mb-4 block">✧</span>
+                            <span className="text-xl font-black text-white tracking-widest uppercase">
+                              Studio 1947
+                            </span>
+                            <span className="text-royal-200 text-sm font-light tracking-widest uppercase mt-2">
+                              Blogs
+                            </span>
+                          </div>
+                        ) : (
+                          <img
+                            src={blog.coverImage}
+                            alt={blog.title}
+                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                          />
+                        )}
+                        {blog.language && blog.language !== 'English' && (
+                          <div className="absolute top-4 right-4 z-10">
+                            <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-white/20">
+                              {blog.language}
+                            </span>
+                          </div>
+                        )}
+                      </Link>
+                      <div className="flex-1 flex flex-col">
+                        <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
+                          <time dateTime={blog.date}>{blog.date}</time>
+                          <span>•</span>
+                          <span>{blog.author}</span>
+                        </div>
+                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-royal-600 dark:group-hover:text-royal-400 transition-colors">
+                          <Link to={`/blogs/${blog.slug}`}>
+                            {blog.title}
+                          </Link>
+                        </h3>
+                        <p className="text-gray-600 dark:text-gray-400 line-clamp-3 mb-4 flex-1">
+                          {blog.excerpt}
+                        </p>
+                        <Link
+                          to={`/blogs/${blog.slug}`}
+                          className="inline-flex items-center text-sm font-bold text-royal-600 dark:text-royal-400 group-hover:text-royal-700 dark:group-hover:text-royal-300"
+                        >
+                          Read More
+                          <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                          </svg>
+                        </Link>
+                      </div>
+                    </article>
+                  ))}
                 </div>
-              </article>
-            ))}
-          </div>
+              </>
+            );
+          })()}
 
         </div>
       </div>

@@ -6,7 +6,7 @@ import { blogs } from '../data/blogData';
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  
+
   const blog = blogs.find((b) => b.slug === slug);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ const BlogPost: React.FC = () => {
           <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-md">
             The article you're looking for doesn't exist or may have been moved.
           </p>
-          <button 
+          <button
             onClick={() => navigate('/blogs')}
             className="px-6 py-3 bg-royal-600 hover:bg-royal-700 text-white rounded-full font-semibold transition-colors"
           >
@@ -38,11 +38,11 @@ const BlogPost: React.FC = () => {
   return (
     <Layout>
       <article className="bg-white dark:bg-gray-900 pt-24 md:pt-32 pb-24 transition-colors duration-300 min-h-screen">
-        
+
         {/* Article Header */}
         <header className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-16 text-center">
-          <Link 
-            to="/blogs" 
+          <Link
+            to="/blogs"
             className="inline-flex items-center text-royal-600 dark:text-royal-400 hover:text-royal-800 dark:hover:text-royal-300 font-medium mb-8 md:mb-12 transition-colors uppercase tracking-wider text-sm"
           >
             <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -50,7 +50,7 @@ const BlogPost: React.FC = () => {
             </svg>
             Back to Journal
           </Link>
-          
+
           <div className="flex flex-wrap items-center justify-center gap-4 mb-6 text-sm">
             <span className="text-gray-500 dark:text-gray-400 font-medium">
               {blog.date}
@@ -68,7 +68,7 @@ const BlogPost: React.FC = () => {
               Written by <span className="text-royal-600 dark:text-royal-400">{blog.author}</span>
             </span>
           </div>
-          
+
           <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-gray-900 dark:text-white tracking-tight leading-[1.1] mb-6">
             {blog.title}
           </h1>
@@ -76,12 +76,24 @@ const BlogPost: React.FC = () => {
 
         {/* Hero Image */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 md:mb-24">
-          <div className="aspect-w-16 aspect-h-9 md:aspect-h-7 rounded-3xl overflow-hidden shadow-2xl">
-            <img 
-              src={blog.coverImage} 
-              alt={blog.title}
-              className="w-full h-[300px] md:h-[500px] lg:h-[700px] object-cover"
-            />
+          <div className="aspect-w-16 aspect-h-9 md:aspect-h-7 rounded-3xl overflow-hidden shadow-2xl relative">
+            {blog.coverImage === '/logo.svg' ? (
+              <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center">
+                <span className="text-white/20 text-7xl md:text-8xl mb-6 block">✧</span>
+                <span className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-widest uppercase">
+                  Studio 1947
+                </span>
+                <span className="text-royal-200 text-xl md:text-2xl font-light tracking-widest uppercase mt-4">
+                  Blogs
+                </span>
+              </div>
+            ) : (
+              <img
+                src={blog.coverImage}
+                alt={blog.title}
+                className="w-full h-[300px] md:h-[500px] lg:h-[700px] object-cover"
+              />
+            )}
           </div>
         </div>
 
@@ -97,7 +109,7 @@ const BlogPost: React.FC = () => {
                   </h2>
                 );
               }
-              
+
               // Basic check for lists
               if (paragraph.startsWith('●') || paragraph.startsWith('*')) {
                 return (
@@ -114,7 +126,7 @@ const BlogPost: React.FC = () => {
               );
             })}
           </div>
-          
+
           {/* Share / Tags section (placeholder) */}
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-between gap-6">
             <div className="flex gap-3">
@@ -122,11 +134,11 @@ const BlogPost: React.FC = () => {
               <span className="text-royal-600 dark:text-royal-400 font-medium">Culture</span>
               <span className="text-royal-600 dark:text-royal-400 font-medium">Stories</span>
             </div>
-            
+
             <div className="flex items-center gap-4">
               <span className="text-gray-500 font-medium">Share this article:</span>
               <button className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-royal-600 hover:text-white transition-colors">
-                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/></svg>
+                <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z" /></svg>
               </button>
             </div>
           </div>

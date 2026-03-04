@@ -19,7 +19,7 @@ export const blogs: BlogPost[] = [
     language: "English",
     tags: [],
     excerpt: "Introduction Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken, and the crisp, golden crust of kulchas—all of these culin...",
-    coverImage: "/blogs/litti chokha.png",
+    coverImage: "/logo.svg",
     content: `
 Introduction
 Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken,
@@ -240,7 +240,7 @@ the morning light, that we find a wisdom we are only beginning to fathom.
     language: "Hindi",
     tags: [],
     excerpt: "#Gender-Equality                  #Constitutional_Right                              #Youth CLOTHES HAVE \"NO\" GENDER . ISN'T IT ??? एक स\$ची कहानी से ...",
-    coverImage: "/blogs/sendra parva.png",
+    coverImage: "/logo.svg",
     content: `
 #Gender-Equality                  #Constitutional_Right                              #Youth
 CLOTHES HAVE "NO" GENDER . ISN'T IT ???
@@ -332,7 +332,7 @@ Email :- ali2011pf@gmail.com
     language: "English",
     tags: [],
     excerpt: "Childhood Rituals (rituals childhoodrituals belonging)  word count 1023 I grew up in nineties Bombay. A Bombay that was going to soon be called Mumbai...",
-    coverImage: "/blogs/Instagram story - 29.png",
+    coverImage: "/logo.svg",
     content: `
 Childhood Rituals
 (rituals childhoodrituals belonging)
@@ -596,7 +596,7 @@ h&&cgrp=1&&cid=2047
     language: "English",
     tags: [],
     excerpt: "Bishnu Sendra Parv(Hunting Festival) #traditionalfestival#clim ate#indigenousfestival ___________________________________ A hunting festival called Bi...",
-    coverImage: "/blogs/Sendra parv.png",
+    coverImage: "/blogs/sendra parva.png",
     content: `
 Bishnu Sendra
 Parv(Hunting Festival)
@@ -701,7 +701,7 @@ the worshipping, animal hunting is on a rapid rate of decline.
     language: "English",
     tags: [],
     excerpt: "My ‘boring’ traditional attire was never ‘boring’ at all  Packing for college was an exciting activity for Imu considering that this was going to be h...",
-    coverImage: "/blogs/Instagram story Copy for Video - 5.png",
+    coverImage: "/logo.svg",
     content: `
 My ‘boring’ traditional attire was never ‘boring’ at all
 
@@ -845,7 +845,7 @@ https://www.ijfmr.com/papers/2023/5/7112.pdf
     language: "English",
     tags: [],
     excerpt: "In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It enables designers to comprehend people’s feelings and experi...",
-    coverImage: "/blogs/Instagram story - 33.png",
+    coverImage: "/logo.svg",
     content: `
 In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It
 enables designers to comprehend people’s feelings and experiences, empowering
@@ -1004,7 +1004,7 @@ deserves to be celebrated globally.
     language: "English",
     tags: [],
     excerpt: "Timekeeping Before Clocks: Tracing Ancient Indian andBengali Timekeeping Traditions #Traditional Knowledge \"Time was once told by tides and twilight, ...",
-    coverImage: "/blogs/Instagram story - 34.png",
+    coverImage: "/logo.svg",
     content: `
 Timekeeping Before Clocks: Tracing Ancient Indian andBengali
 Timekeeping Traditions
@@ -1102,7 +1102,7 @@ systems that we honour rhythm over rush, and community over clockwork.
     language: "Nepali",
     tags: [],
     excerpt: "निष्पक्षताको प्रयोग । बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को दशकमा फेलोसिप अफ रिकन्सिलिएसन संस्था मार्फत् र...",
-    coverImage: "/blogs/Instagram story - 31.png",
+    coverImage: "/logo.svg",
     content: `
 निष्पक्षताको प्रयोग ।
 बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को
@@ -1263,7 +1263,7 @@ environmental stewardship, and cultural continuity for future generations.
     language: "Bengali",
     tags: [],
     excerpt: "এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শ...",
-    coverImage: "/blogs/Instagram story - 35.png",
+    coverImage: "/logo.svg",
     content: `
 এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে
 চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শেষ কি? দুই আর চারে? দুই আর চারে কত? না,
@@ -1390,7 +1390,7 @@ thought disorder এ ভুগছে। অন্তত ডাক্তার �
     language: "English",
     tags: [],
     excerpt: "The Desert’s Alchemy #LocalSolution Long before industrial salt refineries cropped up to dominate supply chains globally, the indigenous communities a...",
-    coverImage: "/blogs/Instagram story - 32.png",
+    coverImage: "/blogs/Desert's alchemy.png",
     content: `
 The Desert’s Alchemy
 #LocalSolution
@@ -1496,7 +1496,7 @@ imagination.
     language: "English",
     tags: [],
     excerpt: "“Just a slap, but he can't hit me.\" This dialogue from the movie Thappad, directed by Anubhav Sinha, is not just a dialogue, it’s an inspiration for m...",
-    coverImage: "/blogs/Instagram story - 36.png",
+    coverImage: "/logo.svg",
     content: `
 “Just a slap, but he can't hit me." This dialogue from the movie Thappad, directed
 by Anubhav Sinha, is not just a dialogue, it’s an inspiration for many women in the
@@ -1585,7 +1585,7 @@ anyone. Stay in your lane. Drive slow, drive safe, but drive.”
     language: "Bengali",
     tags: [],
     excerpt: "আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক...",
-    coverImage: "/blogs/Instagram story - 37.png",
+    coverImage: "/logo.svg",
     content: `
 আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম
 যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক্ষ্য করেছি—কাঁচ জিনিসটা

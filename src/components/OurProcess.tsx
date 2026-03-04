@@ -52,9 +52,9 @@ export default function OurProcess() {
                 {/* Grid Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     {STEPS.map((step, index) => (
-                        <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 hover:shadow-lg transition-all duration-300 group">
-                            <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-6 group-hover:bg-black group-hover:dark:bg-white group-hover:text-white group-hover:dark:text-black transition-colors duration-300">
-                                <span className="text-xl font-bold text-gray-900 dark:text-white group-hover:text-white group-hover:dark:text-black">{step.number}</span>
+                        <div key={index} className="bg-white dark:bg-gray-900 p-8 rounded-3xl border border-gray-100 dark:border-gray-800 md:hover:shadow-lg transition-all duration-300 group">
+                            <div className="w-16 h-16 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center mb-6 md:group-hover:bg-black md:group-hover:dark:bg-white md:group-hover:text-white md:group-hover:dark:text-black transition-colors duration-300">
+                                <span className="text-xl font-bold text-gray-900 dark:text-white md:group-hover:text-white md:group-hover:dark:text-black">{step.number}</span>
                             </div>
                             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
                                 {step.title}

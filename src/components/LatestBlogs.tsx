@@ -33,13 +33,17 @@ export default function LatestBlogs() {
                         <Link to={`/blogs/${blog.slug}`} key={index} className="group cursor-pointer block">
                             {/* Image Placeholder / Cover Image */}
                             <div className="w-full aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-2xl mb-8 relative flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
-                                {blog.coverImage ? (
-                                    <img src={blog.coverImage} alt={blog.title} className="w-full h-full object-cover" />
+                                {blog.coverImage && blog.coverImage !== '/logo.svg' ? (
+                                    <img src={blog.coverImage} alt={blog.title} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                                 ) : (
-                                    <div className="flex items-center gap-4 opacity-30">
-                                        <div className="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-sm"></div>
-                                        <div className="w-16 h-16 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
-                                        <div className="w-0 h-0 border-l-[32px] border-l-transparent border-b-[64px] border-b-gray-300 dark:border-b-gray-600 border-r-[32px] border-r-transparent"></div>
+                                    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center transition-transform duration-700 group-hover:scale-105">
+                                        <span className="text-white/30 text-5xl mb-3 block">✧</span>
+                                        <span className="text-xl font-black text-white tracking-widest uppercase">
+                                            Studio 1947
+                                        </span>
+                                        <span className="text-royal-200 text-sm font-light tracking-widest uppercase mt-2">
+                                            Blogs
+                                        </span>
                                     </div>
                                 )}
                             </div>

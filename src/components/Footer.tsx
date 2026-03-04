@@ -83,7 +83,7 @@ export default function Footer() {
     };
 
     const footerLinks = [
-        { title: "Sitemap", links: [{ label: "Home", href: "/" }, { label: "Solutions", href: "/solutions" }, { label: "Products", href: "/products" }, { label: "About Us", href: "/about" }] },
+        { title: "Sitemap", links: [{ label: "Home", href: "/" }, { label: "Our Story", href: "/our-story" }, { label: "Solutions", href: "/solutions" }, { label: "Products", href: "/products" }, { label: "About Us", href: "/about" }] },
         { title: "Connect", links: [{ label: "Careers", href: "/careers" }, { label: "Instagram", href: "https://www.instagram.com/1947.io/" }, { label: "Facebook", href: "https://www.facebook.com/1947.io/?ref=PROFILE_EDIT_xav_ig_profile_page_web#" }] },
         {
             title: "Legal", links: [{ label: "Privacy Policy", href: "/privacy-policy" }, { label: "Terms of Service", href: "/terms-of-service" },

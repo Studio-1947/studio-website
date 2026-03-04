@@ -6,6 +6,7 @@ import Initiative from './pages/Initiative.tsx';
 import TeamMember from './pages/TeamMember.tsx';
 import About from './pages/About.tsx';
 import Careers from './pages/Careers.tsx';
+import Story from './pages/Story.tsx';
 import Layout from './components/Layout.tsx';
 import './index.css';
 import Blogs from './pages/Blogs.tsx';
@@ -45,6 +46,7 @@ createRoot(document.getElementById('root')!).render(
 
         {/* Existing Routes */}
         <Route path="/team/:slug" element={<TeamMember />} />
+        <Route path="/our-story" element={<Story />} />
         <Route path="/about" element={<About />} />
         <Route path="/careers" element={<Careers />} />
         <Route path="/blogs" element={<Blogs />} />
