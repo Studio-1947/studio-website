@@ -24,6 +24,17 @@ interface NavLink {
     dropdown?: DropdownItem[];
 }
 
+const getMaintenanceMessage = (name: string) => {
+    const messages = [
+        `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
+        `${name} is currently in the creative oven getting baked to perfection 🥐`,
+        `Our pixies are putting the final touches on ${name}. Check back soon! 🧚`,
+        `${name} is currently taking a beauty sleep 😴 Be right back!`,
+        `We're leveling up the ${name} experience. Thank you for your patience! 🚀`
+    ];
+    return messages[Math.floor(Math.random() * messages.length)];
+};
+
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -40,7 +51,7 @@ export default function Navbar() {
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string, name: string) => {
-        const unlockedRoutes = ['/', '/about', '/blogs'];
+        const unlockedRoutes = ['/', '/about', '/blogs', '/solutions'];
 
         if (unlockedRoutes.includes(href) || name === 'Logo' || name === 'Search') {
             // Let normal navigation proceed
@@ -50,15 +61,7 @@ export default function Navbar() {
 
         e.preventDefault();
 
-        const maintenanceMessages = [
-            `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
-            `${name} is currently in the creative oven getting baked to perfection 🥐`,
-            `Our pixies are putting the final touches on ${name}. Check back soon! 🧚`,
-            `${name} is currently taking a beauty sleep 😴 Be right back!`,
-            `We're leveling up the ${name} experience. Thank you for your patience! 🚀`
-        ];
-
-        const randomMsg = maintenanceMessages[Math.floor(Math.random() * maintenanceMessages.length)];
+        const randomMsg = getMaintenanceMessage(name);
 
         toast(randomMsg, {
             icon: '🚧',

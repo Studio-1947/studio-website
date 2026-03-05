@@ -14,84 +14,87 @@ const Solutions: React.FC = () => {
 
   return (
     <Layout>
-      <div className="bg-white dark:bg-gray-900 pt-32 pb-24 transition-colors duration-300 min-h-screen relative overflow-hidden">
+      <div className="bg-white dark:bg-gray-950 pt-32 pb-24 transition-colors duration-300 min-h-screen relative overflow-hidden">
         
         {/* Decorative Background Elements */}
-        <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-royal-900/10 to-transparent pointer-events-none"></div>
-        <div className="absolute top-[-10%] right-[-5%] w-[40rem] h-[40rem] bg-indigo-500/10 dark:bg-indigo-500/5 rounded-full blur-[100px] pointer-events-none"></div>
-        <div className="absolute top-[30%] left-[-10%] w-[30rem] h-[30rem] bg-emerald-500/10 dark:bg-emerald-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+        <div className="fixed top-0 left-0 w-full h-[600px] bg-gradient-to-b from-royal-900/5 to-transparent pointer-events-none z-0"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           {/* Header Section */}
-          <div className="text-center max-w-4xl mx-auto mb-20 md:mb-32">
-            <span className="inline-block py-1.5 px-4 rounded-full bg-royal-100 text-royal-700 dark:bg-royal-900/30 dark:text-royal-300 font-bold tracking-widest uppercase text-sm mb-6 border border-royal-200 dark:border-royal-800">
+          <div className="text-center max-w-5xl mx-auto mb-20 md:mb-32 pt-10">
+            <span className="inline-block py-1.5 px-4 rounded-full bg-royal-50 text-royal-700 dark:bg-royal-900/30 dark:text-royal-300 font-bold tracking-widest uppercase text-sm mb-6 border border-royal-200 dark:border-royal-800 shadow-sm">
               What We Do
             </span>
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-black text-gray-900 dark:text-white tracking-tight leading-tight mb-8">
-              Solutions<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-600 via-indigo-500 to-emerald-500 dark:from-royal-400 dark:via-indigo-400 dark:to-emerald-400">
-                You need to grow your business.
+            <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4 md:mb-6">
+              SOLUTIONS<br />
+              <span className="text-royal-600 dark:text-royal-400 inline-block mt-2">
+                THAT SCALE.
               </span>
             </h1>
-            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-light leading-relaxed">
-              We bring strategy, design, and engineering together to solve your most complex challenges and scale operations seamlessly.
+            <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">
+              We bring strategy, design, and engineering together to solve your most complex challenges.
             </p>
           </div>
 
-          {/* Elevated Solutions Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {solutions.map((solution, idx) => (
-              <div 
-                key={idx} 
-                className="group relative rounded-[2rem] overflow-hidden aspect-[4/5] sm:aspect-[4/3] lg:aspect-[4/5] transform hover:-translate-y-2 transition-all duration-500 shadow-xl hover:shadow-2xl"
-              >
-                {/* Background Image Layer */}
-                <div className="absolute inset-0 w-full h-full">
-                  <img 
-                    src={solution.bgImage} 
-                    alt={solution.title} 
-                    className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-1000"
-                  />
-                  {/* Default Dark Overlay */}
-                  <div className="absolute inset-0 bg-gray-900/80 dark:bg-gray-950/80 transition-colors duration-500 group-hover:bg-gray-900/60"></div>
-                  {/* Colored Gradient Overlay on Hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-t ${solution.color} mix-blend-multiply opacity-0 group-hover:opacity-80 transition-opacity duration-500`}></div>
-                </div>
-                
-                {/* Content Layer */}
-                <div className="absolute inset-0 p-8 md:p-10 flex flex-col justify-between z-10">
-                  <div className="flex justify-between items-start">
-                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center backdrop-blur-md border border-white/10 ${solution.iconBg} ${solution.iconColor} group-hover:text-white transition-colors duration-300 shadow-xl`}>
-                      {solution.icon}
-                    </div>
-                    {/* Floating arrow that appears on hover */}
-                    <div className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center text-white opacity-0 transform translate-y-4 group-hover:opacity-100 group-hover:translate-y-0 transition-all duration-500 border border-white/20">
-                      <svg className="w-5 h-5 transform -rotate-45 group-hover:rotate-0 transition-transform duration-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                      </svg>
-                    </div>
-                  </div>
+          {/* Apple-Style Structured Bento Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mb-32 md:mt-12 w-full max-w-7xl mx-auto">
+            {solutions.map((solution, idx) => {
+              
+              // If we have an odd number of items, the last item spans both columns perfectly.
+              // This fixes any orphaned layout holes in the 2-column grid.
+              const isFullWidthOnTablet = solutions.length % 2 !== 0 && idx === solutions.length - 1;
+
+              return (
+                <div 
+                  key={idx}
+                  className={`group relative flex flex-col border border-gray-200 dark:border-white/10 rounded-[2rem] lg:rounded-[2.5rem] p-8 md:p-12 lg:p-16 overflow-hidden transition-all duration-500 hover:shadow-2xl dark:hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] hover:-translate-y-1 ${isFullWidthOnTablet ? 'md:col-span-2' : 'col-span-1'}`}
+                >
                   
-                  <div>
-                    <h3 className="text-2xl md:text-3xl font-bold text-white mb-4 group-hover:translate-x-2 transition-transform duration-300">
-                      {solution.title}
-                    </h3>
+                  {/* Creative Photography Background */}
+                  <div className="absolute inset-0 z-0 bg-gray-50 dark:bg-gray-950">
+                    <img 
+                      src={solution.bgImage} 
+                      alt="" 
+                      className="absolute inset-0 w-full h-full object-cover opacity-30 dark:opacity-20 mix-blend-luminosity transform group-hover:scale-105 transition-transform duration-[3s] ease-out"
+                    />
+                    {/* Gradient fade to ensure perfect text readability */}
+                    <div className="absolute inset-0 bg-gradient-to-b from-white/30 via-white/80 to-white dark:from-gray-950/40 dark:via-gray-950/90 dark:to-gray-950"></div>
                     
-                    <p className="text-gray-300 leading-relaxed text-sm md:text-base opacity-80 group-hover:opacity-100 group-hover:text-white transition-all duration-300 group-hover:translate-x-2 delay-75">
-                      {solution.description}
-                    </p>
+                    {/* Elegant color tint wash based on the specific solution's brand color */}
+                    <div className={`absolute inset-0 bg-gradient-to-br ${solution.color} opacity-[0.03] dark:opacity-[0.05] mix-blend-multiply dark:mix-blend-screen group-hover:opacity-10 transition-opacity duration-700`}></div>
+                  </div>
+
+                  {/* Consistent Context Box (Icon + Title) */}
+                  <div className="flex flex-col h-full relative z-10">
+                    
+                    {/* Minimal, Perfectly Consistent Icon Block */}
+                    <div className="w-16 h-16 rounded-2xl bg-white dark:bg-gray-800 shadow-sm border border-gray-100 dark:border-gray-700 flex items-center justify-center text-royal-600 dark:text-royal-400 mb-8 md:mb-12 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-500 ease-out">
+                      <div className="w-8 h-8">
+                        {solution.icon}
+                      </div>
+                    </div>
+                    
+                    {/* Title */}
+                    <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-gray-900 dark:text-white tracking-tight leading-[1.1] mb-6">
+                      {solution.title}
+                    </h2>
+                    
+                    {/* Description pushed to bottom to fill the box structural space */}
+                    <div className="mt-auto pt-4 md:pt-8">
+                      <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 font-light leading-relaxed relative z-10">
+                        {solution.description}
+                      </p>
+                    </div>
+
                   </div>
                 </div>
-                
-                {/* Bottom Highlight Line */}
-                <div className={`absolute bottom-0 left-0 h-2 w-full bg-gradient-to-r ${solution.color} transform origin-left scale-x-0 group-hover:scale-x-100 transition-transform duration-500 z-20`}></div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* CTA Section (Enhanced) */}
-          <div className="mt-32 relative rounded-[3rem] overflow-hidden shadow-2xl group border border-gray-200 dark:border-royal-500/20">
+          <div className="mt-16 relative rounded-[3rem] overflow-hidden shadow-2xl group border border-gray-200 dark:border-royal-500/20">
             {/* Adaptive gradient base for light and dark modes */}
             <div className="absolute inset-0 bg-gradient-to-br from-royal-50 via-indigo-50 to-white dark:from-gray-900 dark:via-royal-950 dark:to-black z-0 transition-colors duration-500"></div>
             
