@@ -29,7 +29,7 @@ export default function LatestBlogs() {
 
                 {/* Grid Layout */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-                    {blogs.slice(0, 4).map((blog, index) => (
+                    {blogs.filter(b => b.coverImage && b.coverImage !== '/logo.svg').slice(0, 4).map((blog, index) => (
                         <Link to={`/blogs/${blog.slug}`} key={index} className="group cursor-pointer block">
                             {/* Image Placeholder / Cover Image */}
                             <div className="w-full aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-2xl mb-8 relative flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">

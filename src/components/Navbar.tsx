@@ -40,7 +40,7 @@ export default function Navbar() {
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string, name: string) => {
-        const unlockedRoutes = ['/', '/about'];
+        const unlockedRoutes = ['/', '/about', '/blogs'];
 
         if (unlockedRoutes.includes(href) || name === 'Logo' || name === 'Search') {
             // Let normal navigation proceed
