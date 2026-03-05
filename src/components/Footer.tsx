@@ -6,18 +6,26 @@ import Logo from './Logo';
 import GoldenSprinkles from './GoldenSprinkles';
 import ContactModal from './ContactModal';
 
+const getMaintenanceMessage = (name: string) => {
+    const messages = [
+        `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
+        `${name} is currently in the creative oven getting baked to perfection 🥐`,
+        `Our pixies are putting the final touches on ${name}. Check back soon! 🧚`,
+        `${name} is currently taking a beauty sleep 😴 Be right back!`,
+        `We're leveling up the ${name} experience. Thank you for your patience! 🚀`
+    ];
+    return messages[Math.floor(Math.random() * messages.length)];
+};
+
 
 export default function Footer() {
     const [time, setTime] = useState(new Date());
-    const [isContactModalOpen, setIsContactModalOpen] = useState(false);
-    const [mirikAqi, setMirikAqi] = useState<number | null>(null);
     const location = useLocation();
+    const [isContactModalOpen, setIsContactModalOpen] = useState(
+        location.hash === '#pitch' || location.search.includes('pitch=true')
+    );
 
-    useEffect(() => {
-        if (location.hash === '#pitch' || location.search.includes('pitch=true')) {
-            setIsContactModalOpen(true);
-        }
-    }, [location]);
+    const [mirikAqi, setMirikAqi] = useState<number | null>(null);
 
     const handleCloseModal = () => {
         setIsContactModalOpen(false);
@@ -66,15 +74,7 @@ export default function Footer() {
     const handleSitemapClick = (e: React.MouseEvent<HTMLButtonElement>, name: string) => {
         e.preventDefault();
 
-        const maintenanceMessages = [
-            `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
-            `${name} is currently in the creative oven getting baked to perfection 🥐`,
-            `Our pixies are putting the final touches on ${name}. Check back soon! 🧚`,
-            `${name} is currently taking a beauty sleep 😴 Be right back!`,
-            `We're leveling up the ${name} experience. Thank you for your patience! 🚀`
-        ];
-
-        const randomMsg = maintenanceMessages[Math.floor(Math.random() * maintenanceMessages.length)];
+        const randomMsg = getMaintenanceMessage(name);
 
         toast(randomMsg, {
             icon: '🚧',
@@ -144,7 +144,7 @@ export default function Footer() {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             transition={{ duration: 0.3, delay: (idx * 0.1) + (linkIdx * 0.05) }}
                                         >
-                                            {section.title === "Sitemap" && link.label !== "Home" ? (
+                                            {section.title === "Sitemap" && link.label !== "Home" && link.label !== "Solutions" ? (
                                                 <button
                                                     onClick={(e) => handleSitemapClick(e, link.label)}
                                                     className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"
