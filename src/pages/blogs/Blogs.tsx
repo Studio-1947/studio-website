@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Layout from '../components/Layout';
-import { blogs } from '../data/blogData';
+import Layout from '../../components/Layout';
+import { blogs } from '../../data/blogData';
 
 const Blogs: React.FC = () => {
   useEffect(() => {

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
 const products = [
   {
@@ -62,7 +62,7 @@ const Products: React.FC = () => {
     <Layout>
       <div className="bg-white dark:bg-gray-900 pt-32 pb-24 transition-colors duration-300 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           {/* Header Section */}
           <div className="text-center max-w-3xl mx-auto mb-20 md:mb-32">
             <span className="text-royal-600 dark:text-royal-400 font-semibold tracking-wider uppercase text-sm mb-4 block">
@@ -82,26 +82,26 @@ const Products: React.FC = () => {
           {/* Products Grid */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {products.map((product) => (
-              <Link 
-                key={product.slug} 
+              <Link
+                key={product.slug}
                 to={`/products/${product.slug}`}
                 className="group flex flex-col bg-gray-50 dark:bg-gray-800/50 rounded-3xl overflow-hidden hover:shadow-2xl transition-all duration-500 border border-gray-100 dark:border-gray-800 hover:-translate-y-2 relative"
               >
                 <div className="aspect-w-16 aspect-h-10 w-full overflow-hidden relative">
-                  <img 
-                    src={product.image} 
+                  <img
+                    src={product.image}
                     alt={product.name}
                     className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-300"></div>
-                  
+
                   {/* Tag overlay */}
                   <div className="absolute top-6 left-6 z-10">
                     <span className="px-4 py-1.5 bg-white/20 backdrop-blur-md text-white text-xs font-bold uppercase tracking-wider rounded-full border border-white/30">
                       {product.tag}
                     </span>
                   </div>
-                  
+
                   {/* Icon overlay */}
                   <div className="absolute bottom-6 left-6 z-10 w-12 h-12 bg-royal-600 rounded-2xl flex items-center justify-center text-white shadow-lg transform group-hover:scale-110 transition-transform duration-300">
                     {product.icon}
@@ -115,7 +115,7 @@ const Products: React.FC = () => {
                   <p className="text-gray-600 dark:text-gray-400 mb-8 flex-1 text-lg">
                     {product.description}
                   </p>
-                  
+
                   <div className="inline-flex items-center text-royal-600 dark:text-royal-400 font-bold group-hover:text-royal-700 dark:group-hover:text-royal-300 transition-colors">
                     Explore Platform
                     <div className="w-8 h-8 ml-3 rounded-full bg-royal-100 dark:bg-royal-900/50 flex items-center justify-center group-hover:bg-royal-600 group-hover:text-white transition-colors duration-300">
