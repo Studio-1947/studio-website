@@ -11,7 +11,7 @@ const DataAnalysis: React.FC = () => {
     <Layout>
       <div className="bg-white dark:bg-gray-900 pt-32 pb-24 transition-colors duration-300 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <Link to="/products" className="inline-flex items-center text-royal-600 dark:text-royal-400 font-semibold mb-12 hover:text-royal-800 transition-colors uppercase tracking-wider text-sm">
             <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
@@ -39,12 +39,12 @@ const DataAnalysis: React.FC = () => {
                 </button>
               </div>
             </div>
-            
+
             <div className="relative">
               <div className="absolute -inset-4 bg-gradient-to-tr from-purple-500/20 to-indigo-500/20 rounded-[3rem] blur-2xl transform rotate-6"></div>
-              <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop" 
-                alt="Data Dashboard" 
+              <img
+                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop"
+                alt="Data Dashboard"
                 className="relative rounded-3xl shadow-2xl object-cover aspect-[4/3] w-full border border-gray-200/50 dark:border-gray-700/50"
               />
             </div>
