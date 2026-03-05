@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import Layout from '../components/Layout';
+import Layout from '../../components/Layout';
 
 const PrivacyPolicy: React.FC = () => {
   useEffect(() => {
