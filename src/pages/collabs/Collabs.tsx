@@ -49,12 +49,12 @@ const Collabs: React.FC = () => {
   return (
     <Layout>
       <div className="bg-white dark:bg-gray-900 pt-32 pb-24 transition-colors duration-300 min-h-screen relative overflow-hidden">
-        
+
         {/* Decorative Background Elements */}
         <div className="absolute top-0 left-0 w-full h-[600px] bg-gradient-to-b from-royal-900/10 to-transparent pointer-events-none"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           {/* Header Section */}
           <div className="text-center max-w-4xl mx-auto mb-20 md:mb-32">
             <span className="inline-block py-1.5 px-4 rounded-full bg-royal-100 text-royal-700 dark:bg-royal-900/30 dark:text-royal-300 font-bold tracking-widest uppercase text-sm mb-6 border border-royal-200 dark:border-royal-800">
@@ -74,27 +74,27 @@ const Collabs: React.FC = () => {
           {/* Collaborations List */}
           <div className="space-y-12 lg:space-y-16">
             {collabs.map((collab, idx) => (
-              <Link 
-                key={idx} 
+              <Link
+                key={idx}
                 to={`/collabs/${collab.slug}`}
                 className="group block relative bg-white dark:bg-gray-800/40 rounded-[2.5rem] p-8 md:p-12 border border-gray-100 dark:border-gray-800 hover:shadow-2xl transition-all duration-500 overflow-hidden transform hover:-translate-y-1"
               >
                 {/* Background Hover Element */}
                 <div className={`absolute inset-0 bg-gradient-to-r ${collab.theme} opacity-0 group-hover:opacity-5 transition-opacity duration-500 pointer-events-none`}></div>
-                
+
                 <div className="grid md:grid-cols-12 gap-8 md:gap-12 items-center relative z-10">
-                  
+
                   {/* Logo Column */}
                   <div className="md:col-span-3 flex justify-center md:justify-start">
                     <div className="w-32 h-32 md:w-48 md:h-48 rounded-full bg-gray-50 dark:bg-gray-800 flex items-center justify-center p-6 border border-gray-200 dark:border-gray-700 shadow-inner group-hover:scale-105 transition-transform duration-500">
-                      <img 
-                        src={collab.logo} 
-                        alt={`${collab.name} logo`} 
+                      <img
+                        src={collab.logo}
+                        alt={`${collab.name} logo`}
                         className="max-w-full max-h-full object-contain filter drop-shadow-md"
                       />
                     </div>
                   </div>
-                  
+
                   {/* Content Column */}
                   <div className="md:col-span-9 flex flex-col justify-center text-center md:text-left">
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4 gap-4">
@@ -108,11 +108,11 @@ const Collabs: React.FC = () => {
                         </svg>
                       </span>
                     </div>
-                    
+
                     <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-8 max-w-3xl">
                       {collab.description}
                     </p>
-                    
+
                     <div className="flex items-center justify-center md:justify-start">
                       <span className={`inline-flex items-center font-bold px-6 py-3 rounded-full ${collab.bgLight} ${collab.textLight} ${collab.darkBg} transition-all duration-300 group-hover:pr-4`}>
                         Explore Collaboration
@@ -126,7 +126,7 @@ const Collabs: React.FC = () => {
                   </div>
 
                 </div>
-                
+
                 {/* Visual Line at the bottom */}
                 <div className={`absolute bottom-0 left-0 h-1.5 w-0 bg-gradient-to-r ${collab.theme} transition-all duration-700 group-hover:w-full`}></div>
               </Link>

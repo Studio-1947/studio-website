@@ -10,7 +10,7 @@ const TermsOfService: React.FC = () => {
     <Layout>
       <div className="bg-white dark:bg-gray-900 pt-32 pb-24 transition-colors duration-300 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="mb-12">
             <h1 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight mb-4">
               Terms of Service
@@ -20,8 +20,8 @@ const TermsOfService: React.FC = () => {
 
           <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
             <p>
-              These Terms of Service (“Terms”) govern access to and use of the website 
-              <a href="https://www.1947.io/" className="text-royal-600 dark:text-royal-400 hover:underline mx-1">https://www.1947.io/</a> 
+              These Terms of Service (“Terms”) govern access to and use of the website
+              <a href="https://www.1947.io/" className="text-royal-600 dark:text-royal-400 hover:underline mx-1">https://www.1947.io/</a>
               (“the Site”) and all associated digital products, tools, and services provided by Studio 1947 (“Studio 1947”, “we”, “us”, or “our”). By accessing or using the Site or the Services, users agree to be bound by these Terms. If you do not agree with any part of these Terms, you must discontinue use of the Site and Services.
             </p>
 
