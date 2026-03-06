@@ -10,7 +10,7 @@ const PrivacyPolicy: React.FC = () => {
     <Layout>
       <div className="bg-white dark:bg-gray-900 pt-32 pb-24 transition-colors duration-300 min-h-screen">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="mb-12">
             <h1 className="text-4xl md:text-5xl font-black text-gray-900 dark:text-white leading-tight mb-4">
               Privacy Policy
@@ -20,8 +20,8 @@ const PrivacyPolicy: React.FC = () => {
 
           <div className="prose prose-lg dark:prose-invert max-w-none text-gray-600 dark:text-gray-300">
             <p>
-              This Privacy Policy explains how Studio 1947 (“we”, “us”, “our”) collects, uses, discloses, and protects personal data obtained through the website 
-              <a href="https://www.1947.io/" className="text-royal-600 dark:text-royal-400 hover:underline mx-1">https://www.1947.io/</a> 
+              This Privacy Policy explains how Studio 1947 (“we”, “us”, “our”) collects, uses, discloses, and protects personal data obtained through the website
+              <a href="https://www.1947.io/" className="text-royal-600 dark:text-royal-400 hover:underline mx-1">https://www.1947.io/</a>
               and through all associated services (“the Services”). By accessing or using the Site or the Services, users acknowledge and consent to the practices described in this Policy.
             </p>
 
