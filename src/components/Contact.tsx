@@ -64,7 +64,7 @@ export default function Contact() {
                                     <Facebook className="w-5 h-5" />
                                 </a>
                                 <a
-                                    href="https://www.linkedin.com/company/studio1947/"
+                                    href="https://www.linkedin.com/company/studio-1947"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     aria-label="LinkedIn"
@@ -79,10 +79,10 @@ export default function Contact() {
                 </div>
 
             </div>
-            
-            <ContactModal 
-                isOpen={isContactModalOpen} 
-                onClose={() => setIsContactModalOpen(false)} 
+
+            <ContactModal
+                isOpen={isContactModalOpen}
+                onClose={() => setIsContactModalOpen(false)}
             />
         </section>
     );
