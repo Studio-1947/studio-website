@@ -354,12 +354,6 @@ export default function Navbar() {
                             <Logo className="h-8 w-auto text-gray-900 dark:text-white" />
                         </Link>
                         <div className="flex items-center gap-4">
-                            <button
-                                onClick={() => setIsSearchOpen(true)}
-                                className="p-2 text-gray-900 dark:text-white hover:text-primary"
-                            >
-                                <img src="/search-02.png" alt="Search" className="w-5 h-5 invert dark:invert-0" />
-                            </button>
                             <ThemeToggle />
                             <button
                                 onClick={() => setIsOpen(!isOpen)}
