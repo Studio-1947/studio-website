@@ -93,12 +93,34 @@ export default function Footer() {
     ];
 
     return (
-        <footer className="relative bg-gray-950 text-white pt-20 pb-10 overflow-hidden">
+        <footer className="relative bg-gray-950 text-white pt-10 pb-10 overflow-hidden">
             {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-50" />
+            <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-50 z-20" />
+
+            {/* Background elements (Interactive Animation + Subtle Text) */}
+            <div className="absolute inset-0 z-0 overflow-hidden" style={{ zIndex: 1 }}>
+
+                {/* Interactive Sprinkles Layer */}
+                <div className="absolute inset-0 z-10 opacity-40">
+                    <GoldenSprinkles />
+                </div>
+
+                {/* Subtle Text Layer */}
+                <div className="absolute bottom-16 md:bottom-20 left-0 w-full z-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none px-4 md:px-8">
+                    <motion.h1
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 1, ease: "easeOut" }}
+                        className="w-full text-[28vw] sm:text-[24vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] leading-none font-black text-center text-white flex flex-col md:flex-row justify-center md:gap-4 lg:gap-8 whitespace-nowrap"
+                    >
+                        <span>STUDIO</span>
+                        <span>1947</span>
+                    </motion.h1>
+                </div>
+            </div>
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div className="grid grid-cols-1 md:grid-cols-12 gap-12 mb-20">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
                     {/* Brand Section */}
                     <div className="md:col-span-5 space-y-6">
                         <motion.h2
@@ -166,27 +188,6 @@ export default function Footer() {
                             </div>
                         ))}
                     </div>
-                </div>
-
-                {/* Big Text */}
-                <div className="border-t border-gray-800 pt-12 mt-12 relative overflow-hidden">
-                    <div className="absolute inset-0 z-0">
-                        <GoldenSprinkles />
-                    </div>
-                    <motion.h1
-                        initial={{ opacity: 0, scale: 0.95 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.8, ease: "easeOut" }}
-                        className="text-[12vw] leading-none font-bold text-center text-gray-900 dark:text-gray-800 select-none pointer-events-none"
-                        style={{
-                            background: 'linear-gradient(to bottom, #333 0%, #000 100%)',
-                            WebkitBackgroundClip: 'text',
-                            WebkitTextFillColor: 'transparent',
-                            opacity: 0.3
-                        }}
-                    >
-                        STUDIO 1947
-                    </motion.h1>
                 </div>
 
                 {/* Bottom Bar */}
