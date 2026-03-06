@@ -51,7 +51,7 @@ export default function Navbar() {
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string, name: string) => {
-        const unlockedRoutes = ['/', '/about', '/blogs', '/solutions'];
+        const unlockedRoutes = ['/', '/about', '/blogs', '/solutions', '/initiative', '/collabs/walking-project', '#'];
 
         if (unlockedRoutes.includes(href) || name === 'Logo' || name === 'Search') {
             // Let normal navigation proceed
@@ -156,11 +156,11 @@ export default function Navbar() {
             name: 'Collabs',
             href: '#',
             spokeIndex: 0,
-            /* dropdown: [
-                { name: 'Walking Project', href: '/collabs/walking-project', logo: '/collabs/walkingproject.png' },
+            dropdown: [
+                { name: 'Walking Project', href: '/collabs/walking-project', logo: '/collabs/walkingproject/walkingprojectlogo.svg' },
                 { name: 'Ai Crowd', href: '/collabs/ai-crowd', logo: '/collabs/aicrowd.png' },
                 { name: 'Ecological Foundations', href: '/collabs/ecological-foundations', logo: '/collabs/ecologicalfoundation.png' },
-            ] */
+            ]
         },
         {
             name: 'Initiative',
@@ -318,11 +318,11 @@ export default function Navbar() {
                                                                 key={item.name}
                                                                 to={item.href}
                                                                 onClick={(e) => handleNavClick(e, item.href, item.name)}
-                                                                className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-lg transition-colors ${isItemActive ? 'text-primary bg-primary/10' : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
+                                                                className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-lg transition-all group ${item.name === 'Walking Project' ? 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-900 hover:bg-[#F5D650] font-semibold' : isItemActive ? 'text-primary bg-primary/10' : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
                                                             >
                                                                 {item.logo && (
-                                                                    <div className="w-6 h-6 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center p-1 shrink-0">
-                                                                        <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
+                                                                    <div className={`w-8 h-8 flex items-center justify-center p-1.5 shrink-0 transition-colors ${item.name === 'Walking Project' ? 'bg-black/5 dark:bg-white/10 group-hover:bg-white/20 dark:group-hover:bg-black/20 rounded-lg' : 'bg-black/5 dark:bg-white/10 rounded-full'}`}>
+                                                                        <img src={item.logo} alt="" className={`w-full h-full object-contain ${item.name === 'Walking Project' ? '' : 'filter drop-shadow-sm'}`} />
                                                                     </div>
                                                                 )}
                                                                 {item.name}
@@ -473,11 +473,11 @@ export default function Navbar() {
                                                     key={item.name}
                                                     to={item.href}
                                                     onClick={(e) => handleNavClick(e, item.href, item.name)}
-                                                    className={`text-xl font-medium transition-colors flex items-center gap-3 ${isItemActive ? 'text-primary' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
+                                                    className={`text-xl font-medium transition-all group flex items-center gap-3 ${item.name === 'Walking Project' ? 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-900 hover:bg-[#F5D650] w-full px-4 py-3 rounded-xl' : isItemActive ? 'text-primary' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white'}`}
                                                 >
                                                     {item.logo && (
-                                                        <div className="w-8 h-8 rounded-full bg-black/5 dark:bg-white/10 flex items-center justify-center p-1.5 shrink-0">
-                                                            <img src={item.logo} alt="" className="w-full h-full object-contain filter drop-shadow-sm" />
+                                                        <div className={`w-10 h-10 flex items-center justify-center p-2 shrink-0 transition-colors ${item.name === 'Walking Project' ? 'bg-black/5 dark:bg-white/10 group-hover:bg-white/20 dark:group-hover:bg-black/20 rounded-xl' : 'bg-black/5 dark:bg-white/10 rounded-full'}`}>
+                                                            <img src={item.logo} alt="" className={`w-full h-full object-contain ${item.name === 'Walking Project' ? '' : 'filter drop-shadow-sm'}`} />
                                                         </div>
                                                     )}
                                                     {item.name}
