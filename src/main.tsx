@@ -6,6 +6,7 @@ import Layout from './components/Layout.tsx';
 import ScrollToTop from './components/ScrollToTop.tsx';
 import './index.css';
 import NotFound from './pages/NotFound.tsx';
+import ExternalRedirect from './components/ExternalRedirect.tsx';
 
 // ─── Route-level lazy imports ──────────────────────────────────────────────
 // Each lazy() call creates a separate chunk loaded only when the route is visited
@@ -79,6 +80,9 @@ createRoot(document.getElementById('root')!).render(
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<App />} />
+
+          {/* External Redirects */}
+          <Route path="/sirflocal" element={<ExternalRedirect to="https://www.sirflocal.in" />} />
 
           {/* Initiative Routes */}
           <Route path="/initiative" element={<Layout><Initiative /></Layout>} />
