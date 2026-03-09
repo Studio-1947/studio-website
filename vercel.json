@@ -1,0 +1,15 @@
+{
+  "redirects": [
+    {
+      "source": "/sirflocal",
+      "destination": "https://www.sirflocal.in",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
