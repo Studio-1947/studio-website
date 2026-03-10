@@ -1,8 +1,10 @@
 import React, { useEffect } from 'react';
 import Layout from '../components/Layout';
+import { usePageMeta } from '../hooks/usePageMeta';
 
 const Careers: React.FC = () => {
-    
+  usePageMeta({ title: 'Careers – Studio 1947', description: 'Join the Studio 1947 team. We are always looking for exceptional designers, engineers, and strategists who want to build with purpose.' });
+
   // Scroll to top when this page mounts
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
@@ -19,10 +21,10 @@ const Careers: React.FC = () => {
         - "Join Us" label bottom-left
       */}
       <section className="relative w-full h-screen min-h-[600px] flex flex-col justify-end bg-gray-900 border-b-8 border-royal-700">
-        
+
         {/* Background Image Setup */}
         <div className="absolute inset-0 z-0">
-          <img 
+          <img
             src="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?q=80&w=2000&auto=format&fit=crop" // Nature/agriculture expansive scene
             alt="Expansive landscape representing growth"
             className="w-full h-full object-cover"
@@ -33,20 +35,20 @@ const Careers: React.FC = () => {
 
         {/* Content Container positioned at the bottom */}
         <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-16 md:pb-24">
-            
-            {/* The Main Huge Text */}
-            <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-black text-white tracking-tighter leading-[0.9] mb-12 max-w-5xl">
-              Build the next era <br className="hidden sm:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-400 to-indigo-400">of the web with us.</span>
-            </h1>
 
-            {/* Sub-text and CTA Container */}
-            <div className="max-w-4xl border-t border-white/20 pt-8 mt-12">
-               <p className="text-lg md:text-2xl text-white font-medium leading-tight mb-8">
-                 We are always looking for exceptional designers, engineers, and strategists. If you don't see an open role, convince us we need you.
-               </p>
-               
-               {/* <a 
+          {/* The Main Huge Text */}
+          <h1 className="text-5xl sm:text-7xl md:text-8xl lg:text-[7rem] font-black text-white tracking-tighter leading-[0.9] mb-12 max-w-5xl">
+            Build the next era <br className="hidden sm:block" />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-400 to-indigo-400">of the web with us.</span>
+          </h1>
+
+          {/* Sub-text and CTA Container */}
+          <div className="max-w-4xl border-t border-white/20 pt-8 mt-12">
+            <p className="text-lg md:text-2xl text-white font-medium leading-tight mb-8">
+              We are always looking for exceptional designers, engineers, and strategists. If you don't see an open role, convince us we need you.
+            </p>
+
+            {/* <a 
                  href="https://docs.google.com/forms/d/e/1FAIpQLSedpUsfmmY12ooR1NJLEh18d1MGXRu5H6nh2YufE2GGZeMdmw/viewform"
                  target="_blank"
                  rel="noopener noreferrer"
@@ -61,7 +63,7 @@ const Careers: React.FC = () => {
                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
                  </svg>
                </a> */}
-            </div>
+          </div>
 
         </div>
       </section>

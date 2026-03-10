@@ -1,5 +1,6 @@
 import { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
+import { usePageMeta } from '../hooks/usePageMeta';
 const initiatives = [
     {
         id: 'local-design',
@@ -21,6 +22,7 @@ const initiatives = [
 ];
 
 export default function Initiative() {
+    usePageMeta({ title: 'Initiative – Studio 1947', description: 'Studio 1947 initiatives — Local Design and Sirf Local — pioneering meaningful change through localized, sustainable, and culturally rooted projects.' });
     const containerRef = useRef<HTMLDivElement>(null);
     const [hoveredCard, setHoveredCard] = useState<string | null>(null);
 
@@ -35,7 +37,7 @@ export default function Initiative() {
 
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header Section */}
-                <motion.div 
+                <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, ease: "easeOut" }}
@@ -67,7 +69,7 @@ export default function Initiative() {
                             {/* Background Image/Video & Gradient */}
                             <div className="absolute inset-0 overflow-hidden">
                                 <motion.div
-                                    animate={{ 
+                                    animate={{
                                         scale: hoveredCard === initiative.id ? 1.05 : 1,
                                     }}
                                     transition={{ duration: 0.6, ease: "easeOut" }}
@@ -85,9 +87,9 @@ export default function Initiative() {
                                             className="w-full h-full object-cover"
                                         />
                                     ) : (
-                                        <img 
-                                            src={initiative.image} 
-                                            alt={initiative.title} 
+                                        <img
+                                            src={initiative.image}
+                                            alt={initiative.title}
                                             className="w-full h-full object-cover"
                                         />
                                     )}
@@ -97,7 +99,7 @@ export default function Initiative() {
                             {/* Content */}
                             <div className="relative z-10 p-8 sm:p-12 flex flex-col h-full justify-end">
                                 <motion.div
-                                    animate={{ 
+                                    animate={{
                                         y: hoveredCard === initiative.id ? -10 : 0,
                                     }}
                                     transition={{ duration: 0.4, ease: "easeOut" }}
@@ -105,11 +107,11 @@ export default function Initiative() {
                                     <h2 className="text-4xl sm:text-5xl font-bold mb-4 tracking-tight drop-shadow-md">
                                         {initiative.title}
                                     </h2>
-                                    
+
                                     <div className="overflow-hidden">
-                                        <motion.p 
+                                        <motion.p
                                             initial={{ opacity: 0, height: 0 }}
-                                            animate={{ 
+                                            animate={{
                                                 opacity: hoveredCard === initiative.id ? 1 : 0.7,
                                                 height: hoveredCard === initiative.id ? 'auto' : '3rem'
                                             }}

@@ -2,8 +2,10 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import { blogs } from '../../data/blogData';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 const Blogs: React.FC = () => {
+  usePageMeta({ title: 'Journal – Studio 1947', description: 'Explorations, essays, and stories from the Studio 1947 team on design, culture, technology, and where they intersect.' });
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);

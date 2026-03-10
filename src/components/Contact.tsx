@@ -22,7 +22,7 @@ export default function Contact() {
                     <div className="mt-16 group">
                         <button
                             onClick={() => setIsContactModalOpen(true)}
-                            className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full hover:scale-105 transition-transform text-lg font-medium"
+                            className="inline-flex items-center px-8 py-4 bg-black dark:bg-white text-white dark:text-black rounded-full hover:scale-105 active:scale-95 transition-transform text-lg font-medium select-none"
                         >
                             Start a Project
                             <ArrowRight className="w-5 h-5 ml-2" />
@@ -32,11 +32,11 @@ export default function Contact() {
                     <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8 text-left md:text-center w-full max-w-4xl border-t border-gray-100 dark:border-gray-800 pt-12">
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Email</h4>
-                            <p className="text-gray-500 dark:text-gray-400">hello@1947.io</p>
+                            <a href="mailto:hello@1947.io" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors cursor-pointer">hello@1947.io</a>
                         </div>
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Phone</h4>
-                            <p className="text-gray-500 dark:text-gray-400">+917207680813</p>
+                            <a href="tel:+917207680813" className="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors cursor-pointer">+917207680813</a>
                         </div>
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Studio</h4>

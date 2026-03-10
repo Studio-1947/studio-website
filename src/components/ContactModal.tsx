@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { toast } from 'sonner';
 import { X } from 'lucide-react';
 
@@ -10,13 +10,21 @@ interface ContactModalProps {
 export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSuccess, setIsSuccess] = useState(false);
-    const [] = useState(false);
 
     const handleClose = () => {
         onClose();
         setTimeout(() => setIsSuccess(false), 300);
     };
 
+
+    useEffect(() => {
+        if (!isOpen) return;
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') handleClose();
+        };
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
+    }, [isOpen]);
 
     if (!isOpen) return null;
 
@@ -127,6 +135,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                     name="name"
                                     id="name"
                                     required
+                                    autoComplete="name"
                                     className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                                     placeholder="Your Name *"
                                 />
@@ -138,6 +147,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                     name="phone_number"
                                     id="number"
                                     required
+                                    autoComplete="tel"
                                     className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                                     placeholder="Phone Number *"
                                 />
@@ -149,6 +159,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
                                     name="email"
                                     id="email"
                                     required
+                                    autoComplete="email"
                                     className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
                                     placeholder="Email Address *"
                                 />
