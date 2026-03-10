@@ -160,6 +160,7 @@ export default function Navbar() {
                 { name: 'Walking Project', href: '/collabs/walking-project', logo: '/collabs/walkingproject/walkingprojectlogo.svg' },
                 { name: 'Ai Crowd', href: '/collabs/ai-crowd', logo: '/collabs/aicrowd.png' },
                 { name: 'Ecological Foundations', href: '/collabs/ecological-foundations', logo: '/collabs/ecologicalfoundation.png' },
+                { name: 'Sundarban', href: '/collabs/sundarban' },
             ]
         },
         {
