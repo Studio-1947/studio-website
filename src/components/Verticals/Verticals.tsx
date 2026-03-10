@@ -4,30 +4,22 @@ const VERTICALS = [
   {
     title: "Collaborations",
     description: "We collaborate with NGOs and other businesses who aim for local impact with greater minds.",
-    href: "/collabs",
-    linkText: "View Collaborations",
-    image: "/aboutus/About_us_hero.webp",
+    image: "/vertical/collabs.jpg",
   },
   {
     title: "Products",
     description: "We build scalable, robust software solutions tailored to solve complex challenges. Explore our suite of enterprise products.",
-    href: "/products",
-    linkText: "Explore Products",
-    image: "/sirfLocal/hero/2.webp",
+    image: "/vertical/products.png",
   },
   {
     title: "Solutions",
     description: "From research to deployment, we build bespoke platforms and workflows tailored exactly to your organizational volume and scale.",
-    href: "/solutions",
-    linkText: "See Solutions",
-    image: "/sirfLocal/hero/1.webp",
+    image: "/vertical/Solutions.png",
   },
   {
     title: "Initiatives",
     description: "Pioneering meaningful change through localized, sustainable, and culturally rooted projects.",
-    href: "/initiative",
-    linkText: "Discover Initiatives",
-    image: "/client/rajkamal.jpeg",
+    image: "/vertical/initiative.png",
   },
 ];
 

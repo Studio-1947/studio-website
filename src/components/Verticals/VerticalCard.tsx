@@ -8,19 +8,15 @@ gsap.registerPlugin(ScrollTrigger);
 interface VerticalCardProps {
   title: string;
   description: string;
-  href?: string;
-  linkText?: string;
   image: string;
   index: number;
 }
 
-export default function VerticalCard({ title, description, linkText, image, index }: VerticalCardProps) {
+export default function VerticalCard({ title, description, image, index }: VerticalCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
   const overlayRef = useRef<HTMLDivElement>(null);
   const textRevealRef = useRef<HTMLDivElement>(null);
-  const arrowRef = useRef<HTMLSpanElement>(null);
-  const tagRef = useRef<HTMLSpanElement>(null);
 
   useGSAP(() => {
     const card = cardRef.current;
@@ -28,7 +24,6 @@ export default function VerticalCard({ title, description, linkText, image, inde
 
     // Set initial states
     gsap.set(textRevealRef.current, { y: 18, opacity: 0 });
-    gsap.set(arrowRef.current, { x: 0 });
     gsap.set(overlayRef.current, { opacity: 0 });
 
     // Staggered entrance
@@ -56,9 +51,7 @@ export default function VerticalCard({ title, description, linkText, image, inde
     hoverTl
       .to(imageRef.current, { scale: 1.07, duration: 0.7 }, 0)
       .to(overlayRef.current, { opacity: 1, duration: 0.4 }, 0)
-      .to(tagRef.current, { y: -4, duration: 0.3 }, 0)
-      .to(textRevealRef.current, { y: 0, opacity: 1, duration: 0.45 }, 0.08)
-      .to(arrowRef.current, { x: 5, duration: 0.35 }, 0.1);
+      .to(textRevealRef.current, { y: 0, opacity: 1, duration: 0.45 }, 0.08);
 
     const handleMouseEnter = () => hoverTl.play();
     const handleMouseLeave = () => hoverTl.reverse();
@@ -76,7 +69,7 @@ export default function VerticalCard({ title, description, linkText, image, inde
   return (
     <div
       ref={cardRef}
-      className="relative rounded-2xl overflow-hidden cursor-pointer transform-gpu will-change-transform"
+      className="relative rounded-2xl overflow-hidden transform-gpu will-change-transform"
       style={{ opacity: 0, aspectRatio: '3 / 4' }}
     >
       {/* Image */}
@@ -96,42 +89,17 @@ export default function VerticalCard({ title, description, linkText, image, inde
         className="absolute inset-0 bg-black/20 pointer-events-none"
       />
 
-      {/* Tag */}
-      <div className="absolute top-5 left-5">
-        <span
-          ref={tagRef}
-          className="inline-block px-3 py-1 rounded-full bg-white/15 backdrop-blur-sm border border-white/25 text-white text-xs font-semibold tracking-widest uppercase transform-gpu"
-        >
-          {String(index + 1).padStart(2, '0')}
-        </span>
-      </div>
-
-      {/*
-        Title anchor — absolutely pinned to the bottom.
-        The description is absolutely positioned ABOVE this anchor
-        so it never affects the title's vertical position.
-      */}
+      {/* Title anchor — absolutely pinned to the bottom */}
       <div className="absolute bottom-0 left-0 right-0 px-6 pb-7">
 
-        {/* Description + CTA — floats above the title, out of flow */}
+        {/* Description — floats above the title, out of flow */}
         <div
           ref={textRevealRef}
           className="absolute bottom-full left-0 right-0 px-6 pb-4 pt-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none transform-gpu will-change-transform"
         >
-          <p className="text-white/80 text-sm leading-relaxed mb-4">
+          <p className="text-white/80 text-sm leading-relaxed">
             {description}
           </p>
-          <div className="flex items-center gap-2">
-            <span className="text-white font-semibold text-sm tracking-wide">
-              {linkText}
-            </span>
-            <span
-              ref={arrowRef}
-              className="text-white text-base transform-gpu will-change-transform"
-            >
-              →
-            </span>
-          </div>
         </div>
 
         {/* Title — always at the same height */}
