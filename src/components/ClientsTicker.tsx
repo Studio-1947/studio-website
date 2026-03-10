@@ -12,7 +12,7 @@ const logos = [
   { src: "/logos/Rajkamal Logo.svg", alt: "Rajkamal" },
   { src: "/logos/Remodel UN.svg", alt: "Remodel UN" },
   { src: "/logos/Sikkim Himal.svg", alt: "Sikkim Himal" },
-  { src: "/logos/Sundargan.svg", alt: "Sundargan" },
+  // { src: "/logos/Sundargan.svg", alt: "Sundargan" },
 ];
 
 const CONTENT = {

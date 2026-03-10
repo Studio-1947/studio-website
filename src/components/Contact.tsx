@@ -32,7 +32,7 @@ export default function Contact() {
                     <div className="mt-24 grid grid-cols-2 md:grid-cols-4 gap-x-12 gap-y-8 text-left md:text-center w-full max-w-4xl border-t border-gray-100 dark:border-gray-800 pt-12">
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Email</h4>
-                            <p className="text-gray-500 dark:text-gray-400">hello@studio1947.io</p>
+                            <p className="text-gray-500 dark:text-gray-400">hello@1947.io</p>
                         </div>
                         <div>
                             <h4 className="text-sm font-semibold text-gray-900 dark:text-white uppercase tracking-wider mb-2">Phone</h4>

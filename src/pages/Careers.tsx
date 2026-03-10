@@ -66,37 +66,125 @@ const Careers: React.FC = () => {
         </div>
       </section>
 
-      {/* 
-        NO OPEN ROLES MESSAGE SECTION
-        As requested, a section directly below explaining there are no immediate openings, 
-        but leaving the door open via the form.
-      */}
+      {/* OPEN ROLES SECTION */}
       <section className="py-24 bg-white dark:bg-gray-900 transition-colors duration-300">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            
-            <span className="inline-block p-4 bg-gray-50 dark:bg-gray-800 rounded-full mb-8 text-gray-400">
-                <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-                </svg>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+          {/* Section Header */}
+          <div className="mb-16">
+            <span className="inline-block text-xs font-bold tracking-[0.25em] uppercase text-royal-600 dark:text-royal-400 mb-4">
+              Open Positions
             </span>
-
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-                No active openings right now.
+            <h2 className="text-4xl md:text-6xl font-black text-gray-900 dark:text-white tracking-tight leading-none mb-4">
+              A few openings,<br />
+              <span className="text-gray-400 dark:text-gray-600">right now.</span>
             </h2>
-            
-            <p className="text-xl text-gray-600 dark:text-gray-400 leading-relaxed mb-10 max-w-2xl mx-auto">
-                Our team is currently at capacity, but we are always eager to connect with exceptional talent. If you believe your craft belongs here, we'd love to hear from you anyway.
+            <p className="text-lg text-gray-500 dark:text-gray-400 max-w-xl mt-6">
+              We keep a tight-knit team, but these seats are open. Every role here shapes how we build, communicate, and create.
             </p>
+          </div>
 
-            <a 
-                 href="https://docs.google.com/forms/d/e/1FAIpQLSedpUsfmmY12ooR1NJLEh18d1MGXRu5H6nh2YufE2GGZeMdmw/viewform"
-                 target="_blank"
-                 rel="noopener noreferrer"
-                 className="inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-royal-700 rounded-full hover:bg-royal-600 focus:ring-4 focus:ring-royal-500 shadow-lg hover:shadow-xl hover:-translate-y-1"
+          {/* Role Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-gray-200 dark:border-gray-800">
+
+            {/* Card 1: Content Creator */}
+            <div className="group relative flex flex-col justify-between p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors duration-300">
+              <div>
+                <span className="inline-block text-[10px] font-bold tracking-widest uppercase px-2 py-1 border border-royal-600 text-royal-600 dark:text-royal-400 dark:border-royal-400 mb-6">
+                  Creative
+                </span>
+                <h3 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white tracking-tight mb-3">
+                  Content Creator
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                  You tell stories that stick. From long-form editorial to short-form social, you understand platform-native content and know how to make ideas land with the right audience.
+                </p>
+              </div>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSedpUsfmmY12ooR1NJLEh18d1MGXRu5H6nh2YufE2GGZeMdmw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-10 inline-flex items-center text-sm font-bold text-gray-900 dark:text-white group-hover:text-royal-600 dark:group-hover:text-royal-400 transition-colors"
+              >
+                Apply for this role
+                <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Card 2: Communication */}
+            <div className="group relative flex flex-col justify-between p-8 md:p-10 border-b md:border-b-0 md:border-r border-gray-200 dark:border-gray-800 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors duration-300">
+              <div>
+                <span className="inline-block text-[10px] font-bold tracking-widest uppercase px-2 py-1 border border-royal-600 text-royal-600 dark:text-royal-400 dark:border-royal-400 mb-6">
+                  Strategy
+                </span>
+                <h3 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white tracking-tight mb-3">
+                  Communication
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                  You bridge the gap between what we build and how the world perceives it. Brand voice, client relations, PR, and outreach — you handle the words that represent us.
+                </p>
+              </div>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSedpUsfmmY12ooR1NJLEh18d1MGXRu5H6nh2YufE2GGZeMdmw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-10 inline-flex items-center text-sm font-bold text-gray-900 dark:text-white group-hover:text-royal-600 dark:group-hover:text-royal-400 transition-colors"
+              >
+                Apply for this role
+                <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Card 3: Graphics Designer */}
+            <div className="group relative flex flex-col justify-between p-8 md:p-10 hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors duration-300">
+              <div>
+                <span className="inline-block text-[10px] font-bold tracking-widest uppercase px-2 py-1 border border-royal-600 text-royal-600 dark:text-royal-400 dark:border-royal-400 mb-6">
+                  Design
+                </span>
+                <h3 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white tracking-tight mb-3">
+                  Graphics Designer
+                </h3>
+                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                  Visual identity is your craft. You design with purpose — from brand assets and campaign visuals to motion and production-ready deliverables that make people stop scrolling.
+                </p>
+              </div>
+              <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSedpUsfmmY12ooR1NJLEh18d1MGXRu5H6nh2YufE2GGZeMdmw/viewform"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-10 inline-flex items-center text-sm font-bold text-gray-900 dark:text-white group-hover:text-royal-600 dark:group-hover:text-royal-400 transition-colors"
+              >
+                Apply for this role
+                <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
+            </div>
+
+          </div>
+
+          {/* Fallback CTA for non-listed roles */}
+          <div className="mt-12 pt-10 border-t border-gray-200 dark:border-gray-800 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+            <p className="text-gray-500 dark:text-gray-400 text-sm max-w-md">
+              Don't see your role above? We're always eager to connect with exceptional talent. If your craft belongs here, we'd love to hear from you anyway.
+            </p>
+            <a
+              href="https://docs.google.com/forms/d/e/1FAIpQLSedpUsfmmY12ooR1NJLEh18d1MGXRu5H6nh2YufE2GGZeMdmw/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 inline-flex items-center justify-center px-7 py-3 text-sm font-bold text-white bg-gray-900 dark:bg-white dark:text-gray-900 hover:bg-royal-700 dark:hover:bg-royal-400 dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
             >
-                Introduce Yourself via Form
+              Introduce Yourself
+              <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
             </a>
-            <p className="mt-6 text-sm text-gray-500 font-medium">Link opens Microsoft Forms in a new tab.</p>
+          </div>
+
         </div>
       </section>
 
