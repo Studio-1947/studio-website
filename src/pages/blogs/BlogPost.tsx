@@ -4,12 +4,19 @@ import Layout from '../../components/Layout';
 import { blogs } from '../../data/blogData';
 import { Share2 } from 'lucide-react';
 import { toast } from 'sonner';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
 
   const blog = blogs.find((b) => b.slug === slug);
+
+  usePageMeta({
+    title: blog ? `${blog.title} – Studio 1947` : 'Article Not Found – Studio 1947',
+    description: blog?.excerpt ?? 'Read the latest articles from the Studio 1947 journal.',
+    ogImage: blog?.coverImage && blog.coverImage !== '/logo.svg' ? blog.coverImage : undefined,
+  });
 
   const handleShare = async () => {
     if (navigator.share) {

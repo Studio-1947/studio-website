@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react';
 import Layout from './components/Layout';
 import { Analytics } from '@vercel/analytics/react';
+import { usePageMeta } from './hooks/usePageMeta';
 
 // Eagerly loaded — above the fold, must render immediately
 import Hero from './components/Hero';
@@ -22,6 +23,11 @@ const SectionLoader = () => (
 );
 
 function App() {
+  usePageMeta({
+    title: 'Studio 1947 – Local Wisdom for Global Impact',
+    description: 'Studio 1947 is a creative studio from Mirik, Darjeeling crafting digital experiences — from brand strategy to web & app development — that drive real-world impact.',
+  });
+
   return (
     <Layout>
       {/* Above the fold — eager */}

@@ -3,8 +3,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Layout from '../../components/Layout';
 import { ArrowLeft, ArrowUpRight, CheckCircle2 } from 'lucide-react';
+import { usePageMeta } from '../../hooks/usePageMeta';
 
 const WalkingProject: React.FC = () => {
+  usePageMeta({ title: 'Walking Project – Studio 1947', description: 'How Studio 1947 helped the Walking Project amplify pedestrian rights advocacy in Mumbai through digital strategy and storytelling.' });
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
