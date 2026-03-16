@@ -32,20 +32,19 @@ const DataAnalysis = lazy(() => import('./pages/products/DataAnalysis.tsx'));
 const SocialMedia = lazy(() => import('./pages/products/SocialMedia.tsx'));
 
 // Collabs pages
-const Collabs = lazy(() => import('./pages/collabs/Collabs.tsx'));
-const WalkingProject = lazy(() => import('./pages/collabs/WalkingProject.tsx'));
+const CollabsV2 = lazy(() => import('./pages/collabs/CollabsV2.tsx'));
+const WalkingProjectV2 = lazy(() => import('./pages/collabs/WalkingProjectV2.tsx'));
 const AiCrowd = lazy(() => import('./pages/collabs/AiCrowd.tsx'));
 const EcologicalFoundations = lazy(() => import('./pages/collabs/EcologicalFoundations.tsx'));
+const MirikCollege = lazy(() => import('./pages/collabs/MirikCollege.tsx'));
 
 // Our Work pages
-const MirikCollege = lazy(() => import('./pages/ourwork/MirikCollege.tsx'));
-const MadlyInLove = lazy(() => import('./pages/ourwork/MadlyInLove.tsx'));
 const FesIndia = lazy(() => import('./pages/ourwork/FesIndia.tsx'));
-const NestHomes = lazy(() => import('./pages/ourwork/NestHomes.tsx'));
 const RemodelUn = lazy(() => import('./pages/ourwork/RemodelUn.tsx'));
 const Rajkamal = lazy(() => import('./pages/ourwork/Rajkamal.tsx'));
-const AiCrowdBadge = lazy(() => import('./pages/ourwork/AiCrowdBadge.tsx'));
-const Vanya = lazy(() => import('./pages/ourwork/Vanya.tsx'));
+const Fermilab = lazy(() => import('./pages/ourwork/Fermilab.tsx'));
+const JanSahas = lazy(() => import('./pages/ourwork/JanSahas.tsx'));
+const AllWorks = lazy(() => import('./pages/ourwork/AllWorks.tsx'));
 
 // Legal pages
 const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy.tsx'));
@@ -106,20 +105,29 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/products/social-media" element={<SocialMedia />} />
 
           {/* Collabs Routes */}
-          <Route path="/collabs" element={<Collabs />} />
-          <Route path="/collabs/walking-project" element={<WalkingProject />} />
+          <Route path="/collabs" element={<CollabsV2 />} />
+          <Route path="/collabs-v2" element={<CollabsV2 />} />
+          <Route path="/collabs/walking-project" element={<WalkingProjectV2 />} />
+          <Route path="/collabs/walking-project-v2" element={<WalkingProjectV2 />} />
           <Route path="/collabs/ai-crowd" element={<AiCrowd />} />
           <Route path="/collabs/ecological-foundations" element={<EcologicalFoundations />} />
+          <Route path="/collabs/mirik-college" element={<MirikCollege />} />
+          <Route path="/collabs/mirikcollege" element={<MirikCollege />} />
+          <Route path="/collabs/sundargaan" element={<ComingSoon />} />
 
           {/* Our Work Routes */}
-          <Route path="/ourwork/mirik-college" element={<MirikCollege />} />
-          <Route path="/ourwork/madly-in-love" element={<MadlyInLove />} />
+          <Route path="/ourworks" element={<AllWorks />} />
           <Route path="/ourwork/fes-india" element={<FesIndia />} />
-          <Route path="/ourwork/nest-homes" element={<NestHomes />} />
           <Route path="/ourwork/remodel-un" element={<RemodelUn />} />
           <Route path="/ourwork/rajkamal" element={<Rajkamal />} />
-          <Route path="/ourwork/aicrowd-badge" element={<AiCrowdBadge />} />
-          <Route path="/ourwork/vanya" element={<Vanya />} />
+          <Route path="/ourwork/fermilab" element={<Fermilab />} />
+
+          <Route path="/ourwork/fermylab" element={<Fermilab />} />
+          <Route path="/ourwork/awch" element={<ComingSoon />} />
+          <Route path="/ourwork/jansahas" element={<JanSahas />} />
+          <Route path="/ourwork/village-ways" element={<ComingSoon />} />
+          <Route path="/ourwork/local-futures" element={<ComingSoon />} />
+          <Route path="/ourwork/givfunds" element={<ComingSoon />} />
 
           {/* Legal Routes */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

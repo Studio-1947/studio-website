@@ -14,6 +14,7 @@ interface DropdownItem {
     name: string;
     href: string;
     logo?: string;
+    placeholder?: boolean;
 }
 
 interface NavLink {
@@ -51,7 +52,7 @@ export default function Navbar() {
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string, name: string) => {
-        const unlockedRoutes = ['/', '/about', '/blogs', '/solutions', '/initiative', '/collabs/walking-project', '#'];
+        const unlockedRoutes = ['/', '/about', '/blogs', '/solutions', '/initiative', '/collabs/walking-project', '/collabs/mirikcollege', '#'];
 
         if (unlockedRoutes.includes(href) || name === 'Logo' || name === 'Search') {
             // Let normal navigation proceed
@@ -160,7 +161,8 @@ export default function Navbar() {
                 { name: 'Walking Project', href: '/collabs/walking-project', logo: '/collabs/walkingproject/walkingprojectlogo.svg' },
                 { name: 'Ai Crowd', href: '/collabs/ai-crowd', logo: '/collabs/aicrowd.png' },
                 { name: 'Ecological Foundations', href: '/collabs/ecological-foundations', logo: '/collabs/ecologicalfoundation.png' },
-                { name: 'Sundargaan', href: '/collabs/sundargaan' },
+                { name: 'Mirik College', href: '/collabs/mirikcollege', logo: '/collabs/Mirik_College_Logo.svg' },
+                { name: 'Sundargaan', href: '/collabs/sundargaan', placeholder: true },
             ]
         },
         {
@@ -321,9 +323,11 @@ export default function Navbar() {
                                                                 onClick={(e) => handleNavClick(e, item.href, item.name)}
                                                                 className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-lg transition-all group ${item.name === 'Walking Project' ? 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-900 hover:bg-[#F5D650] font-semibold' : isItemActive ? 'text-primary bg-primary/10' : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
                                                             >
-                                                                {item.logo && (
+                                                                {(item.logo || item.placeholder) && (
                                                                     <div className={`w-8 h-8 flex items-center justify-center p-1.5 shrink-0 transition-colors ${item.name === 'Walking Project' ? 'bg-black/5 dark:bg-white/10 group-hover:bg-white/20 dark:group-hover:bg-black/20 rounded-lg' : 'bg-black/5 dark:bg-white/10 rounded-full'}`}>
-                                                                        <img src={item.logo} alt="" className={`w-full h-full object-contain ${item.name === 'Walking Project' ? '' : 'filter drop-shadow-sm'}`} />
+                                                                        {item.logo
+                                                                            ? <img src={item.logo} alt="" className={`w-full h-full object-contain ${item.name === 'Walking Project' ? '' : 'filter drop-shadow-sm'}`} />
+                                                                            : <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 opacity-80" />}
                                                                     </div>
                                                                 )}
                                                                 {item.name}
@@ -471,9 +475,11 @@ export default function Navbar() {
                                                     onClick={(e) => handleNavClick(e, item.href, item.name)}
                                                     className={`text-xl font-medium transition-all group flex items-center gap-3 w-full px-4 py-3 rounded-xl ${item.name === 'Walking Project' ? 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-900 hover:bg-[#F5D650]' : isItemActive ? 'text-primary bg-primary/10' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
                                                 >
-                                                    {item.logo && (
+                                                    {(item.logo || item.placeholder) && (
                                                         <div className={`w-10 h-10 flex items-center justify-center p-2 shrink-0 transition-colors ${item.name === 'Walking Project' ? 'bg-black/5 dark:bg-white/10 group-hover:bg-white/20 dark:group-hover:bg-black/20 rounded-xl' : 'bg-black/5 dark:bg-white/10 rounded-full'}`}>
-                                                            <img src={item.logo} alt="" className={`w-full h-full object-contain ${item.name === 'Walking Project' ? '' : 'filter drop-shadow-sm'}`} />
+                                                            {item.logo
+                                                                ? <img src={item.logo} alt="" className={`w-full h-full object-contain ${item.name === 'Walking Project' ? '' : 'filter drop-shadow-sm'}`} />
+                                                                : <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 opacity-80" />}
                                                         </div>
                                                     )}
                                                     {item.name}

@@ -15,18 +15,18 @@ interface VerticalCardProps {
 export default function VerticalCard({ title, description, image, index }: VerticalCardProps) {
   const cardRef = useRef<HTMLDivElement>(null);
   const imageRef = useRef<HTMLImageElement>(null);
-  const overlayRef = useRef<HTMLDivElement>(null);
-  const textRevealRef = useRef<HTMLDivElement>(null);
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const descRef = useRef<HTMLParagraphElement>(null);
+  const dividerRef = useRef<HTMLDivElement>(null);
+  const glowRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
     const card = cardRef.current;
     if (!card) return;
 
-    // Set initial states
-    gsap.set(textRevealRef.current, { y: 18, opacity: 0 });
-    gsap.set(overlayRef.current, { opacity: 0 });
+    gsap.set([titleRef.current, descRef.current], { y: 16, opacity: 0 });
+    gsap.set(dividerRef.current, { scaleX: 0.45, transformOrigin: 'left center' });
 
-    // Staggered entrance
     gsap.fromTo(
       card,
       { y: 70, opacity: 0, scale: 0.97 },
@@ -45,13 +45,39 @@ export default function VerticalCard({ title, description, image, index }: Verti
       }
     );
 
-    // Hover timeline
+    gsap.to(imageRef.current, {
+      yPercent: 8,
+      ease: 'none',
+      scrollTrigger: {
+        trigger: card,
+        start: 'top bottom',
+        end: 'bottom top',
+        scrub: true,
+      },
+    });
+
+    gsap.to([titleRef.current, descRef.current], {
+      y: 0,
+      opacity: 1,
+      duration: 0.55,
+      stagger: 0.08,
+      ease: 'power3.out',
+      delay: 0.12,
+      scrollTrigger: {
+        trigger: card,
+        start: 'top 86%',
+        toggleActions: 'play none none none',
+      },
+    });
+
     const hoverTl = gsap.timeline({ paused: true, defaults: { ease: 'power3.out' } });
 
     hoverTl
-      .to(imageRef.current, { scale: 1.07, duration: 0.7 }, 0)
-      .to(overlayRef.current, { opacity: 1, duration: 0.4 }, 0)
-      .to(textRevealRef.current, { y: 0, opacity: 1, duration: 0.45 }, 0.08);
+      .to(imageRef.current, { scale: 1.08, duration: 0.9 }, 0)
+      .to(glowRef.current, { opacity: 1, duration: 0.45 }, 0)
+      .to(titleRef.current, { y: -4, duration: 0.35 }, 0)
+      .to(descRef.current, { y: -2, opacity: 0.96, duration: 0.35 }, 0.04)
+      .to(dividerRef.current, { scaleX: 1, duration: 0.5 }, 0.06);
 
     const handleMouseEnter = () => hoverTl.play();
     const handleMouseLeave = () => hoverTl.reverse();
@@ -63,50 +89,60 @@ export default function VerticalCard({ title, description, image, index }: Verti
       card.removeEventListener('mouseenter', handleMouseEnter);
       card.removeEventListener('mouseleave', handleMouseLeave);
       hoverTl.kill();
+      ScrollTrigger.getAll().forEach((trigger) => {
+        if (trigger.trigger === card) {
+          trigger.kill();
+        }
+      });
     };
   }, { scope: cardRef });
 
   return (
     <div
       ref={cardRef}
-      className="relative rounded-2xl overflow-hidden transform-gpu will-change-transform"
-      style={{ opacity: 0, aspectRatio: '3 / 4' }}
+      className="vertical-card group relative flex min-h-[24rem] flex-col overflow-hidden rounded-[2rem] border border-gray-200 bg-white p-7 shadow-sm transition-all duration-500 hover:-translate-y-1 hover:shadow-2xl dark:border-white/10 dark:bg-gray-950 dark:hover:shadow-[0_0_40px_-15px_rgba(255,255,255,0.1)] md:p-8"
+      style={{ opacity: 0 }}
     >
-      {/* Image */}
       <img
         ref={imageRef}
         src={image}
-        alt={title}
-        className="absolute inset-0 w-full h-full object-cover transform-gpu will-change-transform"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover opacity-35 transition-transform duration-[2.5s] ease-out group-hover:scale-105 dark:opacity-20"
       />
 
-      {/* Permanent bottom gradient */}
-      <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent pointer-events-none" />
-
-      {/* Hover overlay */}
+      <div className="absolute inset-0 bg-gradient-to-b from-white/15 via-white/70 to-white dark:from-gray-950/20 dark:via-gray-950/75 dark:to-gray-950" />
+      <div className="absolute inset-0 bg-gradient-to-br from-royal-500/[0.03] via-transparent to-amber-400/[0.04] opacity-80 transition-opacity duration-500 group-hover:opacity-100 dark:from-royal-400/[0.06] dark:to-amber-200/[0.05]" />
       <div
-        ref={overlayRef}
-        className="absolute inset-0 bg-black/20 pointer-events-none"
+        ref={glowRef}
+        className="pointer-events-none absolute inset-0 opacity-0"
+        style={{ background: 'radial-gradient(120% 80% at 50% 100%, rgba(37, 99, 235, 0.16) 0%, rgba(37, 99, 235, 0) 60%)' }}
       />
 
-      {/* Title anchor — absolutely pinned to the bottom */}
-      <div className="absolute bottom-0 left-0 right-0 px-6 pb-7">
+      <div className="relative z-10 mt-auto px-1 pb-1 text-left">
+        <div className="grid h-[14.25rem] grid-rows-[3.25rem,1fr,auto] md:h-[14.75rem] md:grid-rows-[3.5rem,1fr,auto]">
+          <h3
+            ref={titleRef}
+            className="overflow-hidden text-ellipsis whitespace-nowrap text-[clamp(1.45rem,1.15vw,1.7rem)] font-black leading-tight tracking-tight text-gray-900 dark:text-white"
+          >
+            {title}
+          </h3>
 
-        {/* Description — floats above the title, out of flow */}
-        <div
-          ref={textRevealRef}
-          className="absolute bottom-full left-0 right-0 px-6 pb-4 pt-20 bg-gradient-to-t from-black/60 to-transparent pointer-events-none transform-gpu will-change-transform"
-        >
-          <p className="text-white/80 text-sm leading-relaxed">
+          <p
+            ref={descRef}
+            className="overflow-hidden text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:text-[0.95rem]"
+            style={{
+              display: '-webkit-box',
+              WebkitLineClamp: 6,
+              WebkitBoxOrient: 'vertical',
+              overflow: 'hidden',
+            }}
+          >
             {description}
           </p>
+
+          <div ref={dividerRef} className="mt-6 h-px w-full bg-gradient-to-r from-royal-600/25 via-gray-300 to-transparent dark:from-royal-400/30 dark:via-white/10" />
         </div>
-
-        {/* Title — always at the same height */}
-        <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight">
-          {title}
-        </h3>
-
       </div>
     </div>
   );
