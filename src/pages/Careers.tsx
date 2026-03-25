@@ -178,7 +178,7 @@ const Careers: React.FC = () => {
               href="https://docs.google.com/forms/d/e/1FAIpQLSedpUsfmmY12ooR1NJLEh18d1MGXRu5H6nh2YufE2GGZeMdmw/viewform"
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 inline-flex items-center justify-center px-7 py-3 text-sm font-bold text-white bg-gray-900 dark:bg-white dark:text-gray-900 hover:bg-royal-700 dark:hover:bg-royal-400 dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
+              className="shrink-0 inline-flex items-center justify-center px-7 py-3 text-sm font-bold text-white bg-gray-900 dark:bg-white dark:text-gray-900 hover:bg-royal-700 dark:hover:bg-gray-700 dark:hover:text-white transition-all duration-300 hover:-translate-y-0.5"
             >
               Introduce Yourself
               <svg className="w-4 h-4 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">

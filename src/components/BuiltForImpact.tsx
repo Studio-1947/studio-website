@@ -1,34 +1,14 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
 
-const PROJECTS = [
-    {
-        client: "Vanya Branding",
-        category: "UI Screens & Packaging",
-        image: "/ourworks/vanya/thumbnail.avif",
-        color: "bg-[#eef0ec] dark:bg-[#1c2321]",
-        link: "/ourwork/vanya"
-    },
-    // {
-    //     client: "AIcrowd Badge & Reputation System",
-    //     category: "A Design System for 75K+ Members",
-    //     image: "/ourworks/aicrowd/thumbnail.avif",
-    //     color: "bg-[#0b0c10] dark:bg-[#0b0c10]",
-    //     link: "/ourwork/aicrowd-badge"
-    // },
+export const PROJECTS = [
     {
         client: "RemodelUN",
         category: "Brand Identity & Design Guideline",
         image: "/client/RemodelUN.avif",
         color: "bg-gray-100 dark:bg-gray-800",
         link: "/ourwork/remodel-un"
-    },
-    {
-        client: "Madly in LOVE",
-        category: "Event Branding & Social Media Promotional Creatives",
-        image: "/client/madly_in_love.avif",
-        color: "bg-gray-100 dark:bg-gray-800",
-        link: "/ourwork/madly-in-love"
     },
     {
         client: "Rajkamal Prakashan",
@@ -45,83 +25,208 @@ const PROJECTS = [
         link: "/ourwork/fes-india"
     },
     {
-        client: "Nest Homes Rebranding",
-        category: "Brochure & Event Branding",
-        image: "/collabs/Nest_Homes.avif",
-        color: "bg-orange-50 dark:bg-orange-900/20",
-        link: "/ourwork/nest-homes"
+        client: "Fermilab",
+        category: "Brand Identity, Packaging & Retail",
+        image: "/ourworks/Fermilab/fermilab_storefront.png",
+        color: "bg-emerald-50 dark:bg-emerald-900/20",
+        link: "/ourwork/fermilab"
     },
     {
-        client: "Mirik College",
-        category: "Capacity Building through trainings beyond the Classroom",
-        image: "/collabs/mirikcollege.avif",
-        color: "bg-blue-50 dark:bg-blue-900/20",
-        link: "/ourwork/mirik-college"
+        client: "AWCH",
+        category: "Coming Soon",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3C/svg%3E",
+        color: "bg-gray-100 dark:bg-gray-800",
+        link: "/ourwork/awch"
+    },
+    {
+        client: "JanSahas",
+        category: "Website Design & Digital Communication",
+        image: "/ourworks/janSahas/Jansahas.png",
+        color: "bg-gray-100 dark:bg-gray-800",
+        link: "/ourwork/jansahas"
+    },
+    {
+        client: "Village Ways",
+        category: "Coming Soon",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3C/svg%3E",
+        color: "bg-gray-100 dark:bg-gray-800",
+        link: "/ourwork/village-ways"
+    },
+    {
+        client: "Local Futures",
+        category: "Coming Soon",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3C/svg%3E",
+        color: "bg-gray-100 dark:bg-gray-800",
+        link: "/ourwork/local-futures"
+    },
+    {
+        client: "givfunds",
+        category: "Coming Soon",
+        image: "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3C/svg%3E",
+        color: "bg-gray-100 dark:bg-gray-800",
+        link: "/ourwork/givfunds"
     }
 ];
 
+const MOBILE_BREAKPOINT = 640;
+
 export default function BuiltForImpact() {
-    const containerRef = useRef<HTMLDivElement>(null);
+    const sliderRef = useRef<HTMLDivElement>(null);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const [visibleCards, setVisibleCards] = useState(() =>
+        typeof window !== 'undefined' && window.innerWidth < MOBILE_BREAKPOINT ? 1 : 2
+    );
+
+    useEffect(() => {
+        const updateVisibleCards = () => {
+            setVisibleCards(window.innerWidth < MOBILE_BREAKPOINT ? 1 : 2);
+        };
+
+        updateVisibleCards();
+        window.addEventListener('resize', updateVisibleCards);
+        return () => window.removeEventListener('resize', updateVisibleCards);
+    }, []);
+
+    const maxIndex = Math.max(0, PROJECTS.length - visibleCards);
+
+    useEffect(() => {
+        setActiveIndex(prev => Math.min(prev, maxIndex));
+    }, [maxIndex]);
+
+    const getStepWidth = () => {
+        if (!sliderRef.current) return 0;
+        const firstCard = sliderRef.current.firstElementChild as HTMLElement | null;
+        if (!firstCard) return 0;
+
+        const gap = parseFloat(getComputedStyle(sliderRef.current).columnGap || '0');
+        return firstCard.offsetWidth + gap;
+    };
+
+    const canPrev = activeIndex > 0;
+    const canNext = activeIndex < maxIndex;
+
+    const scroll = (dir: 'prev' | 'next') => {
+        setActiveIndex(i => {
+            const next = dir === 'next'
+                ? Math.min(i + 1, maxIndex)
+                : Math.max(i - 1, 0);
+
+            // Programmatic scroll so the DOM moves in sync
+            if (sliderRef.current) {
+                const stepWidth = getStepWidth();
+                sliderRef.current.scrollTo({ left: stepWidth * next, behavior: 'smooth' });
+            }
+            return next;
+        });
+    };
 
     return (
-        <section id="works" ref={containerRef} className="bg-white dark:bg-black py-24 relative">
+        <section id="works" className="bg-white dark:bg-black py-24 relative overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex flex-col lg:flex-row gap-12 lg:gap-20">
 
-                    {/* Sticky Left Content */}
-                    <div className="w-full lg:w-1/3 lg:h-screen lg:sticky lg:top-24 flex flex-col justify-start">
-                        <span className="inline-block py-1 px-3 w-fit rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold tracking-wide uppercase mb-6">
+                {/* Header row */}
+                <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
+                    <div>
+                        <span className="inline-block py-1 px-3 w-fit rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold tracking-wide uppercase mb-4">
                             ● Projects
                         </span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6 leading-tight">
+                        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white leading-tight">
                             Built For Impact
                         </h2>
-                        <p className="text-gray-500 dark:text-gray-400 text-lg leading-relaxed mb-10">
-                            As a transparent agency we always want our clients to know how we work?, what we do? & how we do?
+                        <p className="text-gray-500 dark:text-gray-400 text-base mt-3 max-w-xl leading-relaxed">
+                            As a transparent agency we always want our clients to know how we work, what we do &amp; how we do.
                         </p>
-
-                        {/* <button className="flex items-center gap-2 bg-black dark:bg-white text-white dark:text-black px-6 py-3 rounded-full font-medium w-fit hover:opacity-80 transition-opacity">
-                            All Projects
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                <line x1="5" y1="12" x2="19" y2="12"></line>
-                                <polyline points="12 5 19 12 12 19"></polyline>
-                            </svg>
-                        </button> */}
                     </div>
 
-                    {/* Scrollable Right Content */}
-                    <div className="w-full lg:w-2/3 flex flex-col gap-8 lg:gap-12">
-                        {PROJECTS.map((project, index) => {
-                            const content = (
-                                <>
-                                    {/* Large Image Area */}
-                                    <div className={`aspect-[4/3] w-full ${project.color} rounded-2xl relative overflow-hidden group flex items-center justify-center`}>
-                                        <img src={project.image} alt={project.client} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                                    </div>
+                    {/* Nav arrows */}
+                    <div className="flex items-center gap-3 shrink-0">
+                        <button
+                            onClick={() => scroll('prev')}
+                            disabled={!canPrev}
+                            aria-label="Previous projects"
+                            className="w-11 h-11 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-gray-900 dark:hover:border-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none"
+                        >
+                            <ArrowLeft className="w-4 h-4" />
+                        </button>
+                        <button
+                            onClick={() => scroll('next')}
+                            disabled={!canNext}
+                            aria-label="Next projects"
+                            className="w-11 h-11 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-gray-900 dark:hover:border-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none"
+                        >
+                            <ArrowRight className="w-4 h-4" />
+                        </button>
 
-                                    {/* Project Details */}
-                                    <div className="flex justify-between items-center text-sm md:text-base">
-                                        <div className="flex items-center gap-2">
-                                            <span className="font-bold text-gray-900 dark:text-white transition-colors duration-300 group-hover:text-royal-600 dark:group-hover:text-royal-400">{project.client}</span>
-                                            <span className="text-gray-400 dark:text-gray-500">{project.category}</span>
-                                        </div>
-                                    </div>
-                                </>
-                            );
-
-                            return project.link ? (
-                                <Link key={index} to={project.link} className="flex flex-col gap-4 group cursor-pointer block">
-                                    {content}
-                                </Link>
-                            ) : (
-                                <div key={index} className="flex flex-col gap-4">
-                                    {content}
-                                </div>
-                            );
-                        })}
+                        <Link
+                            to="/ourworks"
+                            className="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none"
+                        >
+                            All Works
+                            <ArrowUpRight className="w-4 h-4" />
+                        </Link>
                     </div>
-
                 </div>
+
+                {/* Slider track */}
+                <div className="relative">
+                    <div
+                        ref={sliderRef}
+                        className="flex gap-6 overflow-x-hidden scroll-smooth"
+                        style={{ scrollSnapType: 'x mandatory' }}
+                    >
+                        {PROJECTS.map((project, index) => (
+                            <Link
+                                key={index}
+                                to={project.link}
+                                className="flex-none w-full sm:w-[calc((100%-1.5rem)/2)] min-w-0 sm:min-w-[320px] flex flex-col gap-4 group cursor-pointer"
+                                style={{ scrollSnapAlign: 'start' }}
+                            >
+                                {/* Image */}
+                                <div className={`aspect-[4/3] w-full ${project.color} rounded-2xl relative overflow-hidden`}>
+                                    <img
+                                        src={project.image}
+                                        alt={project.client}
+                                        loading="lazy"
+                                        decoding="async"
+                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                    />
+                                </div>
+
+                                {/* Details */}
+                                <div className="flex flex-col gap-1 px-1">
+                                    <span className="font-bold text-gray-900 dark:text-white text-base leading-snug group-hover:text-royal-600 dark:group-hover:text-royal-400 transition-colors">
+                                        {project.client}
+                                    </span>
+                                    <span className="text-gray-400 dark:text-gray-500 text-sm leading-snug line-clamp-2">
+                                        {project.category}
+                                    </span>
+                                </div>
+                            </Link>
+                        ))}
+                    </div>
+
+                    {/* Dot indicators */}
+                    <div className="flex items-center justify-center gap-2 mt-8">
+                        {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => {
+                                    setActiveIndex(i);
+                                    if (sliderRef.current) {
+                                        const stepWidth = getStepWidth();
+                                        sliderRef.current.scrollTo({ left: stepWidth * i, behavior: 'smooth' });
+                                    }
+                                }}
+                                aria-label={`Go to slide ${i + 1}`}
+                                className={`h-1.5 rounded-full transition-all select-none ${activeIndex === i
+                                        ? 'w-8 bg-gray-900 dark:bg-white'
+                                        : 'w-1.5 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-500'
+                                    }`}
+                            />
+                        ))}
+                    </div>
+                </div>
+
             </div>
         </section>
     );

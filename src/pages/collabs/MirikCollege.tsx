@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+﻿import { useEffect } from 'react';
 import Layout from '../../components/Layout';
 
 export default function MirikCollege() {
@@ -50,7 +50,7 @@ export default function MirikCollege() {
                             <div className="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
                             <div className="absolute bottom-6 left-6 right-6 lg:right-auto max-w-2xl z-10">
                                 <p className="text-sm md:text-base font-medium leading-relaxed text-gray-100 drop-shadow-xl">
-                                    What happens when you take geography out of the textbook and drop it right in the middle of the hills of Darjeeling? That’s exactly what we’re doing with Mirik College. Together, we designed a 60-hour intensive program that blended classroom learning, hands-on workshops, and fieldwork into one big cauldron. Just being a part of academic activity, practical training, and on-ground discovery, it is built around curiosity and experience.
+                                    What happens when you take geography out of the textbook and drop it right in the middle of the hills of Darjeeling? ThatΓÇÖs exactly what weΓÇÖre doing with Mirik College. Together, we designed a 60-hour intensive program that blended classroom learning, hands-on workshops, and fieldwork into one big cauldron. Just being a part of academic activity, practical training, and on-ground discovery, it is built around curiosity and experience.
                                 </p>
                             </div>
                         </div>
@@ -74,7 +74,7 @@ export default function MirikCollege() {
                                     Instead of only hearing about livelihoods, communities, and human-nature relationships, students get to experience them firsthand. One day, they are in a classroom discussing how local economies work. Next, they walk through tea garden villages, talking to the residents, observing daily routines, and seeing how theory plays out in real life.
                                 </p>
                                 <p>
-                                    The aim is simple. Learning should not stop at just notes and exams. It should move, ask questions, and sometimes feel uncomfortable in a good way. This approach helps students understand that geography is not abstract. It lives in people’s homes, work, and everyday decisions.
+                                    The aim is simple. Learning should not stop at just notes and exams. It should move, ask questions, and sometimes feel uncomfortable in a good way. This approach helps students understand that geography is not abstract. It lives in peopleΓÇÖs homes, work, and everyday decisions.
                                 </p>
                             </div>
                         </div>
@@ -123,7 +123,7 @@ export default function MirikCollege() {
                                     <h3 className="text-2xl font-bold mb-4 uppercase">Fieldwork Component</h3>
                                     <div className="text-sm font-bold tracking-widest uppercase mb-6 text-orange-600">20 Hours</div>
                                     <p className="text-sm leading-relaxed text-gray-600 group-hover:text-gray-400">
-                                        Fieldwork formed the heart of the project. This was where concepts from the classroom met lived experience, and where students began to understand geography as something shaped by people’s daily lives.
+                                        Fieldwork formed the heart of the project. This was where concepts from the classroom met lived experience, and where students began to understand geography as something shaped by peopleΓÇÖs daily lives.
                                     </p>
                                 </div>
                             </div>
@@ -217,7 +217,7 @@ export default function MirikCollege() {
                                 <h2 className="text-2xl lg:text-4xl font-black uppercase mb-6 tracking-tight">Outcomes & Learning Impact</h2>
                                 <div className="w-12 h-1 bg-black mb-6"></div>
                                 <p className="text-black/80 font-medium leading-relaxed mb-6 text-sm md:text-base">
-                                    The project resulted in a detailed, ground-level understanding of livelihood conditions in the selected villages, based entirely on primary data collected by the students. Beyond the research output, the process strengthened students’ confidence in conducting fieldwork, engaging with communities respectfully, and connecting theory with observation.
+                                    The project resulted in a detailed, ground-level understanding of livelihood conditions in the selected villages, based entirely on primary data collected by the students. Beyond the research output, the process strengthened studentsΓÇÖ confidence in conducting fieldwork, engaging with communities respectfully, and connecting theory with observation.
                                 </p>
                                 <p className="text-black/80 font-medium leading-relaxed text-sm md:text-base">
                                     At the conclusion of the project, all participating students received certificates issued by Studio 1947, recognizing their completion of the program and their active involvement in applied research.

@@ -2,17 +2,11 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 
 const logos = [
-  { src: "/logos/awch.svg", alt: "Awch" },
-  { src: "/logos/Bazmkaar Logo.svg", alt: "Bazmkaar" },
-  { src: "/logos/Bhagyam.svg", alt: "Bhagyam" },
-  { src: "/logos/ecopt.svg", alt: "Ecopt" },
-  { src: "/logos/Fes.svg", alt: "Fes" },
-  { src: "/logos/Jansahas.svg", alt: "Jansahas" },
-  { src: "/logos/Nest homes.svg", alt: "Nest Homes" },
+  { src: "/logos/Fes.svg", alt: "FES" },
+  { src: "/logos/awch.svg", alt: "AWCH" },
   { src: "/logos/Rajkamal Logo.svg", alt: "Rajkamal" },
   { src: "/logos/Remodel UN.svg", alt: "Remodel UN" },
-  { src: "/logos/Sikkim Himal.svg", alt: "Sikkim Himal" },
-  // { src: "/logos/Sundargan.svg", alt: "Sundargan" },
+  { src: "/logos/Jansahas.svg", alt: "JanSahas" },
 ];
 
 const CONTENT = {
