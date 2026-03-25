@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 export default function ThemeToggle() {
+    const location = useLocation();
+
     const [isDark, setIsDark] = useState(() => {
         if (typeof window !== 'undefined') {
             return localStorage.getItem('theme') === 'dark' ||
@@ -8,6 +11,15 @@ export default function ThemeToggle() {
         }
         return false;
     });
+
+    useEffect(() => {
+        const isOurWorkRoute =
+            location.pathname === '/ourworks' || location.pathname.startsWith('/ourwork/');
+
+        if (isOurWorkRoute) {
+            setIsDark(false);
+        }
+    }, [location.pathname]);
 
     useEffect(() => {
         if (isDark) {
