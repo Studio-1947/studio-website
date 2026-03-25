@@ -1,78 +1,87 @@
-import { StrictMode, lazy, Suspense } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import App from './App.tsx';
-import Layout from './components/Layout.tsx';
-import ScrollToTop from './components/ScrollToTop.tsx';
-import './index.css';
-import NotFound from './pages/NotFound.tsx';
-import ExternalRedirect from './components/ExternalRedirect.tsx';
+import { StrictMode, lazy, Suspense } from "react";
+import { createRoot } from "react-dom/client";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import App from "./App.tsx";
+import Layout from "./components/Layout.tsx";
+import ScrollToTop from "./components/ScrollToTop.tsx";
+import "./index.css";
+import NotFound from "./pages/NotFound.tsx";
+import ExternalRedirect from "./components/ExternalRedirect.tsx";
 
 // ─── Route-level lazy imports ──────────────────────────────────────────────
 // Each lazy() call creates a separate chunk loaded only when the route is visited
 
 // Core pages
-const Initiative = lazy(() => import('./pages/Initiative.tsx'));
-const TeamMember = lazy(() => import('./pages/TeamMember.tsx'));
-const About = lazy(() => import('./pages/About.tsx'));
-const Careers = lazy(() => import('./pages/Careers.tsx'));
-const Story = lazy(() => import('./pages/Story.tsx'));
-const Solutions = lazy(() => import('./pages/Solutions.tsx'));
-const ComingSoon = lazy(() => import('./pages/ComingSoon.tsx'));
+const Initiative = lazy(() => import("./pages/Initiative.tsx"));
+const TeamMember = lazy(() => import("./pages/TeamMember.tsx"));
+const About = lazy(() => import("./pages/About.tsx"));
+const Careers = lazy(() => import("./pages/Careers.tsx"));
+const Story = lazy(() => import("./pages/Story.tsx"));
+const Solutions = lazy(() => import("./pages/Solutions.tsx"));
+const ComingSoon = lazy(() => import("./pages/ComingSoon.tsx"));
 
 // Blog pages
-const Blogs = lazy(() => import('./pages/blogs/Blogs.tsx'));
-const BlogPost = lazy(() => import('./pages/blogs/BlogPost.tsx'));
+const Blogs = lazy(() => import("./pages/blogs/Blogs.tsx"));
+const BlogPost = lazy(() => import("./pages/blogs/BlogPost.tsx"));
 
 // Product pages
-const Products = lazy(() => import('./pages/products/Products.tsx'));
-const Doptor = lazy(() => import('./pages/products/Doptor.tsx'));
-const Angan = lazy(() => import('./pages/products/Angan.tsx'));
-const DataAnalysis = lazy(() => import('./pages/products/DataAnalysis.tsx'));
-const SocialMedia = lazy(() => import('./pages/products/SocialMedia.tsx'));
+const Products = lazy(() => import("./pages/products/Products.tsx"));
+const Doptor = lazy(() => import("./pages/products/Doptor.tsx"));
+const Angan = lazy(() => import("./pages/products/Angan.tsx"));
+const DataAnalysis = lazy(() => import("./pages/products/DataAnalysis.tsx"));
+const SocialMedia = lazy(() => import("./pages/products/SocialMedia.tsx"));
 
 // Collabs pages
-const CollabsV2 = lazy(() => import('./pages/collabs/CollabsV2.tsx'));
-const WalkingProjectV2 = lazy(() => import('./pages/collabs/WalkingProjectV2.tsx'));
-const AiCrowd = lazy(() => import('./pages/collabs/AiCrowd.tsx'));
-const EcologicalFoundations = lazy(() => import('./pages/collabs/EcologicalFoundations.tsx'));
-const MirikCollege = lazy(() => import('./pages/collabs/MirikCollege.tsx'));
+const CollabsV2 = lazy(() => import("./pages/collabs/CollabsV2.tsx"));
+const WalkingProjectV2 = lazy(
+  () => import("./pages/collabs/WalkingProjectV2.tsx"),
+);
+const AiCrowd = lazy(() => import("./pages/collabs/AiCrowd.tsx"));
+const EcologicalFoundations = lazy(
+  () => import("./pages/collabs/EcologicalFoundations.tsx"),
+);
+const MirikCollege = lazy(() => import("./pages/collabs/MirikCollege.tsx"));
 
 // Our Work pages
-const FesIndia = lazy(() => import('./pages/ourwork/FesIndia.tsx'));
-const RemodelUn = lazy(() => import('./pages/ourwork/RemodelUn.tsx'));
-const Rajkamal = lazy(() => import('./pages/ourwork/Rajkamal.tsx'));
-const Fermilab = lazy(() => import('./pages/ourwork/Fermilab.tsx'));
-const JanSahas = lazy(() => import('./pages/ourwork/JanSahas.tsx'));
-const AllWorks = lazy(() => import('./pages/ourwork/AllWorks.tsx'));
+const FesIndia = lazy(() => import("./pages/ourwork/FesIndia.tsx"));
+const RemodelUn = lazy(() => import("./pages/ourwork/RemodelUn.tsx"));
+const Rajkamal = lazy(() => import("./pages/ourwork/Rajkamal.tsx"));
+const Fermilab = lazy(() => import("./pages/ourwork/Fermilab.tsx"));
+const Awch = lazy(() => import("./pages/ourwork/Awch.tsx"));
+const JanSahas = lazy(() => import("./pages/ourwork/JanSahas.tsx"));
+const AllWorks = lazy(() => import("./pages/ourwork/AllWorks.tsx"));
 
 // Legal pages
-const PrivacyPolicy = lazy(() => import('./pages/legal/PrivacyPolicy.tsx'));
-const TermsOfService = lazy(() => import('./pages/legal/TermsOfService.tsx'));
+const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.tsx"));
+const TermsOfService = lazy(() => import("./pages/legal/TermsOfService.tsx"));
 
 // ─── Loading Fallback ──────────────────────────────────────────────────────
 const PageLoader = () => (
-  <div style={{
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'center',
-    minHeight: '100vh',
-    background: 'var(--bg, #fff)',
-  }}>
-    <div style={{
-      width: 40,
-      height: 40,
-      border: '3px solid #e5e7eb',
-      borderTopColor: '#1d4ed8',
-      borderRadius: '50%',
-      animation: 'spin 0.7s linear infinite',
-    }} />
+  <div
+    style={{
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      minHeight: "100vh",
+      background: "var(--bg, #fff)",
+    }}
+  >
+    <div
+      style={{
+        width: 40,
+        height: 40,
+        border: "3px solid #e5e7eb",
+        borderTopColor: "#1d4ed8",
+        borderRadius: "50%",
+        animation: "spin 0.7s linear infinite",
+      }}
+    />
     <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
   </div>
 );
 
 // ─── Root ──────────────────────────────────────────────────────────────────
-createRoot(document.getElementById('root')!).render(
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
     <BrowserRouter>
       <ScrollToTop />
@@ -81,10 +90,20 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/" element={<App />} />
 
           {/* External Redirects */}
-          <Route path="/sirflocal" element={<ExternalRedirect to="https://www.sirflocal.in" />} />
+          <Route
+            path="/sirflocal"
+            element={<ExternalRedirect to="https://www.sirflocal.in" />}
+          />
 
           {/* Initiative Routes */}
-          <Route path="/initiative" element={<Layout><Initiative /></Layout>} />
+          <Route
+            path="/initiative"
+            element={
+              <Layout>
+                <Initiative />
+              </Layout>
+            }
+          />
 
           {/* Core Routes */}
           <Route path="/team/:slug" element={<TeamMember />} />
@@ -107,10 +126,19 @@ createRoot(document.getElementById('root')!).render(
           {/* Collabs Routes */}
           <Route path="/collabs" element={<CollabsV2 />} />
           <Route path="/collabs-v2" element={<CollabsV2 />} />
-          <Route path="/collabs/walking-project" element={<WalkingProjectV2 />} />
-          <Route path="/collabs/walking-project-v2" element={<WalkingProjectV2 />} />
+          <Route
+            path="/collabs/walking-project"
+            element={<WalkingProjectV2 />}
+          />
+          <Route
+            path="/collabs/walking-project-v2"
+            element={<WalkingProjectV2 />}
+          />
           <Route path="/collabs/ai-crowd" element={<AiCrowd />} />
-          <Route path="/collabs/ecological-foundations" element={<EcologicalFoundations />} />
+          <Route
+            path="/collabs/ecological-foundations"
+            element={<EcologicalFoundations />}
+          />
           <Route path="/collabs/mirik-college" element={<MirikCollege />} />
           <Route path="/collabs/mirikcollege" element={<MirikCollege />} />
           <Route path="/collabs/sundargaan" element={<ComingSoon />} />
@@ -123,7 +151,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/ourwork/fermilab" element={<Fermilab />} />
 
           <Route path="/ourwork/fermylab" element={<Fermilab />} />
-          <Route path="/ourwork/awch" element={<ComingSoon />} />
+          <Route path="/ourwork/awch" element={<Awch />} />
           <Route path="/ourwork/jansahas" element={<JanSahas />} />
           <Route path="/ourwork/village-ways" element={<ComingSoon />} />
           <Route path="/ourwork/local-futures" element={<ComingSoon />} />
