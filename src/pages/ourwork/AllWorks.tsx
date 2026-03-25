@@ -51,13 +51,13 @@ const AllWorks: React.FC = () => {
                                 className="flex flex-col gap-4 group cursor-pointer self-start"
                             >
                                 {/* Image */}
-                                <div className={`aspect-[4/3] w-full ${project.color} rounded-2xl relative overflow-hidden`}>
+                                <div className={`aspect-[4/3] w-full ${project.color} ${project.imageContainerClass ?? ''} rounded-2xl relative overflow-hidden`}>
                                     <img
                                         src={project.image}
                                         alt={project.client}
                                         loading="lazy"
                                         decoding="async"
-                                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        className={`${project.imageClass ?? 'w-full h-full object-cover'} transition-transform duration-500 ${project.disableHoverZoom ? '' : 'group-hover:scale-105'}`}
                                     />
                                 </div>
 

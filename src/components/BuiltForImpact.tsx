@@ -47,26 +47,26 @@ export const PROJECTS = [
   },
   {
     client: "Village Ways",
-    category: "Coming Soon",
-    image:
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3C/svg%3E",
-    color: "bg-gray-100 dark:bg-gray-800",
+    category: "Brand Identity & Visual Communication",
+    image: "/ourworks/villageways/CM1.svg",
+    color: "bg-pink-50 dark:bg-pink-950/20",
     link: "/ourwork/village-ways",
   },
   {
     client: "Local Futures",
-    category: "Coming Soon",
-    image:
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3C/svg%3E",
-    color: "bg-gray-100 dark:bg-gray-800",
+    category: "Video Translation & Localization",
+    image: "/ourworks/localfutures/local-futures-logo-2.png",
+    color: "bg-white dark:bg-black",
+    imageContainerClass: "flex items-center justify-center",
+    imageClass: "w-auto h-auto max-w-full max-h-full object-contain p-6",
+    disableHoverZoom: true,
     link: "/ourwork/local-futures",
   },
   {
-    client: "givfunds",
-    category: "Coming Soon",
-    image:
-      "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='300'%3E%3Crect fill='%23f3f4f6' width='400' height='300'/%3E%3C/svg%3E",
-    color: "bg-gray-100 dark:bg-gray-800",
+    client: "Givfunds",
+    category: "Brand Identity & Visual Communication",
+    image: "/ourworks/givfunds/Givfuds%2002.jpg",
+    color: "bg-red-50 dark:bg-red-950/20",
     link: "/ourwork/givfunds",
   },
 ];
@@ -195,14 +195,14 @@ export default function BuiltForImpact() {
               >
                 {/* Image */}
                 <div
-                  className={`aspect-[4/3] w-full ${project.color} rounded-2xl relative overflow-hidden`}
+                  className={`aspect-[4/3] w-full ${project.color} ${project.imageContainerClass ?? ""} rounded-2xl relative overflow-hidden`}
                 >
                   <img
                     src={project.image}
                     alt={project.client}
                     loading="lazy"
                     decoding="async"
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    className={`${project.imageClass ?? "w-full h-full object-cover"} transition-transform duration-500 ${project.disableHoverZoom ? "" : "group-hover:scale-105"}`}
                   />
                 </div>
 

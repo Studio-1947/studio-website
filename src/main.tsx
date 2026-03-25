@@ -49,6 +49,9 @@ const Rajkamal = lazy(() => import("./pages/ourwork/Rajkamal.tsx"));
 const Fermilab = lazy(() => import("./pages/ourwork/Fermilab.tsx"));
 const Awch = lazy(() => import("./pages/ourwork/Awch.tsx"));
 const JanSahas = lazy(() => import("./pages/ourwork/JanSahas.tsx"));
+const Givfunds = lazy(() => import("./pages/ourwork/Givfunds.tsx"));
+const VillageWays = lazy(() => import("./pages/ourwork/VillageWays.tsx"));
+const LocalFutures = lazy(() => import("./pages/ourwork/LocalFutures.tsx"));
 const AllWorks = lazy(() => import("./pages/ourwork/AllWorks.tsx"));
 
 // Legal pages
@@ -153,9 +156,9 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/ourwork/fermylab" element={<Fermilab />} />
           <Route path="/ourwork/awch" element={<Awch />} />
           <Route path="/ourwork/jansahas" element={<JanSahas />} />
-          <Route path="/ourwork/village-ways" element={<ComingSoon />} />
-          <Route path="/ourwork/local-futures" element={<ComingSoon />} />
-          <Route path="/ourwork/givfunds" element={<ComingSoon />} />
+          <Route path="/ourwork/village-ways" element={<VillageWays />} />
+          <Route path="/ourwork/local-futures" element={<LocalFutures />} />
+          <Route path="/ourwork/givfunds" element={<Givfunds />} />
 
           {/* Legal Routes */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

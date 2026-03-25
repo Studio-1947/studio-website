@@ -498,6 +498,161 @@ export const ourWorksData: BrandWork[] = [
       "/ourworks/awch/Final Poster 6.png",
     ],
   },
+
+  // ─── Givfunds ────────────────────────────────────────────────────────────
+  {
+    slug: "givfunds",
+    title: "Givfunds",
+    subtitle: "Brand Identity and Visual Communication",
+    year: "2026",
+    tags: ["Brand Identity", "Campaign Design", "Social Impact"],
+    studio: "Studio 1947",
+    credits: [
+      { role: "Creative Direction", name: "Rabi" },
+      { role: "Brand Design", name: "Studio 1947 Team" },
+      { role: "Visual Communication", name: "Studio 1947 Team" },
+    ],
+    overview: {
+      heading: "Building Urgency Through Clarity",
+      paragraphs: [
+        "Givfunds needed a visual language that could communicate trust and urgency at the same time across social, print, and campaign touchpoints.",
+        "We developed a bold communication system centered on strong red accents, direct typography, and clean layouts that keep focus on cause, contribution, and action.",
+      ],
+    },
+    logoImages: ["/ourworks/givfunds/logo.png", "/ourworks/givfunds/logo01.png"],
+    typefaces: [
+      {
+        name: "Montserrat",
+        designer: "Julieta Ulanovsky",
+        released: "2011",
+        foundry: "The Montserrat Project",
+        style: "Sans-serif — Headlines and campaign statements",
+      },
+      {
+        name: "Inter",
+        designer: "Rasmus Andersson",
+        released: "2017",
+        foundry: "Rasmus Andersson",
+        style: "Sans-serif — Body copy and digital UI",
+      },
+    ],
+    colors: [
+      {
+        hex: "#C20000",
+        rgb: "194, 0, 0",
+        cmyk: "0, 100, 100, 24",
+        label: "Givfunds Red",
+      },
+      {
+        hex: "#ffffff",
+        rgb: "255, 255, 255",
+        cmyk: "0, 0, 0, 0",
+        label: "White",
+      },
+      {
+        hex: "#111111",
+        rgb: "17, 17, 17",
+        cmyk: "0, 0, 0, 93",
+        label: "Ink Black",
+      },
+    ],
+    artDirectionImages: [
+      "/ourworks/givfunds/Givfuds%2002.jpg",
+      "/ourworks/givfunds/Givfunds%204.jpg",
+      "/ourworks/givfunds/Poster%204.jpg",
+      "/ourworks/givfunds/JULYY%2001.png",
+    ],
+    applicationImages: [
+      "/ourworks/givfunds/giv%20edu%2001.jpg",
+      "/ourworks/givfunds/giv%20edu%2002.jpg",
+      "/ourworks/givfunds/givs06.jpg",
+      "/ourworks/givfunds/wa1.jpg",
+    ],
+  },
+
+  // ─── Village Ways ────────────────────────────────────────────────────────
+  {
+    slug: "village-ways",
+    title: "Village Ways",
+    subtitle: "Brand Identity and Visual Communication",
+    year: "2026",
+    tags: ["Brand Identity", "Campaign Design", "Communication Design"],
+    studio: "Studio 1947",
+    credits: [
+      { role: "Creative Direction", name: "Rabi" },
+      { role: "Brand Design", name: "Studio 1947 Team" },
+      { role: "Visual Communication", name: "Studio 1947 Team" },
+    ],
+    overview: {
+      heading: "A Color-Led System for Community Storytelling",
+      paragraphs: [
+        "Village Ways required a lively visual identity that could hold cultural warmth while staying clear and adaptable across multiple communication formats.",
+        "We built a flexible, color-forward design system with distinctive iconography and typographic rhythm so every touchpoint feels rooted, optimistic, and easy to engage with.",
+      ],
+    },
+    logoImages: [
+      "/ourworks/villageways/logo.png",
+      "/ourworks/villageways/logo01.png",
+    ],
+    typefaces: [
+      {
+        name: "Montserrat",
+        designer: "Julieta Ulanovsky",
+        released: "2011",
+        foundry: "The Montserrat Project",
+        style: "Sans-serif — Headline and display use",
+      },
+      {
+        name: "Inter",
+        designer: "Rasmus Andersson",
+        released: "2017",
+        foundry: "Rasmus Andersson",
+        style: "Sans-serif — Body and digital text",
+      },
+    ],
+    colors: [
+      {
+        hex: "#D90059",
+        rgb: "217, 0, 89",
+        cmyk: "0, 100, 59, 15",
+      },
+      {
+        hex: "#EA5219",
+        rgb: "234, 82, 25",
+        cmyk: "0, 65, 89, 8",
+      },
+      {
+        hex: "#49B9CC",
+        rgb: "73, 185, 204",
+        cmyk: "64, 9, 0, 20",
+      },
+      {
+        hex: "#96C31F",
+        rgb: "150, 195, 31",
+        cmyk: "23, 0, 84, 24",
+      },
+      {
+        hex: "#F39200",
+        rgb: "243, 146, 0",
+        cmyk: "0, 40, 100, 5",
+      },
+      {
+        hex: "#7A6B59",
+        rgb: "122, 107, 89",
+        cmyk: "0, 12, 27, 52",
+      },
+    ],
+    artDirectionImages: [
+      "/ourworks/villageways/CM1.svg",
+      "/ourworks/villageways/CM2.svg",
+      "/ourworks/villageways/CM3.svg",
+    ],
+    applicationImages: [
+      "/ourworks/villageways/CM1.svg",
+      "/ourworks/villageways/CM2.svg",
+      "/ourworks/villageways/CM3.svg",
+    ],
+  },
 ];
 /** Look up a brand by its URL slug. */
 export const getWorkBySlug = (slug: string): BrandWork | undefined =>
