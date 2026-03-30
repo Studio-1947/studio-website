@@ -68,11 +68,11 @@ const WalkingProjectV2: React.FC = () => {
       <div className="bg-[#fafafa] text-[#111111] min-h-screen overflow-x-hidden selection:bg-[#111111] selection:text-white" style={{ fontFamily: 'Inter, sans-serif' }}>
         <div className="pt-28 px-6 lg:px-16 max-w-[1440px] mx-auto">
           <Link
-            to="/collabs"
+            to="/"
             className="inline-flex items-center gap-2 text-sm font-medium text-gray-500 hover:text-gray-900 transition-colors group"
           >
             <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Collaborations
+            Back to Home
           </Link>
         </div>
 

@@ -1,4 +1,5 @@
 ﻿import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
 
 export default function MirikCollege() {
@@ -11,13 +12,13 @@ export default function MirikCollege() {
             <div className="bg-[#0a0a0a] text-white min-h-screen selection:bg-orange-500 selection:text-white pb-32 overflow-x-hidden">
                 {/* Navigation */}
                 <div className="pt-32 px-6 lg:px-12 max-w-[1600px] mx-auto">
-                    <a
-                        href="/#works"
+                    <Link
+                        to="/"
                         className="group inline-flex items-center text-xs font-bold tracking-[0.2em] uppercase hover:text-[#ff3b00] transition-colors duration-300"
                     >
                         <span className="w-8 h-[1px] bg-[#e0e0e0] group-hover:bg-[#ff3b00] mr-4 transition-colors duration-300"></span>
-                        Back to Works
-                    </a>
+                        Back to Home
+                    </Link>
                 </div>
 
                 {/* Hero Section - Asymmetric, Typographic Brutalism */}
