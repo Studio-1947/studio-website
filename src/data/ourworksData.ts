@@ -69,7 +69,7 @@ export const ourWorksData: BrandWork[] = [
     studio: "Studio 1947",
     credits: [
       { role: "Creative Direction", name: "Rabi" },
-      { role: "Layout Design", name: "Zahid & Pragya" },
+      { role: "Layout Design", name: "Zahid" },
       { role: "Content", name: "FES Team" },
     ],
     overview: {
@@ -145,7 +145,7 @@ export const ourWorksData: BrandWork[] = [
     studio: "Studio 1947",
     credits: [
       { role: "Creative Direction", name: "Rabi" },
-      { role: "Layout Design", name: "Zahid & Pragya" },
+      { role: "Layout Design", name: "Zahid" },
       { role: "Content", name: "Sneha — AIcrowd Team" },
     ],
     overview: {
