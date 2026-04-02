@@ -19,7 +19,7 @@ export const blogs: BlogPost[] = [
     language: "English",
     tags: [],
     excerpt: "Introduction Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken, and the crisp, golden crust of kulchas—all of these culin...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/Tandoor Legacy.png",
     content: `
 Introduction
 Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken,
@@ -240,7 +240,7 @@ the morning light, that we find a wisdom we are only beginning to fathom.
     language: "Hindi",
     tags: [],
     excerpt: "#Gender-Equality                  #Constitutional_Right                              #Youth CLOTHES HAVE \"NO\" GENDER . ISN'T IT ??? एक स\$ची कहानी से ...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/Clothes have no gender.png",
     content: `
 #Gender-Equality                  #Constitutional_Right                              #Youth
 CLOTHES HAVE "NO" GENDER . ISN'T IT ???
@@ -284,7 +284,7 @@ Email :- ali2011pf@gmail.com
     language: "English",
     tags: [],
     excerpt: "Childhood Rituals (rituals childhoodrituals belonging)  word count 1023 I grew up in nineties Bombay. A Bombay that was going to soon be called Mumbai...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/Childhood rituals.png",
     content: `
 Childhood Rituals
 (rituals childhoodrituals belonging)
@@ -653,7 +653,7 @@ the worshipping, animal hunting is on a rapid rate of decline.
     language: "English",
     tags: [],
     excerpt: "My ‘boring’ traditional attire was never ‘boring’ at all  Packing for college was an exciting activity for Imu considering that this was going to be h...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/My boring traditional attire was never boring at all.png",
     content: `
 My ‘boring’ traditional attire was never ‘boring’ at all
 
@@ -797,7 +797,7 @@ https://www.ijfmr.com/papers/2023/5/7112.pdf
     language: "English",
     tags: [],
     excerpt: "In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It enables designers to comprehend people’s feelings and experi...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/Empathy.png",
     content: `
 In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It
 enables designers to comprehend people’s feelings and experiences, empowering
@@ -1215,7 +1215,7 @@ environmental stewardship, and cultural continuity for future generations.
     language: "Bengali",
     tags: [],
     excerpt: "এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শ...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/era-ora-ebong-studio-1947-blogs.png",
     content: `
 এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে
 চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শেষ কি? দুই আর চারে? দুই আর চারে কত? না,
@@ -1448,7 +1448,7 @@ imagination.
     language: "English",
     tags: [],
     excerpt: "“Just a slap, but he can't hit me.\" This dialogue from the movie Thappad, directed by Anubhav Sinha, is not just a dialogue, it’s an inspiration for m...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/Saraswati on steering wheel.png",
     content: `
 “Just a slap, but he can't hit me." This dialogue from the movie Thappad, directed
 by Anubhav Sinha, is not just a dialogue, it’s an inspiration for many women in the
@@ -1537,7 +1537,7 @@ anyone. Stay in your lane. Drive slow, drive safe, but drive.”
     language: "Bengali",
     tags: [],
     excerpt: "আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/pakhi-basay-design-thinking.png",
     content: `
 আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম
 যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক্ষ্য করেছি—কাঁচ জিনিসটা
