@@ -16,7 +16,7 @@ const EcologicalFoundations: React.FC = () => {
             <svg className="w-5 h-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
             </svg>
-            Back to Collaborations
+            Back to Home
           </Link>
 
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-center">

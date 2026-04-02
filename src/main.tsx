@@ -1,6 +1,6 @@
 import { StrictMode, lazy, Suspense } from "react";
 import { createRoot } from "react-dom/client";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import App from "./App.tsx";
 import Layout from "./components/Layout.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
@@ -32,7 +32,6 @@ const DataAnalysis = lazy(() => import("./pages/products/DataAnalysis.tsx"));
 const SocialMedia = lazy(() => import("./pages/products/SocialMedia.tsx"));
 
 // Collabs pages
-const CollabsV2 = lazy(() => import("./pages/collabs/CollabsV2.tsx"));
 const WalkingProjectV2 = lazy(
   () => import("./pages/collabs/WalkingProjectV2.tsx"),
 );
@@ -127,8 +126,8 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/products/social-media" element={<SocialMedia />} />
 
           {/* Collabs Routes */}
-          <Route path="/collabs" element={<CollabsV2 />} />
-          <Route path="/collabs-v2" element={<CollabsV2 />} />
+          <Route path="/collabs" element={<Navigate to="/" replace />} />
+          <Route path="/collabs-v2" element={<Navigate to="/" replace />} />
           <Route
             path="/collabs/walking-project"
             element={<WalkingProjectV2 />}
