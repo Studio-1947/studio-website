@@ -1,12 +1,29 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
-import { blogs } from '../../data/blogData';
+import { blogs as localBlogs, type BlogPost } from '../../data/blogData';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { fetchAllBlogs } from '../../lib/sanityAdapter';
 
 const Blogs: React.FC = () => {
+  const [blogs, setBlogs] = useState<BlogPost[]>(localBlogs);
+  const [loading, setLoading] = useState(true);
+
   usePageMeta({ title: 'Journal – Studio 1947', description: 'Explorations, essays, and stories from the Studio 1947 team on design, culture, technology, and where they intersect.' });
+
   useEffect(() => {
+    const loadBlogs = async () => {
+      try {
+        const sanityBlogs = await fetchAllBlogs();
+        if (sanityBlogs.length > 0) {
+          setBlogs(sanityBlogs);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadBlogs();
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
 
@@ -28,6 +45,18 @@ const Blogs: React.FC = () => {
               Explorations, essays, and stories from our team. We write about design, culture, technology, and the intersections between them.
             </p>
           </div>
+
+          {loading && (
+            <div className="text-center text-gray-500 dark:text-gray-400 mb-10">
+              Loading latest content...
+            </div>
+          )}
+
+          {!loading && blogs.length === 0 && (
+            <div className="text-center text-gray-500 dark:text-gray-400 mb-10">
+              No blog posts are available yet.
+            </div>
+          )}
 
           {/* Featured Blog */}
           {(() => {

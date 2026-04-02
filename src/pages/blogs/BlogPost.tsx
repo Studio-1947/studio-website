@@ -1,16 +1,41 @@
 import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import Layout from '../../components/Layout';
-import { blogs } from '../../data/blogData';
+import { blogs as localBlogs, type BlogPost as BlogPostType } from '../../data/blogData';
 import { Share2 } from 'lucide-react';
 import { toast } from 'sonner';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { fetchBlogBySlug } from '../../lib/sanityAdapter';
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
+  const [blog, setBlog] = React.useState<BlogPostType | null>(null);
+  const [loading, setLoading] = React.useState(true);
 
-  const blog = blogs.find((b) => b.slug === slug);
+  useEffect(() => {
+    const loadBlog = async () => {
+      if (!slug) {
+        setBlog(null);
+        setLoading(false);
+        return;
+      }
+
+      try {
+        const sanityBlog = await fetchBlogBySlug(slug);
+        if (sanityBlog) {
+          setBlog(sanityBlog);
+        } else {
+          const fallbackBlog = localBlogs.find((b) => b.slug === slug) || null;
+          setBlog(fallbackBlog);
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadBlog();
+  }, [slug]);
 
   usePageMeta({
     title: blog ? `${blog.title} – Studio 1947` : 'Article Not Found – Studio 1947',
@@ -44,6 +69,16 @@ const BlogPost: React.FC = () => {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, [slug]);
+
+  if (loading) {
+    return (
+      <Layout>
+        <div className="min-h-[70vh] flex flex-col items-center justify-center py-32 px-4 text-center">
+          <p className="text-gray-600 dark:text-gray-400">Loading article...</p>
+        </div>
+      </Layout>
+    );
+  }
 
   if (!blog) {
     return (
