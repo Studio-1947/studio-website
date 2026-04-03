@@ -956,7 +956,7 @@ deserves to be celebrated globally.
     language: "English",
     tags: [],
     excerpt: "Timekeeping Before Clocks: Tracing Ancient Indian andBengali Timekeeping Traditions #Traditional Knowledge \"Time was once told by tides and twilight, ...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/Timekeeping Before Clocks.png",
     content: `
 Timekeeping Before Clocks: Tracing Ancient Indian andBengali
 Timekeeping Traditions
@@ -1054,7 +1054,7 @@ systems that we honour rhythm over rush, and community over clockwork.
     language: "Nepali",
     tags: [],
     excerpt: "निष्पक्षताको प्रयोग । बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को दशकमा फेलोसिप अफ रिकन्सिलिएसन संस्था मार्फत् र...",
-    coverImage: "/logo.svg",
+    coverImage: "/blogs/nishpakshata-ko-prayog.png",
     content: `
 निष्पक्षताको प्रयोग ।
 बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को
