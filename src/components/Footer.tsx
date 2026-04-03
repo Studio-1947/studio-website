@@ -166,7 +166,7 @@ export default function Footer() {
                                             whileInView={{ opacity: 1, x: 0 }}
                                             transition={{ duration: 0.3, delay: (idx * 0.1) + (linkIdx * 0.05) }}
                                         >
-                                            {section.title === "Sitemap" && link.label !== "Home" && link.label !== "Solutions" ? (
+                                            {section.title === "Sitemap" && link.label === "Our Story" ? (
                                                 <button
                                                     onClick={(e) => handleSitemapClick(e, link.label)}
                                                     className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"

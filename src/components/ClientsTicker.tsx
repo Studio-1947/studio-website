@@ -7,6 +7,7 @@ const logos = [
   { src: "/logos/Rajkamal Logo.svg", alt: "Rajkamal" },
   { src: "/logos/Remodel UN.svg", alt: "Remodel UN" },
   { src: "/logos/Jansahas.svg", alt: "JanSahas" },
+  { src: "/logos/sundargaan_logo_white.svg", alt: "Sundargaan" },
 ];
 
 const CONTENT = {

@@ -40,6 +40,7 @@ const EcologicalFoundations = lazy(
   () => import("./pages/collabs/EcologicalFoundations.tsx"),
 );
 const MirikCollege = lazy(() => import("./pages/collabs/MirikCollege.tsx"));
+const Sundargaan = lazy(() => import("./pages/collabs/Sundargaan.tsx"));
 
 // Our Work pages
 const FesIndia = lazy(() => import("./pages/ourwork/FesIndia.tsx"));
@@ -143,7 +144,7 @@ createRoot(document.getElementById("root")!).render(
           />
           <Route path="/collabs/mirik-college" element={<MirikCollege />} />
           <Route path="/collabs/mirikcollege" element={<MirikCollege />} />
-          <Route path="/collabs/sundargaan" element={<ComingSoon />} />
+          <Route path="/collabs/sundargaan" element={<Sundargaan />} />
 
           {/* Our Work Routes */}
           <Route path="/ourworks" element={<AllWorks />} />

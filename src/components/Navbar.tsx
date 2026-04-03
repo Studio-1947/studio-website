@@ -52,7 +52,7 @@ export default function Navbar() {
     const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
     const handleNavClick = (e: React.MouseEvent<HTMLElement>, href: string, name: string) => {
-        const unlockedRoutes = ['/', '/about', '/blogs', '/solutions', '/initiative', '/collabs/walking-project', '/collabs/mirikcollege', '#'];
+        const unlockedRoutes = ['/', '/about', '/blogs', '/solutions', '/initiative', '/products', '/collabs/walking-project', '/collabs/ai-crowd', '/collabs/ecological-foundations', '/collabs/sundargaan', '/collabs/mirikcollege', '#'];
 
         if (unlockedRoutes.includes(href) || name === 'Logo' || name === 'Search') {
             // Let normal navigation proceed
@@ -143,14 +143,8 @@ export default function Navbar() {
     const rightLinks: NavLink[] = [
         {
             name: 'Products',
-            href: '#',
+            href: '/products',
             spokeIndex: 2,
-            /* dropdown: [
-                { name: 'Doptor', href: '/products/doptor' },
-                { name: 'Angan', href: '/products/angan' },
-                { name: 'Data analysis dashboards', href: '/products/data-analysis' },
-                { name: 'Social media dashboards', href: '/products/social-media' },
-            ] */
         },
         { name: 'Solutions', href: '/solutions', spokeIndex: 1 },
         {
@@ -162,7 +156,7 @@ export default function Navbar() {
                 { name: 'Ai Crowd', href: '/collabs/ai-crowd', logo: '/collabs/aicrowd.png' },
                 { name: 'Ecological Foundations', href: '/collabs/ecological-foundations', logo: '/collabs/ecologicalfoundation.png' },
                 { name: 'Mirik College', href: '/collabs/mirikcollege', logo: '/collabs/Mirik_College_Logo.svg' },
-                { name: 'Sundargaan', href: '/collabs/sundargaan', placeholder: true },
+                { name: 'Sundargaan', href: '/collabs/sundargaan', logo: '/logos/clientlogocolour/sundargaan_logo_col.svg' },
             ]
         },
         {
