@@ -19,6 +19,7 @@ const Careers = lazy(() => import("./pages/Careers.tsx"));
 const Story = lazy(() => import("./pages/Story.tsx"));
 const Solutions = lazy(() => import("./pages/Solutions.tsx"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon.tsx"));
+const PressMedia = lazy(() => import("./pages/PressMedia.tsx"));
 
 // Blog pages
 const Blogs = lazy(() => import("./pages/blogs/Blogs.tsx"));
@@ -114,6 +115,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/press-media" element={<PressMedia />} />
 
           {/* Blog Routes */}
           <Route path="/blogs" element={<Blogs />} />
