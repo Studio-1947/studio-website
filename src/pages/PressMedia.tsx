@@ -6,7 +6,6 @@ import {
   ExternalLink,
   Mountain,
   Newspaper,
-  Sparkles,
 } from "lucide-react";
 import Layout from "../components/Layout";
 import { usePageMeta } from "../hooks/usePageMeta";
