@@ -1,8 +1,8 @@
-import BrandWorkTemplate from '../../components/BrandWorkTemplate';
-import { getWorkBySlug } from '../../data/ourworksData';
+import BrandWorkTemplate from "../../components/BrandWorkTemplate";
+import { getWorkBySlug } from "../../data/ourworksData";
 
-const data = getWorkBySlug('fermilab')!;
+const data = getWorkBySlug("fermylab")!;
 
-export default function Fermilab() {
-    return <BrandWorkTemplate data={data} />;
+export default function FermyLab() {
+  return <BrandWorkTemplate data={data} />;
 }

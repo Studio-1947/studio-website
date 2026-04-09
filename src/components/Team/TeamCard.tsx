@@ -33,19 +33,10 @@ const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
           <img
             src={member.image}
             alt={member.name}
-            /* Remove loading="lazy" ONLY IF this image is immediately visible on screen load */
             loading="lazy"
             decoding="async"
             onLoad={() => setIsLoaded(true)}
-            className={`
-      w-full h-full object-cover 
-      transition-all duration-700 ease-[cubic-bezier(0.25,0.46,0.45,0.94)]
-      will-change-[opacity,transform,filter]
-      group-hover:scale-110 
-      ${isLoaded
-                ? 'opacity-100 blur-0 grayscale-0 scale-100'
-                : 'opacity-0 blur-md grayscale scale-105'}
-  `}
+            className={`w-full h-full object-cover transition-[opacity,transform] duration-500 group-hover:scale-110 ${isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-100'}`}
           />
         </div>
 

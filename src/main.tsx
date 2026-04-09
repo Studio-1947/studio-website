@@ -19,6 +19,7 @@ const Careers = lazy(() => import("./pages/Careers.tsx"));
 const Story = lazy(() => import("./pages/Story.tsx"));
 const Solutions = lazy(() => import("./pages/Solutions.tsx"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon.tsx"));
+const PressMedia = lazy(() => import("./pages/PressMedia.tsx"));
 
 // Blog pages
 const Blogs = lazy(() => import("./pages/blogs/Blogs.tsx"));
@@ -40,12 +41,13 @@ const EcologicalFoundations = lazy(
   () => import("./pages/collabs/EcologicalFoundations.tsx"),
 );
 const MirikCollege = lazy(() => import("./pages/collabs/MirikCollege.tsx"));
+const Sundargaan = lazy(() => import("./pages/collabs/Sundargaan.tsx"));
 
 // Our Work pages
 const FesIndia = lazy(() => import("./pages/ourwork/FesIndia.tsx"));
 const RemodelUn = lazy(() => import("./pages/ourwork/RemodelUn.tsx"));
 const Rajkamal = lazy(() => import("./pages/ourwork/Rajkamal.tsx"));
-const Fermilab = lazy(() => import("./pages/ourwork/Fermilab.tsx"));
+const FermyLab = lazy(() => import("./pages/ourwork/FermyLab.tsx"));
 const Awch = lazy(() => import("./pages/ourwork/Awch.tsx"));
 const JanSahas = lazy(() => import("./pages/ourwork/JanSahas.tsx"));
 const Givfunds = lazy(() => import("./pages/ourwork/Givfunds.tsx"));
@@ -113,6 +115,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/solutions" element={<Solutions />} />
+          <Route path="/press-media" element={<PressMedia />} />
 
           {/* Blog Routes */}
           <Route path="/blogs" element={<Blogs />} />
@@ -143,16 +146,14 @@ createRoot(document.getElementById("root")!).render(
           />
           <Route path="/collabs/mirik-college" element={<MirikCollege />} />
           <Route path="/collabs/mirikcollege" element={<MirikCollege />} />
-          <Route path="/collabs/sundargaan" element={<ComingSoon />} />
+          <Route path="/collabs/sundargaan" element={<Sundargaan />} />
 
           {/* Our Work Routes */}
           <Route path="/ourworks" element={<AllWorks />} />
           <Route path="/ourwork/fes-india" element={<FesIndia />} />
           <Route path="/ourwork/remodel-un" element={<RemodelUn />} />
           <Route path="/ourwork/rajkamal" element={<Rajkamal />} />
-          <Route path="/ourwork/fermilab" element={<Fermilab />} />
-
-          <Route path="/ourwork/fermylab" element={<Fermilab />} />
+          <Route path="/ourwork/fermylab" element={<FermyLab />} />
           <Route path="/ourwork/awch" element={<Awch />} />
           <Route path="/ourwork/jansahas" element={<JanSahas />} />
           <Route path="/ourwork/village-ways" element={<VillageWays />} />
