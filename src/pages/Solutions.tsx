@@ -124,7 +124,7 @@ const Solutions: React.FC = () => {
 
               <button
                 onClick={() => setIsContactModalOpen(true)}
-                className="group/btn relative overflow-hidden px-12 py-5 bg-royal-600 text-white dark:bg-royal-500 dark:text-royal-900 rounded-full font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl dark:shadow-[0_0_40px_-10px_rgba(255,255,255,0.2)] flex items-center gap-3"
+                className="group/btn relative overflow-hidden px-12 py-5 bg-royal-700 text-white dark:bg-royal-100 dark:text-royal-950 rounded-full border border-royal-900/15 dark:border-white/20 font-bold text-lg hover:scale-105 transition-all duration-300 shadow-xl hover:shadow-2xl dark:shadow-[0_0_40px_-10px_rgba(255,255,255,0.2)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-white/70 dark:focus-visible:ring-offset-gray-950 flex items-center gap-3"
               >
                 <span className="relative z-10 flex items-center gap-3">
                   Start a Conversation
@@ -133,7 +133,7 @@ const Solutions: React.FC = () => {
                   </svg>
                 </span>
                 {/* Inner button hover gradient */}
-                <div className="absolute inset-0 bg-gradient-to-r from-royal-700 to-royal-600 dark:from-royal-50 dark:to-white opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 z-0"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-royal-800 to-royal-700 dark:from-white dark:to-royal-100 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300 z-0"></div>
               </button>
             </div>
           </div>

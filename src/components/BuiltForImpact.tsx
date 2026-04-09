@@ -25,11 +25,11 @@ export const PROJECTS = [
     link: "/ourwork/fes-india",
   },
   {
-    client: "Fermilab",
+    client: "Fermy Lab",
     category: "Brand Identity, Packaging & Retail",
-    image: "/ourworks/Fermilab/fermilab_storefront.png",
+    image: "/ourworks/FermyLab/fermilab_storefront.png",
     color: "bg-emerald-50 dark:bg-emerald-900/20",
-    link: "/ourwork/fermilab",
+    link: "/ourwork/fermylab",
   },
   {
     client: "AWCH",
@@ -135,7 +135,7 @@ export default function BuiltForImpact() {
       className="bg-white dark:bg-black py-24 relative overflow-hidden"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header row */}
+        {/* Header row - Desktop only */}
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-6 mb-12">
           <div>
             <span className="inline-block py-1 px-3 w-fit rounded-full bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-800 text-gray-600 dark:text-gray-300 text-xs font-semibold tracking-wide uppercase mb-4">
@@ -150,28 +150,11 @@ export default function BuiltForImpact() {
             </p>
           </div>
 
-          {/* Nav arrows */}
-          <div className="flex items-center gap-3 shrink-0">
-            <button
-              onClick={() => scroll("prev")}
-              disabled={!canPrev}
-              aria-label="Previous projects"
-              className="w-11 h-11 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-gray-900 dark:hover:border-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none"
-            >
-              <ArrowLeft className="w-4 h-4" />
-            </button>
-            <button
-              onClick={() => scroll("next")}
-              disabled={!canNext}
-              aria-label="Next projects"
-              className="w-11 h-11 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-gray-900 dark:hover:border-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none"
-            >
-              <ArrowRight className="w-4 h-4" />
-            </button>
-
+          {/* Header CTA - Large screens only */}
+          <div className="hidden lg:flex items-center gap-3 shrink-0">
             <Link
               to="/ourworks"
-              className="ml-2 inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none"
             >
               All Works
               <ArrowUpRight className="w-4 h-4" />
@@ -179,8 +162,27 @@ export default function BuiltForImpact() {
           </div>
         </div>
 
-        {/* Slider track */}
+        {/* Slider track with side arrows on desktop */}
         <div className="relative">
+          {/* Side arrows - Medium and large screens */}
+          <button
+            onClick={() => scroll("prev")}
+            disabled={!canPrev}
+            aria-label="Previous projects"
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 w-11 h-11 rounded-full border border-gray-200 dark:border-gray-700 items-center justify-center text-gray-700 dark:text-gray-300 hover:border-gray-900 dark:hover:border-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none z-10"
+          >
+            <ArrowLeft className="w-4 h-4" />
+          </button>
+
+          <button
+            onClick={() => scroll("next")}
+            disabled={!canNext}
+            aria-label="Next projects"
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 translate-x-16 w-11 h-11 rounded-full border border-gray-200 dark:border-gray-700 items-center justify-center text-gray-700 dark:text-gray-300 hover:border-gray-900 dark:hover:border-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none z-10"
+          >
+            <ArrowRight className="w-4 h-4" />
+          </button>
+
           <div
             ref={sliderRef}
             className="flex gap-6 overflow-x-hidden scroll-smooth"
@@ -219,8 +221,8 @@ export default function BuiltForImpact() {
             ))}
           </div>
 
-          {/* Dot indicators */}
-          <div className="flex items-center justify-center gap-2 mt-8">
+          {/* Dot indicators - Large screens only */}
+          <div className="hidden lg:flex items-center justify-center gap-2 mt-8">
             {Array.from({ length: maxIndex + 1 }).map((_, i) => (
               <button
                 key={i}
@@ -242,6 +244,65 @@ export default function BuiltForImpact() {
                 }`}
               />
             ))}
+          </div>
+        </div>
+
+        {/* Mobile control bar - Small screens only */}
+        <div className="md:hidden flex flex-col gap-4 mt-8">
+          {/* Control buttons and dots */}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <button
+                onClick={() => scroll("prev")}
+                disabled={!canPrev}
+                aria-label="Previous projects"
+                className="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-gray-900 dark:hover:border-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none"
+              >
+                <ArrowLeft className="w-4 h-4" />
+              </button>
+
+              {/* Dots for mobile */}
+              <div className="flex items-center gap-1.5">
+                {Array.from({ length: maxIndex + 1 }).map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => {
+                      setActiveIndex(i);
+                      if (sliderRef.current) {
+                        const stepWidth = getStepWidth();
+                        sliderRef.current.scrollTo({
+                          left: stepWidth * i,
+                          behavior: "smooth",
+                        });
+                      }
+                    }}
+                    aria-label={`Go to slide ${i + 1}`}
+                    className={`transition-all select-none ${
+                      activeIndex === i
+                        ? "w-6 h-1.5 bg-gray-900 dark:bg-white rounded-full"
+                        : "w-1.5 h-1.5 bg-gray-300 dark:bg-gray-700 hover:bg-gray-400 dark:hover:bg-gray-500 rounded-full"
+                    }`}
+                  />
+                ))}
+              </div>
+
+              <button
+                onClick={() => scroll("next")}
+                disabled={!canNext}
+                aria-label="Next projects"
+                className="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center text-gray-700 dark:text-gray-300 hover:border-gray-900 dark:hover:border-white hover:bg-gray-900 dark:hover:bg-white hover:text-white dark:hover:text-black transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none"
+              >
+                <ArrowRight className="w-4 h-4" />
+              </button>
+            </div>
+
+            <Link
+              to="/ourworks"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none"
+            >
+              All Works
+              <ArrowUpRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </div>

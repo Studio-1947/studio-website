@@ -287,10 +287,10 @@ export const ourWorksData: BrandWork[] = [
     ],
   },
 
-  // ─── Fermilab ────────────────────────────────────────────────────────────
+  // ─── Fermy Lab ───────────────────────────────────────────────────────────
   {
-    slug: "fermilab",
-    title: "Fermilab",
+    slug: "fermylab",
+    title: "Fermy Lab",
     subtitle: "Brand Identity, Packaging, and Retail Applications",
     year: "2024",
     tags: ["Brand Identity", "Packaging", "Retail"],
@@ -302,13 +302,13 @@ export const ourWorksData: BrandWork[] = [
     overview: {
       heading: "Fresh, Warm, and Distinctly Local",
       paragraphs: [
-        "Fermilab needed a cohesive visual language that could move from logo to shelf, and from storefront to apparel without losing brand character.",
+        "Fermy Lab needed a cohesive visual language that could move from logo to shelf, and from storefront to apparel without losing brand character.",
         "We built a bright, memorable identity anchored in rich bakery green and warm amber tones, then extended it across packaging, uniforms, merchandising, and environment touchpoints.",
       ],
     },
     logoImages: [
-      "/ourworks/Fermilab/fermilab_logo.png",
-      "/ourworks/Fermilab/fermilab_logo2.png",
+      "/ourworks/FermyLab/fermilab_logo.png",
+      "/ourworks/FermyLab/fermilab_logo2.png",
     ],
     typefaces: [
       {
@@ -331,29 +331,29 @@ export const ourWorksData: BrandWork[] = [
         hex: "#158533",
         rgb: "21, 133, 51",
         cmyk: "84, 0, 62, 48",
-        label: "Fermilab Green",
+        label: "Fermy Lab Green",
       },
       {
         hex: "#E59739",
         rgb: "229, 151, 57",
         cmyk: "0, 34, 75, 10",
-        label: "Fermilab Amber",
+        label: "Fermy Lab Amber",
       },
     ],
     artDirectionImages: [
-      "/ourworks/Fermilab/fermilab_storefront.png",
-      "/ourworks/Fermilab/fermilab_billboard.png",
-      "/ourworks/Fermilab/fermilab_standi.png",
-      "/ourworks/Fermilab/iPhone%2016%20Dark.png",
-      "/ourworks/Fermilab/iPhone%2016%20Plus%20Light.png",
+      "/ourworks/FermyLab/fermilab_storefront.png",
+      "/ourworks/FermyLab/fermilab_billboard.png",
+      "/ourworks/FermyLab/fermilab_standi.png",
+      "/ourworks/FermyLab/iPhone%2016%20Dark.png",
+      "/ourworks/FermyLab/iPhone%2016%20Plus%20Light.png",
     ],
     applicationImages: [
-      "/ourworks/Fermilab/Bread%20Bakery%20Mockup%201.png",
-      "/ourworks/Fermilab/Croissants%20in%20transparent%20packaging%201.png",
-      "/ourworks/Fermilab/fermilab_tablecloth.png",
-      "/ourworks/Fermilab/fermilab_t.png",
-      "/ourworks/Fermilab/fermilab_tshirt.png",
-      "/ourworks/Fermilab/fermilab_tshirt2.png",
+      "/ourworks/FermyLab/Bread%20Bakery%20Mockup%201.png",
+      "/ourworks/FermyLab/Croissants%20in%20transparent%20packaging%201.png",
+      "/ourworks/FermyLab/fermilab_tablecloth.png",
+      "/ourworks/FermyLab/fermilab_t.png",
+      "/ourworks/FermyLab/fermilab_tshirt.png",
+      "/ourworks/FermyLab/fermilab_tshirt2.png",
     ],
   },
 

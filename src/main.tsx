@@ -46,7 +46,7 @@ const Sundargaan = lazy(() => import("./pages/collabs/Sundargaan.tsx"));
 const FesIndia = lazy(() => import("./pages/ourwork/FesIndia.tsx"));
 const RemodelUn = lazy(() => import("./pages/ourwork/RemodelUn.tsx"));
 const Rajkamal = lazy(() => import("./pages/ourwork/Rajkamal.tsx"));
-const Fermilab = lazy(() => import("./pages/ourwork/Fermilab.tsx"));
+const FermyLab = lazy(() => import("./pages/ourwork/FermyLab.tsx"));
 const Awch = lazy(() => import("./pages/ourwork/Awch.tsx"));
 const JanSahas = lazy(() => import("./pages/ourwork/JanSahas.tsx"));
 const Givfunds = lazy(() => import("./pages/ourwork/Givfunds.tsx"));
@@ -151,9 +151,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/ourwork/fes-india" element={<FesIndia />} />
           <Route path="/ourwork/remodel-un" element={<RemodelUn />} />
           <Route path="/ourwork/rajkamal" element={<Rajkamal />} />
-          <Route path="/ourwork/fermilab" element={<Fermilab />} />
-
-          <Route path="/ourwork/fermylab" element={<Fermilab />} />
+          <Route path="/ourwork/fermylab" element={<FermyLab />} />
           <Route path="/ourwork/awch" element={<Awch />} />
           <Route path="/ourwork/jansahas" element={<JanSahas />} />
           <Route path="/ourwork/village-ways" element={<VillageWays />} />

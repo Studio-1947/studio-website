@@ -40,22 +40,23 @@ const Products: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
             {productsGridData.map((product) => {
               const colors = productColorConfig[product.accentColor];
+              const bgObjectPosition =
+                product.slug === 'data-analysis' ? 'center 38%' : 'center';
               return (
                 <Link
                   key={product.slug}
                   to={`/products/${product.slug}`}
                   className="group relative rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-800 hover:border-gray-200 dark:hover:border-gray-700 hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 bg-white dark:bg-gray-900"
                 >
-                  {/* Background image — subtle texture */}
-                  <div
-                    className="absolute inset-0 opacity-[0.06] dark:opacity-[0.04] group-hover:opacity-[0.1] dark:group-hover:opacity-[0.07] transition-opacity duration-500"
-                    style={{
-                      backgroundImage: `url(${product.backgroundImage})`,
-                      backgroundSize: 'cover',
-                      backgroundPosition: 'center',
-                    }}
+                  {/* Background image with focal framing so product device shots stay recognizable */}
+                  <img
+                    src={product.backgroundImage}
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute inset-0 h-full w-full object-cover opacity-[0.18] dark:opacity-[0.1] group-hover:opacity-[0.24] dark:group-hover:opacity-[0.14] transition-all duration-500 group-hover:scale-[1.03]"
+                    style={{ objectPosition: bgObjectPosition }}
                   />
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/60 dark:from-gray-900/80 dark:to-gray-900/60" />
+                  <div className="absolute inset-0 bg-gradient-to-br from-white/78 via-white/66 to-white/52 dark:from-gray-900/82 dark:via-gray-900/74 dark:to-gray-900/64" />
 
                   <div className="relative z-10 p-8 md:p-10 flex flex-col h-full min-h-[280px]">
                     <div className="flex items-start justify-between mb-auto">

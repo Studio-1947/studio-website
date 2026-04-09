@@ -84,7 +84,10 @@ export default function ProductPageTemplate({ product }: Props) {
 
               {/* CTAs */}
               <div className="flex flex-wrap gap-4">
-                <button onClick={() => setIsContactOpen(true)} className={`px-8 py-4 rounded-full font-bold transition-colors cursor-pointer ${colors.primaryBtn}`}>
+                <button
+                  onClick={() => setIsContactOpen(true)}
+                  className={`px-8 py-4 rounded-full font-bold transition-all cursor-pointer border border-black/10 dark:border-white/20 shadow-xl hover:shadow-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-royal-500/60 focus-visible:ring-offset-2 focus-visible:ring-offset-white dark:focus-visible:ring-white/70 dark:focus-visible:ring-offset-gray-900 ${colors.primaryBtn}`}
+                >
                   Request a Demo
                 </button>
               </div>
