@@ -21,7 +21,7 @@ export interface VerticalsSectionData {
 
 export const verticalsSectionData: VerticalsSectionData = {
   eyebrow: "Our Verticals",
-  heading: "We Not Just Only Build Products.",
+  heading: "We Don’t Just Build Products.",
   description:
     "We work across collaborations, products, solutions, and initiatives, shaping each one with the same craft but a different lens for impact.",
   cards: [

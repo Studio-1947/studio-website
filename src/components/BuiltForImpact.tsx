@@ -156,7 +156,7 @@ export default function BuiltForImpact() {
               to="/ourworks"
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none"
             >
-              All Works
+              Our Works
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
@@ -300,7 +300,7 @@ export default function BuiltForImpact() {
               to="/ourworks"
               className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 dark:bg-white text-white dark:text-gray-900 text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none"
             >
-              All Works
+              Our Works
               <ArrowUpRight className="w-4 h-4" />
             </Link>
           </div>
