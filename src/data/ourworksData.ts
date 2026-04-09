@@ -519,7 +519,10 @@ export const ourWorksData: BrandWork[] = [
         "We developed a bold communication system centered on strong red accents, direct typography, and clean layouts that keep focus on cause, contribution, and action.",
       ],
     },
-    logoImages: ["/ourworks/givfunds/logo.png", "/ourworks/givfunds/logo01.png"],
+    logoImages: [
+      "/ourworks/givfunds/logo.png",
+      "/ourworks/givfunds/logo01.png",
+    ],
     typefaces: [
       {
         name: "Montserrat",

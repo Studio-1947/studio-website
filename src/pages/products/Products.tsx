@@ -1,38 +1,41 @@
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import Layout from '../../components/Layout';
-import { productsGridData, productColorConfig } from '../../data/productsData';
-import { usePageMeta } from '../../hooks/usePageMeta';
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import Layout from "../../components/Layout";
+import { productsGridData, productColorConfig } from "../../data/productsData";
+import { usePageMeta } from "../../hooks/usePageMeta";
 
 const Products: React.FC = () => {
   usePageMeta({
-    title: 'Products – Studio 1947',
+    title: "Products – Studio 1947",
     description:
-      'Explore Studio 1947\'s suite of in-house software products — from office management and homestay operations to data dashboards and social analytics.',
+      "Explore Studio 1947's suite of in-house software products — from office management and homestay operations to data dashboards and social analytics.",
   });
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, []);
 
   return (
     <Layout>
       <div className="bg-white dark:bg-gray-900 pt-32 pb-24 transition-colors duration-300 min-h-screen">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
           {/* Header */}
           <div className="max-w-3xl mb-20 md:mb-28">
             <span className="text-royal-600 dark:text-royal-400 font-semibold tracking-wider uppercase text-sm mb-4 block">
               Our Products
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white tracking-tight leading-tight mb-6">
-              Software built from<br />
+              Software built from
+              <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-600 to-indigo-600 dark:from-royal-400 dark:to-indigo-400">
                 the inside out.
               </span>
             </h1>
             <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 font-light leading-relaxed">
-              We build our own products because we've seen the gaps that off-the-shelf software leaves behind. Each platform here started as a response to a real, observed problem — and is designed to solve it without unnecessary complexity.
+              We build our own products because we've seen the gaps that
+              off-the-shelf software leaves behind. Each platform here started
+              as a response to a real, observed problem — and is designed to
+              solve it without unnecessary complexity.
             </p>
           </div>
 
@@ -41,7 +44,7 @@ const Products: React.FC = () => {
             {productsGridData.map((product) => {
               const colors = productColorConfig[product.accentColor];
               const bgObjectPosition =
-                product.slug === 'data-analysis' ? 'center 38%' : 'center';
+                product.slug === "data-analysis" ? "center 38%" : "center";
               return (
                 <Link
                   key={product.slug}
@@ -60,12 +63,26 @@ const Products: React.FC = () => {
 
                   <div className="relative z-10 p-8 md:p-10 flex flex-col h-full min-h-[280px]">
                     <div className="flex items-start justify-between mb-auto">
-                      <span className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${colors.badge}`}>
+                      <span
+                        className={`inline-block px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest ${colors.badge}`}
+                      >
                         {product.category}
                       </span>
-                      <div className={`w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0 translate-x-2 ${colors.iconBg}`}>
-                        <svg className={`w-4 h-4 ${colors.iconText}`} fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                      <div
+                        className={`w-8 h-8 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:translate-x-0 translate-x-2 ${colors.iconBg}`}
+                      >
+                        <svg
+                          className={`w-4 h-4 ${colors.iconText}`}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </div>
                     </div>
@@ -77,10 +94,22 @@ const Products: React.FC = () => {
                       <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
                         {product.tagline}
                       </p>
-                      <span className={`inline-flex items-center gap-2 mt-6 text-sm font-bold ${colors.accentText}`}>
+                      <span
+                        className={`inline-flex items-center gap-2 mt-6 text-sm font-bold ${colors.accentText}`}
+                      >
                         Explore Platform
-                        <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+                        <svg
+                          className="w-4 h-4 transform group-hover:translate-x-1 transition-transform"
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2.5}
+                            d="M9 5l7 7-7 7"
+                          />
                         </svg>
                       </span>
                     </div>
@@ -95,9 +124,10 @@ const Products: React.FC = () => {
             <div
               className="absolute inset-0 opacity-10"
               style={{
-                backgroundImage: 'url(https://images.unsplash.com/photo-1557683316-973673baf926?w=2000&auto=format&fit=crop)',
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
+                backgroundImage:
+                  "url(https://images.unsplash.com/photo-1557683316-973673baf926?w=2000&auto=format&fit=crop)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
               }}
             />
             <div className="relative z-10 max-w-2xl mx-auto">
@@ -105,7 +135,8 @@ const Products: React.FC = () => {
                 Need something built to spec?
               </h3>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
-                None of our existing products quite fit your problem? We design and build bespoke platforms from the ground up.
+                None of our existing products quite fit your problem? We design
+                and build bespoke platforms from the ground up.
               </p>
               <Link
                 to="/about"
@@ -115,7 +146,6 @@ const Products: React.FC = () => {
               </Link>
             </div>
           </div>
-
         </div>
       </div>
     </Layout>
