@@ -9,7 +9,7 @@ export default function Services() {
         aria-hidden="true"
       >
         <img
-          src="/home/What We Do.svg"
+          src="https://res.cloudinary.com/drgb8w8ak/image/upload/v1776410139/What_We_Do_jjxrik.svg"
           alt=""
           className="w-full h-full object-cover object-center"
           loading="lazy"
