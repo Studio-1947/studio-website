@@ -1,4 +1,4 @@
-﻿// ─────────────────────────────────────────────────────────────────────────────
+// ─────────────────────────────────────────────────────────────────────────────
 // Our Works — Brand Data
 //
 // This file contains data for all brand pages under /ourwork/*
@@ -593,10 +593,7 @@ export const ourWorksData: BrandWork[] = [
         "We built a flexible, color-forward design system with distinctive iconography and typographic rhythm so every touchpoint feels rooted, optimistic, and easy to engage with.",
       ],
     },
-    logoImages: [
-      "/ourworks/villageways/logo.png",
-      "/ourworks/villageways/logo01.png",
-    ],
+    logoImages: [],
     typefaces: [
       {
         name: "Montserrat",

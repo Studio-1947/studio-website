@@ -219,7 +219,7 @@ export default function Navbar() {
                             onMouseEnter={() => setActiveSpoke(2)} // Default to 'Right' spoke on logo hover
                             onMouseLeave={() => setActiveSpoke(null)}
                         >
-                            <Logo className="h-6 w-auto object-contain" activeSpoke={activeSpoke} />
+                            <Logo className="h-6 w-auto object-contain text-primary dark:text-primary-hero transition-colors duration-300" activeSpoke={activeSpoke} />
                         </Link>
                         <div className="flex space-x-6 items-center">
                             {leftLinks.map((link) => {
@@ -350,7 +350,7 @@ export default function Navbar() {
                     {/* Mobile Nav Container - Wider */}
                     <div className="lg:hidden w-full flex justify-between items-center px-6 py-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl border border-black/10 dark:border-gray-800 pointer-events-auto min-w-[92vw] mx-auto">
                         <Link to="/" className="block">
-                            <Logo className="h-8 w-auto text-gray-900 dark:text-white" />
+                            <Logo className="h-8 w-auto text-primary dark:text-primary-hero transition-colors duration-300" />
                         </Link>
                         <div className="flex items-center gap-4">
                             <ThemeToggle />
