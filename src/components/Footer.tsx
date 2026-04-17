@@ -197,56 +197,129 @@ export default function Footer() {
           </div>
 
           {/* Links Section */}
-          <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-8">
-            {footerLinks.map((section, idx) => (
-              <div key={section.title}>
-                <motion.h3
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: idx * 0.1 }}
-                  className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4"
-                >
-                  {section.title}
-                </motion.h3>
-                <ul className="space-y-3">
-                  {section.links.map((link, linkIdx) => (
-                    <motion.li
-                      key={link.label}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      transition={{
-                        duration: 0.3,
-                        delay: idx * 0.1 + linkIdx * 0.05,
-                      }}
+          <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-8 items-start">
+            <div>
+              {(() => {
+                const section = footerLinks[0];
+                return (
+                  <>
+                    <motion.h3
+                      initial={{ opacity: 0, y: 10 }}
+                      whileInView={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.5, delay: 0 }}
+                      className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4"
                     >
-                      {section.title === "Sitemap" &&
-                      link.label === "Our Story" ? (
-                        <button
-                          onClick={(e) => handleSitemapClick(e, link.label)}
-                          className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"
+                      {section.title}
+                    </motion.h3>
+                    <ul className="space-y-3">
+                      {section.links.map((link, linkIdx) => (
+                        <motion.li
+                          key={link.label}
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ duration: 0.3, delay: linkIdx * 0.05 }}
                         >
-                          {link.label}
-                        </button>
-                      ) : link.href.startsWith("/") ? (
-                        <Link
-                          to={link.href}
-                          className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
-                        >
-                          {link.label}
-                        </Link>
-                      ) : (
-                        <a
-                          href={link.href}
-                          className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
-                        >
-                          {link.label}
-                        </a>
-                      )}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
-            ))}
+                          {link.label === "Our Story" ? (
+                            <button
+                              onClick={(e) => handleSitemapClick(e, link.label)}
+                              className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"
+                            >
+                              {link.label}
+                            </button>
+                          ) : link.href.startsWith("/") ? (
+                            <Link
+                              to={link.href}
+                              className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                            >
+                              {link.label}
+                            </Link>
+                          ) : (
+                            <a
+                              href={link.href}
+                              className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                            >
+                              {link.label}
+                            </a>
+                          )}
+                        </motion.li>
+                      ))}
+                    </ul>
+                  </>
+                );
+              })()}
+            </div>
+
+            <div className="md:col-start-2 md:row-start-1 flex flex-col gap-8">
+              {footerLinks.slice(1, 3).map((section, idx) => (
+                <div key={section.title}>
+                  <motion.h3
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: (idx + 1) * 0.1 }}
+                    className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4"
+                  >
+                    {section.title}
+                  </motion.h3>
+                  <ul className="space-y-3">
+                    {section.links.map((link, linkIdx) => (
+                      <motion.li
+                        key={link.label}
+                        initial={{ opacity: 0, x: -10 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        transition={{
+                          duration: 0.3,
+                          delay: (idx + 1) * 0.1 + linkIdx * 0.05,
+                        }}
+                      >
+                        {link.href.startsWith("/") ? (
+                          <Link
+                            to={link.href}
+                            className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                          >
+                            {link.label}
+                          </Link>
+                        ) : (
+                          <a
+                            href={link.href}
+                            className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                          >
+                            {link.label}
+                          </a>
+                        )}
+                      </motion.li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+
+            <div className="md:col-start-3 md:row-start-1">
+              <motion.h3
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4"
+              >
+                {footerLinks[3].title}
+              </motion.h3>
+              <ul className="space-y-3">
+                {footerLinks[3].links.map((link, linkIdx) => (
+                  <motion.li
+                    key={link.label}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 + linkIdx * 0.05 }}
+                  >
+                    <a
+                      href={link.href}
+                      className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                    >
+                      {link.label}
+                    </a>
+                  </motion.li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
 
