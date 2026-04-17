@@ -123,9 +123,9 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-gray-950 text-white pt-10 pb-10 overflow-hidden">
+    <footer className="relative bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white pt-10 pb-10 overflow-hidden transition-colors duration-300">
       {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-700 to-transparent opacity-50 z-20" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent opacity-50 z-20" />
 
       {/* Background elements (Interactive Animation + Subtle Text) */}
       <div
@@ -138,12 +138,12 @@ export default function Footer() {
         </div>
 
         {/* Subtle Text Layer */}
-        <div className="absolute bottom-16 md:bottom-20 left-0 w-full z-0 flex items-center justify-center opacity-[0.03] pointer-events-none select-none px-4 md:px-8">
+        <div className="absolute bottom-16 md:bottom-20 left-0 w-full z-0 flex items-center justify-center opacity-[0.04] dark:opacity-[0.03] pointer-events-none select-none px-4 md:px-8">
           <motion.h1
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="w-full text-[28vw] sm:text-[24vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] leading-none font-black text-center text-white flex flex-col md:flex-row justify-center md:gap-4 lg:gap-8 whitespace-nowrap"
+            className="w-full text-[28vw] sm:text-[24vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] leading-none font-black text-center text-gray-900 dark:text-white flex flex-col md:flex-row justify-center md:gap-4 lg:gap-8 whitespace-nowrap"
           >
             <span>STUDIO</span>
             <span>1947</span>
@@ -161,20 +161,20 @@ export default function Footer() {
               transition={{ duration: 0.6 }}
               className="text-3xl font-bold tracking-tight"
             >
-              <Logo className="h-6 w-auto text-white" />
+              <Logo className="h-6 w-auto text-gray-900 dark:text-white" />
             </motion.h2>
-            <p className="text-gray-400 max-w-sm text-lg leading-relaxed">
+            <p className="text-gray-500 dark:text-gray-400 max-w-sm text-lg leading-relaxed">
               Crafting digital experiences that merge timeless design with
               cutting-edge technology.
             </p>
             <div className="pt-8">
               <button
                 onClick={() => setIsContactModalOpen(true)}
-                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-white transition duration-300 ease-out border border-gray-700 rounded-full hover:border-white select-none active:scale-95"
+                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-gray-900 dark:text-white transition duration-300 ease-out border border-gray-300 dark:border-gray-700 rounded-full hover:border-gray-900 dark:hover:border-white select-none active:scale-95"
               >
-                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-white group-hover:translate-x-0 ease">
+                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-gray-900 dark:bg-white group-hover:translate-x-0 ease">
                   <svg
-                    className="w-6 h-6 text-black"
+                    className="w-6 h-6 text-white dark:text-black"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -188,7 +188,7 @@ export default function Footer() {
                     ></path>
                   </svg>
                 </span>
-                <span className="absolute flex items-center justify-center w-full h-full text-white transition-all duration-300 transform group-hover:translate-x-full ease">
+                <span className="absolute flex items-center justify-center w-full h-full text-gray-900 dark:text-white transition-all duration-300 transform group-hover:translate-x-full ease">
                   Start a Project
                 </span>
                 <span className="relative invisible">Start a Project</span>
@@ -207,7 +207,7 @@ export default function Footer() {
                       initial={{ opacity: 0, y: 10 }}
                       whileInView={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.5, delay: 0 }}
-                      className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4"
+                      className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4"
                     >
                       {section.title}
                     </motion.h3>
@@ -222,21 +222,21 @@ export default function Footer() {
                           {link.label === "Our Story" ? (
                             <button
                               onClick={(e) => handleSitemapClick(e, link.label)}
-                              className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"
+                              className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"
                             >
                               {link.label}
                             </button>
                           ) : link.href.startsWith("/") ? (
                             <Link
                               to={link.href}
-                              className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                              className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
                             >
                               {link.label}
                             </Link>
                           ) : (
                             <a
                               href={link.href}
-                              className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                              className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
                             >
                               {link.label}
                             </a>
@@ -256,7 +256,7 @@ export default function Footer() {
                     initial={{ opacity: 0, y: 10 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: (idx + 1) * 0.1 }}
-                    className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4"
+                    className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4"
                   >
                     {section.title}
                   </motion.h3>
@@ -274,14 +274,14 @@ export default function Footer() {
                         {link.href.startsWith("/") ? (
                           <Link
                             to={link.href}
-                            className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                            className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
                           >
                             {link.label}
                           </Link>
                         ) : (
                           <a
                             href={link.href}
-                            className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                            className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
                           >
                             {link.label}
                           </a>
@@ -298,7 +298,7 @@ export default function Footer() {
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4"
+                className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4"
               >
                 {footerLinks[3].title}
               </motion.h3>
@@ -312,7 +312,7 @@ export default function Footer() {
                   >
                     <a
                       href={link.href}
-                      className="text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
+                      className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
                     >
                       {link.label}
                     </a>
@@ -324,7 +324,7 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-gray-800 text-sm text-gray-500">
+        <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-400 dark:text-gray-500">
           <p>
             &copy; {new Date().getFullYear()} Studio 1947. All rights reserved.
           </p>
@@ -336,17 +336,17 @@ export default function Footer() {
             </div>
             {mirikAqi !== null && (
               <>
-                <div className="hidden md:block w-px h-3 bg-gray-800" />
+                <div className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
                 <div className="flex items-center space-x-2">
                   <span>Mirik AQI {mirikAqi}</span>
                 </div>
               </>
             )}
-            <div className="hidden md:block w-px h-3 bg-gray-800" />
+            <div className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
             <div className="flex items-center space-x-2">
               <span>US {formatTime(time, "America/New_York")}</span>
             </div>
-            <div className="hidden md:block w-px h-3 bg-gray-800" />
+            <div className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
             <div className="flex items-center space-x-2">
               <span>BER {formatTime(time, "Europe/Berlin")}</span>
             </div>

@@ -16,10 +16,11 @@
   --color-primary-300: #B988FF;
   --color-primary-400: #A260FF;
   --color-primary-500: #8B39FF;
-  --color-primary-600: #6B1FC8;
+  --color-primary-600: #8827ff;
   --color-primary-700: #5A1AAB;
   --color-primary-800: #49158E;
   --color-primary-900: #2D0D56;
+  --color-primary-hero: #8827ff;
 
   /* --- SECONDARY COLORS --- */
   /* Complementary orange/yellow for contrast */
@@ -94,7 +95,7 @@
 
 }
 
-/* Dark mode overrides */
+/* Dark mode overrides (Media query + .dark class) */
 @media (prefers-color-scheme: dark) {
   :root {
     --color-bg-primary: #111827;
@@ -105,4 +106,14 @@
     --color-text-secondary: #E5E7EB;
     --color-text-tertiary: #9CA3AF;
   }
+}
+
+.dark {
+  --color-bg-primary: #111827;
+  --color-bg-secondary: #1F2937;
+  --color-bg-tertiary: #374151;
+  
+  --color-text-primary: #F9FAFB;
+  --color-text-secondary: #E5E7EB;
+  --color-text-tertiary: #9CA3AF;
 }

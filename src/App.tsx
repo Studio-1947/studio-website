@@ -5,7 +5,6 @@ import { usePageMeta } from './hooks/usePageMeta';
 
 // Eagerly loaded — above the fold, must render immediately
 import Hero from './components/Hero';
-import ClientsTicker from './components/ClientsTicker';
 
 // Lazily loaded — below the fold, improves initial bundle size
 const Services = lazy(() => import('./components/Services/Services'));
@@ -32,7 +31,6 @@ function App() {
     <Layout>
       {/* Above the fold — eager */}
       <Hero />
-      <ClientsTicker />
 
       {/* Below the fold — lazy, each gets its own chunk */}
       <Suspense fallback={<SectionLoader />}>

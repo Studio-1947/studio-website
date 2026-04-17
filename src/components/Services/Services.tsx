@@ -2,12 +2,28 @@ import { Link } from "react-router-dom";
 
 export default function Services() {
   return (
-    <section className="bg-white dark:bg-gray-900 py-24 md:py-32 border-b border-gray-200 dark:border-gray-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative bg-white dark:bg-gray-900 py-24 md:py-32 lg:min-h-screen lg:flex lg:items-center border-b border-gray-200 dark:border-gray-800 overflow-hidden">
+      {/* Background illustration */}
+      <div
+        className="absolute inset-0 w-full h-full pointer-events-none select-none"
+        aria-hidden="true"
+      >
+        <img
+          src="/home/What We Do.svg"
+          alt=""
+          className="w-full h-full object-cover object-center"
+          loading="lazy"
+          decoding="async"
+        />
+        {/* Overlay — light mode: soft white wash; dark mode: deep dark wash */}
+        <div className="absolute inset-0 bg-white/70 dark:bg-gray-900/80 transition-colors duration-300" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         
         {/* Centralized, Premium Introduction */}
         <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
-          <span className="inline-block py-1.5 px-4 rounded-full bg-royal-50 dark:bg-royal-900/30 text-royal-700 dark:text-royal-300 text-sm font-bold tracking-widest uppercase mb-8 border border-royal-200 dark:border-royal-800 shadow-sm">
+          <span className="inline-block py-1.5 px-4 rounded-full bg-gradient-to-r from-primary via-primary to-purple-600 dark:from-primary-hero dark:via-primary-hero dark:to-purple-400 bg-clip-text text-transparent text-sm font-bold tracking-widest uppercase mb-8 border border-royal-200 dark:border-royal-800 shadow-sm">
             What We Do
           </span>
           <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-gray-900 dark:text-white tracking-tighter leading-[1.1] mb-8">
