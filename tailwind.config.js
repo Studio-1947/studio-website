@@ -29,6 +29,16 @@ export default {
           700: "#7e22ce",
         },
       },
+      animation: {
+        "cell-ripple": "cell-ripple var(--duration, 200ms) ease-out none 1 var(--delay, 0ms)",
+      },
+      keyframes: {
+        "cell-ripple": {
+          "0%": { opacity: "0.4" },
+          "50%": { opacity: "0.8" },
+          "100%": { opacity: "0.4" },
+        },
+      },
     },
   },
   plugins: [],
