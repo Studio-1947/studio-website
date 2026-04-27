@@ -20,15 +20,15 @@ export default function Hero() {
     }, []);
 
     return (
-        <div className="relative bg-white dark:bg-gray-900 overflow-hidden min-h-svh lg:h-screen flex flex-col">
+        <div className="relative bg-white dark:bg-gray-900 overflow-hidden min-h-[100dvh] flex flex-col">
             {/*
               Content zone: flex-1 makes this grow to fill everything except the ticker.
-              lg:pt-20 offsets the fixed navbar (≈80px) so the true center of THIS
-              region aligns with the visual center of the viewport.
+              Padding-top accounts for the fixed navbar on all breakpoints.
+              Using smaller pt on mobile so nothing gets clipped top or bottom.
             */}
-            <div className="flex-1 flex items-center w-full pt-24 lg:pt-36">
+            <div className="flex-1 flex items-center w-full pt-20 pb-4 sm:pt-24 sm:pb-4 lg:pt-28 lg:pb-0">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-8 lg:gap-16 items-center">
                         {/* Left Column: Text Content */}
                         <div className="text-center lg:text-left z-10 flex flex-col justify-center items-center lg:items-start order-2 lg:order-1 w-full">
                             <div className="text-center lg:text-left w-full pl-10 lg:pl-0">
@@ -74,15 +74,15 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        {/* Right Column: Hero Figure */}
-                        <div className="relative flex justify-center items-center w-full max-h-[40vh] sm:max-h-[55vh] lg:max-h-[70vh] order-1 lg:order-2 mb-8 lg:mb-0">
+                        {/* Right Column: Hero Figure — explicit heights prevent overflow at every breakpoint */}
+                        <div className="relative flex justify-center items-center w-full order-1 lg:order-2 mb-4 lg:mb-0 h-[280px] sm:h-[340px] md:h-[380px] lg:h-full lg:max-h-[600px]">
                             <motion.div
                                 className="w-full h-full flex justify-center items-center"
                                 initial={{ opacity: 0, scale: 0.9 }}
                                 animate={{ opacity: 1, scale: 1 }}
                                 transition={{ duration: 0.8, ease: "easeOut" }}
                             >
-                                <HeroFigure className="w-full h-full object-contain max-h-[500px] lg:max-h-[700px]" />
+                                <HeroFigure className="w-full h-full object-contain" />
                             </motion.div>
                         </div>
                     </div>
@@ -90,7 +90,7 @@ export default function Hero() {
             </div>
 
             {/* Clients Ticker — always at the bottom */}
-            <div className="w-full">
+            <div className="w-full flex-shrink-0">
                 <ClientsTicker />
             </div>
 

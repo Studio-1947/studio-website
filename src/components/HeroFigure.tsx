@@ -66,7 +66,7 @@ export default function HeroFigure({ className }: { className?: string }) {
 
                 // Make SVG fill container
                 svg.setAttribute("class", "w-full h-full");
-                svg.setAttribute("overflow", "visible");
+                svg.setAttribute("overflow", "hidden");
                 svg.removeAttribute("width");
                 svg.removeAttribute("height");
 
@@ -78,7 +78,7 @@ export default function HeroFigure({ className }: { className?: string }) {
 
     return (
         <div
-            className={`relative flex items-center justify-center w-full h-full aspect-square ${className || ""}`}
+            className={`relative flex items-center justify-center w-full h-full overflow-hidden ${className || ""}`}
         >
             <style>{`
                 @keyframes hero-spin-cw {
