@@ -20,11 +20,15 @@ export default function Hero() {
     }, []);
 
     return (
-        <div className="relative bg-white dark:bg-gray-900 overflow-hidden min-h-svh lg:h-screen flex flex-col pt-24 lg:pt-0">
-            {/* Main content — grows to fill available space */}
-            <div className="flex-1 flex items-center w-full">
+        <div className="relative bg-white dark:bg-gray-900 overflow-hidden min-h-svh lg:h-screen flex flex-col">
+            {/*
+              Content zone: flex-1 makes this grow to fill everything except the ticker.
+              lg:pt-20 offsets the fixed navbar (≈80px) so the true center of THIS
+              region aligns with the visual center of the viewport.
+            */}
+            <div className="flex-1 flex items-center w-full pt-24 lg:pt-36">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
                         {/* Left Column: Text Content */}
                         <div className="text-center lg:text-left z-10 flex flex-col justify-center items-center lg:items-start order-2 lg:order-1 w-full">
                             <div className="text-center lg:text-left w-full pl-10 lg:pl-0">
@@ -70,8 +74,8 @@ export default function Hero() {
                             </div>
                         </div>
 
-                        {/* Right Column: Key Figure */}
-                        <div className="relative flex justify-center items-center w-full h-full max-h-[40vh] sm:max-h-[50vh] lg:max-h-[80vh] order-1 lg:order-2 mb-8 lg:mb-0">
+                        {/* Right Column: Hero Figure */}
+                        <div className="relative flex justify-center items-center w-full max-h-[40vh] sm:max-h-[55vh] lg:max-h-[70vh] order-1 lg:order-2 mb-8 lg:mb-0">
                             <motion.div
                                 className="w-full h-full flex justify-center items-center"
                                 initial={{ opacity: 0, scale: 0.9 }}
