@@ -78,7 +78,7 @@ export default function Verticals() {
               image={card.image}
               index={i}
               featured={card.featured}
-              tone={card.tone}
+
               ctaLabel={card.ctaLabel}
               ctaHref={card.ctaHref}
               className={BENTO[card.id] ?? ""}
