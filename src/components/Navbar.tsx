@@ -173,7 +173,7 @@ export default function Navbar() {
     ];
 
     // Increased padding and adjusted max-width for "proper screen fill"
-    const pillBaseClass = "flex items-center space-x-10 px-12 py-5 bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl border border-black/20 dark:border-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300";
+    const pillBaseClass = "flex items-center xl:space-x-10 space-x-5 xl:px-12 px-6 py-5 bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl border border-black/20 dark:border-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300";
 
     const handleMouseEnter = (linkName: string, spokeIndex?: number) => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -205,7 +205,7 @@ export default function Navbar() {
                     {/* Left Pill */}
                     <div
                         ref={leftPillRef}
-                        className={`${pillBaseClass} rounded-full hidden lg:flex`}
+                        className={`${pillBaseClass} rounded-full hidden xl:flex`}
                         style={{
                             // Initial styles matching GSAP 'from' state
                             borderTopRightRadius: '9999px',
@@ -216,13 +216,13 @@ export default function Navbar() {
                     >
                         <Link
                             to="/"
-                            className="mr-8 block group/logo"
+                            className="xl:mr-8 mr-4 block group/logo"
                             onMouseEnter={() => setActiveSpoke(2)} // Default to 'Right' spoke on logo hover
                             onMouseLeave={() => setActiveSpoke(null)}
                         >
                             <Logo className="h-6 w-auto object-contain text-primary dark:text-primary-hero transition-colors duration-300" activeSpoke={activeSpoke} />
                         </Link>
-                        <div className="flex space-x-6 items-center">
+                        <div className="flex xl:space-x-6 space-x-4 items-center">
                             {leftLinks.map((link) => {
                                 const isActive = location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
                                 return (
@@ -242,7 +242,7 @@ export default function Navbar() {
                     {/* Right Pill */}
                     <div
                         ref={rightPillRef}
-                        className={`${pillBaseClass} rounded-full hidden lg:flex`}
+                        className={`${pillBaseClass} rounded-full hidden xl:flex`}
                         style={{
                             borderTopLeftRadius: '9999px',
                             borderBottomLeftRadius: '9999px',
@@ -250,7 +250,7 @@ export default function Navbar() {
                             transform: 'translateX(15vw)'
                         }}
                     >
-                        <div className="flex space-x-6 items-center">
+                        <div className="flex xl:space-x-6 space-x-4 items-center">
                             {rightLinks.map((link) => {
                                 const isActive =
                                     location.pathname === link.href ||
@@ -338,7 +338,7 @@ export default function Navbar() {
                                     </div>
                                 )
                             })}
-                            <div className="flex items-center gap-4 pl-6 ml-6 border-l border-gray-300 dark:border-gray-700">
+                            <div className="flex items-center gap-3 xl:pl-6 xl:ml-6 pl-3 ml-3 border-l border-gray-300 dark:border-gray-700">
                                 <button
                                     onClick={() => setIsSearchOpen(true)}
                                     className="text-base font-medium hover:text-primary transition-colors focus:outline-none flex items-center gap-2"
@@ -352,7 +352,7 @@ export default function Navbar() {
                     </div>
 
                     {/* Mobile Nav Container - Wider */}
-                    <div className="lg:hidden w-full flex justify-between items-center px-6 py-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl border border-black/10 dark:border-gray-800 pointer-events-auto min-w-[92vw] mx-auto">
+                    <div className="xl:hidden w-full flex justify-between items-center px-6 py-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl border border-black/10 dark:border-gray-800 pointer-events-auto min-w-[92vw] mx-auto">
                         <Link to="/" className="block">
                             <Logo className="h-8 w-auto text-primary dark:text-primary-hero transition-colors duration-300" />
                         </Link>
@@ -384,7 +384,7 @@ export default function Navbar() {
                 aria-modal="true"
                 aria-label="Mobile navigation menu"
                 aria-hidden={!isOpen}
-                className={`fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl transition-all duration-500 lg:hidden flex flex-col ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-10'
+                className={`fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl transition-all duration-500 xl:hidden flex flex-col ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-10'
                     }`}
             >
                 <div className="flex flex-col items-center justify-center min-h-screen w-full p-8 space-y-6 overflow-y-auto">
