@@ -92,13 +92,10 @@ const AiCrowd: React.FC = () => {
               <div className="lg:col-span-7 lg:pt-4">
                 <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                   <p>
-                    AICrowd is a global platform that hosts open AI challenges, research competitions, and collaborative hackathons — connecting organisations that have hard problems with the scientific community that can solve them. It has run hundreds of competitions spanning reinforcement learning, computer vision, NLP, and beyond, with participants from universities and research labs around the world.
+                    AICrowd is a global platform for open AI challenges, research competitions, and collaborative hackathons, connecting complex problems with the people equipped to solve them. With hundreds of competitions across fields like reinforcement learning, computer vision, and NLP, it brings together a highly skilled global research community.
                   </p>
                   <p>
-                    The platform sits at a rare intersection: it's simultaneously a competitive arena, a research repository, a community space, and a product used by some of the most technically demanding users in the world. Designing for it means designing for people who will notice when something doesn't work — and who will switch tabs the moment it gets in their way.
-                  </p>
-                  <p>
-                    Our collaboration with AICrowd focused on shaping the visual and structural foundations of the platform — building the systems and surfaces that let the work itself take centre stage.
+                    Positioned at the intersection of competition, research, and community, the platform demands precision in every detail. Our collaboration focused on shaping its visual and structural foundations which created systems that stay out of the way and let the work lead.
                   </p>
                 </div>
               </div>
@@ -119,7 +116,7 @@ const AiCrowd: React.FC = () => {
             <div className="mb-16">
               <div className="w-12 h-1 bg-[#D60000] rounded-full mb-6" />
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">
-                What we worked on
+                What we did
               </h2>
             </div>
 

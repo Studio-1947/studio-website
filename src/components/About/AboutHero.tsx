@@ -53,7 +53,7 @@ const AboutHero: React.FC = () => {
                   </span>
                   <div className="h-1 w-24 bg-royal-700 mx-auto md:ml-auto md:mr-0 mb-6 md:mb-8"></div>
                   <p className="text-lg md:text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-medium max-w-sm mx-auto md:mx-0 transition-colors duration-300 leading-relaxed">
-                    We craft ideas that live in the now and evolve with what’s next
+                    We craft ideas that live in the present and evolve with what’s next
                   </p>
             </div>
 

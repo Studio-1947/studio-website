@@ -15,9 +15,7 @@ const TeamHubs: React.FC = () => {
         </h2>
         
         <p className="text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed max-w-2xl mx-auto">
-          Studio 1947 is expanding its creative footprint.<br className="hidden md:block" />
-          We are establishing new team hubs to bridge<br className="hidden md:block" />
-          local talent with global opportunity.
+          Studio 1947 is growing its creative network, launching new team hubs that connect local talent with opportunities on a global stage.
         </p>
 
         <div className="pt-8 space-y-8">

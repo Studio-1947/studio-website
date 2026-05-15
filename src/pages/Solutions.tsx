@@ -31,10 +31,10 @@ const Solutions: React.FC = () => {
               What We Do
             </span>
             <h1 className="text-6xl md:text-8xl lg:text-9xl font-black text-gray-900 dark:text-white tracking-tighter leading-none mb-4 md:mb-6">
-              SOLUTIONS
+              FUTURE-READY
               <br />
               <span className="text-royal-600 dark:text-royal-400 inline-block mt-2">
-                THAT SCALE.
+                SOLUTIONS.
               </span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-400 font-light leading-relaxed max-w-3xl mx-auto">

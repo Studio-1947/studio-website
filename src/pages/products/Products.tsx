@@ -132,7 +132,7 @@ const Products: React.FC = () => {
             />
             <div className="relative z-10 max-w-2xl mx-auto">
               <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
-                Need something built to spec?
+                Have a vision? Let's build it to spec!
               </h3>
               <p className="text-gray-400 text-lg mb-8 leading-relaxed">
                 None of our existing products quite fit your problem? We design

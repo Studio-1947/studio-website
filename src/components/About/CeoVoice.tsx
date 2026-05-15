@@ -21,11 +21,14 @@ const CeoVoice: React.FC = () => {
             A Word from Our CEO
           </h2>
 
-          <p className="text-xl leading-relaxed text-gray-600 dark:text-gray-300 italic mb-12 relative z-10">
-            "Inspired by the spirit of free thinking, we bridge the gaps in digital development to uplift communities.
-            We integrate social impact into every project, using empathetic design and data to support capacity building.
-            Whether working with AI companies or social entrepreneurs, we craft solutions that are effective, helpful, and truly inclusive."
-          </p>
+          <div className="text-xl leading-relaxed text-gray-600 dark:text-gray-300 mb-12 relative z-10 space-y-5 text-left max-w-2xl mx-auto">
+            <p>
+              Inspired by free thought, Studio 1947 echoes the spirit of voices history left in the margins. Grounded in resilience, we weave together tradition and technology to shape futures led by people, not systems.
+            </p>
+            <p>
+              We value wisdom that exists beyond privilege, bringing unseen perspectives into the light. We create fair, human-centered impact, because true progress begins when every voice has the power to shape what comes next.
+            </p>
+          </div>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-y-4">
             {/* Signature Placeholder - Adjust text color/font as desired to mimic a signature, or replace with an img tag later */}

@@ -8,7 +8,7 @@ const work = [
     index: '01',
     title: 'Website Design & Development',
     description:
-      'We are designing and building the digital home for the Forum for Responsible Living — a platform that needs to hold the weight of a movement without feeling heavy. The site is conceived as a creative commons: a space where ideas, people, and projects can find each other. The design language reflects the values of the organisation — open, regenerative, and rooted — while remaining legible and inviting to the full breadth of its audience: designers, researchers, technologists, and community practitioners.',
+      "We're designing the digital home for the Forum for Responsible Living — a platform that carries the depth of a movement while staying open and accessible. Conceived as a creative commons, it connects ideas, people, and projects through a design language that is rooted, regenerative, and inviting to a diverse community.",
   },
 ];
 
@@ -60,7 +60,7 @@ const EcologicalFoundations: React.FC = () => {
                 <div className="w-12 h-1 bg-emerald-600 rounded-full mb-8" />
 
                 <p className="text-xl md:text-2xl text-emerald-600 dark:text-emerald-400 font-light leading-relaxed mb-6">
-                  Where purpose takes root.
+                  This is where purpose takes roots.
                 </p>
 
                 <a
@@ -134,7 +134,7 @@ const EcologicalFoundations: React.FC = () => {
             <div className="mb-16">
               <div className="w-12 h-1 bg-emerald-600 rounded-full mb-6" />
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">
-                What we're working on
+                Building what's next
               </h2>
             </div>
 

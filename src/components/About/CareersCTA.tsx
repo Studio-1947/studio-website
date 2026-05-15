@@ -19,14 +19,14 @@ const CareersCTA: React.FC = () => {
         </h2>
         
         <p className="text-lg md:text-2xl text-gray-300 leading-relaxed max-w-4xl mb-12 font-medium">
-          If our vision speaks to you, write to us, and we can co-create solutions where others only see complexity.
+          If our vision resonates, let's co-create solutions where others perceive complexity.
         </p>
-        
-        <Link 
+
+        <Link
           to="/careers"
           className="group relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-white transition-all duration-300 bg-royal-700 rounded-full hover:bg-royal-600 hover:scale-105 hover:shadow-[0_0_2rem_-0.5rem_rgba(168,85,247,0.5)] focus:outline-none focus:ring-4 focus:ring-royal-500 focus:ring-offset-2 focus:ring-offset-gray-900"
         >
-          <span>View Open Roles</span>
+          <span>Browse Opportunities</span>
           <svg 
             className="w-5 h-5 ml-3 transition-transform duration-300 group-hover:translate-x-1" 
             fill="none" 

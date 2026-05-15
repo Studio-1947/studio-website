@@ -63,13 +63,10 @@ const EcologicalFoundations: React.FC = () => {
               <div className="lg:col-span-7 lg:pt-4">
                 <div className="space-y-6 text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
                   <p>
-                    The Sundarbans is one of the most ecologically singular places on earth — a vast tidal mangrove delta shared between India and Bangladesh, where land and water are in constant, slow negotiation. It is also home to communities whose lives have been shaped by that landscape for generations: fisherfolk, honey collectors, woodworkers, weavers, and artisans whose craft carries the memory of the delta in every form it takes.
+                    Sunderbans appears as a land of quiet strength and living tradition. The mangrove roots rising from the soft, sloppy earth symbolize protection, endurance, and the courage to stand firm against storms. Reflecting their simple life and deep cultural roots, the ektara carries the gentle music of the people; they together express how small local businesses like fishing, honey gathering, and handicrafts grow naturally from the bond between nature and community.
                   </p>
                   <p>
-                    These artisans have largely existed outside the mainstream cultural record. Their work is not well documented, their names are not widely known, and the traditions they carry are vulnerable to the same pressures facing the landscape itself — climate change, migration, economic precarity, and the quiet erosion of intergenerational knowledge transfer.
-                  </p>
-                  <p>
-                    Sundargaan is an initiative to change that. It is an effort to recognise these artists on their own terms, to document their craft with the depth and care it deserves, and to build a living digital archive that makes their work accessible, searchable, and permanent.
+                    Sundargaan is a step toward rewriting that narrative — an initiative dedicated to recognising artists on their own terms, documenting their craft with the depth and dignity it deserves, and creating a living digital archive that ensures their work remains visible, discoverable, and enduring.
                   </p>
                 </div>
               </div>

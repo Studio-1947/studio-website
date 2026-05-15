@@ -30,12 +30,12 @@ const Culture: React.FC = () => {
               Our Culture
             </span>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white leading-tight">
-              At the heart of our work are three core values
+              Our work is guided by three core values
             </h2>
           </div>
           <div>
             <p className="text-lg md:text-xl text-gray-500 dark:text-gray-400 leading-relaxed font-light">
-              Our diverse team of strategists and creators crafts tailored solutions to elevate your online presence. We don't just deliver results; we nurture an environment where strategy meets humanity.
+              Our diverse team of strategists and creators builds solutions that are honest, inclusive, and enduring — where strategy meets humanity at every step.
             </p>
           </div>
         </div>
