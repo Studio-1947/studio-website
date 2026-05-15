@@ -12,12 +12,14 @@ class Particle {
     speedX: number;
     speedY: number;
     density: number;
+    private canvas: HTMLCanvasElement;
+    private ctx: CanvasRenderingContext2D;
+    private mouse: MousePos;
 
-    constructor(
-        private canvas: HTMLCanvasElement,
-        private ctx: CanvasRenderingContext2D,
-        private mouse: MousePos,
-    ) {
+    constructor(canvas: HTMLCanvasElement, ctx: CanvasRenderingContext2D, mouse: MousePos) {
+        this.canvas = canvas;
+        this.ctx = ctx;
+        this.mouse = mouse;
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.xOriginal = this.x;
