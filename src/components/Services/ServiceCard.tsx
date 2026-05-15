@@ -76,7 +76,7 @@ export default function ServiceCard({ title, description, bgImage, icon, iconBg,
       {/* GLOW EFFECT BEHIND */}
       <div 
         ref={glowRef}
-        className="pointer-events-none absolute left-0 top-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.12)_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.2)_0%,transparent_50%)] opacity-0 z-0"
+        className="pointer-events-none absolute left-0 top-0 w-[800px] h-[800px] bg-[radial-gradient(circle_at_center,rgba(214,0,0,0.12)_0%,transparent_50%)] dark:bg-[radial-gradient(circle_at_center,rgba(214,0,0,0.2)_0%,transparent_50%)] opacity-0 z-0"
       />
       
       {/* SHINE EFFECT ON TOP */}
@@ -108,7 +108,7 @@ export default function ServiceCard({ title, description, bgImage, icon, iconBg,
         {/* Typographic Title Area matching the poster look */}
         <div className="flex flex-col justify-end text-left z-10 space-y-4">
           <div>
-            <h3 className="text-3xl lg:text-[40px] font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1] mb-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors duration-500">
+            <h3 className="text-3xl lg:text-[40px] font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1] mb-2 group-hover:text-[#D60000] dark:group-hover:text-red-400 transition-colors duration-500">
               {title}
             </h3>
             <p className="text-gray-500 dark:text-gray-400 text-sm md:text-base font-medium tracking-wide uppercase mt-4 opacity-80 group-hover:opacity-100 transition-opacity">
@@ -116,7 +116,7 @@ export default function ServiceCard({ title, description, bgImage, icon, iconBg,
             </p>
           </div>
 
-          <div className="h-[2px] w-12 bg-gray-300 dark:bg-gray-700 mt-2 mb-2 group-hover:w-full group-hover:bg-blue-600/50 transition-all duration-700 ease-out"></div>
+          <div className="h-[2px] w-12 bg-gray-300 dark:bg-gray-700 mt-2 mb-2 group-hover:w-full group-hover:bg-[#D60000]/50 transition-all duration-700 ease-out"></div>
         </div>
       </div>
     </div>

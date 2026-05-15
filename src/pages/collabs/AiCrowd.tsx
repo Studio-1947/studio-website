@@ -57,11 +57,11 @@ const AiCrowd: React.FC = () => {
 
               {/* Left — identity */}
               <div className="lg:col-span-5">
-                <div className="w-16 h-16 rounded-2xl bg-blue-50 dark:bg-gray-800 flex items-center justify-center p-3 border border-blue-100 dark:border-gray-700 mb-8">
+                <div className="w-16 h-16 rounded-2xl bg-red-50 dark:bg-gray-800 flex items-center justify-center p-3 border border-red-100 dark:border-gray-700 mb-8">
                   <img src="/collabs/aicrowd.png" alt="AICrowd" className="w-full h-full object-contain" />
                 </div>
 
-                <span className="inline-block px-3 py-1 rounded-full bg-blue-50 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-widest mb-6">
+                <span className="inline-block px-3 py-1 rounded-full bg-red-50 dark:bg-red-900/30 text-[#D60000] dark:text-red-400 text-xs font-bold uppercase tracking-widest mb-6">
                   Collaboration
                 </span>
 
@@ -69,9 +69,9 @@ const AiCrowd: React.FC = () => {
                   AI<br />Crowd
                 </h1>
 
-                <div className="w-12 h-1 bg-blue-600 rounded-full mb-8" />
+                <div className="w-12 h-1 bg-[#D60000] rounded-full mb-8" />
 
-                <p className="text-xl md:text-2xl text-blue-600 dark:text-blue-400 font-light leading-relaxed mb-6">
+                <p className="text-xl md:text-2xl text-[#D60000] dark:text-red-400 font-light leading-relaxed mb-6">
                   Where the world's AI researchers compete, collaborate, and build.
                 </p>
 
@@ -117,7 +117,7 @@ const AiCrowd: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
             <div className="mb-16">
-              <div className="w-12 h-1 bg-blue-600 rounded-full mb-6" />
+              <div className="w-12 h-1 bg-[#D60000] rounded-full mb-6" />
               <h2 className="text-3xl md:text-4xl font-black text-gray-900 dark:text-white">
                 What we worked on
               </h2>
@@ -131,7 +131,7 @@ const AiCrowd: React.FC = () => {
                 >
                   {/* Index + title */}
                   <div className="md:col-span-4 lg:col-span-3">
-                    <span className="text-xs font-black text-blue-400 dark:text-blue-500 tracking-widest uppercase block mb-3">
+                    <span className="text-xs font-black text-[#D60000] dark:text-red-400 tracking-widest uppercase block mb-3">
                       {item.index}
                     </span>
                     <h3 className="text-2xl md:text-3xl font-black text-gray-900 dark:text-white leading-tight">

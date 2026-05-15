@@ -18,7 +18,7 @@ export const solutionsData = [
         />
       </svg>
     ),
-    color: "from-blue-500 to-cyan-400",
+    color: "from-[#D60000] to-rose-400",
     bgImage:
       "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=800&auto=format&fit=crop",
     iconBg: "bg-primary/10",

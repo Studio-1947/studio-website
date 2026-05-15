@@ -21,10 +21,10 @@ const collabs = [
     url: 'www.aicrowd.com',
     description: 'Data models trained and verified, fueling open-source intelligence and democratizing AI for grassroots problems.',
     logo: '/collabs/aicrowd.png',
-    theme: 'from-blue-600 to-indigo-600',
-    bgLight: 'bg-blue-50',
-    textLight: 'text-blue-600',
-    darkBg: 'dark:bg-blue-900/20',
+    theme: 'from-[#D60000] to-rose-700',
+    bgLight: 'bg-red-50',
+    textLight: 'text-[#D60000]',
+    darkBg: 'dark:bg-red-900/20',
     image: 'https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=800&auto=format&fit=crop'
   },
   {

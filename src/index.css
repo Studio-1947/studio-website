@@ -4,23 +4,23 @@
 
 /* ===================================
    DESIGN SYSTEM - CSS VARIABLES
-   Base Color: #4D00DF (Deep Purple)
+   Base Color: #D60000 (Studio Red)
    =================================== */
 
 :root {
   /* --- PRIMARY COLOR (MAIN BRAND) --- */
-  --color-primary: #4D00DF;
-  --color-primary-50: #F3EBFF;
-  --color-primary-100: #E8D7FF;
-  --color-primary-200: #D1B0FF;
-  --color-primary-300: #B988FF;
-  --color-primary-400: #A260FF;
-  --color-primary-500: #8B39FF;
-  --color-primary-600: #8827ff;
-  --color-primary-700: #5A1AAB;
-  --color-primary-800: #49158E;
-  --color-primary-900: #2D0D56;
-  --color-primary-hero: #8827ff;
+  --color-primary: #D60000;
+  --color-primary-50: #FFF0F0;
+  --color-primary-100: #FFD6D6;
+  --color-primary-200: #FFADAD;
+  --color-primary-300: #FF8080;
+  --color-primary-400: #FF4D4D;
+  --color-primary-500: #E81010;
+  --color-primary-600: #D60000;
+  --color-primary-700: #B30000;
+  --color-primary-800: #8F0000;
+  --color-primary-900: #5C0000;
+  --color-primary-hero: #D60000;
 
   /* --- SECONDARY COLORS --- */
   /* Complementary orange/yellow for contrast */
@@ -71,8 +71,8 @@
   --color-warning-light: #FEF3C7;
   --color-error: #EF4444;
   --color-error-light: #FEE2E2;
-  --color-info: #3B82F6;
-  --color-info-light: #DBEAFE;
+  --color-info: #D60000;
+  --color-info-light: #FFCCCC;
 
   /* --- BACKGROUND & TEXT --- */
   --color-bg-primary: #FFFFFF;

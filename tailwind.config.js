@@ -9,7 +9,7 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: "#4D00DF",
+          DEFAULT: "#D60000",
           foreground: "#FFFFFF",
           hero: "var(--color-primary-hero)",
         },
@@ -25,8 +25,8 @@ export default {
         },
         border: "var(--color-gray-200)",
         royal: {
-          500: "#a855f7",
-          700: "#7e22ce",
+          500: "#D60000",
+          700: "#B30000",
         },
       },
       animation: {

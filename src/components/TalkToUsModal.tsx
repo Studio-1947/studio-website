@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { toast } from 'sonner';
-import { X } from 'lucide-react';
+import { useState, useEffect, useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 interface TalkToUsModalProps {
     isOpen: boolean;
@@ -8,165 +7,156 @@ interface TalkToUsModalProps {
 }
 
 export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
-    const [isSubmitting, setIsSubmitting] = useState(false);
-    const [isSuccess, setIsSuccess] = useState(false);
-
-    const handleClose = () => {
-        onClose();
-        setTimeout(() => setIsSuccess(false), 300);
-    };
+    const [form, setForm] = useState({ name: "", email: "", message: "" });
+    const [submitted, setSubmitted] = useState(false);
+    const nameRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
-        if (!isOpen) return;
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === 'Escape') handleClose();
-        };
-        document.addEventListener('keydown', handleKeyDown);
-        return () => document.removeEventListener('keydown', handleKeyDown);
+        if (isOpen) {
+            setTimeout(() => nameRef.current?.focus(), 50);
+            setForm({ name: "", email: "", message: "" });
+            setSubmitted(false);
+        }
     }, [isOpen]);
 
-    if (!isOpen) return null;
+    useEffect(() => {
+        const handleKeyDown = (e: KeyboardEvent) => {
+            if (e.key === "Escape") onClose();
+        };
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [onClose]);
 
-    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
-        setIsSubmitting(true);
-
-        const formData = new FormData(e.currentTarget);
-
-        // Add required Web3Forms parameters
-        formData.append("access_key", "ca0477c5-5671-437a-81b4-f297223a50d6");
-        formData.append("subject", "Talk To Us - Query from Studio 1947 Website");
-        // Prevent default redirect
-        formData.append("redirect", "false");
-
-        try {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData,
-                headers: {
-                    'Accept': 'application/json'
-                }
-            });
-
-            const data = await response.json();
-
-            if (data.success) {
-                toast.success("Message sent successfully!");
-                setIsSuccess(true);
-            } else {
-                toast.error(data.message || "Something went wrong. Please try again.");
-            }
-        } catch (error) {
-            toast.error("An error occurred. Please check your connection and try again.");
-            console.error("Web3Forms submission error:", error);
-        } finally {
-            setIsSubmitting(false);
-        }
+        setSubmitted(true);
     };
 
     return (
-        <div
-            className="fixed inset-0 z-[100] flex items-center justify-center bg-black/50 backdrop-blur-sm p-4 sm:p-6 overflow-y-auto"
-            onClick={handleClose}
-        >
-            <div
-                className={`bg-white dark:bg-gray-900 rounded-2xl sm:rounded-3xl w-full max-w-lg p-6 sm:p-8 relative shadow-2xl border border-gray-200 dark:border-gray-800 animate-in fade-in zoom-in duration-300 my-4 sm:my-8 flex flex-col`}
-                onClick={(e) => e.stopPropagation()}
-            >
-                <button
-                    onClick={handleClose}
-                    className="absolute top-6 right-6 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors z-10 text-gray-500 hover:text-gray-900 dark:hover:text-white"
-                    aria-label="Close modal"
-                >
-                    <X className="w-6 h-6" />
-                </button>
+        <AnimatePresence>
+            {isOpen && (
+                <>
+                    {/* Backdrop */}
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.2 }}
+                        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60]"
+                        onClick={onClose}
+                    />
 
-                {isSuccess ? (
-                    <div className="flex flex-col items-center w-full py-8">
-                        <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mb-6">
-                            <svg className="w-8 h-8 text-green-600 dark:text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
-                            </svg>
-                        </div>
-                        <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2 text-center">Thank You!</h3>
-                        <p className="text-gray-600 dark:text-gray-400 text-center">We have received your message and will get back to you shortly.</p>
-                    </div>
-                ) : (
-                    <>
-                        <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white mb-2">Talk to Us</h3>
-                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-6 sm:mb-8">Let's discuss how we can help you achieve your goals. Fill in your details below and we'll get in touch with you shortly.</p>
+                    {/* Modal */}
+                    <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.95, y: 20 }}
+                            animate={{ opacity: 1, scale: 1, y: 0 }}
+                            exit={{ opacity: 0, scale: 0.95, y: 20 }}
+                            transition={{ duration: 0.2, type: "spring", damping: 25, stiffness: 300 }}
+                            className="w-full max-w-lg pointer-events-auto"
+                        >
+                            <div className="bg-white dark:bg-[#121212] rounded-2xl shadow-2xl border border-gray-100 dark:border-gray-800 overflow-hidden">
 
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            {/* Honeypot Spam Protection */}
-                            <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} />
-
-                            <div>
-                                <input
-                                    type="text"
-                                    name="name"
-                                    id="name"
-                                    required
-                                    autoComplete="name"
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                                    placeholder="Your Name *"
-                                />
-                            </div>
-
-                            <div>
-                                <input
-                                    type="tel"
-                                    name="phone_number"
-                                    id="number"
-                                    required
-                                    autoComplete="tel"
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                                    placeholder="Phone Number *"
-                                />
-                            </div>
-
-                            <div>
-                                <input
-                                    type="email"
-                                    name="email"
-                                    id="email"
-                                    required
-                                    autoComplete="email"
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none"
-                                    placeholder="Email Address *"
-                                />
-                            </div>
-
-                            <div>
-                                <textarea
-                                    name="message"
-                                    id="message"
-                                    rows={4}
-                                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-950 text-gray-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent transition-all outline-none resize-y"
-                                    placeholder="Your Message "
-                                ></textarea>
-                            </div>
-
-                            <button
-                                type="submit"
-                                disabled={isSubmitting}
-                                className="w-full py-4 px-6 rounded-xl bg-black dark:bg-white text-white dark:text-black font-bold text-lg hover:scale-[1.02] transition-transform flex items-center justify-center disabled:opacity-70 disabled:cursor-not-allowed disabled:hover:scale-100"
-                            >
-                                {isSubmitting ? (
-                                    <div className="flex items-center gap-2">
-                                        <svg className="animate-spin h-5 w-5" viewBox="0 0 24 24">
-                                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" fill="none" />
-                                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" />
-                                        </svg>
-                                        Sending...
+                                {/* Header */}
+                                <div className="flex items-start justify-between p-8 pb-6">
+                                    <div>
+                                        <div className="w-8 h-1 bg-[#D60000] rounded-full mb-4" />
+                                        <h2 className="text-2xl font-black text-gray-900 dark:text-white tracking-tight">
+                                            Let's talk
+                                        </h2>
+                                        <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                            Tell us what you're working on.
+                                        </p>
                                     </div>
-                                ) : (
-                                    "Send Message"
-                                )}
-                            </button>
-                        </form>
-                    </>
-                )}
-            </div>
-        </div>
+                                    <button
+                                        onClick={onClose}
+                                        className="w-8 h-8 flex items-center justify-center rounded-lg text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                                        aria-label="Close"
+                                    >
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                            <path d="M12 4L4 12M4 4l8 8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
+                                        </svg>
+                                    </button>
+                                </div>
+
+                                {/* Body */}
+                                <div className="px-8 pb-8">
+                                    {submitted ? (
+                                        <motion.div
+                                            initial={{ opacity: 0, y: 8 }}
+                                            animate={{ opacity: 1, y: 0 }}
+                                            className="py-8 text-center"
+                                        >
+                                            <div className="w-12 h-12 rounded-full bg-[#D60000]/10 flex items-center justify-center mx-auto mb-4">
+                                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                                    <path d="M4 10l4.5 4.5L16 6" stroke="#D60000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                                                </svg>
+                                            </div>
+                                            <p className="text-lg font-bold text-gray-900 dark:text-white">We'll be in touch.</p>
+                                            <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
+                                                Thanks for reaching out, {form.name.split(" ")[0]}.
+                                            </p>
+                                        </motion.div>
+                                    ) : (
+                                        <form onSubmit={handleSubmit} className="space-y-4">
+                                            <div className="grid grid-cols-2 gap-4">
+                                                <div>
+                                                    <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
+                                                        Name
+                                                    </label>
+                                                    <input
+                                                        ref={nameRef}
+                                                        type="text"
+                                                        required
+                                                        value={form.name}
+                                                        onChange={(e) => setForm({ ...form, name: e.target.value })}
+                                                        placeholder="Your name"
+                                                        className="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#D60000] focus:ring-1 focus:ring-[#D60000] transition-colors"
+                                                    />
+                                                </div>
+                                                <div>
+                                                    <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
+                                                        Email
+                                                    </label>
+                                                    <input
+                                                        type="email"
+                                                        required
+                                                        value={form.email}
+                                                        onChange={(e) => setForm({ ...form, email: e.target.value })}
+                                                        placeholder="you@example.com"
+                                                        className="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#D60000] focus:ring-1 focus:ring-[#D60000] transition-colors"
+                                                    />
+                                                </div>
+                                            </div>
+
+                                            <div>
+                                                <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
+                                                    Message
+                                                </label>
+                                                <textarea
+                                                    required
+                                                    rows={4}
+                                                    value={form.message}
+                                                    onChange={(e) => setForm({ ...form, message: e.target.value })}
+                                                    placeholder="What are you working on?"
+                                                    className="w-full px-4 py-2.5 rounded-lg bg-gray-50 dark:bg-gray-900 border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white placeholder-gray-400 text-sm focus:outline-none focus:border-[#D60000] focus:ring-1 focus:ring-[#D60000] transition-colors resize-none"
+                                                />
+                                            </div>
+
+                                            <button
+                                                type="submit"
+                                                className="w-full py-3 rounded-lg bg-[#D60000] text-white text-sm font-bold tracking-wide hover:bg-[#B80000] transition-colors duration-200"
+                                            >
+                                                Send Message
+                                            </button>
+                                        </form>
+                                    )}
+                                </div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </>
+            )}
+        </AnimatePresence>
     );
 }

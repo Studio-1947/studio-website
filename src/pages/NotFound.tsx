@@ -43,7 +43,7 @@ export default function NotFound() {
       className="min-h-screen bg-[#F8F9FA] dark:bg-[#121212] flex flex-col items-center justify-center px-4 overflow-hidden relative"
     >
       {/* Background ambient glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-blue-500/5 dark:bg-blue-500/10 rounded-full blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#D60000]/5 dark:bg-[#D60000]/10 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="relative z-10 flex flex-col items-center text-center">
 

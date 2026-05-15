@@ -8,7 +8,7 @@ interface LogoProps {
 const Logo: React.FC<LogoProps> = ({ className }) => {
     return (
         <img
-            src="/logos/studio1947_logo.svg"
+            src="/Logo-studio-new.svg"
             alt="Studio 1947 Logo"
             className={`${className} dark:brightness-0 dark:invert`}
         />
