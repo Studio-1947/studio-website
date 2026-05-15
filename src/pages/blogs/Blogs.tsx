@@ -54,6 +54,8 @@ const Blogs: React.FC = () => {
                           <img
                             src={featuredBlog.coverImage}
                             alt={featuredBlog.title}
+                            loading="eager"
+                            decoding="async"
                             className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
                           />
                         )}
@@ -104,6 +106,8 @@ const Blogs: React.FC = () => {
                           <img
                             src={blog.coverImage}
                             alt={blog.title}
+                            loading="lazy"
+                            decoding="async"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                           />
                         )}

@@ -239,7 +239,7 @@ the morning light, that we find a wisdom we are only beginning to fathom.
     date: "Jun 24, 2025",
     language: "Hindi",
     tags: [],
-    excerpt: "#Gender-Equality                  #Constitutional_Right                              #Youth CLOTHES HAVE \"NO\" GENDER . ISN'T IT ??? एक स\$ची कहानी से ...",
+    excerpt: "#Gender-Equality                  #Constitutional_Right                              #Youth CLOTHES HAVE \"NO\" GENDER . ISN'T IT ??? एक स$ची कहानी से ...",
     coverImage: "/blogs/Clothes have no gender.png",
     content: `
 #Gender-Equality                  #Constitutional_Right                              #Youth
@@ -409,134 +409,134 @@ banana, milk and sugar.
     date: "Jun 24, 2025",
     language: "English",
     tags: [],
-    excerpt: "Brewing Beer And Memories   Aliya and her cousins were travelling back from Delhi to their hometown in Arunachal​ Pradesh. Aliya had bought her naniap...",
+    excerpt: "Brewing Beer And Memories   Aliya and her cousins were travelling back from Delhi to their hometown in Arunachal Pradesh. Aliya had bought her naniap...",
     coverImage: "/blogs/yu beer.png",
     content: `
 Brewing Beer And
 Memories
 
 
-Aliya and her cousins were travelling back from Delhi to their hometown in Arunachal​
+Aliya and her cousins were travelling back from Delhi to their hometown in Arunachal
 Pradesh. Aliya had bought her naniapiya (father’s elder sister) a jewellery box from
-Janpath​
+Janpath
 and a set of flavoured beer from a shop in Safdarjung, an area famous for
 
-Northeastern​
+Northeastern
 cuisine. As they sat on the bamboo floor exchanging pleasantries Aliya’s naniapiya
-was​
-mixing rice spreaded on a tarpaulin sheet with an aluminium ladle. ​
-Naniapiya. Ini mein nu gebane aecha gifts lowada. Aathu.​
-Ohh. Aecha kesha mein taando! Thank you ah. Aecha aesya? Yu hunji aathu da.​
+was
+mixing rice spreaded on a tarpaulin sheet with an aluminium ladle. 
+Naniapiya. Ini mein nu gebane aecha gifts lowada. Aathu.
+Ohh. Aecha kesha mein taando! Thank you ah. Aecha aesya? Yu hunji aathu da.
 Aecha mein flavoured yu dumo. Yu ajihone nu aecha ma fruit flavour aetehone
-ichibu topra​
-mein taando baida. Aathu aecha Kiwi chi, aecha mango flavour. ​
-Naniapiya. We have bought gifts for you. Please have a look.​
-Ohh. These are beautiful. Thank you dear. What is this? This looks like Yu.​
+ichibu topra
+mein taando baida. Aathu aecha Kiwi chi, aecha mango flavour. 
+Naniapiya. We have bought gifts for you. Please have a look.
+Ohh. These are beautiful. Thank you dear. What is this? This looks like Yu.
 Yes it is. It is a set of flavoured yu (rice beer). When the rice beer is made it is mixed
-with​
+with
 fruit syrup and fruits flavours and then we can drink delicious flavoured fruit beer.
-See this​
-one is made up of Kiwi, and this one is a mango flavoured drink.​
+See this
+one is made up of Kiwi, and this one is a mango flavoured drink.
 As naniapiya nods at the explanation she cannot help but remember how the
-process of​
+process of
 brewing yu used to be a household chore which connected households through
-barter system​
+barter system
 and merrymaking. Yu is seen as a necessary part of village and community
-festivities. Local​
+festivities. Local
 glutinous rice cultivated in the farm is half boiled along with red rice. Naniapiya says
-the red​
+the red
 rice is Mishinge jijiko. The name of this variant of red rice might have been derived
-from an​
+from an
 indigenous collection of rice of the species Oryza sativa, known as Jijiko from Tirap
-district.​
+district.
 Another possibility is another type of variant found in Lohit district which is nearer to
-their​
-district of Lower Dibang Valley. The name of the variant is Jijikong (Ahu) of the same​
+their
+district of Lower Dibang Valley. The name of the variant is Jijikong (Ahu) of the same
 
 species. One of the ways in exchange in rice varieties and names could have been
-a result of​
-weekly markets held in villages and barter system. ​
+a result of
+weekly markets held in villages and barter system. 
 As the local white rice is half boiled and mixed with the red rice it produces a
-nutty, starchy​
+nutty, starchy
 aroma. The rice is spreaded evenly on a carpet until it has cooled down
-substantially. Then​
+substantially. Then
 the Pa is broken down into fine powder and mixed with the rice. Pa is a rice
-cake consisting​
+cake consisting
 of yeast that will help the rice to ferment. It is made out of uncooked rice paste
-which is​
+which is
 mixed with old rice cakes consisting of yeast or local herbs which fastens the
-fermentation.​
+fermentation.
 These small rice cakes are shaped into small disks which can be stored for
-months. ​
+months. 
 Naniapiya recalls “ Nga ichikihi ho nani so paku ne inane, oko ma pehiyo, pa ajigai
-chi. Pa​
+chi. Pa
 ajite hiyo, aashunu ma brushutu aehiyo, aaya gibene aamegaichida. Aaya ho Pa
-khege ma​
+khege ma
 prage lagaichi, aechaho Pa amuni babuda. Hu chi hone khepetya chiyada. Nga
-ichiga​
+ichiga
 bihitone Bizari iiho, ayahobu nga aatiko chi nani aalombro so inyime pa ajigai da. Pa
-aji​
+aji
 hone jigaiho ini yaku alombro mein jipa jeene oko chi lagaiji, aatiko chi, anapra chi
-lagaiji.​
+lagaiji.
 Baha chi taju bu lagaiji, aai aene jigachida.
 Buge mein ini mein Bizari ne Pa ajite hayo Dambuk ma amewdane aagugaichida.
-Nga hone,​
+Nga hone,
 ichibu nani khe kani hone Dambuk bojaar aagugaichida. Bojare pa aakhahogaicha
-imu mein​
-taando pa lowdane ini maanu ma dega banaba. Ini chi pa wa mosa alombro mein​
+imu mein
+taando pa lowdane ini maanu ma dega banaba. Ini chi pa wa mosa alombro mein
 
-londogahiba. Baha aashunuge pa amehiyo, aaga kani kiku gine aegaichim. ​
+londogahiba. Baha aashunuge pa amehiyo, aaga kani kiku gine aegaichim. 
 “When I was young Whenever we used to return from our fields we would start
-making pa.​
+making pa.
 We would make enough that could be stored in our baskets and sell it in the
-markets, some​
+markets, some
 people used to come at home to buy it and we would also visit houses in our village.
-The cost​
+The cost
 of selling one pa was 1 Rs. Now it has increased to 10 Rs. When I got married I had
-to shift to​
+to shift to
 my husband’s village which is Bizari. I used to make pa along with the village nani
-(mothers).​
+(mothers).
 We used to talk about our households, childhood, food and much more. Then after
-we made​
+we made
 and filled our baskets with pa we would go to the market which was at Dambuk. One
-day as​
+day as
 we went to the market, we opened our baskets and displayed our pa for customers
-and​
+and
 suddenly all the people in the market surrounded us. It was so crowded. Hands
-jutting out​
+jutting out
 money in exchange of a dozen pa. It was amusing. Most of our customers were Adi
-(another​
+(another
 tribe residing in Siang, East Siang, Upper Siang, West Siang, Lower Dibang Valley
-and Lohit​
-districts). Maybe because most of them lived in Dambuk too. ​
+and Lohit
+districts). Maybe because most of them lived in Dambuk too. 
 In the olden days mothers would fill baskets of pa and travel to villages and markets
-in the​
-morning. By evening they would return back with two baskets of grains and pulses.”​
+in the
+morning. By evening they would return back with two baskets of grains and pulses.”
 After Pa is mixed with the rice it is evenly spread again. When the rice cools down it
-is stored​
+is stored
 in aluminium or steel beakers. The speed of the fermentation process usually
-depends on the​
+depends on the
 temperature and season. During winter season it takes more than two weeks for the
 
-rice to be​
-properly fermented while in summer the process may be completed in a week. ​
+rice to be
+properly fermented while in summer the process may be completed in a week. 
 People believe drinking Yu in small quantities help in regulating low blood
-pressure and​
+pressure and
 digestion. Although Yu is harmful when consumed heavily, it is also an
-integral process of​
+integral process of
 traditional cooking technique. Rice beer, Apong, Zutho, Chuwak, Yu whatever
-the name be it​
+the name be it
 has connected several people with love and appreciation for tribal cooking
-and culture. When​
+and culture. When
 resources were scarce and means of leisure almost none, drinking Yu and
-sharing stories,​
+sharing stories,
 enjoying some hours before lulling into sleep was a social outlet for men and
-women alike to​
-enjoy the simple pleasures of life. ​
-References ​
+women alike to
+enjoy the simple pleasures of life. 
+References 
 
 http://genebank.nbpgr.ernet.in/SeedBank/AccessionDetails.aspx?state=Arunac
-hal%20Prades​
+hal%20Prades
 h&&cgrp=1&&cid=2047
 `
   },
@@ -658,134 +658,134 @@ the worshipping, animal hunting is on a rapid rate of decline.
 My ‘boring’ traditional attire was never ‘boring’ at all
 
 Packing for college was an exciting activity for Imu considering that this was going to
-be her​
+be her
 first time leaving her hometown of seventeen years and going to a college in
-another state. As​
+another state. As
 her stomach filled with a heavy sense of impending doom; probably because of
-excitement​
+excitement
 and jittery nerves, she did a double check on all her belongings packed in her brown
-trolley​
-which her elder sister had packed.​
-Eeee! Aecha aesya? Ngada. Nga aecha thuwe gimbaw gumda! ​
-Aecha nu chi Etopolo ni Thuwe. Naniapiya mein college gimbana laada. ​
-Eeee. Ngada. Kesha gum. Nga gimbaw gum.​
-Yoh! Gimbana.​
-Ngada. Ngada. Ngada!!​
+trolley
+which her elder sister had packed.
+Eeee! Aecha aesya? Ngada. Nga aecha thuwe gimbaw gumda! 
+Aecha nu chi Etopolo ni Thuwe. Naniapiya mein college gimbana laada. 
+Eeee. Ngada. Kesha gum. Nga gimbaw gum.
+Yoh! Gimbana.
+Ngada. Ngada. Ngada!!
 
-Eee. What is this? No! I am not taking this thuwe with me.​
+Eee. What is this? No! I am not taking this thuwe with me.
 This is your Etopolo and Thuwe. Naniapiya has told you to take it with you to your
-college.​
-Eeee. No. This is not even pretty. I am not taking it.​
-Oh c’mon. Take this with you.​
-No. No. No!!​
+college.
+Eeee. No. This is not even pretty. I am not taking it.
+Oh c’mon. Take this with you.
+No. No. No!!
 But after multiple back and forth between the two sisters which lasted for more than
-half an​
+half an
 hour the result was final. Imu would be taking her ‘boring’ traditional Etopolo (top)
-and​
+and
 Thuwe (wrap around skirt) with her to college. Although Imu had kept her end of the
-bargain​
+bargain
 she promised herself she would not be taking these clothes out from her bag any
-time soon. ​
+time soon. 
 College started and so did new adventures and lessons. Days turned into weeks
-and weeks​
+and weeks
 into months and soon it was the Indigenous Faith Day of Arunachal Pradesh. In the
-midst of​
+midst of
 tribal students excited to flaunt their traditional attire Imu found herself nervous at
-the​
-thought of wearing hers. ​
+the
+thought of wearing hers. 
 The idu mishmi textile pattern consists of simple geometric shapes which are
-decorated with​
+decorated with
 smaller colourful shapes. The primary colours used in Idu Mishmi textiles are Black,
-dark or​
+dark or
 bright orange, white. Different cloth pieces have different colour themes. For
-instance- when​
+instance- when
 weaving a traditional Thuwe which is a wrap around skirt the colours used are
-mostly black,​
+mostly black,
 dark or bright orange, white and shimmering yarn is also used for embellishments.
-The​
+The
 design on a Thuwe is weaved on a black background with rows of diamond shaped
 
-motifs​
+motifs
 filled with smaller diamonds in shiny silver, white or brighter colours of green or
-bright​
+bright
 orange. A traditional everyday Etoma , a coat also has the same colour scheme as
-the Thuwe.​
+the Thuwe.
 Another coat known as Anatubru is a more colourful version consisting of bright
-yellow​
+yellow
 rectangular strips with black, red and green geometric shaped embroidery. The
-warrior coat​
+warrior coat
 known as Etondre is made out of thicker yarn or wool. It is mostly in a symmetrical
-black and​
-white design. ​
+black and
+white design. 
 
 In the earlier days the Idu Mishmi people would use nettle plants to make yarn and
-natural​
+natural
 plant dyes for the colours. Every loom set was different and had multiple
-components for​
+components for
 multiple attires. Since the clothes were curated out of natural raw products it was a
-time​
+time
 taking process taking up to four to five months. Thus each clothing piece was
-appreciated and​
+appreciated and
 cost a lot. When Imu was in high school she remembered how her naniapiya
-weaved different​
+weaved different
 sets of Thuwe for different occasions. The simpler ones made mostly out of one
-single colour​
+single colour
 could be weaved in a week and would cost around 1000- 1500 Rs. While the ones
-which had​
+which had
 Joṉ (embroidery/ weaving designs) were much costlier considering the amount of
-time and​
+time and
 precision it took to complete one. The cost of the latter would start from 3000- 6000
-Rs. ​
+Rs. 
 Imu remembered how she had to accompany her aunty during the initial phase of
-setting up​
+setting up
 
 the wooden loom for weaving. She would pass the ball of black yarn to her aunty
-who would​
+who would
 be sitting in front of the loom; one hand waiting for the ball at point A and passing it
-to the​
+to the
 other hand through the horizontal opening at point B. As the duo repeated this
-process till a​
+process till a
 black piece of desired outcome could be seen they would be sharing anecdotes
-from everyday​
+from everyday
 life, incidents of great curiosity, home remedies and life lessons from school and the
-farm.​
+farm.
 As the D-day approached, Imu found herself contemplating if her attire would be
-pretty​
+pretty
 enough or if it would be too plain and simple. A pinch of nervousness and a bucket
-load of​
+load of
 hopefulness later Imu looked at herself in the mirror. She looked pretty. Why did she
-think​
+think
 her clothes made her ugly? Perhaps it looked boring to her because she had always
-seen it be​
+seen it be
 made out of simple balls of yarn and had worn it multiple times on multiple
-occasions that​
+occasions that
 she forgot how colourful it was and how beautiful her clothes made her feel. She
-was wearing​
+was wearing
 a lekopo, a traditional necklace made out of small white beads and bigger red
-beads, her​
+beads, her
 silver earrings or andisu and her aakuchi (purse) made her resemble her naniapiya,
-her​
-mother’s elder sister.​
+her
+mother’s elder sister.
 Mimi, her Adi friend, was also wearing her traditional attire of Ulta Galuk (top) of a
-dark​
+dark
 black colour and Gale (wrap around skirt) of a bright red colour with horizontal thin
-black​
+black
 rows. Her look was complimented with a traditional necklace Aane, made up of
-silver coins​
+silver coins
 
-and beads. ​
+and beads. 
 As the two friends joined their classmates all adorning their traditional attires with
-pride and​
+pride and
 gusto, Imu realised how important her clothes made her feel. Every attire was
-different,​
+different,
 colourful and beautiful. Each attire had a story to tell and a tradition to be preserved
-and​
+and
 proud of. She was part of a connection between her traditional roots and the modern
-world.​
+world.
 Her embarrassment crumbled as she paraded hand in hand with her peers, the sun
-shining​
-brightly at the ongoing procession and a smile breaking into her young heart. ​
-References​
+shining
+brightly at the ongoing procession and a smile breaking into her young heart. 
+References
 https://www.ijfmr.com/papers/2023/5/7112.pdf
 `
   },
@@ -916,16 +916,16 @@ Winter: Mustard oil and wheat provide warmth, keeping the body cozy during
 cold months. The protein-rich sattu ensures higher energy levels in winter.
 Sustainability and Simplicity: A Meal for the Future At a time when the world is
 looking for eco-friendly food solutions, Litti Chokha stands out
-As a sustainable dish:​
+As a sustainable dish:
 * Minimal Cooking Fuel Required – Traditionally, Littis are roasted over cow
-dung cakes or wood fire, reducing dependency on gas or electricity.​
+dung cakes or wood fire, reducing dependency on gas or electricity.
 * No Refrigeration Needed – Due to its simple ingredients, it remains fresh for
-longhours without refrigeration.​
+longhours without refrigeration.
 *Locally Sourced Ingredients – Every element of this dish is derived from local
-farms, reducing carbon footprint.​
+farms, reducing carbon footprint.
 * Zero Waste Cooking – Unlike modern processed food, there is minimal food
-waste in​
-making Litti Chokha.​
+waste in
+making Litti Chokha.
 *This makes it not just a heritage dish, but also an eco-friendly future food
 option.
 A Heritage Dish with a Global Future

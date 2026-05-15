@@ -28,15 +28,15 @@ const BlogPost: React.FC = () => {
         });
       } catch (error) {
         if (error instanceof Error && error.name !== 'AbortError') {
-          console.error('Error sharing:', error);
+          toast.error('Unable to share. Try copying the link instead.');
         }
       }
     } else {
       try {
         await navigator.clipboard.writeText(window.location.href);
         toast.success('Link copied to clipboard!');
-      } catch (err) {
-        console.error('Failed to copy link: ', err);
+      } catch {
+        toast.error('Could not copy link. Please copy it manually from the address bar.');
       }
     }
   };

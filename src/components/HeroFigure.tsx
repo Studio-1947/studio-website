@@ -73,7 +73,7 @@ export default function HeroFigure({ className }: { className?: string }) {
                 // Inject directly into DOM so animations start immediately
                 el.innerHTML = svg.outerHTML;
             })
-            .catch(console.error);
+            .catch(() => {});
     }, []);
 
     return (
