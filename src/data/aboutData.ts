@@ -7,5 +7,6 @@ export const aboutData = {
     "Rooted in local insights and shaped by global thinking, we blend creativity, strategy, and technology to break through the noise and build what lasts.",
     "Our work transforms lived narratives into meaningful systems which are designed for today, inspired by the past, and built for what's next."
   ],
-  closingStatement: "Keep moving forward."
+  closingStatement: "Keep moving forward.",
+  closingAuthor: "Walt Disney"
 };

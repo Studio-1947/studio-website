@@ -33,6 +33,9 @@ const AboutContent: React.FC = () => {
                  <p className="text-xl md:text-2xl font-serif italic text-gray-800 dark:text-gray-200 leading-normal">
                    "{aboutData.closingStatement}"
                  </p>
+                 <footer className="mt-3 text-sm font-semibold text-gray-500 dark:text-gray-400 not-italic">
+                   — {aboutData.closingAuthor}
+                 </footer>
                </blockquote>
             </div>
           </div>
