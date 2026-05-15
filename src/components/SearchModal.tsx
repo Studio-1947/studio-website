@@ -49,6 +49,18 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
         setSelectedIndex(0);
     }, [query]);
 
+    const handleSelect = (item: SearchResult) => {
+        if (item.path.startsWith('action:')) {
+            if (item.path === 'action:theme') {
+                const themeBtn = document.querySelector('button[aria-label="Toggle Theme"]') as HTMLButtonElement | null;
+                if (themeBtn) themeBtn.click();
+            }
+        } else {
+            window.location.href = item.path;
+        }
+        onClose();
+    };
+
     useEffect(() => {
         const handleKeyDown = (e: KeyboardEvent) => {
             if (!isOpen) return;
@@ -71,9 +83,8 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
-    }, [isOpen, filteredItems, selectedIndex, onClose]);
+    }, [isOpen, filteredItems, selectedIndex, onClose, handleSelect]);
 
-    // Scroll selected item into view
     useEffect(() => {
         if (listRef.current && listRef.current.children[selectedIndex]) {
             listRef.current.children[selectedIndex].scrollIntoView({
@@ -81,21 +92,6 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
             });
         }
     }, [selectedIndex]);
-
-
-    const handleSelect = (item: SearchResult) => {
-        if (item.path.startsWith('action:')) {
-            if (item.path === 'action:theme') {
-                // Find existing theme toggle button and click it to toggle theme
-                // This is a workaround since we don't have direct access to the theme context here easily without refactoring
-                const themeBtn = document.querySelector('button[aria-label="Toggle Theme"]') as HTMLButtonElement | null;
-                if (themeBtn) themeBtn.click();
-            }
-        } else {
-            window.location.href = item.path;
-        }
-        onClose();
-    };
 
     return (
         <AnimatePresence>
@@ -112,9 +108,11 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
                     />
 
                     {/* Modal */}
-                    {/* Modal Wrapper for Centering */}
                     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none">
                         <motion.div
+                            role="dialog"
+                            aria-modal="true"
+                            aria-label="Site search"
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -125,12 +123,19 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
                                 {/* Input Header */}
                                 <div className="flex items-center p-4 border-b border-gray-100 dark:border-gray-800 relative">
-                                    <svg className="w-5 h-5 text-gray-400 absolute left-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <label htmlFor="search-input" className="sr-only">Search site</label>
+                                    <svg className="w-5 h-5 text-gray-400 absolute left-6" aria-hidden="true" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                                     </svg>
                                     <input
+                                        id="search-input"
                                         ref={inputRef}
                                         type="text"
+                                        role="combobox"
+                                        aria-expanded={filteredItems.length > 0}
+                                        aria-controls="search-results"
+                                        aria-autocomplete="list"
+                                        aria-activedescendant={filteredItems[selectedIndex] ? `search-result-${filteredItems[selectedIndex].id}` : undefined}
                                         className="w-full pl-10 pr-4 py-2 bg-transparent text-lg text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none"
                                         placeholder="Search..."
                                         value={query}
@@ -143,10 +148,13 @@ export default function SearchModal({ isOpen, onClose }: SearchModalProps) {
 
                                 {/* Results List */}
                                 {filteredItems.length > 0 ? (
-                                    <ul ref={listRef} className="overflow-y-auto p-2 scrollbar-hide">
+                                    <ul id="search-results" role="listbox" aria-label="Search results" ref={listRef} className="overflow-y-auto p-2 scrollbar-hide">
                                         {filteredItems.map((item, index) => (
                                             <li
                                                 key={item.id}
+                                                id={`search-result-${item.id}`}
+                                                role="option"
+                                                aria-selected={selectedIndex === index}
                                                 onClick={() => handleSelect(item)}
                                                 onMouseEnter={() => setSelectedIndex(index)}
                                                 className={`flex items-center justify-between px-4 py-3 rounded-lg cursor-pointer transition-colors ${selectedIndex === index

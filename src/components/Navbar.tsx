@@ -198,6 +198,7 @@ export default function Navbar() {
         <>
             <nav
                 ref={navRef}
+                aria-label="Main navigation"
                 className="fixed top-6 left-0 right-0 z-50 flex justify-center items-center px-4 pointer-events-none"
             >
                 <div ref={containerRef} className="flex items-stretch pointer-events-auto origin-center w-full justify-center">
@@ -265,13 +266,16 @@ export default function Navbar() {
                                         onMouseLeave={handleMouseLeave}
                                     >
                                         {link.href === '#' ? (
-                                            <div
+                                            <button
                                                 onClick={(e) => handleNavClick(e, link.href, link.name)}
-                                                className={`text-base font-medium transition-colors flex items-center gap-1 cursor-pointer ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
+                                                aria-haspopup={link.dropdown ? 'true' : undefined}
+                                                aria-expanded={link.dropdown ? hoveredLink === link.name : undefined}
+                                                className={`text-base font-medium transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-0 p-0 ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
                                             >
                                                 {link.name}
                                                 {link.dropdown && (
                                                     <svg
+                                                        aria-hidden="true"
                                                         className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
                                                         fill="none"
                                                         viewBox="0 0 24 24"
@@ -280,7 +284,7 @@ export default function Navbar() {
                                                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                                     </svg>
                                                 )}
-                                            </div>
+                                            </button>
                                         ) : (
                                             <Link
                                                 to={link.href}
@@ -376,6 +380,10 @@ export default function Navbar() {
 
             {/* Mobile Menu Overlay */}
             <div
+                role="dialog"
+                aria-modal="true"
+                aria-label="Mobile navigation menu"
+                aria-hidden={!isOpen}
                 className={`fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl transition-all duration-500 lg:hidden flex flex-col ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-10'
                     }`}
             >
@@ -392,8 +400,10 @@ export default function Navbar() {
                             <div key={link.name} className="flex flex-col items-center w-full max-w-sm">
                                 <div className="flex items-center justify-center w-full relative">
                                     {link.href === '#' ? (
-                                        <div
+                                        <button
                                             style={{ transitionDelay: `${index * 50}ms` }}
+                                            aria-haspopup={link.dropdown ? 'true' : undefined}
+                                            aria-expanded={link.dropdown ? expandedMobileLinks.includes(link.name) : undefined}
                                             onClick={(e) => {
                                                 if (link.dropdown) {
                                                     e.preventDefault();
@@ -406,11 +416,12 @@ export default function Navbar() {
                                                     setIsOpen(false);
                                                 }
                                             }}
-                                            className={`text-3xl font-bold transition-all transform cursor-pointer select-none flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
+                                            className={`text-3xl font-bold transition-all transform cursor-pointer select-none flex items-center gap-2 bg-transparent border-0 p-0 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
                                         >
                                             {link.name}
                                             {link.dropdown && (
                                                 <svg
+                                                    aria-hidden="true"
                                                     className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
                                                     fill="none"
                                                     viewBox="0 0 24 24"
@@ -419,7 +430,7 @@ export default function Navbar() {
                                                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                                                 </svg>
                                             )}
-                                        </div>
+                                        </button>
                                     ) : (
                                         <Link
                                             to={link.href}

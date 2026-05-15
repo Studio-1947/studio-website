@@ -6,6 +6,17 @@ import Logo from "./Logo";
 import GoldenSprinkles from "./GoldenSprinkles";
 import ContactModal from "./ContactModal";
 
+const SOCIAL_LINKS = {
+  instagram: "https://www.instagram.com/1947.io/",
+  facebook: "https://www.facebook.com/1947.io/?ref=PROFILE_EDIT_xav_ig_profile_page_web#",
+};
+
+const OFFICE_CLOCKS = [
+  { label: "Darjeeling/IND", timezone: "Asia/Kolkata" },
+  { label: "US", timezone: "America/New_York" },
+  { label: "BER", timezone: "Europe/Berlin" },
+];
+
 const getMaintenanceMessage = (name: string) => {
   const messages = [
     `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
@@ -56,8 +67,8 @@ export default function Footer() {
         if (data?.current?.us_aqi) {
           setMirikAqi(data.current.us_aqi);
         }
-      } catch (error) {
-        console.error("Failed to fetch AQI", error);
+      } catch {
+        // AQI is non-critical; widget stays hidden on failure
       }
     };
     fetchAqi();
@@ -105,11 +116,8 @@ export default function Footer() {
       title: "Connect",
       links: [
         { label: "Careers", href: "/careers" },
-        { label: "Instagram", href: "https://www.instagram.com/1947.io/" },
-        {
-          label: "Facebook",
-          href: "https://www.facebook.com/1947.io/?ref=PROFILE_EDIT_xav_ig_profile_page_web#",
-        },
+        { label: "Instagram", href: SOCIAL_LINKS.instagram },
+        { label: "Facebook", href: SOCIAL_LINKS.facebook },
       ],
     },
     {
@@ -330,10 +338,23 @@ export default function Footer() {
           </p>
 
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-3 md:gap-4 mt-4 md:mt-0">
-            <div className="flex items-center space-x-2">
-              <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-              <span>Darjeeling/IND {formatTime(time, "Asia/Kolkata")}</span>
-            </div>
+            {OFFICE_CLOCKS.map((clock, i) => (
+              <>
+                {i === 0 ? (
+                  <div key={clock.label} className="flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span>{clock.label} {formatTime(time, clock.timezone)}</span>
+                  </div>
+                ) : (
+                  <>
+                    <div key={`div-${clock.label}`} className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
+                    <div key={clock.label} className="flex items-center space-x-2">
+                      <span>{clock.label} {formatTime(time, clock.timezone)}</span>
+                    </div>
+                  </>
+                )}
+              </>
+            ))}
             {mirikAqi !== null && (
               <>
                 <div className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
@@ -342,14 +363,6 @@ export default function Footer() {
                 </div>
               </>
             )}
-            <div className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
-            <div className="flex items-center space-x-2">
-              <span>US {formatTime(time, "America/New_York")}</span>
-            </div>
-            <div className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
-            <div className="flex items-center space-x-2">
-              <span>BER {formatTime(time, "Europe/Berlin")}</span>
-            </div>
           </div>
         </div>
       </div>

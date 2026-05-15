@@ -89,7 +89,7 @@ export default function Testimonials() {
                             </div>
                             <div className="flex items-center gap-4">
                                 {testimonial.image && (
-                                    <img src={testimonial.image} alt={testimonial.author} className="w-12 h-12 rounded-full object-cover" />
+                                    <img src={testimonial.image} alt={testimonial.author} loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover" />
                                 )}
                                 <div>
                                     <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
@@ -112,7 +112,7 @@ export default function Testimonials() {
                             </div>
                             <div className="flex items-center gap-4">
                                 {testimonial.image && (
-                                    <img src={testimonial.image} alt={testimonial.author} className="w-12 h-12 rounded-full object-cover" />
+                                    <img src={testimonial.image} alt={testimonial.author} loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover" />
                                 )}
                                 <div>
                                     <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>

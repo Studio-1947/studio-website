@@ -51,7 +51,7 @@ export const Button: React.FC<ButtonProps> = ({
           className
         )}
         href={href}
-        {...(props as any)}
+        {...(props as Record<string, unknown>)}
       >
         <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 -translate-x-full bg-primary dark:bg-primary-hero ease group-hover:translate-x-0">
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -69,7 +69,7 @@ export const Button: React.FC<ButtonProps> = ({
       className={cn(baseStyles, variants[variant], sizes[size], className)}
       disabled={isLoading}
       href={href}
-      {...(props as any)}
+      {...(props as Record<string, unknown>)}
     >
       {isLoading ? (
         <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />

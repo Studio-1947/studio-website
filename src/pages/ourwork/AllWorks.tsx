@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
-import { PROJECTS } from '../../components/BuiltForImpact';
+import { PROJECTS } from '../../data/projects';
 import { ArrowLeft } from 'lucide-react';
 import { usePageMeta } from '../../hooks/usePageMeta';
 

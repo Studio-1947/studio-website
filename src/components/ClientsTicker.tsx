@@ -64,8 +64,7 @@ export default function ClientsTicker() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
-                  // Light Message: White logo + Invert = Black Logo
-                  // Dark Message: White logo + No Invert = White Logo
+                  loading="lazy"
                   className="h-16 md:h-20 w-auto object-contain invert dark:invert-0 opacity-70 hover:opacity-100 transition-all duration-300"
                 />
               </div>
@@ -76,6 +75,7 @@ export default function ClientsTicker() {
                 <img
                   src={logo.src}
                   alt={logo.alt}
+                  loading="lazy"
                   className="h-16 md:h-20 w-auto object-contain invert dark:invert-0 opacity-70 hover:opacity-100 transition-all duration-300"
                 />
               </div>

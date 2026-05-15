@@ -49,6 +49,9 @@ export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
                     {/* Modal */}
                     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none">
                         <motion.div
+                            role="dialog"
+                            aria-modal="true"
+                            aria-labelledby="talk-modal-title"
                             initial={{ opacity: 0, scale: 0.95, y: 20 }}
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -61,7 +64,7 @@ export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
                                 <div className="flex items-start justify-between p-8 pb-6">
                                     <div>
                                         <div className="w-8 h-1 bg-[#D60000] rounded-full mb-4" />
-                                        <h2 className="text-2xl font-black text-gray-900 dark:text-white tracking-tight">
+                                        <h2 id="talk-modal-title" className="text-2xl font-black text-gray-900 dark:text-white tracking-tight">
                                             Let's talk
                                         </h2>
                                         <p className="text-sm text-gray-500 dark:text-gray-400 mt-1">
@@ -101,10 +104,11 @@ export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
                                         <form onSubmit={handleSubmit} className="space-y-4">
                                             <div className="grid grid-cols-2 gap-4">
                                                 <div>
-                                                    <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
+                                                    <label htmlFor="talk-name" className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
                                                         Name
                                                     </label>
                                                     <input
+                                                        id="talk-name"
                                                         ref={nameRef}
                                                         type="text"
                                                         required
@@ -115,10 +119,11 @@ export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
                                                     />
                                                 </div>
                                                 <div>
-                                                    <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
+                                                    <label htmlFor="talk-email" className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
                                                         Email
                                                     </label>
                                                     <input
+                                                        id="talk-email"
                                                         type="email"
                                                         required
                                                         value={form.email}
@@ -130,10 +135,11 @@ export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
                                             </div>
 
                                             <div>
-                                                <label className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
+                                                <label htmlFor="talk-message" className="block text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-1.5">
                                                     Message
                                                 </label>
                                                 <textarea
+                                                    id="talk-message"
                                                     required
                                                     rows={4}
                                                     value={form.message}
