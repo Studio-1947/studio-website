@@ -14,7 +14,7 @@ const NAV_LINKS = [
 const linkStyle = {
   fontFamily: 'Inter, sans-serif',
   fontSize: '15px',
-  fontWeight: 300,
+  fontWeight: 500,
   lineHeight: 'normal',
 };
 
