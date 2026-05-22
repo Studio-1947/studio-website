@@ -30,41 +30,41 @@ export default function LatestBlogs() {
  </Link>
  </div>
 
- {/* Grid Layout */}
- <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
- {blogs
- .filter((b) => b.coverImage && b.coverImage !== "/logo.svg")
- .slice(0, 4)
- .map((blog, index) => (
- <Link
- to={`/blogs/${blog.slug}`}
- key={index}
- className="group cursor-pointer block"
- >
- {/* Image Placeholder / Cover Image */}
- <div className="w-full aspect-[16/9] bg-gray-100 rounded-2xl mb-8 relative flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
- {blog.coverImage && blog.coverImage !== "/logo.svg" ? (
- <img
- src={blog.coverImage}
- alt={blog.title}
- loading="lazy"
- decoding="async"
- className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
- />
- ) : (
- <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center transition-transform duration-700 group-hover:scale-105">
- <span className="text-white/30 text-5xl mb-3 block">
- ✧
- </span>
- <span className="text-xl font-black text-white tracking-widest uppercase">
- Studio 1947
- </span>
- <span className="text-royal-200 text-sm font-light tracking-widest uppercase mt-2">
- Blogs
- </span>
- </div>
- )}
- </div>
+        {/* Grid Layout */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+          {blogs
+            .filter((b) => b.coverImage && b.coverImage !== "/logo.svg")
+            .slice(0, 4)
+            .map((blog, index) => (
+              <Link
+                to={`/blogs/${blog.slug}`}
+                key={index}
+                className="group cursor-pointer block"
+              >
+                {/* Image Placeholder / Cover Image */}
+                <div className="w-full aspect-[16/9] bg-gray-100 dark:bg-gray-800 rounded-2xl mb-8 relative flex items-center justify-center overflow-hidden transition-transform duration-300 group-hover:scale-[1.02]">
+                  {blog.coverImage && blog.coverImage !== "/logo.svg" ? (
+                    <img
+                      src={blog.coverImage}
+                      alt={blog.title}
+                      loading="lazy"
+                      decoding="async"
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center transition-transform duration-700 group-hover:scale-105">
+                      <span className="text-white/30 text-5xl mb-3 block">
+                        ✧
+                      </span>
+                      <span className="text-xl font-black text-white tracking-widest uppercase">
+                        Studio 1947
+                      </span>
+                      <span className="text-royal-200 text-sm font-light tracking-widest uppercase mt-2">
+                        Blogs
+                      </span>
+                    </div>
+                  )}
+                </div>
 
  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 group-hover:text-gray-600 transition-colors">
  {blog.title}
