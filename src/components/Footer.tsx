@@ -7,14 +7,14 @@ import GoldenSprinkles from "./GoldenSprinkles";
 import ContactModal from "./ContactModal";
 
 const SOCIAL_LINKS = {
- instagram: "https://www.instagram.com/1947.io/",
- facebook: "https://www.facebook.com/1947.io/?ref=PROFILE_EDIT_xav_ig_profile_page_web#",
+  instagram: "https://www.instagram.com/1947.io/",
+  facebook: "https://www.facebook.com/1947.io/?ref=PROFILE_EDIT_xav_ig_profile_page_web#",
 };
 
 const OFFICE_CLOCKS = [
- { label: "Darjeeling/IND", timezone: "Asia/Kolkata" },
- { label: "US", timezone: "America/New_York" },
- { label: "BER", timezone: "Europe/Berlin" },
+  { label: "Darjeeling/IND", timezone: "Asia/Kolkata" },
+  { label: "US", timezone: "America/New_York" },
+  { label: "BER", timezone: "Europe/Berlin" },
 ];
 
 const getMaintenanceMessage = (name: string) => {
@@ -57,22 +57,22 @@ export default function Footer() {
  return () => clearInterval(timer);
  }, []);
 
- useEffect(() => {
- const fetchAqi = async () => {
- try {
- const res = await fetch(
- "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=26.8864&longitude=88.1793&current=us_aqi",
- );
- const data = await res.json();
- if (data?.current?.us_aqi) {
- setMirikAqi(data.current.us_aqi);
- }
- } catch {
- // AQI is non-critical; widget stays hidden on failure
- }
- };
- fetchAqi();
- }, []);
+  useEffect(() => {
+    const fetchAqi = async () => {
+      try {
+        const res = await fetch(
+          "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=26.8864&longitude=88.1793&current=us_aqi",
+        );
+        const data = await res.json();
+        if (data?.current?.us_aqi) {
+          setMirikAqi(data.current.us_aqi);
+        }
+      } catch {
+        // AQI is non-critical; widget stays hidden on failure
+      }
+    };
+    fetchAqi();
+  }, []);
 
  const formatTime = (date: Date, timeZone: string) => {
  return new Intl.DateTimeFormat("en-US", {
@@ -97,38 +97,38 @@ export default function Footer() {
  });
  };
 
- const footerLinks = [
- {
- title: "Sitemap",
- links: [
- { label: "Home", href: "/" },
- { label: "Our Story", href: "/our-story" },
- { label: "Solutions", href: "/solutions" },
- { label: "Products", href: "/products" },
- { label: "About Us", href: "/about" },
- ],
- },
- {
- title: "Press",
- links: [{ label: "Press & Media", href: "/press-media" }],
- },
- {
- title: "Connect",
- links: [
- { label: "Careers", href: "/careers" },
- { label: "Instagram", href: SOCIAL_LINKS.instagram },
- { label: "Facebook", href: SOCIAL_LINKS.facebook },
- ],
- },
- {
- title: "Legal",
- links: [
- { label: "Privacy Policy", href: "/privacy-policy" },
- { label: "Terms of Service", href: "/terms-of-service" },
- // { label: "Cookie Policy", href: "#" }
- ],
- },
- ];
+  const footerLinks = [
+    {
+      title: "Sitemap",
+      links: [
+        { label: "Home", href: "/" },
+        { label: "Our Story", href: "/our-story" },
+        { label: "Solutions", href: "/solutions" },
+        { label: "Products", href: "/products" },
+        { label: "About Us", href: "/about" },
+      ],
+    },
+    {
+      title: "Press",
+      links: [{ label: "Press & Media", href: "/press-media" }],
+    },
+    {
+      title: "Connect",
+      links: [
+        { label: "Careers", href: "/careers" },
+        { label: "Instagram", href: SOCIAL_LINKS.instagram },
+        { label: "Facebook", href: SOCIAL_LINKS.facebook },
+      ],
+    },
+    {
+      title: "Legal",
+      links: [
+        { label: "Privacy Policy", href: "/privacy-policy" },
+        { label: "Terms of Service", href: "/terms-of-service" },
+        // { label: "Cookie Policy", href: "#" }
+      ],
+    },
+  ];
 
  return (
  <footer className="relative bg-gray-50 text-gray-900 pt-10 pb-10 overflow-hidden transition-colors duration-300">
@@ -337,36 +337,36 @@ export default function Footer() {
  &copy; {new Date().getFullYear()} Studio 1947. All rights reserved.
  </p>
 
- <div className="flex flex-wrap justify-center md:justify-end items-center gap-3 md:gap-4 mt-4 md:mt-0">
- {OFFICE_CLOCKS.map((clock, i) => (
- <>
- {i === 0 ? (
- <div key={clock.label} className="flex items-center space-x-2">
- <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
- <span>{clock.label} {formatTime(time, clock.timezone)}</span>
- </div>
- ) : (
- <>
- <div key={`div-${clock.label}`} className="hidden md:block w-px h-3 bg-gray-200" />
- <div key={clock.label} className="flex items-center space-x-2">
- <span>{clock.label} {formatTime(time, clock.timezone)}</span>
- </div>
- </>
- )}
- </>
- ))}
- {mirikAqi !== null && (
- <>
- <div className="hidden md:block w-px h-3 bg-gray-200" />
- <div className="flex items-center space-x-2">
- <span>Mirik AQI {mirikAqi}</span>
- </div>
- </>
- )}
- </div>
- </div>
- </div>
- <ContactModal isOpen={isContactModalOpen} onClose={handleCloseModal} />
- </footer>
- );
+          <div className="flex flex-wrap justify-center md:justify-end items-center gap-3 md:gap-4 mt-4 md:mt-0">
+            {OFFICE_CLOCKS.map((clock, i) => (
+              <>
+                {i === 0 ? (
+                  <div key={clock.label} className="flex items-center space-x-2">
+                    <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
+                    <span>{clock.label} {formatTime(time, clock.timezone)}</span>
+                  </div>
+                ) : (
+                  <>
+                    <div key={`div-${clock.label}`} className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
+                    <div key={clock.label} className="flex items-center space-x-2">
+                      <span>{clock.label} {formatTime(time, clock.timezone)}</span>
+                    </div>
+                  </>
+                )}
+              </>
+            ))}
+            {mirikAqi !== null && (
+              <>
+                <div className="hidden md:block w-px h-3 bg-gray-200 dark:bg-gray-800" />
+                <div className="flex items-center space-x-2">
+                  <span>Mirik AQI {mirikAqi}</span>
+                </div>
+              </>
+            )}
+          </div>
+        </div>
+      </div>
+      <ContactModal isOpen={isContactModalOpen} onClose={handleCloseModal} />
+    </footer>
+  );
 }

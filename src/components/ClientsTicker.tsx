@@ -57,31 +57,31 @@ export default function ClientsTicker() {
  <div className="absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-10 pointer-events-none"></div>
  <div className="absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-10 pointer-events-none"></div>
 
- <div className="flex items-center w-max" ref={trackRef}>
- {/* Original List */}
- {logos.map((logo, index) => (
- <div key={`original-${index}`} className="flex-shrink-0 px-8 transition-all duration-300 cursor-pointer group">
- <img
- src={logo.src}
- alt={logo.alt}
- loading="lazy"
- className="h-16 md:h-20 w-auto object-contain invert opacity-70 hover:opacity-100 transition-all duration-300"
- />
- </div>
- ))}
- {/* Duplicated List for Loop */}
- {logos.map((logo, index) => (
- <div key={`duplicate-${index}`} className="flex-shrink-0 px-8 transition-all duration-300 cursor-pointer group">
- <img
- src={logo.src}
- alt={logo.alt}
- loading="lazy"
- className="h-16 md:h-20 w-auto object-contain invert opacity-70 hover:opacity-100 transition-all duration-300"
- />
- </div>
- ))}
- </div>
- </div>
+          <div className="flex items-center w-max" ref={trackRef}>
+            {/* Original List */}
+            {logos.map((logo, index) => (
+              <div key={`original-${index}`} className="flex-shrink-0 px-8 transition-all duration-300 cursor-pointer group">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  className="h-16 md:h-20 w-auto object-contain invert dark:invert-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+            ))}
+            {/* Duplicated List for Loop */}
+            {logos.map((logo, index) => (
+              <div key={`duplicate-${index}`} className="flex-shrink-0 px-8 transition-all duration-300 cursor-pointer group">
+                <img
+                  src={logo.src}
+                  alt={logo.alt}
+                  loading="lazy"
+                  className="h-16 md:h-20 w-auto object-contain invert dark:invert-0 opacity-70 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
 
  </div>
  </section>

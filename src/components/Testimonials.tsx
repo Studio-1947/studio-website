@@ -68,62 +68,62 @@ export default function Testimonials() {
  </p>
  </div>
 
- {/* Ticker Section */}
- <div
- className="mb-10 w-full"
- ref={tickerRef}
- onMouseEnter={handleMouseEnter}
- onMouseLeave={handleMouseLeave}
- >
- <div className="flex w-max gap-6 px-4" ref={trackRef}>
- {/* First Half */}
- {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
- <div key={`first-${index}`} className="w-[320px] md:w-[450px] flex-shrink-0 bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm transition-colors hover:border-gray-200 flex flex-col justify-between cursor-default">
- <div className="mb-8">
- <svg className="w-8 h-8 text-gray-300 mb-6" fill="currentColor" viewBox="0 0 32 32">
- <path d="M9.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H9.333zM25.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H25.333z" />
- </svg>
- <p className="text-gray-700 text-lg leading-relaxed font-medium">
- "{testimonial.quote}"
- </p>
- </div>
- <div className="flex items-center gap-4">
- {testimonial.image && (
- <img src={testimonial.image} alt={testimonial.author} loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover" />
- )}
- <div>
- <p className="font-bold text-gray-900 mb-0.5">{testimonial.author}</p>
- <p className="text-sm text-gray-500 font-medium">{testimonial.role}</p>
- <p className="text-sm text-gray-400 mt-1">{testimonial.company}</p>
- </div>
- </div>
- </div>
- ))}
- {/* Second Half */}
- {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
- <div key={`second-${index}`} className="w-[320px] md:w-[450px] flex-shrink-0 bg-gray-50 rounded-3xl p-8 border border-gray-100 shadow-sm transition-colors hover:border-gray-200 flex flex-col justify-between cursor-default">
- <div className="mb-8">
- <svg className="w-8 h-8 text-gray-300 mb-6" fill="currentColor" viewBox="0 0 32 32">
- <path d="M9.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H9.333zM25.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H25.333z" />
- </svg>
- <p className="text-gray-700 text-lg leading-relaxed font-medium">
- "{testimonial.quote}"
- </p>
- </div>
- <div className="flex items-center gap-4">
- {testimonial.image && (
- <img src={testimonial.image} alt={testimonial.author} loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover" />
- )}
- <div>
- <p className="font-bold text-gray-900 mb-0.5">{testimonial.author}</p>
- <p className="text-sm text-gray-500 font-medium">{testimonial.role}</p>
- <p className="text-sm text-gray-400 mt-1">{testimonial.company}</p>
- </div>
- </div>
- </div>
- ))}
- </div>
- </div>
- </section>
- );
+            {/* Ticker Section */}
+            <div
+                className="mb-10 w-full"
+                ref={tickerRef}
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+            >
+                <div className="flex w-max gap-6 px-4" ref={trackRef}>
+                    {/* First Half */}
+                    {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
+                        <div key={`first-${index}`} className="w-[320px] md:w-[450px] flex-shrink-0 bg-gray-50 dark:bg-gray-900/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm transition-colors hover:border-gray-200 dark:hover:border-gray-700 flex flex-col justify-between cursor-default">
+                            <div className="mb-8">
+                                <svg className="w-8 h-8 text-gray-300 dark:text-gray-700 mb-6" fill="currentColor" viewBox="0 0 32 32">
+                                    <path d="M9.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H9.333zM25.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H25.333z" />
+                                </svg>
+                                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed font-medium">
+                                    "{testimonial.quote}"
+                                </p>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                {testimonial.image && (
+                                    <img src={testimonial.image} alt={testimonial.author} loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover" />
+                                )}
+                                <div>
+                                    <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{testimonial.role}</p>
+                                    <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">{testimonial.company}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                    {/* Second Half */}
+                    {[...TESTIMONIALS, ...TESTIMONIALS].map((testimonial, index) => (
+                        <div key={`second-${index}`} className="w-[320px] md:w-[450px] flex-shrink-0 bg-gray-50 dark:bg-gray-900/50 rounded-3xl p-8 border border-gray-100 dark:border-gray-800 shadow-sm transition-colors hover:border-gray-200 dark:hover:border-gray-700 flex flex-col justify-between cursor-default">
+                            <div className="mb-8">
+                                <svg className="w-8 h-8 text-gray-300 dark:text-gray-700 mb-6" fill="currentColor" viewBox="0 0 32 32">
+                                    <path d="M9.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H9.333zM25.333 13.333c0-3.682 2.985-6.667 6.667-6.667V0c-7.364 0-13.333 5.97-13.333 13.333v13.333h13.333V13.333H25.333z" />
+                                </svg>
+                                <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed font-medium">
+                                    "{testimonial.quote}"
+                                </p>
+                            </div>
+                            <div className="flex items-center gap-4">
+                                {testimonial.image && (
+                                    <img src={testimonial.image} alt={testimonial.author} loading="lazy" decoding="async" className="w-12 h-12 rounded-full object-cover" />
+                                )}
+                                <div>
+                                    <p className="font-bold text-gray-900 dark:text-white mb-0.5">{testimonial.author}</p>
+                                    <p className="text-sm text-gray-500 dark:text-gray-400 font-medium">{testimonial.role}</p>
+                                    <p className="text-sm text-gray-400 dark:text-gray-500 mt-1">{testimonial.company}</p>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </section>
+    );
 }
