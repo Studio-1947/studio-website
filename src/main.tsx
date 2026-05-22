@@ -44,6 +44,9 @@ const EcologicalFoundations = lazy(
 const MirikCollege = lazy(() => import("./pages/collabs/MirikCollege.tsx"));
 const Sundargaan = lazy(() => import("./pages/collabs/Sundargaan.tsx"));
 
+// Figma test page (temporary)
+const FigmaTest = lazy(() => import("./pages/figma/FigmaTest.tsx"));
+
 // Our Work pages
 const FesIndia = lazy(() => import("./pages/ourwork/FesIndia.tsx"));
 const RemodelUn = lazy(() => import("./pages/ourwork/RemodelUn.tsx"));
@@ -149,6 +152,9 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/collabs/mirik-college" element={<MirikCollege />} />
           <Route path="/collabs/mirikcollege" element={<MirikCollege />} />
           <Route path="/collabs/sundargaan" element={<Sundargaan />} />
+
+          {/* Figma test route (temporary) */}
+          <Route path="/figma" element={<FigmaTest />} />
 
           {/* Our Work Routes */}
           <Route path="/ourworks" element={<AllWorks />} />

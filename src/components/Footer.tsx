@@ -18,44 +18,44 @@ const OFFICE_CLOCKS = [
 ];
 
 const getMaintenanceMessage = (name: string) => {
-  const messages = [
-    `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
-    `${name} is currently in the creative oven getting baked to perfection 🥐`,
-    `Our pixies are putting the final touches on ${name}. Check back soon! 🧚`,
-    `${name} is currently taking a beauty sleep 😴 Be right back!`,
-    `We're leveling up the ${name} experience. Thank you for your patience! 🚀`,
-  ];
-  return messages[Math.floor(Math.random() * messages.length)];
+ const messages = [
+ `Hold onto your hats! We're giving the ${name} page a little extra sparkle ✨`,
+ `${name} is currently in the creative oven getting baked to perfection 🥐`,
+ `Our pixies are putting the final touches on ${name}. Check back soon! 🧚`,
+ `${name} is currently taking a beauty sleep 😴 Be right back!`,
+ `We're leveling up the ${name} experience. Thank you for your patience! 🚀`,
+ ];
+ return messages[Math.floor(Math.random() * messages.length)];
 };
 
 export default function Footer() {
-  const [time, setTime] = useState(new Date());
-  const location = useLocation();
-  const [isContactModalOpen, setIsContactModalOpen] = useState(
-    location.hash === "#pitch" || location.search.includes("pitch=true"),
-  );
+ const [time, setTime] = useState(new Date());
+ const location = useLocation();
+ const [isContactModalOpen, setIsContactModalOpen] = useState(
+ location.hash === "#pitch" || location.search.includes("pitch=true"),
+ );
 
-  const [mirikAqi, setMirikAqi] = useState<number | null>(null);
+ const [mirikAqi, setMirikAqi] = useState<number | null>(null);
 
-  const handleCloseModal = () => {
-    setIsContactModalOpen(false);
-    if (location.hash === "#pitch" || location.search.includes("pitch=true")) {
-      const url = new URL(window.location.href);
-      url.hash = "";
-      url.searchParams.delete("pitch");
+ const handleCloseModal = () => {
+ setIsContactModalOpen(false);
+ if (location.hash === "#pitch" || location.search.includes("pitch=true")) {
+ const url = new URL(window.location.href);
+ url.hash = "";
+ url.searchParams.delete("pitch");
 
-      let newUrl = url.toString();
-      if (newUrl.endsWith("?")) {
-        newUrl = newUrl.slice(0, -1);
-      }
-      window.history.replaceState({}, "", newUrl);
-    }
-  };
+ let newUrl = url.toString();
+ if (newUrl.endsWith("?")) {
+ newUrl = newUrl.slice(0, -1);
+ }
+ window.history.replaceState({}, "", newUrl);
+ }
+ };
 
-  useEffect(() => {
-    const timer = setInterval(() => setTime(new Date()), 1000);
-    return () => clearInterval(timer);
-  }, []);
+ useEffect(() => {
+ const timer = setInterval(() => setTime(new Date()), 1000);
+ return () => clearInterval(timer);
+ }, []);
 
   useEffect(() => {
     const fetchAqi = async () => {
@@ -74,28 +74,28 @@ export default function Footer() {
     fetchAqi();
   }, []);
 
-  const formatTime = (date: Date, timeZone: string) => {
-    return new Intl.DateTimeFormat("en-US", {
-      hour: "2-digit",
-      minute: "2-digit",
-      timeZone,
-      hour12: false,
-    }).format(date);
-  };
+ const formatTime = (date: Date, timeZone: string) => {
+ return new Intl.DateTimeFormat("en-US", {
+ hour: "2-digit",
+ minute: "2-digit",
+ timeZone,
+ hour12: false,
+ }).format(date);
+ };
 
-  const handleSitemapClick = (
-    e: React.MouseEvent<HTMLButtonElement>,
-    name: string,
-  ) => {
-    e.preventDefault();
+ const handleSitemapClick = (
+ e: React.MouseEvent<HTMLButtonElement>,
+ name: string,
+ ) => {
+ e.preventDefault();
 
-    const randomMsg = getMaintenanceMessage(name);
+ const randomMsg = getMaintenanceMessage(name);
 
-    toast(randomMsg, {
-      icon: "🚧",
-      duration: 4000,
-    });
-  };
+ toast(randomMsg, {
+ icon: "🚧",
+ duration: 4000,
+ });
+ };
 
   const footerLinks = [
     {
@@ -130,212 +130,212 @@ export default function Footer() {
     },
   ];
 
-  return (
-    <footer className="relative bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white pt-10 pb-10 overflow-hidden transition-colors duration-300">
-      {/* Background Elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-700 to-transparent opacity-50 z-20" />
+ return (
+ <footer className="relative bg-gray-50 text-gray-900 pt-10 pb-10 overflow-hidden transition-colors duration-300">
+ {/* Background Elements */}
+ <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent opacity-50 z-20" />
 
-      {/* Background elements (Interactive Animation + Subtle Text) */}
-      <div
-        className="absolute inset-0 z-0 overflow-hidden"
-        style={{ zIndex: 1 }}
-      >
-        {/* Interactive Sprinkles Layer */}
-        <div className="absolute inset-0 z-10 opacity-40">
-          <GoldenSprinkles />
-        </div>
+ {/* Background elements (Interactive Animation + Subtle Text) */}
+ <div
+ className="absolute inset-0 z-0 overflow-hidden"
+ style={{ zIndex: 1 }}
+ >
+ {/* Interactive Sprinkles Layer */}
+ <div className="absolute inset-0 z-10 opacity-40">
+ <GoldenSprinkles />
+ </div>
 
-        {/* Subtle Text Layer */}
-        <div className="absolute bottom-16 md:bottom-20 left-0 w-full z-0 flex items-center justify-center opacity-[0.04] dark:opacity-[0.03] pointer-events-none select-none px-4 md:px-8">
-          <motion.h1
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="w-full text-[28vw] sm:text-[24vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] leading-none font-black text-center text-gray-900 dark:text-white flex flex-col md:flex-row justify-center md:gap-4 lg:gap-8 whitespace-nowrap"
-          >
-            <span>STUDIO</span>
-            <span>1947</span>
-          </motion.h1>
-        </div>
-      </div>
+ {/* Subtle Text Layer */}
+ <div className="absolute bottom-16 md:bottom-20 left-0 w-full z-0 flex items-center justify-center opacity-[0.04] pointer-events-none select-none px-4 md:px-8">
+ <motion.h1
+ initial={{ opacity: 0, y: 50 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ transition={{ duration: 1, ease: "easeOut" }}
+ className="w-full text-[28vw] sm:text-[24vw] md:text-[13vw] lg:text-[11vw] xl:text-[10vw] leading-none font-black text-center text-gray-900 flex flex-col md:flex-row justify-center md:gap-4 lg:gap-8 whitespace-nowrap"
+ >
+ <span>STUDIO</span>
+ <span>1947</span>
+ </motion.h1>
+ </div>
+ </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
-          {/* Brand Section */}
-          <div className="md:col-span-5 space-y-6">
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
-              className="text-3xl font-bold tracking-tight"
-            >
-              <Logo className="h-6 w-auto text-gray-900 dark:text-white" />
-            </motion.h2>
-            <p className="text-gray-500 dark:text-gray-400 max-w-sm text-lg leading-relaxed">
-              Crafting digital experiences that merge timeless design with
-              cutting-edge technology.
-            </p>
-            <div className="pt-8">
-              <button
-                onClick={() => setIsContactModalOpen(true)}
-                className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-gray-900 dark:text-white transition duration-300 ease-out border border-gray-300 dark:border-gray-700 rounded-full hover:border-gray-900 dark:hover:border-white select-none active:scale-95"
-              >
-                <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-gray-900 dark:bg-white group-hover:translate-x-0 ease">
-                  <svg
-                    className="w-6 h-6 text-white dark:text-black"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      d="M14 5l7 7m0 0l-7 7m7-7H3"
-                    ></path>
-                  </svg>
-                </span>
-                <span className="absolute flex items-center justify-center w-full h-full text-gray-900 dark:text-white transition-all duration-300 transform group-hover:translate-x-full ease">
-                  Start a Project
-                </span>
-                <span className="relative invisible">Start a Project</span>
-              </button>
-            </div>
-          </div>
+ <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+ <div className="grid grid-cols-1 md:grid-cols-12 gap-12">
+ {/* Brand Section */}
+ <div className="md:col-span-5 space-y-6">
+ <motion.h2
+ initial={{ opacity: 0, y: 20 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.6 }}
+ className="text-3xl font-bold tracking-tight"
+ >
+ <Logo className="h-6 w-auto text-gray-900" />
+ </motion.h2>
+ <p className="text-gray-500 max-w-sm text-lg leading-relaxed">
+ Crafting digital experiences that merge timeless design with
+ cutting-edge technology.
+ </p>
+ <div className="pt-8">
+ <button
+ onClick={() => setIsContactModalOpen(true)}
+ className="group relative inline-flex items-center justify-center px-8 py-3 overflow-hidden font-medium text-gray-900 transition duration-300 ease-out border border-gray-300 rounded-full hover:border-gray-900 select-none active:scale-95"
+ >
+ <span className="absolute inset-0 flex items-center justify-center w-full h-full text-white duration-300 -translate-x-full bg-gray-900 group-hover:translate-x-0 ease">
+ <svg
+ className="w-6 h-6 text-white"
+ fill="none"
+ stroke="currentColor"
+ viewBox="0 0 24 24"
+ xmlns="http://www.w3.org/2000/svg"
+ >
+ <path
+ strokeLinecap="round"
+ strokeLinejoin="round"
+ strokeWidth="2"
+ d="M14 5l7 7m0 0l-7 7m7-7H3"
+ ></path>
+ </svg>
+ </span>
+ <span className="absolute flex items-center justify-center w-full h-full text-gray-900 transition-all duration-300 transform group-hover:translate-x-full ease">
+ Start a Project
+ </span>
+ <span className="relative invisible">Start a Project</span>
+ </button>
+ </div>
+ </div>
 
-          {/* Links Section */}
-          <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-8 items-start">
-            <div>
-              {(() => {
-                const section = footerLinks[0];
-                return (
-                  <>
-                    <motion.h3
-                      initial={{ opacity: 0, y: 10 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.5, delay: 0 }}
-                      className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4"
-                    >
-                      {section.title}
-                    </motion.h3>
-                    <ul className="space-y-3">
-                      {section.links.map((link, linkIdx) => (
-                        <motion.li
-                          key={link.label}
-                          initial={{ opacity: 0, x: -10 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          transition={{ duration: 0.3, delay: linkIdx * 0.05 }}
-                        >
-                          {link.label === "Our Story" ? (
-                            <button
-                              onClick={(e) => handleSitemapClick(e, link.label)}
-                              className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"
-                            >
-                              {link.label}
-                            </button>
-                          ) : link.href.startsWith("/") ? (
-                            <Link
-                              to={link.href}
-                              className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
-                            >
-                              {link.label}
-                            </Link>
-                          ) : (
-                            <a
-                              href={link.href}
-                              className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
-                            >
-                              {link.label}
-                            </a>
-                          )}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </>
-                );
-              })()}
-            </div>
+ {/* Links Section */}
+ <div className="md:col-span-7 grid grid-cols-2 md:grid-cols-3 gap-x-8 gap-y-12 md:gap-y-8 items-start">
+ <div>
+ {(() => {
+ const section = footerLinks[0];
+ return (
+ <>
+ <motion.h3
+ initial={{ opacity: 0, y: 10 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0 }}
+ className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4"
+ >
+ {section.title}
+ </motion.h3>
+ <ul className="space-y-3">
+ {section.links.map((link, linkIdx) => (
+ <motion.li
+ key={link.label}
+ initial={{ opacity: 0, x: -10 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.3, delay: linkIdx * 0.05 }}
+ >
+ {link.label === "Our Story" ? (
+ <button
+ onClick={(e) => handleSitemapClick(e, link.label)}
+ className="text-gray-600 hover:text-primary transition-colors duration-300 font-medium cursor-pointer bg-none border-none p-0"
+ >
+ {link.label}
+ </button>
+ ) : link.href.startsWith("/") ? (
+ <Link
+ to={link.href}
+ className="text-gray-600 hover:text-primary transition-colors duration-300 font-medium"
+ >
+ {link.label}
+ </Link>
+ ) : (
+ <a
+ href={link.href}
+ className="text-gray-600 hover:text-primary transition-colors duration-300 font-medium"
+ >
+ {link.label}
+ </a>
+ )}
+ </motion.li>
+ ))}
+ </ul>
+ </>
+ );
+ })()}
+ </div>
 
-            <div className="md:col-start-2 md:row-start-1 flex flex-col gap-8">
-              {footerLinks.slice(1, 3).map((section, idx) => (
-                <div key={section.title}>
-                  <motion.h3
-                    initial={{ opacity: 0, y: 10 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: (idx + 1) * 0.1 }}
-                    className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4"
-                  >
-                    {section.title}
-                  </motion.h3>
-                  <ul className="space-y-3">
-                    {section.links.map((link, linkIdx) => (
-                      <motion.li
-                        key={link.label}
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{
-                          duration: 0.3,
-                          delay: (idx + 1) * 0.1 + linkIdx * 0.05,
-                        }}
-                      >
-                        {link.href.startsWith("/") ? (
-                          <Link
-                            to={link.href}
-                            className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
-                          >
-                            {link.label}
-                          </Link>
-                        ) : (
-                          <a
-                            href={link.href}
-                            className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
-                          >
-                            {link.label}
-                          </a>
-                        )}
-                      </motion.li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
+ <div className="md:col-start-2 md:row-start-1 flex flex-col gap-8">
+ {footerLinks.slice(1, 3).map((section, idx) => (
+ <div key={section.title}>
+ <motion.h3
+ initial={{ opacity: 0, y: 10 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: (idx + 1) * 0.1 }}
+ className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4"
+ >
+ {section.title}
+ </motion.h3>
+ <ul className="space-y-3">
+ {section.links.map((link, linkIdx) => (
+ <motion.li
+ key={link.label}
+ initial={{ opacity: 0, x: -10 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ transition={{
+ duration: 0.3,
+ delay: (idx + 1) * 0.1 + linkIdx * 0.05,
+ }}
+ >
+ {link.href.startsWith("/") ? (
+ <Link
+ to={link.href}
+ className="text-gray-600 hover:text-primary transition-colors duration-300 font-medium"
+ >
+ {link.label}
+ </Link>
+ ) : (
+ <a
+ href={link.href}
+ className="text-gray-600 hover:text-primary transition-colors duration-300 font-medium"
+ >
+ {link.label}
+ </a>
+ )}
+ </motion.li>
+ ))}
+ </ul>
+ </div>
+ ))}
+ </div>
 
-            <div className="md:col-start-3 md:row-start-1">
-              <motion.h3
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-sm font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-4"
-              >
-                {footerLinks[3].title}
-              </motion.h3>
-              <ul className="space-y-3">
-                {footerLinks[3].links.map((link, linkIdx) => (
-                  <motion.li
-                    key={link.label}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.3, delay: 0.2 + linkIdx * 0.05 }}
-                  >
-                    <a
-                      href={link.href}
-                      className="text-gray-600 dark:text-gray-300 hover:text-primary transition-colors duration-300 font-medium"
-                    >
-                      {link.label}
-                    </a>
-                  </motion.li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
+ <div className="md:col-start-3 md:row-start-1">
+ <motion.h3
+ initial={{ opacity: 0, y: 10 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ transition={{ duration: 0.5, delay: 0.2 }}
+ className="text-sm font-semibold text-gray-400 uppercase tracking-wider mb-4"
+ >
+ {footerLinks[3].title}
+ </motion.h3>
+ <ul className="space-y-3">
+ {footerLinks[3].links.map((link, linkIdx) => (
+ <motion.li
+ key={link.label}
+ initial={{ opacity: 0, x: -10 }}
+ whileInView={{ opacity: 1, x: 0 }}
+ transition={{ duration: 0.3, delay: 0.2 + linkIdx * 0.05 }}
+ >
+ <a
+ href={link.href}
+ className="text-gray-600 hover:text-primary transition-colors duration-300 font-medium"
+ >
+ {link.label}
+ </a>
+ </motion.li>
+ ))}
+ </ul>
+ </div>
+ </div>
+ </div>
 
-        {/* Bottom Bar */}
-        <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-400 dark:text-gray-500">
-          <p>
-            &copy; {new Date().getFullYear()} Studio 1947. All rights reserved.
-          </p>
+ {/* Bottom Bar */}
+ <div className="flex flex-col md:flex-row justify-between items-center mt-8 pt-8 border-t border-gray-200 text-sm text-gray-400">
+ <p>
+ &copy; {new Date().getFullYear()} Studio 1947. All rights reserved.
+ </p>
 
           <div className="flex flex-wrap justify-center md:justify-end items-center gap-3 md:gap-4 mt-4 md:mt-0">
             {OFFICE_CLOCKS.map((clock, i) => (

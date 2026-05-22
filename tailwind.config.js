@@ -1,7 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class",
   theme: {
     extend: {
       fontFamily: {
@@ -9,9 +8,13 @@ export default {
       },
       colors: {
         primary: {
-          DEFAULT: "#D60000",
+          DEFAULT: "#D80000",
           foreground: "#FFFFFF",
           hero: "var(--color-primary-hero)",
+        },
+        btn: {
+          DEFAULT: "var(--color-btn)",
+          foreground: "#FFFFFF",
         },
         background: "var(--color-bg-primary)",
         foreground: "var(--color-text-primary)",
@@ -25,7 +28,7 @@ export default {
         },
         border: "var(--color-gray-200)",
         royal: {
-          500: "#D60000",
+          500: "#D80000",
           700: "#B30000",
         },
       },

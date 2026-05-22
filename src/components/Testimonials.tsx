@@ -2,71 +2,71 @@ import { useRef, useEffect } from "react";
 import gsap from "gsap";
 
 const TESTIMONIALS = [
-    {
-        quote: "Studio 1947 delivered exceptional promotional designs for our cultural programmes. Their unique emphasis on visual storytelling added a fascinating, artistic layer to our work that we hadn't seen before.",
-        author: "Suranya Aiyaar",
-        role: "CEO",
-        company: "Bhagyam Arts & Aesthetic",
-        image: "/client/Suranya.avif"
-    },
-    {
-        quote: "Working with the team has been a treat. They did an amazing job simplifying technical jargon into thoughtful illustrations, making our challenging concepts genuinely engaging and effective for our audience.",
-        author: "Sharda Mohanty",
-        role: "CEO",
-        company: "AIcrowd",
-        image: "/client/Sharda.avif"
-    },
-    {
-        quote: "As a development organization, we often struggle to make abstract research accessible. Studio 1947 translated our complex vision into visually meaningful products that made our findings exciting and easy to understand.",
-        author: "Mandvi Kulshreshtha",
-        role: "Senior Program Adviser",
-        company: "Friedrich-Ebert-Stiftung, India",
-        image: "/client/Mandvi.avif"
-    }
+ {
+ quote: "Studio 1947 delivered exceptional promotional designs for our cultural programmes. Their unique emphasis on visual storytelling added a fascinating, artistic layer to our work that we hadn't seen before.",
+ author: "Suranya Aiyaar",
+ role: "CEO",
+ company: "Bhagyam Arts & Aesthetic",
+ image: "/client/Suranya.avif"
+ },
+ {
+ quote: "Working with the team has been a treat. They did an amazing job simplifying technical jargon into thoughtful illustrations, making our challenging concepts genuinely engaging and effective for our audience.",
+ author: "Sharda Mohanty",
+ role: "CEO",
+ company: "AIcrowd",
+ image: "/client/Sharda.avif"
+ },
+ {
+ quote: "As a development organization, we often struggle to make abstract research accessible. Studio 1947 translated our complex vision into visually meaningful products that made our findings exciting and easy to understand.",
+ author: "Mandvi Kulshreshtha",
+ role: "Senior Program Adviser",
+ company: "Friedrich-Ebert-Stiftung, India",
+ image: "/client/Mandvi.avif"
+ }
 ];
 
 export default function Testimonials() {
-    const tickerRef = useRef<HTMLDivElement>(null);
-    const trackRef = useRef<HTMLDivElement>(null);
-    const animationRef = useRef<gsap.core.Tween | null>(null);
+ const tickerRef = useRef<HTMLDivElement>(null);
+ const trackRef = useRef<HTMLDivElement>(null);
+ const animationRef = useRef<gsap.core.Tween | null>(null);
 
-    useEffect(() => {
-        const track = trackRef.current;
-        if (!track) return;
+ useEffect(() => {
+ const track = trackRef.current;
+ if (!track) return;
 
-        const ctx = gsap.context(() => {
-            animationRef.current = gsap.to(track, {
-                xPercent: -50,
-                repeat: -1,
-                duration: 45,
-                ease: "linear",
-            });
-        }, tickerRef);
+ const ctx = gsap.context(() => {
+ animationRef.current = gsap.to(track, {
+ xPercent: -50,
+ repeat: -1,
+ duration: 45,
+ ease: "linear",
+ });
+ }, tickerRef);
 
-        return () => ctx.revert();
-    }, []);
+ return () => ctx.revert();
+ }, []);
 
-    const handleMouseEnter = () => {
-        animationRef.current?.pause();
-    };
+ const handleMouseEnter = () => {
+ animationRef.current?.pause();
+ };
 
-    const handleMouseLeave = () => {
-        animationRef.current?.play();
-    };
+ const handleMouseLeave = () => {
+ animationRef.current?.play();
+ };
 
-    return (
-        <section className="bg-white dark:bg-gray-900 py-24 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
-                <span className="inline-block py-1 px-3 rounded-full bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 text-xs font-semibold tracking-wide uppercase mb-6">
-                    ● Testimonials
-                </span>
-                <h2 className="text-3xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-                    What Our Clients Are Saying
-                </h2>
-                <p className="text-gray-500 dark:text-gray-400 text-lg">
-                    Don't just take our word for it—hear from the people we've worked with.
-                </p>
-            </div>
+ return (
+ <section className="bg-white py-24 overflow-hidden">
+ <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
+ <span className="inline-block py-1 px-3 rounded-full bg-gray-50 border border-gray-200 text-gray-600 text-xs font-semibold tracking-wide uppercase mb-6">
+ ● Testimonials
+ </span>
+ <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+ What Our Clients Are Saying
+ </h2>
+ <p className="text-gray-500 text-lg">
+ Don't just take our word for it—hear from the people we've worked with.
+ </p>
+ </div>
 
             {/* Ticker Section */}
             <div

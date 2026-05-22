@@ -4,23 +4,26 @@
 
 /* ===================================
    DESIGN SYSTEM - CSS VARIABLES
-   Base Color: #D60000 (Studio Red)
+   Base Color: #D80000 (Studio Red)
    =================================== */
 
 :root {
   /* --- PRIMARY COLOR (MAIN BRAND) --- */
-  --color-primary: #D60000;
+  --color-primary: #D80000;
   --color-primary-50: #FFF0F0;
   --color-primary-100: #FFD6D6;
   --color-primary-200: #FFADAD;
   --color-primary-300: #FF8080;
   --color-primary-400: #FF4D4D;
   --color-primary-500: #E81010;
-  --color-primary-600: #D60000;
+  --color-primary-600: #D80000;
   --color-primary-700: #B30000;
   --color-primary-800: #8F0000;
   --color-primary-900: #5C0000;
-  --color-primary-hero: #D60000;
+  --color-primary-hero: #AE3C3C;
+
+  /* --- BUTTON --- */
+  --color-btn: #383649;
 
   /* --- SECONDARY COLORS --- */
   /* Complementary orange/yellow for contrast */
@@ -71,7 +74,7 @@
   --color-warning-light: #FEF3C7;
   --color-error: #EF4444;
   --color-error-light: #FEE2E2;
-  --color-info: #D60000;
+  --color-info: #D80000;
   --color-info-light: #FFCCCC;
 
   /* --- BACKGROUND & TEXT --- */
@@ -79,41 +82,18 @@
   --color-bg-secondary: #F9FAFB;
   --color-bg-tertiary: #F3F4F6;
   
-  --color-text-primary: #111827;
+  --color-text-primary: #383649;
   --color-text-secondary: #374151;
   --color-text-tertiary: #6B7280;
   --color-text-inverse: #FFFFFF;
 
-  /* --- DARK MODE --- */
-  --color-dark-bg-primary: #111827;
-  --color-dark-bg-secondary: #1F2937;
-  --color-dark-bg-tertiary: #374151;
-  
-  --color-dark-text-primary: #F9FAFB;
-  --color-dark-text-secondary: #E5E7EB;
-  --color-dark-text-tertiary: #9CA3AF;
-
 }
 
-/* Dark mode overrides (Media query + .dark class) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --color-bg-primary: #111827;
-    --color-bg-secondary: #1F2937;
-    --color-bg-tertiary: #374151;
-    
-    --color-text-primary: #F9FAFB;
-    --color-text-secondary: #E5E7EB;
-    --color-text-tertiary: #9CA3AF;
-  }
+html, body {
+  min-height: 100%;
 }
 
-.dark {
-  --color-bg-primary: #111827;
-  --color-bg-secondary: #1F2937;
-  --color-bg-tertiary: #374151;
-  
-  --color-text-primary: #F9FAFB;
-  --color-text-secondary: #E5E7EB;
-  --color-text-tertiary: #9CA3AF;
+body {
+  background: linear-gradient(to bottom, #FFFAFA, #FFEAEA);
+  background-attachment: fixed;
 }

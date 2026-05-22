@@ -2,29 +2,29 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface SearchResult {
-    id: string;
-    title: string;
-    path: string;
-    category: 'Page' | 'Section' | 'Action';
-    icon?: React.ReactNode;
+ id: string;
+ title: string;
+ path: string;
+ category: 'Page' | 'Section' | 'Action';
+ icon?: React.ReactNode;
 }
 
 const items: SearchResult[] = [
-    { id: '1', title: 'Home', path: '/', category: 'Page' },
-    { id: '2', title: 'About Us', path: '/about', category: 'Page' },
-    { id: '3', title: 'Products', path: '/products', category: 'Page' },
-    { id: '4', title: 'Solutions', path: '/solutions', category: 'Page' },
-    { id: '5', title: 'Collabs', path: '/collabs', category: 'Page' },
-    { id: '6', title: 'Initiative', path: '/initiative', category: 'Page' },
-    { id: '7', title: 'Say Hello', path: '/contact', category: 'Page' },
-    { id: '8', title: 'Featured Work', path: '/#featured', category: 'Section' },
-    { id: '9', title: 'The Studio', path: '/#studio', category: 'Section' },
-    { id: '10', title: 'Toggle Theme', path: 'action:theme', category: 'Action' },
+ { id: '1', title: 'Home', path: '/', category: 'Page' },
+ { id: '2', title: 'About Us', path: '/about', category: 'Page' },
+ { id: '3', title: 'Products', path: '/products', category: 'Page' },
+ { id: '4', title: 'Solutions', path: '/solutions', category: 'Page' },
+ { id: '5', title: 'Collabs', path: '/collabs', category: 'Page' },
+ { id: '6', title: 'Initiative', path: '/initiative', category: 'Page' },
+ { id: '7', title: 'Say Hello', path: '/contact', category: 'Page' },
+ { id: '8', title: 'Featured Work', path: '/#featured', category: 'Section' },
+ { id: '9', title: 'The Studio', path: '/#studio', category: 'Section' },
+ { id: '10', title: 'Toggle Theme', path: 'action:theme', category: 'Action' },
 ];
 
 interface SearchModalProps {
-    isOpen: boolean;
-    onClose: () => void;
+ isOpen: boolean;
+ onClose: () => void;
 }
 
 export default function SearchModal({ isOpen, onClose }: SearchModalProps) {

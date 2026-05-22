@@ -5,34 +5,34 @@ import { blogs } from '../../data/blogData';
 import { usePageMeta } from '../../hooks/usePageMeta';
 
 const Blogs: React.FC = () => {
-  usePageMeta({ title: 'Journal – Studio 1947', description: 'Explorations, essays, and stories from the Studio 1947 team on design, culture, technology, and where they intersect.' });
-  useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-  }, []);
+ usePageMeta({ title: 'Journal – Studio 1947', description: 'Explorations, essays, and stories from the Studio 1947 team on design, culture, technology, and where they intersect.' });
+ useEffect(() => {
+ window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+ }, []);
 
-  return (
-    <Layout>
-      <div className="bg-white dark:bg-gray-900 pt-32 pb-24 transition-colors duration-300 min-h-screen">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
-            <span className="text-royal-600 dark:text-royal-400 font-semibold tracking-wider uppercase text-sm mb-4 block">
-              Our Thoughts
-            </span>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 dark:text-white tracking-tight leading-tight mb-6">
-              Studio 1947<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-600 to-indigo-600 dark:from-royal-400 dark:to-indigo-400">
-                Journal
-              </span>
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 dark:text-gray-400 font-light">
-              Explorations, essays, and stories from our team. We write about design, culture, technology, and the intersections between them.
-            </p>
-          </div>
+ return (
+ <Layout>
+ <div className="bg-white pt-32 pb-24 transition-colors duration-300 min-h-screen">
+ <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+ <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
+ <span className="text-royal-600 font-semibold tracking-wider uppercase text-sm mb-4 block">
+ Our Thoughts
+ </span>
+ <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight mb-6">
+ Studio 1947<br />
+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-600 to-indigo-600">
+ Journal
+ </span>
+ </h1>
+ <p className="text-lg md:text-xl text-gray-600 font-light">
+ Explorations, essays, and stories from our team. We write about design, culture, technology, and the intersections between them.
+ </p>
+ </div>
 
-          {/* Featured Blog */}
-          {(() => {
-            const featuredBlog = blogs.find(blog => blog.coverImage && blog.coverImage !== '/logo.svg') || blogs[0];
-            const otherBlogs = blogs.filter(blog => blog.slug !== (featuredBlog?.slug || ''));
+ {/* Featured Blog */}
+ {(() => {
+ const featuredBlog = blogs.find(blog => blog.coverImage && blog.coverImage !== '/logo.svg') || blogs[0];
+ const otherBlogs = blogs.filter(blog => blog.slug !== (featuredBlog?.slug || ''));
 
             return (
               <>
@@ -150,10 +150,10 @@ const Blogs: React.FC = () => {
             );
           })()}
 
-        </div>
-      </div>
-    </Layout>
-  );
+ </div>
+ </div>
+ </Layout>
+ );
 };
 
 export default Blogs;

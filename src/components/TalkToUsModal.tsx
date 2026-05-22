@@ -2,49 +2,49 @@ import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface TalkToUsModalProps {
-    isOpen: boolean;
-    onClose: () => void;
+ isOpen: boolean;
+ onClose: () => void;
 }
 
 export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
-    const [form, setForm] = useState({ name: "", email: "", message: "" });
-    const [submitted, setSubmitted] = useState(false);
-    const nameRef = useRef<HTMLInputElement>(null);
+ const [form, setForm] = useState({ name: "", email: "", message: "" });
+ const [submitted, setSubmitted] = useState(false);
+ const nameRef = useRef<HTMLInputElement>(null);
 
-    useEffect(() => {
-        if (isOpen) {
-            setTimeout(() => nameRef.current?.focus(), 50);
-            setForm({ name: "", email: "", message: "" });
-            setSubmitted(false);
-        }
-    }, [isOpen]);
+ useEffect(() => {
+ if (isOpen) {
+ setTimeout(() => nameRef.current?.focus(), 50);
+ setForm({ name: "", email: "", message: "" });
+ setSubmitted(false);
+ }
+ }, [isOpen]);
 
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            if (e.key === "Escape") onClose();
-        };
-        window.addEventListener("keydown", handleKeyDown);
-        return () => window.removeEventListener("keydown", handleKeyDown);
-    }, [onClose]);
+ useEffect(() => {
+ const handleKeyDown = (e: KeyboardEvent) => {
+ if (e.key === "Escape") onClose();
+ };
+ window.addEventListener("keydown", handleKeyDown);
+ return () => window.removeEventListener("keydown", handleKeyDown);
+ }, [onClose]);
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        setSubmitted(true);
-    };
+ const handleSubmit = (e: React.FormEvent) => {
+ e.preventDefault();
+ setSubmitted(true);
+ };
 
-    return (
-        <AnimatePresence>
-            {isOpen && (
-                <>
-                    {/* Backdrop */}
-                    <motion.div
-                        initial={{ opacity: 0 }}
-                        animate={{ opacity: 1 }}
-                        exit={{ opacity: 0 }}
-                        transition={{ duration: 0.2 }}
-                        className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60]"
-                        onClick={onClose}
-                    />
+ return (
+ <AnimatePresence>
+ {isOpen && (
+ <>
+ {/* Backdrop */}
+ <motion.div
+ initial={{ opacity: 0 }}
+ animate={{ opacity: 1 }}
+ exit={{ opacity: 0 }}
+ transition={{ duration: 0.2 }}
+ className="fixed inset-0 bg-black/50 backdrop-blur-sm z-[60]"
+ onClick={onClose}
+ />
 
                     {/* Modal */}
                     <div className="fixed inset-0 z-[70] flex items-center justify-center p-4 pointer-events-none">
@@ -149,20 +149,20 @@ export default function TalkToUsModal({ isOpen, onClose }: TalkToUsModalProps) {
                                                 />
                                             </div>
 
-                                            <button
-                                                type="submit"
-                                                className="w-full py-3 rounded-lg bg-[#D60000] text-white text-sm font-bold tracking-wide hover:bg-[#B80000] transition-colors duration-200"
-                                            >
-                                                Send Message
-                                            </button>
-                                        </form>
-                                    )}
-                                </div>
-                            </div>
-                        </motion.div>
-                    </div>
-                </>
-            )}
-        </AnimatePresence>
-    );
+ <button
+ type="submit"
+ className="w-full py-3 rounded-lg bg-[#D60000] text-white text-sm font-bold tracking-wide hover:bg-[#B80000] transition-colors duration-200"
+ >
+ Send Message
+ </button>
+ </form>
+ )}
+ </div>
+ </div>
+ </motion.div>
+ </div>
+ </>
+ )}
+ </AnimatePresence>
+ );
 }
