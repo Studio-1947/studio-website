@@ -61,7 +61,7 @@ export default function Hero() {
  as="a"
  href="#works"
  variant="primary"
- animate
+ className="bg-[#383649] text-white border-0 hover:bg-white hover:text-[#383649] transition-colors duration-300"
  >
  Explore Our Works
  </Button>
