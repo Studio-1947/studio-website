@@ -29,8 +29,8 @@ export const Button: React.FC<ButtonProps> = ({
   const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-full select-none active:scale-95 disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden';
   
   const variants = {
-    primary: 'bg-primary text-white hover:bg-primary/90 border-2 border-primary',
-    outline: 'border-2 border-primary text-primary hover:bg-primary hover:text-white',
+    primary: 'bg-btn text-white hover:bg-btn/90 border-2 border-btn',
+    outline: 'border-2 border-btn text-btn hover:bg-btn hover:text-white',
     secondary: 'bg-muted text-foreground hover:bg-muted/80',
     ghost: 'hover:bg-muted text-foreground/80 hover:text-foreground',
   };
@@ -46,19 +46,19 @@ export const Button: React.FC<ButtonProps> = ({
     return (
       <Component
         className={cn(
-          'group relative inline-flex items-center justify-center overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-primary rounded-full select-none active:scale-95 dark:border-primary-hero',
+          'group relative inline-flex items-center justify-center overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-btn rounded-full select-none active:scale-95',
           sizes[size],
           className
         )}
         href={href}
         {...(props as Record<string, unknown>)}
       >
-        <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 -translate-x-full bg-primary dark:bg-primary-hero ease group-hover:translate-x-0">
+        <span className="absolute inset-0 flex items-center justify-center w-full h-full duration-300 -translate-x-full bg-btn ease group-hover:translate-x-0">
           <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
         </span>
-        <span className="absolute flex items-center justify-center w-full h-full text-primary dark:text-primary-hero transition-all duration-300 transform group-hover:translate-x-full ease">{children}</span>
+        <span className="absolute flex items-center justify-center w-full h-full text-btn transition-all duration-300 transform group-hover:translate-x-full ease">{children}</span>
         <span className="relative invisible">{children}</span>
       </Component>
     );
