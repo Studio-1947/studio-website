@@ -27,433 +27,180 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > window.innerHeight * 0.8);
     };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
-    // Keyboard shortcut for search
-    useEffect(() => {
-        const handleKeyDown = (e: KeyboardEvent) => {
-            // Check if the target is an input or textarea to avoid triggering while typing
-            const target = e.target as HTMLElement;
-            if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable) {
-                return;
-            }
+  useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
 
-            if (e.key.toLowerCase() === 'k') {
-                e.preventDefault();
-                setIsSearchOpen(true);
-            }
-        };
+  return (
+    <>
+      {/* ── Desktop nav ── */}
+      <nav
+        aria-label="Main navigation"
+        className="fixed top-10 left-0 right-0 z-50 hidden lg:flex justify-center px-4"
+      >
+        <motion.div
+          animate={
+            scrolled
+              ? {
+                  background: '#FFF7F7',
+                  boxShadow: '0 0 14px 3px rgba(174, 59, 59, 0.10)',
+                  borderRadius: '50px',
+                  paddingLeft: '20px',
+                  paddingRight: '36px',
+                  paddingTop: '10px',
+                  paddingBottom: '10px',
+                  width: '75vw',
+                }
+              : {
+                  background: 'transparent',
+                  boxShadow: 'none',
+                  borderRadius: '50px',
+                  paddingLeft: '0px',
+                  paddingRight: '0px',
+                  paddingTop: '0px',
+                  paddingBottom: '0px',
+                  width: 'auto',
+                }
+          }
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
+          className="flex items-center justify-between"
+        >
+          {/* Logo — slides in from the left */}
+          <AnimatePresence>
+            {scrolled && (
+              <motion.div
+                initial={{ x: -40, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -40, opacity: 0 }}
+                transition={{ duration: 0.4, ease: 'easeOut' }}
+              >
+                <motion.img
+                  src="/studio_nav_logo.svg"
+                  alt="Studio 1947"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
+                  className="h-10 w-auto"
+                />
+              </motion.div>
+            )}
+          </AnimatePresence>
 
-        window.addEventListener('keydown', handleKeyDown);
-        return () => window.removeEventListener('keydown', handleKeyDown);
-    }, []);
+          {/* Links */}
+          <div className={`flex items-center gap-14 ${scrolled ? 'ml-auto' : ''}`}>
+            {NAV_LINKS.map((link) => {
+              const isActive =
+                location.pathname === link.href ||
+                (link.href !== '/' && location.pathname.startsWith(link.href));
+              return (
+                <Link
+                  key={link.name}
+                  to={link.href}
+                  style={{ ...linkStyle, color: isActive ? '#D80000' : '#8C8484' }}
+                  className={`transition-colors duration-200 hover:text-primary ${
+                    isActive ? 'underline decoration-2 underline-offset-8' : ''
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              );
+            })}
+          </div>
+        </motion.div>
+      </nav>
 
-    useGSAP(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: "body",
-                start: "top top",
-                end: "+=300",
-                scrub: 1,
-            }
-        });
+      {/* ── Mobile nav ── */}
+      <nav
+        aria-label="Main navigation"
+        className="fixed top-0 left-0 right-0 z-50 lg:hidden"
+      >
+        <motion.div
+          animate={
+            scrolled
+              ? { background: '#FFF7F7', boxShadow: '0 0 14px 3px rgba(174, 59, 59, 0.10)' }
+              : { background: 'transparent', boxShadow: 'none' }
+          }
+          transition={{ duration: 0.4, ease: 'easeInOut' }}
+          className="flex items-center justify-between px-5 py-4"
+        >
+          <AnimatePresence>
+            {scrolled ? (
+              <motion.div
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+              >
+                <motion.img
+                  src="/studio_nav_logo.svg"
+                  alt="Studio 1947"
+                  animate={{ rotate: 360 }}
+                  transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
+                  className="h-8 w-auto"
+                />
+              </motion.div>
+            ) : (
+              <div className="h-8" />
+            )}
+          </AnimatePresence>
 
-        if (leftPillRef.current && rightPillRef.current) {
-            // Animate using transforms for performance (composite layer vs layout)
-            tl.fromTo(leftPillRef.current,
-                { x: "-15vw" },
-                {
-                    x: "0%",
-                    borderTopRightRadius: 0,
-                    borderBottomRightRadius: 0,
-                    borderRightWidth: 0,
-                    paddingRight: "0.75rem", // Animate to final padding
-                    duration: 1,
-                    ease: "power2.inOut"
-                }, 0
-            );
+          <button
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            className="flex flex-col justify-center items-center gap-[5px] w-8 h-8"
+          >
+            <motion.span
+              animate={menuOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.25 }}
+              className="block w-6 h-[1.5px] bg-[#383649] origin-center"
+            />
+            <motion.span
+              animate={menuOpen ? { opacity: 0 } : { opacity: 1 }}
+              transition={{ duration: 0.2 }}
+              className="block w-6 h-[1.5px] bg-[#383649]"
+            />
+            <motion.span
+              animate={menuOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+              transition={{ duration: 0.25 }}
+              className="block w-6 h-[1.5px] bg-[#383649] origin-center"
+            />
+          </button>
+        </motion.div>
 
-            tl.fromTo(rightPillRef.current,
-                { x: "15vw" },
-                {
-                    x: "0%",
-                    borderTopLeftRadius: 0,
-                    borderBottomLeftRadius: 0,
-                    borderLeftWidth: 0,
-                    paddingLeft: "0.75rem",
-                    duration: 1,
-                    ease: "power2.inOut"
-                }, 0
-            );
-        }
-    }, { scope: containerRef });
-
-    const leftLinks: NavLink[] = [
-        { name: 'About Us', href: '/about' },
-        // Search is now handled separately
-        { name: 'Blogs', href: '/blogs' },
-    ];
-
-    // Spoke Mapping: 2 (Right/3oclock), 1 (1:30), 0 (12:00), 7 (10:30) - Anti-clockwise
-    const rightLinks: NavLink[] = [
-        {
-            name: 'Products',
-            href: '/products',
-            spokeIndex: 2,
-        },
-        { name: 'Solutions', href: '/solutions', spokeIndex: 1 },
-        {
-            name: 'Collabs',
-            href: '#',
-            spokeIndex: 0,
-            dropdown: [
-                { name: 'Walking Project', href: '/collabs/walking-project', logo: '/collabs/walkingproject/walkingprojectlogo.svg' },
-                { name: 'Ai Crowd', href: '/collabs/ai-crowd', logo: '/collabs/aicrowd.png' },
-                { name: 'Ecological Foundations', href: '/collabs/ecological-foundations', logo: '/collabs/ecologicalfoundation.png' },
-                { name: 'Mirik College', href: '/collabs/mirikcollege', logo: '/collabs/Mirik_College_Logo.svg' },
-                { name: 'Sundargaan', href: '/collabs/sundargaan', logo: '/logos/clientlogocolour/sundargaan_logo_col.svg' },
-            ]
-        },
-        {
-            name: 'Initiative',
-            href: '/initiative',
-            spokeIndex: 7
-        },
-    ];
-
-    const allLinks: NavLink[] = [
-        ...leftLinks,
-        { name: 'Search', href: '#', onClick: () => setIsSearchOpen(true) },
-        ...rightLinks
-    ];
-
-    // Increased padding and adjusted max-width for "proper screen fill"
-    const pillBaseClass = "flex items-center xl:space-x-10 space-x-5 xl:px-12 px-6 py-5 bg-white/90 dark:bg-gray-900/90 backdrop-blur-3xl border border-black/20 dark:border-gray-800 text-gray-900 dark:text-gray-100 transition-colors duration-300";
-
-    const handleMouseEnter = (linkName: string, spokeIndex?: number) => {
-        if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        setHoveredLink(linkName);
-        if (spokeIndex !== undefined) setActiveSpoke(spokeIndex);
-    };
-
-    const handleMouseLeave = () => {
-        timeoutRef.current = setTimeout(() => {
-            setHoveredLink(null);
-            setActiveSpoke(null);
-        }, 300); // 300ms delay before hiding dropdown
-    };
-
-    const toggleMobileSubmenu = (name: string) => {
-        setExpandedMobileLinks(prev =>
-            prev.includes(name) ? prev.filter(item => item !== name) : [...prev, name]
-        );
-    };
-
-    return (
-        <>
-            <nav
-                ref={navRef}
-                aria-label="Main navigation"
-                className="fixed top-6 left-0 right-0 z-50 flex justify-center items-center px-4 pointer-events-none"
+        <AnimatePresence>
+          {menuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              transition={{ duration: 0.3, ease: 'easeInOut' }}
+              className="flex flex-col px-8 pb-8 pt-4 gap-6"
+              style={{ background: '#FFF7F7', boxShadow: '0 8px 24px rgba(174, 59, 59, 0.10)' }}
             >
-                <div ref={containerRef} className="flex items-stretch pointer-events-auto origin-center w-full justify-center">
-                    {/* Left Pill */}
-                    <div
-                        ref={leftPillRef}
-                        className={`${pillBaseClass} rounded-full hidden xl:flex`}
-                        style={{
-                            // Initial styles matching GSAP 'from' state
-                            borderTopRightRadius: '9999px',
-                            borderBottomRightRadius: '9999px',
-                            borderRightWidth: '1px',
-                            transform: 'translateX(-15vw)'
-                        }}
-                    >
-                        <Link
-                            to="/"
-                            className="xl:mr-8 mr-4 block group/logo"
-                            onMouseEnter={() => setActiveSpoke(2)} // Default to 'Right' spoke on logo hover
-                            onMouseLeave={() => setActiveSpoke(null)}
-                        >
-                            <Logo className="h-6 w-auto object-contain text-primary dark:text-primary-hero transition-colors duration-300" activeSpoke={activeSpoke} />
-                        </Link>
-                        <div className="flex xl:space-x-6 space-x-4 items-center">
-                            {leftLinks.map((link) => {
-                                const isActive = location.pathname === link.href || (link.href !== '/' && location.pathname.startsWith(link.href));
-                                return (
-                                    <Link
-                                        key={link.name}
-                                        to={link.href}
-                                        onClick={(e) => handleNavClick(e, link.href, link.name)}
-                                        className={`text-base font-medium transition-colors ${isActive ? 'text-primary underline decoration-2 underline-offset-8' : 'hover:text-primary'}`}
-                                    >
-                                        {link.name}
-                                    </Link>
-                                )
-                            })}
-                        </div>
-                    </div>
-
-                    {/* Right Pill */}
-                    <div
-                        ref={rightPillRef}
-                        className={`${pillBaseClass} rounded-full hidden xl:flex`}
-                        style={{
-                            borderTopLeftRadius: '9999px',
-                            borderBottomLeftRadius: '9999px',
-                            borderLeftWidth: '1px',
-                            transform: 'translateX(15vw)'
-                        }}
-                    >
-                        <div className="flex xl:space-x-6 space-x-4 items-center">
-                            {rightLinks.map((link) => {
-                                const isActive =
-                                    location.pathname === link.href ||
-                                    (link.href !== '/' && link.href !== '#' && location.pathname.startsWith(link.href)) ||
-                                    link.dropdown?.some(item => location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href))) ||
-                                    (link.href === '#' && link.name !== 'Search' && location.pathname.startsWith(`/${link.name.toLowerCase()}`));
-
-                                return (
-                                    <div
-                                        key={link.name}
-                                        className="relative group"
-                                        onMouseEnter={() => handleMouseEnter(link.name, link.spokeIndex)}
-                                        onMouseLeave={handleMouseLeave}
-                                    >
-                                        {link.href === '#' ? (
-                                            <button
-                                                onClick={(e) => handleNavClick(e, link.href, link.name)}
-                                                aria-haspopup={link.dropdown ? 'true' : undefined}
-                                                aria-expanded={link.dropdown ? hoveredLink === link.name : undefined}
-                                                className={`text-base font-medium transition-colors flex items-center gap-1 cursor-pointer bg-transparent border-0 p-0 ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
-                                            >
-                                                {link.name}
-                                                {link.dropdown && (
-                                                    <svg
-                                                        aria-hidden="true"
-                                                        className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                    >
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                                    </svg>
-                                                )}
-                                            </button>
-                                        ) : (
-                                            <Link
-                                                to={link.href}
-                                                onClick={(e) => handleNavClick(e, link.href, link.name)}
-                                                className={`text-base font-medium transition-colors flex items-center gap-1 ${(hoveredLink === link.name || isActive) ? 'text-primary' : 'hover:text-primary'} ${isActive ? 'underline decoration-2 underline-offset-8' : ''}`}
-                                            >
-                                                {link.name}
-                                                {link.dropdown && (
-                                                    <svg
-                                                        className={`w-4 h-4 transition-transform duration-200 ${hoveredLink === link.name ? 'rotate-180' : ''}`}
-                                                        fill="none"
-                                                        viewBox="0 0 24 24"
-                                                        stroke="currentColor"
-                                                    >
-                                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                                    </svg>
-                                                )}
-                                            </Link>
-                                        )}
-
-                                        {/* Desktop Dropdown */}
-                                        {link.dropdown && (
-                                            <div
-                                                className={`absolute left-0 top-full pt-4 w-64 transition-all duration-300 transform origin-top ${hoveredLink === link.name ? 'opacity-100 scale-100 translate-y-0 visible' : 'opacity-0 scale-95 -translate-y-2 invisible'
-                                                    }`}
-                                            >
-                                                <div className="bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl border border-black/10 dark:border-white/10 rounded-xl overflow-hidden shadow-xl p-2 flex flex-col gap-1">
-                                                    {link.dropdown.map((item) => {
-                                                        const isItemActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
-                                                        return (
-                                                            <Link
-                                                                key={item.name}
-                                                                to={item.href}
-                                                                onClick={(e) => handleNavClick(e, item.href, item.name)}
-                                                                className={`flex items-center gap-3 px-4 py-2.5 text-sm rounded-lg transition-all group ${item.name === 'Walking Project' ? 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-900 hover:bg-[#F5D650] font-semibold' : isItemActive ? 'text-primary bg-primary/10' : 'text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
-                                                            >
-                                                                {(item.logo || item.placeholder) && (
-                                                                    <div className={`w-8 h-8 flex items-center justify-center p-1.5 shrink-0 transition-colors ${item.name === 'Walking Project' ? 'bg-black/5 dark:bg-white/10 group-hover:bg-white/20 dark:group-hover:bg-black/20 rounded-lg' : 'bg-black/5 dark:bg-white/10 rounded-full'}`}>
-                                                                        {item.logo
-                                                                            ? <img src={item.logo} alt="" className={`w-full h-full object-contain ${item.name === 'Walking Project' ? '' : 'filter drop-shadow-sm'}`} />
-                                                                            : <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 opacity-80" />}
-                                                                    </div>
-                                                                )}
-                                                                {item.name}
-                                                            </Link>
-                                                        )
-                                                    })}
-                                                </div>
-                                            </div>
-                                        )}
-                                    </div>
-                                )
-                            })}
-                            <div className="flex items-center gap-3 xl:pl-6 xl:ml-6 pl-3 ml-3 border-l border-gray-300 dark:border-gray-700">
-                                <button
-                                    onClick={() => setIsSearchOpen(true)}
-                                    className="text-base font-medium hover:text-primary transition-colors focus:outline-none flex items-center gap-2"
-                                    aria-label="Search"
-                                >
-                                    <img src="/search-02.png" alt="Search" className="w-5 h-5 opacity-80 hover:opacity-100 transition-opacity invert dark:invert-0" />
-                                </button>
-                                <ThemeToggle />
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* Mobile Nav Container - Wider */}
-                    <div className="xl:hidden w-full flex justify-between items-center px-6 py-4 bg-white/90 dark:bg-gray-900/90 backdrop-blur-md rounded-2xl border border-black/10 dark:border-gray-800 pointer-events-auto min-w-[92vw] mx-auto">
-                        <Link to="/" className="block">
-                            <Logo className="h-8 w-auto text-primary dark:text-primary-hero transition-colors duration-300" />
-                        </Link>
-                        <div className="flex items-center gap-4">
-                            <ThemeToggle />
-                            <button
-                                onClick={() => setIsOpen(!isOpen)}
-                                className="text-gray-900 dark:text-white hover:text-primary focus:outline-none"
-                                aria-label={isOpen ? 'Close menu' : 'Open menu'}
-                            >
-                                {isOpen ? (
-                                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
-                                    </svg>
-                                ) : (
-                                    <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-                                    </svg>
-                                )}
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </nav>
-
-            {/* Mobile Menu Overlay */}
-            <div
-                role="dialog"
-                aria-modal="true"
-                aria-label="Mobile navigation menu"
-                aria-hidden={!isOpen}
-                className={`fixed inset-0 z-40 bg-white/95 dark:bg-gray-900/95 backdrop-blur-3xl transition-all duration-500 xl:hidden flex flex-col ${isOpen ? 'opacity-100 pointer-events-auto translate-y-0' : 'opacity-0 pointer-events-none -translate-y-10'
+              {NAV_LINKS.map((link) => {
+                const isActive =
+                  location.pathname === link.href ||
+                  (link.href !== '/' && location.pathname.startsWith(link.href));
+                return (
+                  <Link
+                    key={link.name}
+                    to={link.href}
+                    style={{ ...linkStyle, fontSize: '18px', color: isActive ? '#D80000' : '#8C8484' }}
+                    className={`transition-colors duration-200 ${
+                      isActive ? 'underline decoration-2 underline-offset-8' : ''
                     }`}
-            >
-                <div className="flex flex-col items-center justify-center min-h-screen w-full p-8 space-y-6 overflow-y-auto">
-
-                    {allLinks.map((link, index) => {
-                        const isActive =
-                            location.pathname === link.href ||
-                            (link.href !== '/' && link.href !== '#' && location.pathname.startsWith(link.href)) ||
-                            link.dropdown?.some(item => location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href))) ||
-                            (link.href === '#' && link.name !== 'Search' && location.pathname.startsWith(`/${link.name.toLowerCase()}`));
-
-                        return (
-                            <div key={link.name} className="flex flex-col items-center w-full max-w-sm">
-                                <div className="flex items-center justify-center w-full relative">
-                                    {link.href === '#' ? (
-                                        <button
-                                            style={{ transitionDelay: `${index * 50}ms` }}
-                                            aria-haspopup={link.dropdown ? 'true' : undefined}
-                                            aria-expanded={link.dropdown ? expandedMobileLinks.includes(link.name) : undefined}
-                                            onClick={(e) => {
-                                                if (link.dropdown) {
-                                                    e.preventDefault();
-                                                    toggleMobileSubmenu(link.name);
-                                                } else {
-                                                    if (link.onClick) {
-                                                        e.preventDefault();
-                                                        link.onClick();
-                                                    }
-                                                    setIsOpen(false);
-                                                }
-                                            }}
-                                            className={`text-3xl font-bold transition-all transform cursor-pointer select-none flex items-center gap-2 bg-transparent border-0 p-0 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
-                                        >
-                                            {link.name}
-                                            {link.dropdown && (
-                                                <svg
-                                                    aria-hidden="true"
-                                                    className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            )}
-                                        </button>
-                                    ) : (
-                                        <Link
-                                            to={link.href}
-                                            style={{ transitionDelay: `${index * 50}ms` }}
-                                            onClick={(e) => {
-                                                if (link.dropdown) {
-                                                    e.preventDefault();
-                                                    toggleMobileSubmenu(link.name);
-                                                } else {
-                                                    if (link.onClick) {
-                                                        e.preventDefault();
-                                                        link.onClick();
-                                                    } else {
-                                                        handleNavClick(e, link.href, link.name);
-                                                    }
-                                                }
-                                            }}
-                                            className={`text-3xl font-bold transition-all transform cursor-pointer flex items-center gap-2 ${isOpen ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'} ${isActive ? 'text-primary underline decoration-4 underline-offset-8' : 'text-gray-900 dark:text-white hover:text-primary'}`}
-                                        >
-                                            {link.name}
-                                            {link.dropdown && (
-                                                <svg
-                                                    className={`w-6 h-6 transition-transform duration-300 ${expandedMobileLinks.includes(link.name) ? 'rotate-180' : ''}`}
-                                                    fill="none"
-                                                    viewBox="0 0 24 24"
-                                                    stroke="currentColor"
-                                                >
-                                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                                                </svg>
-                                            )}
-                                        </Link>
-                                    )}
-                                </div>
-
-                                {/* Mobile Dropdown Items */}
-                                {link.dropdown && (
-                                    <div
-                                        className={`flex flex-col items-start space-y-1 w-full transition-all duration-300 overflow-hidden ${expandedMobileLinks.includes(link.name) ? 'max-h-96 opacity-100 mt-4' : 'max-h-0 opacity-0 mt-0'
-                                            }`}
-                                    >
-                                        {link.dropdown.map((item) => {
-                                            const isItemActive = location.pathname === item.href || (item.href !== '/' && location.pathname.startsWith(item.href));
-                                            return (
-                                                <Link
-                                                    key={item.name}
-                                                    to={item.href}
-                                                    onClick={(e) => handleNavClick(e, item.href, item.name)}
-                                                    className={`text-xl font-medium transition-all group flex items-center gap-3 w-full px-4 py-3 rounded-xl ${item.name === 'Walking Project' ? 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-gray-900 hover:bg-[#F5D650]' : isItemActive ? 'text-primary bg-primary/10' : 'text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-black/5 dark:hover:bg-white/10'}`}
-                                                >
-                                                    {(item.logo || item.placeholder) && (
-                                                        <div className={`w-10 h-10 flex items-center justify-center p-2 shrink-0 transition-colors ${item.name === 'Walking Project' ? 'bg-black/5 dark:bg-white/10 group-hover:bg-white/20 dark:group-hover:bg-black/20 rounded-xl' : 'bg-black/5 dark:bg-white/10 rounded-full'}`}>
-                                                            {item.logo
-                                                                ? <img src={item.logo} alt="" className={`w-full h-full object-contain ${item.name === 'Walking Project' ? '' : 'filter drop-shadow-sm'}`} />
-                                                                : <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-400 to-teal-600 opacity-80" />}
-                                                        </div>
-                                                    )}
-                                                    {item.name}
-                                                </Link>
-                                            )
-                                        })}
-                                    </div>
-                                )}
-                            </div>
-                        )
-                    })}
-                </div>
-            </div>
-
-            <SearchModal isOpen={isSearchOpen} onClose={() => setIsSearchOpen(false)} />
-        </>
-    );
+                  >
+                    {link.name}
+                  </Link>
+                );
+              })}
+            </motion.div>
+          )}
+        </AnimatePresence>
+      </nav>
+    </>
+  );
 }
