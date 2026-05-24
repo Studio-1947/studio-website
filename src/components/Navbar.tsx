@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import TalkToUsModal from './TalkToUsModal';
 
 const NAV_LINKS = [
   { name: 'About', href: '/about' },
@@ -8,7 +9,6 @@ const NAV_LINKS = [
   { name: 'Portfolio', href: '/ourworks' },
   { name: 'Initiatives', href: '/initiative' },
   { name: 'Products & Services', href: '/products' },
-  { name: 'Say Hello', href: '/contact' },
 ];
 
 const linkStyle = {
@@ -22,6 +22,7 @@ export default function Navbar() {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +34,7 @@ export default function Navbar() {
 
   useEffect(() => {
     setMenuOpen(false);
+    setModalOpen(false);
   }, [location.pathname]);
 
   return (
@@ -108,6 +110,13 @@ export default function Navbar() {
                 </Link>
               );
             })}
+            <button
+              onClick={() => setModalOpen(true)}
+              style={{ ...linkStyle, color: '#8C8484' }}
+              className="transition-colors duration-200 hover:text-primary"
+            >
+              Say Hello
+            </button>
           </div>
         </motion.div>
       </nav>
@@ -197,10 +206,18 @@ export default function Navbar() {
                   </Link>
                 );
               })}
+              <button
+                onClick={() => { setMenuOpen(false); setModalOpen(true); }}
+                style={{ ...linkStyle, fontSize: '18px', color: '#8C8484' }}
+                className="text-left transition-colors duration-200"
+              >
+                Say Hello
+              </button>
             </motion.div>
           )}
         </AnimatePresence>
       </nav>
+      <TalkToUsModal isOpen={modalOpen} onClose={() => setModalOpen(false)} />
     </>
   );
 }

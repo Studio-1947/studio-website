@@ -63,7 +63,7 @@ const Blogs: React.FC = () => {
                       </div>
                       <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 z-10">
                         <div className="flex items-center gap-4 mb-4">
-                          <span className="px-3 py-1 bg-royal-600/20 text-royal-300 backdrop-blur-md rounded-full text-xs font-semibold tracking-wide uppercase border border-royal-500/30">
+                          <span className="px-3 py-1 bg-royal-600 text-white backdrop-blur-md rounded-full text-xs font-semibold tracking-wide uppercase">
                             Featured
                           </span>
                           <span className="text-gray-300 text-sm font-medium">{featuredBlog.date}</span>
