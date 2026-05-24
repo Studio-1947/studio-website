@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import { blogs } from '../../data/blogData';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import { CardContainer, CardBody, CardItem } from '../../components/ui/3d-card';
 
 const Blogs: React.FC = () => {
  usePageMeta({ title: 'Journal – Studio 1947', description: 'Explorations, essays, and stories from the Studio 1947 team on design, culture, technology, and where they intersect.' });
@@ -88,62 +89,64 @@ const Blogs: React.FC = () => {
                 )}
 
                 {/* Blog Grid (The rest) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 gap-y-12">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-4 items-stretch">
                   {otherBlogs.map((blog) => (
-                    <article key={blog.slug} className="group flex flex-col h-full">
-                      <Link to={`/blogs/${blog.slug}`} className="block relative rounded-2xl overflow-hidden mb-6 shadow-md shadow-gray-200 dark:shadow-none aspect-[4/3] bg-gray-100 dark:bg-gray-800">
-                        {blog.coverImage === '/logo.svg' ? (
-                          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center transition-transform duration-700 group-hover:scale-105">
-                            <span className="text-white/30 text-6xl mb-4 block">✧</span>
-                            <span className="text-xl font-black text-white tracking-widest uppercase">
-                              Studio 1947
-                            </span>
-                            <span className="text-royal-200 text-sm font-light tracking-widest uppercase mt-2">
-                              Blogs
-                            </span>
-                          </div>
-                        ) : (
-                          <img
-                            src={blog.coverImage}
-                            alt={blog.title}
-                            loading="lazy"
-                            decoding="async"
-                            className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                        )}
-                        {blog.language && blog.language !== 'English' && (
-                          <div className="absolute top-4 right-4 z-10">
-                            <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-white/20">
-                              {blog.language}
-                            </span>
-                          </div>
-                        )}
-                      </Link>
-                      <div className="flex-1 flex flex-col">
-                        <div className="flex items-center gap-3 text-sm text-gray-500 dark:text-gray-400 mb-3">
-                          <time dateTime={blog.date}>{blog.date}</time>
-                          <span>•</span>
-                          <span>{blog.author}</span>
-                        </div>
-                        <h3 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2 group-hover:text-royal-600 dark:group-hover:text-royal-400 transition-colors">
-                          <Link to={`/blogs/${blog.slug}`}>
-                            {blog.title}
+                    <CardContainer key={blog.slug} className="w-full h-full" containerClassName="w-full h-full py-4">
+                      <CardBody className="bg-gray-50 border border-black/[0.1] w-full h-full rounded-xl p-5 group/card flex flex-col">
+                        <CardItem translateZ="100" className="w-full">
+                          <Link to={`/blogs/${blog.slug}`} className="block relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
+                            {blog.coverImage === '/logo.svg' ? (
+                              <div className="absolute inset-0 bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center">
+                                <span className="text-white/30 text-6xl mb-4 block">✧</span>
+                                <span className="text-xl font-black text-white tracking-widest uppercase">Studio 1947</span>
+                                <span className="text-royal-200 text-sm font-light tracking-widest uppercase mt-2">Blogs</span>
+                              </div>
+                            ) : (
+                              <img
+                                src={blog.coverImage}
+                                alt={blog.title}
+                                loading="lazy"
+                                decoding="async"
+                                className="w-full h-full object-cover group-hover/card:shadow-xl"
+                              />
+                            )}
+                            {blog.language && (
+                              <div className="absolute top-3 right-3 z-10">
+                                <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-white/20">
+                                  {blog.language}
+                                </span>
+                              </div>
+                            )}
                           </Link>
-                        </h3>
-                        <p className="text-gray-600 dark:text-gray-400 line-clamp-3 mb-4 flex-1">
+                        </CardItem>
+
+                        <CardItem translateZ="50" className="w-full mt-4">
+                          <div className="flex items-center gap-3 text-sm text-gray-500 mb-2">
+                            <time dateTime={blog.date}>{blog.date}</time>
+                            <span>•</span>
+                            <span>{blog.author}</span>
+                          </div>
+                          <h3 className="text-lg md:text-xl font-bold text-gray-900 line-clamp-2 group-hover/card:text-royal-600 transition-colors">
+                            <Link to={`/blogs/${blog.slug}`}>{blog.title}</Link>
+                          </h3>
+                        </CardItem>
+
+                        <CardItem translateZ="60" as="p" className="w-full text-gray-500 text-sm mt-3 line-clamp-3 flex-1">
                           {blog.excerpt}
-                        </p>
-                        <Link
-                          to={`/blogs/${blog.slug}`}
-                          className="inline-flex items-center text-sm font-bold text-royal-600 dark:text-royal-400 group-hover:text-royal-700 dark:group-hover:text-royal-300"
-                        >
-                          Read More
-                          <svg className="w-4 h-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                          </svg>
-                        </Link>
-                      </div>
-                    </article>
+                        </CardItem>
+
+                        <div className="flex justify-end items-center mt-5">
+                          <CardItem
+                            translateZ={20}
+                            as={Link}
+                            to={`/blogs/${blog.slug}`}
+                            className="px-4 py-2 rounded-xl bg-black text-white text-xs font-bold"
+                          >
+                            Read More →
+                          </CardItem>
+                        </div>
+                      </CardBody>
+                    </CardContainer>
                   ))}
                 </div>
               </>

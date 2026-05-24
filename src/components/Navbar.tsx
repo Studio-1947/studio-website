@@ -80,13 +80,15 @@ export default function Navbar() {
                 exit={{ x: -40, opacity: 0 }}
                 transition={{ duration: 0.4, ease: 'easeOut' }}
               >
-                <motion.img
-                  src="/studio_nav_logo.svg"
-                  alt="Studio 1947"
-                  animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
-                  className="h-10 w-auto"
-                />
+                <Link to="/">
+                  <motion.img
+                    src="/studio_nav_logo.svg"
+                    alt="Studio 1947"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
+                    className="h-10 w-auto"
+                  />
+                </Link>
               </motion.div>
             )}
           </AnimatePresence>
@@ -143,13 +145,15 @@ export default function Navbar() {
                 exit={{ x: -20, opacity: 0 }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
               >
-                <motion.img
-                  src="/studio_nav_logo.svg"
-                  alt="Studio 1947"
-                  animate={{ rotate: 360 }}
-                  transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
-                  className="h-8 w-auto"
-                />
+                <Link to="/">
+                  <motion.img
+                    src="/studio_nav_logo.svg"
+                    alt="Studio 1947"
+                    animate={{ rotate: 360 }}
+                    transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
+                    className="h-8 w-auto"
+                  />
+                </Link>
               </motion.div>
             ) : (
               <div className="h-8" />
