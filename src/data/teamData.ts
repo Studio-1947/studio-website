@@ -195,17 +195,4 @@ export const teamData: TeamMember[] = [
     socials: { linkedin: "#" },
     bio: "Subhendu Kundu is a seasoned Ayurvedic medical practitioner with over 10 years of experience. He currently practices at Mirik Hospital. Subhendu is also a passionate curriculum designer focused on children's health in rural communities. With a strong background in medicine and public health, he crafts psychologically profound curriculum designs for children and teenagers. As an advisor at 1947 Studio, Subhendu lends his expertise to design better programs and curricula that empower skill development and capacity-building practices. He brings valuable experience in large-scale operation management and effective communication strategies. His deep understanding of rural health challenges and proven record in curriculum design creates a different approach for our Skill Development Training Programs.",
   },
-  {
-    id: "zahid",
-    name: "Zahid Ansari",
-    role: "Graphics Designer & Script Writer",
-    slug: "zahid-ansari",
-    image: "https://res.cloudinary.com/drgb8w8ak/image/upload/w_800,ar_3:4,c_fill,g_face,f_auto,q_auto/v1776406572/Zahid_xuzzyn.webp",
-    location: "Kolkata",
-    hobbies: "Collecting Watches, Writing, Content Creation",
-    socials: {
-      linkedin: "https://www.linkedin.com/in/md-zahid-ansari-00616a15b/",
-    },
-    bio: "“Hamesha der kar deta hoon main” is a line that perfectly sums up Zahid Ansari, also known as Zahid. He is a budding graphic designer pursuing a B.A. in History from NSOU. He finds himself increasingly drawn to the design process, valuing the journey of creation as much as the final product. His experience spans multiple creative fields. He has worked as a translator and designer for CPS International, New Delhi. In addition to design, he is a Bengali short story writer, with several of his works published in Golpokutir. Inspired by films, books, and everyday moments, Zahid sees design as a powerful storytelling tool that connects people evokes emotions, and sparks inspiration through compelling visuals.",
-  },
 ];

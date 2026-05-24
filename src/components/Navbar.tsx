@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const NAV_LINKS = [
   { name: 'About', href: '/about' },
   { name: 'Blogs', href: '/blogs' },
-  { name: 'Portfolio', href: '/ourwork' },
+  { name: 'Portfolio', href: '/ourworks' },
   { name: 'Initiatives', href: '/initiative' },
   { name: 'Products & Services', href: '/products' },
   { name: 'Say Hello', href: '/contact' },
@@ -14,7 +14,7 @@ const NAV_LINKS = [
 const linkStyle = {
   fontFamily: 'Inter, sans-serif',
   fontSize: '15px',
-  fontWeight: 300,
+  fontWeight: 500,
   lineHeight: 'normal',
 };
 
