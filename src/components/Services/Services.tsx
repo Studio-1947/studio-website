@@ -9,9 +9,9 @@ export default function Services() {
  aria-hidden="true"
  >
  <img
- src="/home/bg_image_what_we_do.svg"
+ src="https://res.cloudinary.com/drgb8w8ak/image/upload/v1779518409/what-we-do_qvvcqs.jpg"
  alt=""
- className="w-full h-full object-cover object-center opacity-40"
+ className="w-full h-full object-cover object-center opacity-30 blur-sm"
  loading="lazy"
  decoding="async"
  />
