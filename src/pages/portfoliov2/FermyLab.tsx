@@ -27,14 +27,7 @@ const IMG_DELIVERY = "/portfolio/fermylab/Delivery App Optimization.png";
 const IMG_OOH = "/portfolio/fermylab/Out-of-Home Highway Billboards.png";
 const IMG_REALWORLD1 = "/portfolio/fermylab/Real-World Experience-left.png";
 const IMG_REALWORLD2 = "/portfolio/fermylab/Real-World Experience-right.png";
-const IMG_COMMERCIAL =
-  "https://www.figma.com/api/mcp/asset/cb1b0e3c-2825-46a3-9e96-76293220257f"; // pending
-const IMG_VALUE_LEFT =
-  "https://www.figma.com/api/mcp/asset/7549cd66-4d54-48f8-a4d7-2752a7e0d604"; // pending
-const IMG_VALUE_RIGHT =
-  "https://www.figma.com/api/mcp/asset/73c76b4a-ab4e-4a25-a3f7-661a0d7e7865"; // pending
-const IMG_CTA =
-  "https://www.figma.com/api/mcp/asset/f79abfd3-ccbe-44ef-b05e-d8f13db13ad8"; // pending
+
 
 // ── Shared primitives ─────────────────────────────────────────────────────────
 function SectionLabel({
