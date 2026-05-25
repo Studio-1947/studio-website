@@ -99,7 +99,7 @@ export default function RajkamalPrakashan() {
 
   return (
     <Layout>
-      <div className="bg-[#F7F5F2] min-h-screen">
+      <div className="portfoliov2-page bg-[#F7F5F2] min-h-screen">
 
         {/* ── Back button ── */}
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-28 pb-6">
@@ -376,7 +376,7 @@ export default function RajkamalPrakashan() {
           {/* ── CTA ── */}
           <div className="rounded-2xl overflow-hidden border border-black/[0.06] bg-white p-10 md:p-14">
             <p
-              className="text-3xl md:text-5xl font-black leading-tight mb-10"
+              className="text-3xl md:text-5xl font-semibold leading-tight mb-10"
               style={{ color: RED }}
             >
               Building a future-proof brand system or launching a complex digital product?

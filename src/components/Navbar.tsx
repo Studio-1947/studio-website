@@ -33,6 +33,12 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    const handleOpenModal = () => setModalOpen(true);
+    window.addEventListener('open-talk-modal', handleOpenModal);
+    return () => window.removeEventListener('open-talk-modal', handleOpenModal);
+  }, []);
+
+  useEffect(() => {
     setMenuOpen(false);
     setModalOpen(false);
   }, [location.pathname]);

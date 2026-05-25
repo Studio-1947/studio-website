@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+.portfoliov2-page {
+  font-family: 'Inter', sans-serif;
+}
+
 /* ===================================
    DESIGN SYSTEM - CSS VARIABLES
    Base Color: #D80000 (Studio Red)

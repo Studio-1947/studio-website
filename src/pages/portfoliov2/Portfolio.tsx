@@ -6,6 +6,7 @@ import { usePageMeta } from '../../hooks/usePageMeta';
 const IMG_REMODEL_UN = 'https://www.figma.com/api/mcp/asset/cbd571fc-dfbc-4eb7-8e5d-db68c2cdd2cb';
 const IMG_FERMY_LAB  = 'https://www.figma.com/api/mcp/asset/5503c723-07af-4b5e-98f9-39b2419c9b50';
 const IMG_RAJKAMAL   = 'https://www.figma.com/api/mcp/asset/dc00f9e8-f215-4994-a613-e6a9a1fca6c3';
+const IMG_AWCH       = 'https://www.figma.com/api/mcp/asset/b0e048c8-3803-4e2b-a26b-d4f7e5017776';
 
 interface Project {
   slug: string;
@@ -41,6 +42,14 @@ const PROJECTS: Project[] = [
     image: IMG_RAJKAMAL,
     accent: '#D80000',
   },
+  {
+    slug: '/portfoliov2/awch',
+    title: 'AWCH',
+    subtitle: 'Avishkar Women & Children Hospital — Brand, Digital & Social System',
+    tags: ['Brand Strategy', 'Visual Identity', 'Digital Platform', 'Social Media'],
+    image: IMG_AWCH,
+    accent: '#BF0076',
+  },
 ];
 
 export default function PortfolioV2() {
@@ -55,7 +64,7 @@ export default function PortfolioV2() {
 
   return (
     <Layout>
-      <div className="min-h-screen bg-[#F7F5F2] pt-32 pb-24">
+      <div className="portfoliov2-page min-h-screen bg-[#F7F5F2] pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
 
           {/* Header */}
