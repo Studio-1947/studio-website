@@ -64,6 +64,7 @@ const PortfolioV2 = lazy(() => import("./pages/portfoliov2/Portfolio.tsx"));
 const RemodelUNv2 = lazy(() => import("./pages/portfoliov2/RemodelUN.tsx"));
 const FermyLabV2 = lazy(() => import("./pages/portfoliov2/FermyLab.tsx"));
 const RajkamalV2 = lazy(() => import("./pages/portfoliov2/RajkamalPrakashan.tsx"));
+const AwchV2 = lazy(() => import("./pages/portfoliov2/Awch.tsx"));
 
 // Legal pages
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.tsx"));
@@ -167,6 +168,7 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/portfoliov2/remodel-un" element={<RemodelUNv2 />} />
           <Route path="/portfoliov2/fermy-lab" element={<FermyLabV2 />} />
           <Route path="/portfoliov2/rajkamal-prakashan" element={<RajkamalV2 />} />
+          <Route path="/portfoliov2/awch" element={<AwchV2 />} />
 
           {/* Our Work Routes */}
           <Route path="/ourworks" element={<AllWorks />} />
