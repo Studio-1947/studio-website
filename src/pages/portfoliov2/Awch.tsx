@@ -1,47 +1,41 @@
-import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import { ArrowLeft } from 'lucide-react';
-import Layout from '../../components/Layout';
-import { usePageMeta } from '../../hooks/usePageMeta';
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { ArrowLeft } from "lucide-react";
+import Layout from "../../components/Layout";
+import { usePageMeta } from "../../hooks/usePageMeta";
+import PortfolioCTA from "../../components/PortfolioCTA";
 
-// ── Figma Assets (7-day hosted URLs — swap with permanent assets) ─────────────
-const IMG_HERO    = 'https://www.figma.com/api/mcp/asset/b0e048c8-3803-4e2b-a26b-d4f7e5017776';
-const IMG_ARCH    = 'https://www.figma.com/api/mcp/asset/bf69629d-b2d8-40d0-bf2a-5e924c9de89a';
-const IMG_COLOR   = 'https://www.figma.com/api/mcp/asset/21d9c4bc-bdbe-4b02-8928-743c8964b4fc';
-const IMG_TYPO    = 'https://www.figma.com/api/mcp/asset/02d30260-7f9c-44c6-af08-56b0913c2348';
-const IMG_WEB     = 'https://www.figma.com/api/mcp/asset/6e205b23-772e-4146-bec1-64ab99d77d81';
-const IMG_APPT    = 'https://www.figma.com/api/mcp/asset/9c5596a9-8b0b-49a2-97a7-72578906c3aa';
-const IMG_SOCIAL  = 'https://www.figma.com/api/mcp/asset/eb40c4b3-40f1-437b-8db2-65c555e8819d';
+// ── Assets ────────────────────────────────────────────────────────────────────
+const IMG_HERO = "/portfolio/awch/hero.png";
+const IMG_ARCH = "/portfolio/awch/Parent-Brand Architecture.png";
+const IMG_TYPO = "/portfolio/awch/Typographyfont.png";
+const IMG_WEB = "/portfolio/awch/Simplified Information Architecture.png";
+const IMG_APPT = "/portfolio/awch/Frictionless Appointment UX.png";
+const IMG_SOCIAL_1 = "/portfolio/awch/Instant Recall01.png";
+const IMG_SOCIAL_2 = "/portfolio/awch/Instant Recall02.jpg";
+const IMG_SOCIAL_3 = "/portfolio/awch/Instant Recall03.jpg";
 
-const PINK = '#BF0076';
-const RED  = '#D60000';
+const PINK = "#BF0076";
 
 // ── Shared primitives ─────────────────────────────────────────────────────────
-function Tag({ children }: { children: React.ReactNode }) {
+function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
-    <span
-      className="inline-block px-5 py-2 rounded-full text-[11px] font-bold tracking-widest uppercase border"
-      style={{ borderColor: RED, color: RED, background: '#FFF4F4' }}
-    >
+    <span className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide mb-6 bg-[#FFF4F4] text-[#D60000]">
       {children}
     </span>
   );
 }
 
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="text-[11px] font-bold tracking-[0.22em] uppercase mb-3" style={{ color: RED }}>
-      {children}
-    </p>
-  );
-}
-
-function SectionHeading({ children, large }: { children: React.ReactNode; large?: boolean }) {
+function SectionHeading({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
     <h2
-      className={`font-black text-[#1A1A1A] leading-tight tracking-tight ${
-        large ? 'text-3xl md:text-5xl' : 'text-2xl md:text-4xl'
-      }`}
+      className={`text-4xl md:text-5xl lg:text-[3.5rem] font-black tracking-tight leading-[1.05] text-gray-900 ${className}`}
     >
       {children}
     </h2>
@@ -50,28 +44,72 @@ function SectionHeading({ children, large }: { children: React.ReactNode; large?
 
 function SubHeading({ children }: { children: React.ReactNode }) {
   return (
-    <h3 className="text-2xl md:text-3xl font-bold leading-tight" style={{ color: PINK }}>
+    <h3
+      className="text-2xl md:text-3xl font-bold leading-tight mb-6"
+      style={{ color: PINK }}
+    >
       {children}
     </h3>
   );
 }
 
-function Body({ children }: { children: React.ReactNode }) {
+function Body({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) {
   return (
-    <p className="text-[#4A4A4A] text-base md:text-lg leading-relaxed font-light">
+    <p className={`text-lg leading-relaxed text-gray-600 ${className}`}>
       {children}
     </p>
   );
 }
 
 function Divider() {
-  return <hr className="border-t border-black/[0.08] my-14 md:my-20" />;
+  return <hr className="border-gray-100 my-8 md:my-12" />;
 }
 
-function ImageCard({ src, alt, className = '' }: { src: string; alt: string; className?: string }) {
+function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
   return (
-    <div className={`rounded-2xl overflow-hidden border border-black/[0.06] bg-[#F9F9F9] ${className}`}>
-      <img src={src} alt={alt} loading="lazy" decoding="async" className="w-full h-auto" />
+    <div
+      className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out"
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white transition-colors cursor-pointer"
+        aria-label="Close"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="18"
+          height="18"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+      <img
+        src={src}
+        alt=""
+        className="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl"
+        onClick={(e) => e.stopPropagation()}
+      />
     </div>
   );
 }
@@ -79,263 +117,393 @@ function ImageCard({ src, alt, className = '' }: { src: string; alt: string; cla
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function Awch() {
   usePageMeta({
-    title: 'AWCH — Avishkar Women & Children Hospital · Studio 1947',
+    title: "AWCH — Avishkar Women & Children Hospital · Studio 1947",
     description:
-      'How Studio 1947 established AWCH as a modern, premier multispeciality medical institution in Asansol — brand strategy, visual identity, digital platform, and omnichannel social media system.',
+      "How Studio 1947 established AWCH as a modern, premier multispeciality medical institution in Asansol — brand strategy, visual identity, digital platform, and omnichannel social media system.",
   });
 
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const zoom = (src: string) => setLightboxSrc(src);
+
   useEffect(() => {
-    window.scrollTo({ top: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, behavior: "instant" });
   }, []);
 
   return (
     <Layout>
-      <div className="portfoliov2-page bg-[#F7F5F2] min-h-screen">
-
-        {/* ── Back button ── */}
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 pt-28 pb-6">
+      {lightboxSrc && (
+        <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
+      )}
+      <article className="portfoliov2-page bg-[#fafafa] min-h-screen">
+        {/* ── Hero ────────────────────────────────────────────────────────── */}
+        <div className="relative">
           <Link
             to="/portfoliov2"
-            className="inline-flex items-center gap-2 text-sm font-medium text-[#6B6B6B] hover:text-[#1A1A1A] transition-colors"
+            className="absolute top-6 left-6 z-[60] flex items-center justify-center w-10 h-10 md:w-14 md:h-14 bg-[#D60000] rounded-full shadow-lg hover:bg-[#B80000] transition-colors"
+            aria-label="Go back"
           >
-            <ArrowLeft className="w-4 h-4" />
-            All Work
+            <ArrowLeft className="w-4 h-4 md:w-6 md:h-6 text-white" />
           </Link>
-        </div>
-
-        {/* ── Hero ── */}
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12 mb-14">
-          <div className="rounded-2xl overflow-hidden">
-            <img
-              src={IMG_HERO}
-              alt="AWCH — Avishkar Women & Children Hospital, Asansol"
-              loading="eager"
-              decoding="async"
-              className="w-full h-[320px] md:h-[460px] object-cover"
-            />
-          </div>
-        </div>
-
-        {/* ── Content ── */}
-        <div className="max-w-4xl mx-auto px-5 sm:px-8 lg:px-12 pb-24">
-
-          {/* Project header */}
-          <div className="mb-12">
-            <div className="flex flex-wrap gap-2 mb-6">
-              <Tag>Brand Strategy</Tag>
-              <Tag>Visual Identity</Tag>
-              <Tag>Digital Platform</Tag>
-              <Tag>Social Media</Tag>
+          <img
+            src={IMG_HERO}
+            alt="AWCH — Avishkar Women & Children Hospital, Asansol"
+            className="w-full h-[60vh] md:h-[80vh] object-cover"
+            loading="eager"
+            decoding="async"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent pointer-events-none" />
+          <div className="absolute bottom-0 left-0 right-0 px-6 md:px-10 pb-8 md:pb-14">
+            <div className="flex flex-wrap gap-2 mb-4">
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-xs font-semibold text-white tracking-wide border border-white/20">
+                Brand Strategy
+              </span>
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-xs font-semibold text-white tracking-wide border border-white/20">
+                Visual Identity
+              </span>
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-xs font-semibold text-white tracking-wide border border-white/20">
+                Digital Platform
+              </span>
+              <span className="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-xs font-semibold text-white tracking-wide border border-white/20">
+                Social Media
+              </span>
             </div>
-            <h1
-              className="text-5xl md:text-7xl font-black leading-[0.9] tracking-tight mb-8"
-              style={{ color: '#1A1A1A' }}
-            >
-              Avishkar<br />Hospital
+            <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none">
+              Avishkar
+              <br />
+              Hospital
             </h1>
-            <div className="flex flex-col gap-5">
-              <Body>
-                When healthcare founders and hospital executives evaluate a creative partner, they look for design that does more than decorate a space. They seek an agency that can build deep institutional trust, shift consumer behavior, and engineer digital-first touchpoints that simplify patient care.
-              </Body>
-              <Body>
-                This case study demonstrates how we established{' '}
-                <strong style={{ color: PINK }}>AWCH (Avishkar Women & Children Hospital)</strong>{' '}
-                as a modern, premier multispeciality medical institution in Asansol. By shifting regional perceptions and eliminating digital friction, we built a comprehensive communication ecosystem focused on authority, accessibility, and community impact.
+          </div>
+        </div>
+
+        <div className="max-w-[1400px] mx-auto px-6 md:px-10">
+          <Divider />
+
+          {/* ── Intro ─────────────────────────────────────────────────────── */}
+          <section className="pb-6 md:pb-8">
+            <Body className="mb-6">
+              When healthcare founders and hospital executives evaluate a
+              creative partner, they look for design that does more than
+              decorate a space. They seek an agency that can build deep
+              institutional trust, shift consumer behavior, and engineer
+              digital-first touchpoints that simplify patient care.
+            </Body>
+            <Body>
+              This case study demonstrates how we established{" "}
+              <strong className="text-primary">
+                AWCH (Avishkar Women &amp; Children Hospital)
+              </strong>{" "}
+              as a modern, premier multispeciality medical institution in
+              Asansol. By shifting regional perceptions and eliminating digital
+              friction, we built a comprehensive communication ecosystem focused
+              on authority, accessibility, and community impact.
+            </Body>
+          </section>
+
+          <Divider />
+
+          {/* ── Strategic Context ─────────────────────────────────────────── */}
+          <section className="pb-6 md:pb-8">
+            <SectionHeading className="mb-6">
+              Strategic Context & The Regional Trust Gap
+            </SectionHeading>
+
+            <div className="">
+              <SectionLabel>The Mission</SectionLabel>
+              <Body className="">
+                <strong className="text-primary">
+                  Avishkar Women &amp; Children Hospital (AWCH)
+                </strong>{" "}
+                was envisioned as a state-of-the-art multispeciality hospital
+                bringing world-class medical infrastructure directly to families
+                in Asansol. The institution is dedicated to delivering highly
+                specialized, compassionate care, completely removing the need
+                for artificial operational shortcuts in the patient experience.
               </Body>
             </div>
-          </div>
+
+            <div className="mt-10">
+              <SectionLabel>The Challenge</SectionLabel>
+            </div>
+            <Body className="mb-6">
+              Healthcare brands in Tier-2 cities face a unique psychological
+              hurdle: a systemic lack of digital trust and fragmented
+              institutional communication. Historically, many families in
+              Asansol would undergo the emotional and financial strain of
+              traveling all the way to Kolkata for critical treatments. This
+              flight wasn't due to a lack of local medical infrastructure, but a
+              lack of visual confidence and awareness in local brands.
+            </Body>
+            <Body className="mb-10 max-w-4xl">
+              Our core strategic challenge was to bridge this confidence gap.
+              The identity needed to balance:
+            </Body>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              {[
+                {
+                  title: "Emotional Warmth",
+                  body: "Reassuring anxious patients and protective parents.",
+                },
+                {
+                  title: "Clinical Authority",
+                  body: "Commanding absolute medical professionalism.",
+                },
+                {
+                  title: "Cultural Familiarity",
+                  body: "Ensuring the visual environment felt approachably native rather than intimidatingly corporate.",
+                },
+              ].map((card) => (
+                <div
+                  key={card.title}
+                  className="bg-white rounded-3xl border border-gray-100 p-8"
+                >
+                  <h3 className="text-xl font-bold mb-4 text-primary">
+                    {card.title}
+                  </h3>
+                  <p className="text-gray-700 leading-relaxed">{card.body}</p>
+                </div>
+              ))}
+            </div>
+          </section>
 
           <Divider />
 
-          {/* ── Strategic Context ── */}
-          <div className="mb-8">
-            <SectionLabel>Strategic Context</SectionLabel>
-            <SectionHeading large>The Regional Trust Gap</SectionHeading>
-          </div>
+          {/* ── Brand Architecture ────────────────────────────────────────── */}
+          <section className="pb-6 md:pb-8">
+            <SectionHeading className="mb-6">
+              Parent-Brand Architecture
+            </SectionHeading>
 
-          <div className="mb-6">
-            <Tag>The Mission</Tag>
-          </div>
-          <div className="flex flex-col gap-4 mb-10">
-            <Body>
-              <strong style={{ color: PINK }}>Avishkar Women & Children Hospital (AWCH)</strong>{' '}
-              was envisioned as a state-of-the-art multispeciality hospital bringing world-class medical infrastructure directly to families in Asansol. The institution is dedicated to delivering highly specialized, compassionate care, completely removing the need for artificial operational shortcuts in the patient experience.
+            <Body className="mb-10 max-w-4xl">
+              To protect the institution from future design debt, we built an
+              adaptable visual architecture. AWCH serves as the primary master
+              identity under which specific wings (such as Pediatrics,
+              Gynecology, and Emergency Care) operate. This cohesive blueprint
+              ensures that as the hospital expands its departments, every new
+              facility instantly inherits established brand equity, saving
+              long-term promotional costs.
             </Body>
-          </div>
+            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden">
+              <img
+                src={IMG_ARCH}
+                alt="AWCH master brand logo — Avishkar Women & Children Hospital"
+                className="w-full block cursor-zoom-in"
+                loading="lazy"
+                onClick={() => zoom(IMG_ARCH)}
+              />
+            </div>
+          </section>
 
-          <div className="mb-6">
-            <Tag>The Challenge</Tag>
-          </div>
-          <div className="flex flex-col gap-4 mb-10">
-            <Body>
-              Healthcare brands in Tier-2 cities face a unique psychological hurdle: a systemic lack of digital trust and fragmented institutional communication. Historically, many families in Asansol would undergo the emotional and financial strain of traveling all the way to Kolkata for critical treatments. This flight wasn't due to a lack of local medical infrastructure, but a lack of visual confidence and awareness in local brands.
-            </Body>
-            <Body>
-              Our core strategic challenge was to bridge this confidence gap. The identity needed to balance:
-            </Body>
-          </div>
+          <Divider />
 
-          {/* 3-col challenge cards */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-0">
-            {[
-              {
-                title: 'Emotional Warmth',
-                body: 'Reassuring anxious patients and protective parents.',
-              },
-              {
-                title: 'Clinical Authority',
-                body: 'Commanding absolute medical professionalism.',
-              },
-              {
-                title: 'Cultural Familiarity',
-                body: 'Ensuring the visual environment felt approachably native rather than intimidatingly corporate.',
-              },
-            ].map((card) => (
-              <div key={card.title} className="bg-white border border-black/[0.08] rounded-2xl p-8">
-                <h3 className="text-xl font-bold mb-4" style={{ color: PINK }}>{card.title}</h3>
-                <p className="text-[#1A1A1A] text-base leading-relaxed">{card.body}</p>
+          {/* ── Visual Direction ──────────────────────────────────────────── */}
+          <section className="pb-6 md:pb-8">
+            <SectionHeading className="mb-6">
+              Visual Direction & Design Tokens{" "}
+            </SectionHeading>
+            <h3 className="text-xl font-bold mb-4 text-primary">
+              Breaking the "Sterile Blue" Cliché{" "}
+            </h3>
+            <Body className="mb-10 max-w-4xl">
+              Standard corporate healthcare branding is crowded with cold,
+              high-saturation blues that feel clinical and detached. To
+              instantly differentiate AWCH on a regional scale, we engineered a
+              distinct, high-contrast palette:
+            </Body>
+            <div className="grid grid-cols-1 md:grid-cols-2 overflow-hidden rounded-3xl">
+              <div
+                className="relative p-8 md:p-10 flex flex-col justify-between min-h-[280px]"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #d4006b 0%, #7a003d 100%)",
+                }}
+              >
+                <div className="absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                <p className="relative text-white text-base md:text-lg leading-relaxed">
+                  Intentionally selected to evoke care, empathy, and deep
+                  compassion. This tone establishes an immediate psychological
+                  connection with women-centric and pediatric care while
+                  bringing human warmth into an industry often seen as sterile.
+                </p>
+                <div className="relative mt-8 flex items-end justify-between">
+                  <div>
+                    <p className="text-white font-bold text-xl">Primary</p>
+                    <p className="text-white/60 text-sm">Care Pink</p>
+                  </div>
+                  <p className="text-white/60 text-sm font-mono">#BF0076</p>
+                </div>
               </div>
-            ))}
-          </div>
+              <div
+                className="relative p-8 md:p-10 flex flex-col justify-between min-h-[280px]"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #3a3a3a 0%, #000000 100%)",
+                }}
+              >
+                <div className="hidden md:block absolute inset-x-0 top-0 h-20 bg-gradient-to-b from-white/10 to-transparent pointer-events-none" />
+                <p className="relative text-white text-base md:text-lg leading-relaxed">
+                  Sophisticated supporting tones were introduced to frame the
+                  primary care colors. These anchors maintain a clean, academic
+                  weight, ensuring the system functions perfectly across formal
+                  hospital environments, digital software, and print media.
+                </p>
+                <div className="relative mt-8 flex items-end justify-between">
+                  <div>
+                    <p className="text-white font-bold text-xl">Secondary</p>
+                    <p className="text-white/60 text-sm">Neutral</p>
+                  </div>
+                  <p className="text-white/60 text-sm font-mono">#000000</p>
+                </div>
+              </div>
+            </div>
+          </section>
 
           <Divider />
 
-          {/* ── Parent-Brand Architecture ── */}
-          <div className="mb-8">
-            <SectionLabel>Brand Architecture</SectionLabel>
-            <SectionHeading>Parent-Brand Architecture</SectionHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-10">
-            <Body>
-              To protect the institution from future design debt, we built an adaptable visual architecture. AWCH serves as the primary master identity under which specific wings — such as Pediatrics, Gynecology, and Emergency Care — operate. This cohesive blueprint ensures that as the hospital expands its departments, every new facility instantly inherits established brand equity, saving long-term promotional costs.
+          {/* ── Typography ────────────────────────────────────────────────── */}
+          <section className="pb-6 md:pb-8">
+            <SectionHeading className="mb-6">
+              Typography: Accessible and Stress-Free Readability{" "}
+            </SectionHeading>
+            <Body className="mb-10 max-w-4xl">
+              In high-stress medical environments, the typeface must serve as an
+              invisible, high-performance tool for fast reading.
             </Body>
-          </div>
-
-          <ImageCard src={IMG_ARCH} alt="AWCH master brand logo — Avishkar Women & Children Hospital" />
+            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden">
+              <img
+                src={IMG_TYPO}
+                alt="Inter typeface — all weights across the AWCH brand system"
+                className="w-full block cursor-zoom-in"
+                loading="lazy"
+                onClick={() => zoom(IMG_TYPO)}
+              />
+            </div>
+          </section>
 
           <Divider />
 
-          {/* ── Visual Direction ── */}
-          <div className="mb-8">
-            <SectionLabel>Visual Direction & Design Tokens</SectionLabel>
-            <SectionHeading>Breaking the "Sterile Blue" Cliché</SectionHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-10">
-            <Body>
-              Standard corporate healthcare branding is crowded with cold, high-saturation blues that feel clinical and detached. To instantly differentiate AWCH on a regional scale, we engineered a distinct, high-contrast palette — intentionally selected to evoke care, empathy, and deep compassion while bringing human warmth into an industry often seen as sterile.
+          {/* ── Omnichannel ───────────────────────────────────────────────── */}
+          <section className="pb-6 md:pb-8">
+            <SectionHeading className="mb-6">
+              Omnichannel System Application{" "}
+            </SectionHeading>
+            <Body className="mb-8 md:mb-16 max-w-4xl">
+              To demonstrate the system's ability to seamlessly connect with
+              patients across every phase of their healthcare journey, we
+              activated the visual assets across key physical and digital
+              channels:
             </Body>
-          </div>
 
-          <ImageCard src={IMG_COLOR} alt="AWCH color system — Care Pink #BF0076 and Neutral Black" />
+            <SectionLabel>The Friction-Free Web Experience</SectionLabel>
+            <Body className="mb-8 md:mb-16 max-w-4xl">
+              The desktop and mobile web platforms were designed as
+              trust-building tools rather than static information walls.
+            </Body>
+
+            {/* Web experience */}
+
+            <h3 className="text-xl font-bold mb-4 text-primary">
+              Simplified Information Architecture
+            </h3>
+            <Body className="mb-10 max-w-4xl">
+              Healthcare data is structured into highly scannable layouts,
+              enabling anxious users to find doctors, key medical departments,
+              and emergency contact details within seconds.
+            </Body>
+            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden mb-10">
+              <img
+                src={IMG_WEB}
+                alt="AWCH website — Expert Women and Children Healthcare in Asansol"
+                className="w-full block cursor-zoom-in"
+                loading="lazy"
+                onClick={() => zoom(IMG_WEB)}
+              />
+            </div>
+
+            <h3 className="text-xl font-bold mb-4 text-primary">
+              Frictionless Appointment UX
+            </h3>
+            <Body className="mb-10 max-w-4xl">
+              We designed a clean, intuitive booking flow that removes
+              unnecessary steps. This digital pathway builds immediate brand
+              credibility and helps reduce long dependency lines at physical
+              hospital reception desks.
+            </Body>
+            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden mb-10">
+              <img
+                src={IMG_APPT}
+                alt="AWCH appointment booking — Schedule Your Visit at AWCH"
+                className="w-full block cursor-zoom-in"
+                loading="lazy"
+                onClick={() => zoom(IMG_APPT)}
+              />
+            </div>
+
+            <h3 className="text-xl font-bold mb-4 text-primary">
+              Accessibility-First UI
+            </h3>
+            <Body className="mb-10 max-w-4xl">
+              By pairing clean typography with generous breathing space, the
+              layout minimizes cognitive load, making the digital experience
+              effortless for users of varying ages and digital literacy levels.
+            </Body>
+
+            <div className="mb-4">
+              <SectionLabel>The Social Media Awareness Engine</SectionLabel>
+            </div>
+            <Body className="mb-10">
+              Social platforms serve as the primary vehicle for building local
+              awareness in Asansol.
+            </Body>
+
+            <h3 className="text-xl font-bold mb-4 text-primary">
+              Template Scaling
+            </h3>
+
+            <Body className="mb-10 max-w-4xl">
+              We engineered modular graphic templates that maintain a strict
+              visual style, recognizable brand colors, and bold typography
+              hierarchy across all health-education posts.
+            </Body>
+
+            {/* Social */}
+
+            <h3 className="text-xl font-bold mb-4 text-primary">
+              Instant Recall
+            </h3>
+            <Body className="mb-10">
+              This systematic structure ensures that every piece of digital
+              content is immediately recognizable in a crowded social feed as an
+              authoritative, caring message from the AWCH ecosystem.
+            </Body>
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              {[
+                { src: IMG_SOCIAL_1, alt: "AWCH social media post 1" },
+                { src: IMG_SOCIAL_2, alt: "AWCH social media post 2" },
+                { src: IMG_SOCIAL_3, alt: "AWCH social media post 3" },
+              ].map(({ src, alt }) => (
+                <div
+                  key={src}
+                  className="-mx-6 lg:mx-0 rounded-none lg:rounded-3xl overflow-hidden"
+                >
+                  <img
+                    src={src}
+                    alt={alt}
+                    className="w-full h-full object-cover block cursor-zoom-in"
+                    loading="lazy"
+                    onClick={() => zoom(src)}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
 
           <Divider />
 
-          {/* ── Typography ── */}
-          <div className="mb-8">
-            <SectionLabel>Typography</SectionLabel>
-            <SectionHeading>Accessible and Stress-Free Readability</SectionHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-10">
-            <Body>
-              In high-stress medical environments, the typeface must serve as an invisible, high-performance tool for fast reading. We selected Inter across all five weights — providing unmatched legibility on both digital screens and printed hospital collateral while maintaining the clean, academic weight the institution demands.
-            </Body>
-          </div>
-
-          <ImageCard src={IMG_TYPO} alt="Inter typeface — all weights across the AWCH brand system" />
-
-          <Divider />
-
-          {/* ── Omnichannel ── */}
-          <div className="mb-8">
-            <SectionLabel>Omnichannel System</SectionLabel>
-            <SectionHeading large>Connecting Patients Across Every Touchpoint</SectionHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-12">
-            <Body>
-              To demonstrate the system's ability to seamlessly connect with patients across every phase of their healthcare journey, we activated the visual assets across key physical and digital channels.
-            </Body>
-          </div>
-
-          {/* Sub-section: Web */}
-          <div className="mb-4">
-            <Tag>The Friction-Free Web Experience</Tag>
-          </div>
-          <div className="mb-6">
-            <SubHeading>Simplified Information Architecture</SubHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-10">
-            <Body>
-              The desktop and mobile web platforms were designed as trust-building tools rather than static information walls. Healthcare data is structured into highly scannable layouts, enabling anxious users to find doctors, key medical departments, and emergency contact details within seconds.
-            </Body>
-          </div>
-
-          <ImageCard src={IMG_WEB} alt="AWCH website — Expert Women and Children Healthcare in Asansol" className="mb-12" />
-
-          <div className="mb-6">
-            <SubHeading>Frictionless Appointment UX</SubHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-10">
-            <Body>
-              We designed a clean, intuitive booking flow that removes unnecessary steps. This digital pathway builds immediate brand credibility and helps reduce long dependency lines at physical hospital reception desks.
-            </Body>
-          </div>
-
-          <ImageCard src={IMG_APPT} alt="AWCH appointment booking — Schedule Your Visit at AWCH" className="mb-12" />
-
-          <div className="mb-4">
-            <SubHeading>Accessibility-First UI</SubHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-8">
-            <Body>
-              By pairing clean typography with generous breathing space, the layout minimizes cognitive load, making the digital experience effortless for users of varying ages and digital literacy levels.
-            </Body>
-          </div>
-
-          <div className="mb-4">
-            <SubHeading>Template Scaling</SubHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-12">
-            <Body>
-              We engineered modular graphic templates that maintain a strict visual style, recognizable brand colors, and bold typography hierarchy across all health-education posts.
-            </Body>
-          </div>
-
-          {/* Sub-section: Social */}
-          <div className="mb-6">
-            <Tag>The Social Media Awareness Engine</Tag>
-          </div>
-          <div className="mb-4">
-            <SubHeading>Instant Recall</SubHeading>
-          </div>
-          <div className="flex flex-col gap-4 mb-10">
-            <Body>
-              Social platforms serve as the primary vehicle for building local awareness in Asansol. This systematic structure ensures that every piece of digital content is immediately recognizable in a crowded social feed as an authoritative, caring message from the AWCH ecosystem.
-            </Body>
-          </div>
-
-          <ImageCard src={IMG_SOCIAL} alt="AWCH social media posts — health tips, hiring, and pregnancy guidance" />
-
-          <Divider />
-
-          {/* ── CTA ── */}
-          <div className="rounded-2xl overflow-hidden border border-black/[0.06] bg-white p-10 md:p-14">
-            <p
-              className="text-3xl md:text-5xl font-semibold leading-tight mb-10"
-              style={{ color: PINK }}
-            >
-              Building a future-proof brand system or launching a complex digital product?
-            </p>
-            <button
-              onClick={() => window.dispatchEvent(new CustomEvent('open-talk-modal'))}
-              className="inline-flex items-center gap-3 px-8 py-4 rounded-full text-white font-semibold text-sm tracking-wide transition-opacity hover:opacity-90"
-              style={{ background: PINK }}
-            >
-              Let's Build a Sustainable System
-            </button>
-          </div>
-
+          {/* ── CTA ─────────────────────────────────────────────────────────── */}
+          <PortfolioCTA />
         </div>
-      </div>
+      </article>
     </Layout>
   );
 }

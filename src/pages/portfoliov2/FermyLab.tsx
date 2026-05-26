@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
+import PortfolioCTA from "../../components/PortfolioCTA";
 
 // ── Local assets (public/portfolio/fermylab/) ─────────────────────────────────
 const IMG_HERO =
@@ -27,7 +28,6 @@ const IMG_DELIVERY = "/portfolio/fermylab/Delivery App Optimization.png";
 const IMG_OOH = "/portfolio/fermylab/Out-of-Home Highway Billboards.png";
 const IMG_REALWORLD1 = "/portfolio/fermylab/Real-World Experience-left.png";
 const IMG_REALWORLD2 = "/portfolio/fermylab/Real-World Experience-right.png";
-
 
 // ── Shared primitives ─────────────────────────────────────────────────────────
 function SectionLabel({
@@ -86,7 +86,15 @@ function Divider() {
   return <hr className="border-gray-100 my-8 md:my-12" />;
 }
 
-function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
+function Lightbox({
+  src,
+  onClose,
+  whiteBg,
+}: {
+  src: string;
+  onClose: () => void;
+  whiteBg?: boolean;
+}) {
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
@@ -99,10 +107,17 @@ function Lightbox({ src, onClose }: { src: string; onClose: () => void }) {
       className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/80 backdrop-blur-sm p-4 cursor-zoom-out"
       onClick={onClose}
     >
+      <button
+        onClick={onClose}
+        className="absolute top-4 right-4 z-10 flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/25 border border-white/20 text-white transition-colors cursor-pointer"
+        aria-label="Close"
+      >
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
       <img
         src={src}
         alt=""
-        className="max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl"
+        className={`max-w-full max-h-[90vh] rounded-2xl object-contain shadow-2xl${whiteBg ? " bg-white p-6" : ""}`}
         onClick={(e) => e.stopPropagation()}
       />
     </div>
@@ -117,8 +132,12 @@ export default function FermyLab() {
       "Brand identity, packaging design, and omnichannel UI system for Fermy Lab — an innovative fermented food brand bridging traditional Indian culinary wisdom with modern design.",
   });
 
-  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
-  const zoom = (src: string) => setLightboxSrc(src);
+  const [lightboxSrc, setLightboxSrc] = useState<{
+    src: string;
+    whiteBg?: boolean;
+  } | null>(null);
+  const zoom = (src: string, whiteBg?: boolean) =>
+    setLightboxSrc({ src, whiteBg });
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" });
@@ -127,7 +146,11 @@ export default function FermyLab() {
   return (
     <Layout>
       {lightboxSrc && (
-        <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
+        <Lightbox
+          src={lightboxSrc.src}
+          whiteBg={lightboxSrc.whiteBg}
+          onClose={() => setLightboxSrc(null)}
+        />
       )}
       <article className="portfoliov2-page bg-[#fafafa] min-h-screen">
         {/* ── Hero ──────────────────────────────────────────────────────── */}
@@ -219,16 +242,6 @@ export default function FermyLab() {
                 handcrafted, proving to consumers that slow food can be
                 professional, clean, and world-class.
               </Body>
-            </div>
-
-            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden">
-              <img
-                src={IMG_CONTEXT}
-                alt="Context and challenge — Fermy Lab brand foundation"
-                className="w-full block cursor-zoom-in"
-                loading="lazy"
-                onClick={() => zoom(IMG_CONTEXT)}
-              />
             </div>
           </section>
 
@@ -523,29 +536,29 @@ export default function FermyLab() {
           <Divider />
 
           {/* ── Absolute Production Prohibitions ────────────────────────── */}
-          <section className="pb-6 md:pb-8">
+          <section className="">
             <SectionHeading className="mb-6">
               Absolute Production Prohibitions
             </SectionHeading>
 
-            <Body className="mb-10">
+            <Body className="mb-6">
               To eliminate any guesswork for third-party printers or internal
               developers, we codified an explicit checklist of system
               violations. Production environments are strictly prohibited from
               making the following adjustments:
             </Body>
-            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden mb-10">
+            <div className="md:mx-0 rounded-none md:rounded-3xl overflow-hidden mb-10">
               <img
                 src={IMG_PROHIBIT}
                 alt="Absolute production prohibitions — logo violation matrix"
-                className="w-full block cursor-zoom-in"
+                className="w-full block cursor-zoom-in my-4"
                 loading="lazy"
-                onClick={() => zoom(IMG_PROHIBIT)}
+                onClick={() => zoom(IMG_PROHIBIT, true)}
               />
             </div>
           </section>
 
-          <Divider />
+          <hr className="border-gray-100 my-4 md:my-6" />
 
           {/* ── Omnichannel System Application ──────────────────────────── */}
           <section className="pb-6 md:pb-8">
@@ -563,7 +576,7 @@ export default function FermyLab() {
             <div className="mb-4">
               <SectionLabel>Physical Retail Packaging</SectionLabel>
             </div>
-            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden">
+            <div className=" rounded-none md:rounded-3xl overflow-hidden">
               <img
                 src={IMG_PACKAGING}
                 alt="Physical retail packaging design"
@@ -572,7 +585,7 @@ export default function FermyLab() {
                 onClick={() => zoom(IMG_PACKAGING)}
               />
             </div>
-            <Body className="-mt-[6%] md:-mt-[8%] mb-8 md:mb-16 max-w-4xl relative z-10">
+            <Body className="mt-10 mb-8 md:mb-16 max-w-4xl  z-10">
               Clean badge labels wrap seamlessly onto slow-aged condiment jars,
               creating an elegant, editorial appearance that commands attention
               on competitive retail shelves.
@@ -592,7 +605,7 @@ export default function FermyLab() {
                 onClick={() => zoom(IMG_DIGITAL)}
               />
             </div>
-            <Body className="-mt-[6%] md:-mt-[8%] mb-8 md:mb-16 max-w-4xl relative z-10">
+            <Body className=" mb-8 md:mb-16 max-w-4xl relative z-10">
               Clean badge labels wrap seamlessly onto slow-aged condiment jars,
               creating an elegant, editorial appearance that commands attention
               on competitive retail shelves.
@@ -643,23 +656,25 @@ export default function FermyLab() {
             <div className="mb-4">
               <SectionLabel>Real-World Experience</SectionLabel>
             </div>
-            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden mb-6">
-              <img
-                src={IMG_REALWORLD1}
-                alt="Real-world brand experience — retail environment"
-                className="w-full block cursor-zoom-in"
-                loading="lazy"
-                onClick={() => zoom(IMG_REALWORLD1)}
-              />
-            </div>
-            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden">
-              <img
-                src={IMG_REALWORLD2}
-                alt="Real-world brand experience — activation"
-                className="w-full block cursor-zoom-in"
-                loading="lazy"
-                onClick={() => zoom(IMG_REALWORLD2)}
-              />
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <div className="-mx-6 lg:mx-0 rounded-none lg:rounded-3xl overflow-hidden">
+                <img
+                  src={IMG_REALWORLD1}
+                  alt="Real-world brand experience — retail environment"
+                  className="w-full h-full object-cover block cursor-zoom-in"
+                  loading="lazy"
+                  onClick={() => zoom(IMG_REALWORLD1)}
+                />
+              </div>
+              <div className="-mx-6 lg:mx-0 rounded-none lg:rounded-3xl overflow-hidden">
+                <img
+                  src={IMG_REALWORLD2}
+                  alt="Real-world brand experience — activation"
+                  className="w-full h-full object-cover block cursor-zoom-in"
+                  loading="lazy"
+                  onClick={() => zoom(IMG_REALWORLD2)}
+                />
+              </div>
             </div>
           </section>
 
@@ -682,34 +697,7 @@ export default function FermyLab() {
           </section>
 
           {/* ── CTA ──────────────────────────────────────────────────────── */}
-          <section className="pb-16 md:pb-24">
-            <div className="relative rounded-3xl overflow-hidden border border-gray-100 bg-white">
-              {/* Right graphic — hidden on mobile */}
-              <div className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full items-center justify-end overflow-hidden pointer-events-none">
-                <img
-                  src="/portfolio/remodelUN/end_half_logo.svg"
-                  alt=""
-                  aria-hidden
-                  className="h-full object-cover object-left opacity-100"
-                />
-              </div>
-              {/* Left content */}
-              <div className="relative z-10 p-10 md:p-16 max-w-2xl">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#D60000] leading-tight mb-8 md:mb-10">
-                  Building a future-proof brand system or launching a complex
-                  digital product?
-                </h2>
-                <button
-                  onClick={() =>
-                    window.dispatchEvent(new CustomEvent("open-talk-modal"))
-                  }
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[#D60000] text-white rounded-full font-bold text-lg hover:bg-[#B80000] transition-colors"
-                >
-                  Let&apos;s Build a Sustainable System
-                </button>
-              </div>
-            </div>
-          </section>
+          <PortfolioCTA />
         </div>
       </article>
     </Layout>

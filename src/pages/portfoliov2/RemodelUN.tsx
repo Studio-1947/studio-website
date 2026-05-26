@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
+import PortfolioCTA from "../../components/PortfolioCTA";
 
 // ── Assets (public/portfolio/remodelUN/) ──────────────────────────────────────
 const IMG_HERO = "/portfolio/remodelUN/hero.svg";
@@ -17,7 +18,6 @@ const IMG_CLEARSPACE =
 const IMG_COBRANDING =
   "/portfolio/remodelUN/co_branding&partnershipDynamics.svg";
 const IMG_LOGO_LAW = "/portfolio/remodelUN/Logo_law.svg";
-const IMG_CTA_GRAPHIC = "/portfolio/remodelUN/end_half_logo.svg";
 
 // ── Small reusable bits ───────────────────────────────────────────────────────
 
@@ -778,36 +778,7 @@ export default function RemodelUN() {
           </section>
 
           {/* ── CTA ───────────────────────────────────────────────────── */}
-          <section className="pb-16 md:pb-24">
-            <div className="relative rounded-3xl overflow-hidden border border-gray-100 bg-white">
-              {/* Right graphic — hidden on mobile */}
-              <div className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 w-1/2 h-full items-center justify-end overflow-hidden pointer-events-none">
-                <img
-                  src={IMG_CTA_GRAPHIC}
-                  alt=""
-                  aria-hidden
-                  className="h-full object-cover object-left opacity-100"
-                />
-              </div>
-
-              {/* Left content */}
-              <div className="relative z-10 p-10 md:p-16 max-w-2xl">
-                <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-[#D60000] leading-tight mb-8 md:mb-10">
-                  Building a future-proof brand system or launching a complex
-                  digital product?
-                </h2>
-                <button
-                  onClick={() => {
-                    const event = new CustomEvent("open-talk-modal");
-                    window.dispatchEvent(event);
-                  }}
-                  className="inline-flex items-center justify-center px-8 py-4 bg-[#D60000] text-white rounded-full font-bold text-lg hover:bg-[#B80000] transition-colors"
-                >
-                  Let&apos;s Build a Sustainable System
-                </button>
-              </div>
-            </div>
-          </section>
+          <PortfolioCTA />
         </div>
       </article>
     </Layout>
