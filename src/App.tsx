@@ -9,7 +9,7 @@ import Hero from './components/Hero';
 // Lazily loaded — below the fold, improves initial bundle size
 const Services = lazy(() => import('./components/Services/Services'));
 const Verticals = lazy(() => import('./components/Verticals/Verticals'));
-const BuiltForImpact = lazy(() => import('./components/BuiltForImpact'));
+const PortfolioShowcase = lazy(() => import('./components/PortfolioShowcase'));
 const Testimonials = lazy(() => import('./components/Testimonials'));
 const OurProcess = lazy(() => import('./components/OurProcess'));
 const OurProducts = lazy(() => import('./components/OurProducts'));
@@ -40,7 +40,7 @@ function App() {
         <Verticals />
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
-        <BuiltForImpact />
+        <PortfolioShowcase />
       </Suspense>
       <Suspense fallback={<SectionLoader />}>
         <Testimonials />

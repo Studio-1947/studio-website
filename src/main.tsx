@@ -65,6 +65,12 @@ const RemodelUNv2 = lazy(() => import("./pages/portfoliov2/RemodelUN.tsx"));
 const FermyLabV2 = lazy(() => import("./pages/portfoliov2/FermyLab.tsx"));
 const RajkamalV2 = lazy(() => import("./pages/portfoliov2/RajkamalPrakashan.tsx"));
 const AwchV2 = lazy(() => import("./pages/portfoliov2/Awch.tsx"));
+const LocalFuturesV2 = lazy(
+  () => import("./pages/portfoliov2/LocalFutures.tsx"),
+);
+const VillageWaysV2 = lazy(
+  () => import("./pages/portfoliov2/VillageWays.tsx"),
+);
 
 // Legal pages
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.tsx"));
@@ -169,6 +175,14 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/portfoliov2/fermy-lab" element={<FermyLabV2 />} />
           <Route path="/portfoliov2/rajkamal-prakashan" element={<RajkamalV2 />} />
           <Route path="/portfoliov2/awch" element={<AwchV2 />} />
+          <Route
+            path="/portfoliov2/local-futures"
+            element={<LocalFuturesV2 />}
+          />
+          <Route
+            path="/portfoliov2/village-ways"
+            element={<VillageWaysV2 />}
+          />
 
           {/* Our Work Routes */}
           <Route path="/ourworks" element={<AllWorks />} />
