@@ -64,8 +64,8 @@ const HelipadSection: React.FC = () => {
  </div>
 
  {/* Edge Blending Gradients - Placed outside the overflow-hidden box to bleed properly */}
- <div className="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-gray-50 to-transparent z-10 pointer-events-none" />
- <div className="absolute bottom-0 left-0 right-0 h-48 bg-gradient-to-t from-white to-transparent z-10 pointer-events-none" />
+ <div className="absolute top-0 left-0 right-0 h-32 bg-gradient-to-b from-white/8 to-transparent z-10 pointer-events-none" />
+ <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white/8 to-transparent z-10 pointer-events-none" />
 
  {/* Content properly integrated over the image */}
  <div className="relative z-20 mx-auto max-w-7xl px-6 lg:px-8 w-full py-24 sm:py-32 mt-12 mb-12">

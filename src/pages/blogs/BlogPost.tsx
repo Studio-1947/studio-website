@@ -64,8 +64,11 @@ const BlogPost: React.FC = () => {
     );
   }
 
-  // Format the content string into paragraphs by splitting on newlines
-  const paragraphs = blog.content.split('\n').filter(p => p.trim() !== '');
+  const contentBlocks = blog.content
+    .trim()
+    .split(/\n{2,}/)
+    .map((block) => block.trim())
+    .filter(Boolean);
 
   return (
     <Layout>
@@ -130,30 +133,51 @@ const BlogPost: React.FC = () => {
         </div>
 
         {/* Content Body */}
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="prose prose-lg md:prose-xl dark:prose-invert prose-royal mx-auto">
-            {paragraphs.map((paragraph, idx) => {
-              // Basic check for headers
-              if (paragraph.startsWith('The Origins') || paragraph.startsWith('Conclusion:') || paragraph.length < 50 && paragraph.endsWith(':')) {
+        <div className="max-w-[720px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto space-y-8 text-[18px] md:text-[20px] leading-[1.85] text-gray-800 dark:text-gray-300">
+            {contentBlocks.map((block, idx) => {
+              const lines = block
+                .split('\n')
+                .map((line) => line.trim())
+                .filter(Boolean);
+
+              const headingText = lines[0];
+              const isHeading =
+                lines.length === 1 &&
+                (headingText.startsWith('The Origins') ||
+                  headingText.startsWith('Conclusion:') ||
+                  (headingText.length < 50 && headingText.endsWith(':')));
+
+              if (isHeading) {
                 return (
-                  <h2 key={idx} className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mt-12 mb-6">
-                    {paragraph.replace(/^#+\s*/, '')}
+                  <h2
+                    key={idx}
+                    className="pt-2 text-2xl md:text-3xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white first:pt-0"
+                  >
+                    {headingText.replace(/^#+\s*/, '')}
                   </h2>
                 );
               }
 
-              // Basic check for lists
-              if (paragraph.startsWith('●') || paragraph.startsWith('*')) {
+              const isListBlock = lines.length > 1 && lines.every((line) => line.startsWith('●') || line.startsWith('*'));
+
+              if (isListBlock) {
                 return (
-                  <li key={idx} className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4 ml-4">
-                    {paragraph.substring(1).trim()}
-                  </li>
+                  <ul key={idx} className="space-y-3 pl-5">
+                    {lines.map((line, lineIndex) => (
+                      <li key={lineIndex} className="list-disc leading-[1.8] text-gray-800 dark:text-gray-300">
+                        {line.substring(1).trim()}
+                      </li>
+                    ))}
+                  </ul>
                 );
               }
 
+              const paragraphText = lines.join(' ').replace(/\s+/g, ' ');
+
               return (
-                <p key={idx} className="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-                  {paragraph}
+                <p key={idx} className="leading-[1.85] text-gray-800 dark:text-gray-300">
+                  {paragraphText}
                 </p>
               );
             })}
