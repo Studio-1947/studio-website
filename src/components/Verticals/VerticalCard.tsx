@@ -24,7 +24,7 @@ export default function VerticalCard({
   ctaLabel,
   ctaHref,
 }: VerticalCardProps) {
-  const cardRef    = useRef<HTMLDivElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
   const dividerRef = useRef<HTMLDivElement>(null);
   const accent = PRIMARY;
 
@@ -33,26 +33,43 @@ export default function VerticalCard({
       const card = cardRef.current;
       if (!card) return;
 
-      gsap.set(dividerRef.current, { scaleX: 0, transformOrigin: "left center" });
+      gsap.set(dividerRef.current, {
+        scaleX: 0,
+        transformOrigin: "left center",
+      });
 
       gsap.fromTo(
         card,
         { y: 36, opacity: 0 },
         {
-          y: 0, opacity: 1,
-          duration: 0.75, ease: "power3.out",
+          y: 0,
+          opacity: 1,
+          duration: 0.75,
+          ease: "power3.out",
           delay: index * 0.1,
-          scrollTrigger: { trigger: card, start: "top 88%", toggleActions: "play none none none" },
+          scrollTrigger: {
+            trigger: card,
+            start: "top 88%",
+            toggleActions: "play none none none",
+          },
         },
       );
 
       gsap.to(dividerRef.current, {
-        scaleX: 1, duration: 0.7, ease: "power3.out",
-        scrollTrigger: { trigger: card, start: "top 86%", toggleActions: "play none none none" },
+        scaleX: 1,
+        duration: 0.7,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: card,
+          start: "top 86%",
+          toggleActions: "play none none none",
+        },
       });
 
       return () => {
-        ScrollTrigger.getAll().forEach((tr) => { if (tr.trigger === card) tr.kill(); });
+        ScrollTrigger.getAll().forEach((tr) => {
+          if (tr.trigger === card) tr.kill();
+        });
       };
     },
     { scope: cardRef },
@@ -61,7 +78,6 @@ export default function VerticalCard({
   return (
     <div
       ref={cardRef}
-
       className="group flex flex-col overflow-hidden rounded-2xl border border-gray-100 bg-white shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
       style={{ opacity: 0 }}
     >
@@ -91,7 +107,9 @@ export default function VerticalCard({
         <div
           ref={dividerRef}
           className="mb-4 h-[1px] w-full origin-left rounded-full"
-          style={{ background: `linear-gradient(to right, ${accent}70, transparent)` }}
+          style={{
+            background: `linear-gradient(to right, ${accent}70, transparent)`,
+          }}
         />
 
         {/* Description */}
@@ -114,7 +132,12 @@ export default function VerticalCard({
             stroke="currentColor"
             aria-hidden="true"
           >
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M9 5l7 7-7 7" />
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2.5}
+              d="M9 5l7 7-7 7"
+            />
           </svg>
         </a>
       </div>

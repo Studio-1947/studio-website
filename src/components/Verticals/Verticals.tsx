@@ -13,7 +13,6 @@ export default function Verticals() {
       <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gray-200 to-transparent" />
 
       <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-
         {/* ── Section Header ─────────────────────────────────────── */}
         <div className="mb-16 lg:mb-24 max-w-3xl">
           <motion.span

@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
-import Layout from '../../components/Layout';
-import { blogs } from '../../data/blogData';
-import { Share2 } from 'lucide-react';
-import { toast } from 'sonner';
-import { usePageMeta } from '../../hooks/usePageMeta';
+import React, { useEffect } from "react";
+import { useParams, Link, useNavigate } from "react-router-dom";
+import Layout from "../../components/Layout";
+import { blogs } from "../../data/blogData";
+import { Share2 } from "lucide-react";
+import { toast } from "sonner";
+import { usePageMeta } from "../../hooks/usePageMeta";
 
 const BlogPost: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -13,9 +13,15 @@ const BlogPost: React.FC = () => {
   const blog = blogs.find((b) => b.slug === slug);
 
   usePageMeta({
-    title: blog ? `${blog.title} – Studio 1947` : 'Article Not Found – Studio 1947',
-    description: blog?.excerpt ?? 'Read the latest articles from the Studio 1947 journal.',
-    ogImage: blog?.coverImage && blog.coverImage !== '/logo.svg' ? blog.coverImage : undefined,
+    title: blog
+      ? `${blog.title} – Studio 1947`
+      : "Article Not Found – Studio 1947",
+    description:
+      blog?.excerpt ?? "Read the latest articles from the Studio 1947 journal.",
+    ogImage:
+      blog?.coverImage && blog.coverImage !== "/logo.svg"
+        ? blog.coverImage
+        : undefined,
   });
 
   const handleShare = async () => {
@@ -27,34 +33,38 @@ const BlogPost: React.FC = () => {
           url: window.location.href,
         });
       } catch (error) {
-        if (error instanceof Error && error.name !== 'AbortError') {
-          toast.error('Unable to share. Try copying the link instead.');
+        if (error instanceof Error && error.name !== "AbortError") {
+          toast.error("Unable to share. Try copying the link instead.");
         }
       }
     } else {
       try {
         await navigator.clipboard.writeText(window.location.href);
-        toast.success('Link copied to clipboard!');
+        toast.success("Link copied to clipboard!");
       } catch {
-        toast.error('Could not copy link. Please copy it manually from the address bar.');
+        toast.error(
+          "Could not copy link. Please copy it manually from the address bar.",
+        );
       }
     }
   };
 
   useEffect(() => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" });
   }, [slug]);
 
   if (!blog) {
     return (
       <Layout>
         <div className="min-h-[70vh] flex flex-col items-center justify-center py-32 px-4 text-center">
-          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Article Not Found</h1>
+          <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
+            Article Not Found
+          </h1>
           <p className="text-gray-600 dark:text-gray-400 mb-8 max-w-md">
             The article you're looking for doesn't exist or may have been moved.
           </p>
           <button
-            onClick={() => navigate('/blogs')}
+            onClick={() => navigate("/blogs")}
             className="px-6 py-3 bg-royal-600 hover:bg-royal-700 text-white rounded-full font-semibold transition-colors"
           >
             Back to Journal
@@ -73,15 +83,24 @@ const BlogPost: React.FC = () => {
   return (
     <Layout>
       <article className="bg-white dark:bg-gray-900 pt-24 md:pt-32 pb-24 transition-colors duration-300 min-h-screen">
-
         {/* Article Header */}
         <header className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-16 text-center">
           <Link
             to="/blogs"
             className="inline-flex items-center text-royal-600 dark:text-royal-400 hover:text-royal-800 dark:hover:text-royal-300 font-medium mb-8 md:mb-12 transition-colors uppercase tracking-wider text-sm"
           >
-            <svg className="w-4 h-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+            <svg
+              className="w-4 h-4 mr-2"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth={2}
+                d="M10 19l-7-7m0 0l7-7m-7 7h18"
+              />
             </svg>
             Back to Journal
           </Link>
@@ -91,7 +110,7 @@ const BlogPost: React.FC = () => {
               {blog.date}
             </span>
             <span className="text-gray-400">•</span>
-            {blog.language && blog.language !== 'English' && (
+            {blog.language && blog.language !== "English" && (
               <>
                 <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full font-semibold">
                   {blog.language}
@@ -100,7 +119,10 @@ const BlogPost: React.FC = () => {
               </>
             )}
             <span className="text-gray-900 dark:text-gray-100 font-medium">
-              Written by <span className="text-royal-600 dark:text-royal-400">{blog.author}</span>
+              Written by{" "}
+              <span className="text-royal-600 dark:text-royal-400">
+                {blog.author}
+              </span>
             </span>
           </div>
 
@@ -112,9 +134,11 @@ const BlogPost: React.FC = () => {
         {/* Hero Image */}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 md:mb-24">
           <div className="aspect-w-16 aspect-h-9 md:aspect-h-7 rounded-3xl overflow-hidden shadow-2xl relative">
-            {blog.coverImage === '/logo.svg' ? (
+            {blog.coverImage === "/logo.svg" ? (
               <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center">
-                <span className="text-white/20 text-7xl md:text-8xl mb-6 block">✧</span>
+                <span className="text-white/20 text-7xl md:text-8xl mb-6 block">
+                  ✧
+                </span>
                 <span className="text-4xl md:text-5xl lg:text-6xl font-black text-white tracking-widest uppercase">
                   Studio 1947
                 </span>
@@ -137,16 +161,16 @@ const BlogPost: React.FC = () => {
           <div className="mx-auto space-y-8 text-[18px] md:text-[20px] leading-[1.85] text-gray-800 dark:text-gray-300">
             {contentBlocks.map((block, idx) => {
               const lines = block
-                .split('\n')
+                .split("\n")
                 .map((line) => line.trim())
                 .filter(Boolean);
 
               const headingText = lines[0];
               const isHeading =
                 lines.length === 1 &&
-                (headingText.startsWith('The Origins') ||
-                  headingText.startsWith('Conclusion:') ||
-                  (headingText.length < 50 && headingText.endsWith(':')));
+                (headingText.startsWith("The Origins") ||
+                  headingText.startsWith("Conclusion:") ||
+                  (headingText.length < 50 && headingText.endsWith(":")));
 
               if (isHeading) {
                 return (
@@ -154,18 +178,25 @@ const BlogPost: React.FC = () => {
                     key={idx}
                     className="pt-2 text-2xl md:text-3xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white first:pt-0"
                   >
-                    {headingText.replace(/^#+\s*/, '')}
+                    {headingText.replace(/^#+\s*/, "")}
                   </h2>
                 );
               }
 
-              const isListBlock = lines.length > 1 && lines.every((line) => line.startsWith('●') || line.startsWith('*'));
+              const isListBlock =
+                lines.length > 1 &&
+                lines.every(
+                  (line) => line.startsWith("●") || line.startsWith("*"),
+                );
 
               if (isListBlock) {
                 return (
                   <ul key={idx} className="space-y-3 pl-5">
                     {lines.map((line, lineIndex) => (
-                      <li key={lineIndex} className="list-disc leading-[1.8] text-gray-800 dark:text-gray-300">
+                      <li
+                        key={lineIndex}
+                        className="list-disc leading-[1.8] text-gray-800 dark:text-gray-300"
+                      >
                         {line.substring(1).trim()}
                       </li>
                     ))}
@@ -173,10 +204,13 @@ const BlogPost: React.FC = () => {
                 );
               }
 
-              const paragraphText = lines.join(' ').replace(/\s+/g, ' ');
+              const paragraphText = lines.join(" ").replace(/\s+/g, " ");
 
               return (
-                <p key={idx} className="leading-[1.85] text-gray-800 dark:text-gray-300">
+                <p
+                  key={idx}
+                  className="leading-[1.85] text-gray-800 dark:text-gray-300"
+                >
                   {paragraphText}
                 </p>
               );
@@ -187,12 +221,18 @@ const BlogPost: React.FC = () => {
           <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-between gap-6">
             <div className="flex gap-3">
               <span className="text-gray-500 font-medium">Tags:</span>
-              <span className="text-royal-600 dark:text-royal-400 font-medium">Culture</span>
-              <span className="text-royal-600 dark:text-royal-400 font-medium">Stories</span>
+              <span className="text-royal-600 dark:text-royal-400 font-medium">
+                Culture
+              </span>
+              <span className="text-royal-600 dark:text-royal-400 font-medium">
+                Stories
+              </span>
             </div>
 
             <div className="flex items-center gap-4">
-              <span className="text-gray-500 font-medium">Share this article:</span>
+              <span className="text-gray-500 font-medium">
+                Share this article:
+              </span>
               <button
                 onClick={handleShare}
                 className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-royal-600 hover:text-white transition-colors"
