@@ -313,7 +313,10 @@ export default function LocalFutures() {
 
           {/* ── Video ───────────────────────────────────────────────────────── */}
           <section className="pb-6 md:pb-8">
-            <div className="relative w-full rounded-3xl overflow-hidden" style={{ paddingBottom: "56.25%" }}>
+            <div
+              className="relative w-full rounded-3xl overflow-hidden"
+              style={{ paddingBottom: "56.25%" }}
+            >
               <iframe
                 className="absolute inset-0 w-full h-full"
                 src="https://www.youtube.com/embed/Q1ZPIWBs45A?si=KwCN_-KOnIzzOUJQ"
