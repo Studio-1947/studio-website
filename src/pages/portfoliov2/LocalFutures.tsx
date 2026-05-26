@@ -16,14 +16,6 @@ const IMG_TYPOGRAPHY = "/portfolio/localFutures/typography.png";
 //   "https://www.figma.com/api/mcp/asset/4f1cc270-d505-4fe6-8319-c443673db5d9";
 
 // ── Shared primitives ─────────────────────────────────────────────────────────
-function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <span className="inline-flex items-center px-5 py-2.5 rounded-full text-sm font-semibold tracking-wide mb-6 bg-[#FFF4F4] text-[#D60000]">
-      {children}
-    </span>
-  );
-}
-
 function SectionHeading({
   children,
   className = "",

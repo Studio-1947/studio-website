@@ -15,8 +15,6 @@ const IMG_SOCIAL_1 = "/portfolio/awch/Instant Recall01.png";
 const IMG_SOCIAL_2 = "/portfolio/awch/Instant Recall02.jpg";
 const IMG_SOCIAL_3 = "/portfolio/awch/Instant Recall03.jpg";
 
-const PINK = "#BF0076";
-
 // ── Shared primitives ─────────────────────────────────────────────────────────
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -39,17 +37,6 @@ function SectionHeading({
     >
       {children}
     </h2>
-  );
-}
-
-function SubHeading({ children }: { children: React.ReactNode }) {
-  return (
-    <h3
-      className="text-2xl md:text-3xl font-bold leading-tight mb-6"
-      style={{ color: PINK }}
-    >
-      {children}
-    </h3>
   );
 }
 

@@ -6,7 +6,7 @@ import TalkToUsModal from './TalkToUsModal';
 const NAV_LINKS = [
   { name: 'About', href: '/about' },
   { name: 'Blogs', href: '/blogs' },
-  { name: 'Portfolio', href: '/ourworks' },
+  { name: 'Portfolio', href: '/portfoliov2' },
   { name: 'Initiatives', href: '/initiative' },
   { name: 'Products & Services', href: '/products' },
 ];

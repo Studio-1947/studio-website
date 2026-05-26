@@ -155,7 +155,7 @@ export const ourWorksData: BrandWork[] = [
         "Studio 1947 built reModelUN's complete visual identity — from logo and typography to digital templates and episode artwork — creating a brand that feels authoritative yet accessible.",
       ],
     },
-    logoImages: ["/ourworks/remodelun/AoQZtFEqIqO8ptUbhMLYKw39IY.avif"],
+    logoImages: ["/ourworks/remodelUN/AoQZtFEqIqO8ptUbhMLYKw39IY.avif"],
     typefaces: [
       // ← PLACEHOLDER
       {
@@ -201,13 +201,13 @@ export const ourWorksData: BrandWork[] = [
       },
     ],
     artDirectionImages: [
-      "/ourworks/remodelun/KjwzzwsWhV6hARRXQdCcxPJc8.avif",
-      "/ourworks/remodelun/z0nYNiWawGbUVcyVkbYBx0entxw.avif",
+      "/ourworks/remodelUN/KjwzzwsWhV6hARRXQdCcxPJc8.avif",
+      "/ourworks/remodelUN/z0nYNiWawGbUVcyVkbYBx0entxw.avif",
     ],
     applicationImages: [
-      "/ourworks/remodelun/HB6O7GiPg8pybqoVeBSXalqNpI.avif",
-      "/ourworks/remodelun/AoQZtFEqIqO8ptUbhMLYKw39IY (1).avif",
-      "/ourworks/remodelun/AoQZtFEqIqO8ptUbhMLYKw39IY.avif",
+      "/ourworks/remodelUN/HB6O7GiPg8pybqoVeBSXalqNpI.avif",
+      "/ourworks/remodelUN/AoQZtFEqIqO8ptUbhMLYKw39IY (1).avif",
+      "/ourworks/remodelUN/AoQZtFEqIqO8ptUbhMLYKw39IY.avif",
     ],
   },
 

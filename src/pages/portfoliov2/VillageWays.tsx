@@ -18,9 +18,6 @@ const IMG_BROCHURE_4 = "/portfolio/villageWays/Brochure04.png";
 const IMG_CALENDAR_1 = "/portfolio/villageWays/Calendar01.png";
 const IMG_CALENDAR_2 = "/portfolio/villageWays/Calendar02.png";
 const IMG_CALENDAR_3 = "/portfolio/villageWays/Calendar03.png";
-const IMG_NATURAL_STORYTELLERS =
-  "/portfolio/villageWays/Natural Storytellers & Photographers.png";
-const IMG_FUTURE_SCOPE = "/portfolio/villageWays/Future Scope.png";
 // const IMG_AVATAR_1    = "https://www.figma.com/api/mcp/asset/54c5f089-05db-4a19-ae8d-f0dd651ac9b0";
 // const IMG_AVATAR_2    = "https://www.figma.com/api/mcp/asset/7da9599d-a629-4a50-886e-93f244f4e953";
 // const IMG_AVATAR_3    = "https://www.figma.com/api/mcp/asset/ec490c9d-dc1d-49a2-b459-12421b3e04a2";

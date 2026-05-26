@@ -6,10 +6,7 @@ import { usePageMeta } from "../../hooks/usePageMeta";
 import PortfolioCTA from "../../components/PortfolioCTA";
 
 // ── Local assets (public/portfolio/fermylab/) ─────────────────────────────────
-const IMG_HERO =
-  "https://www.figma.com/api/mcp/asset/5503c723-07af-4b5e-98f9-39b2419c9b50"; // pending
-const IMG_CONTEXT =
-  "https://www.figma.com/api/mcp/asset/7231301b-ca4e-410b-ad64-473998e98ae5"; // pending
+const IMG_HERO = "/portfolio/fermylab/The-Horizontal-Lockup.png";
 const IMG_ARCH = "/portfolio/fermylab/parent-Brand_architect.png";
 const IMG_CLR_COMBO =
   "https://www.figma.com/api/mcp/asset/129706f9-eb1b-45ad-8f0e-9e5f932a7576"; // pending

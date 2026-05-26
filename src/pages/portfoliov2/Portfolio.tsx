@@ -3,11 +3,11 @@ import { useEffect } from 'react';
 import Layout from '../../components/Layout';
 import { usePageMeta } from '../../hooks/usePageMeta';
 
-const IMG_REMODEL_UN    = 'https://www.figma.com/api/mcp/asset/cbd571fc-dfbc-4eb7-8e5d-db68c2cdd2cb';
-const IMG_FERMY_LAB     = 'https://www.figma.com/api/mcp/asset/5503c723-07af-4b5e-98f9-39b2419c9b50';
-const IMG_RAJKAMAL      = 'https://www.figma.com/api/mcp/asset/dc00f9e8-f215-4994-a613-e6a9a1fca6c3';
-const IMG_AWCH          = 'https://www.figma.com/api/mcp/asset/b0e048c8-3803-4e2b-a26b-d4f7e5017776';
-const IMG_LOCAL_FUTURES = 'https://www.figma.com/api/mcp/asset/b4444640-72b8-4981-ba6e-2a6e35bd0b2b';
+const IMG_REMODEL_UN    = '/portfolio/remodelUN/hero.svg';
+const IMG_FERMY_LAB     = '/portfolio/fermylab/Physical Retail Packaging.png';
+const IMG_RAJKAMAL      = '/portfolio/rajkamal/hero.svg';
+const IMG_AWCH          = '/portfolio/awch/hero.png';
+const IMG_LOCAL_FUTURES = '/portfolio/localFutures/hero.png';
 const IMG_VILLAGE_WAYS  = '/portfolio/villageWays/hero.png';
 
 interface Project {
@@ -107,11 +107,6 @@ export default function PortfolioV2() {
                 to={project.slug}
                 className="group relative flex flex-col md:flex-row overflow-hidden rounded-2xl bg-white border border-black/[0.06] shadow-sm hover:shadow-xl transition-shadow duration-500"
               >
-                {/* Index number */}
-                <span className="absolute top-6 left-6 text-xs font-bold tracking-widest text-black/20 select-none z-10">
-                  {String(i + 1).padStart(2, '0')}
-                </span>
-
                 {/* Image panel */}
                 <div className="relative md:w-1/2 lg:w-[55%] aspect-[16/10] md:aspect-auto overflow-hidden flex-shrink-0">
                   <img
