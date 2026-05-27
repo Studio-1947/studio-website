@@ -11,7 +11,7 @@ export default function LatestBlogs() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div className="max-w-3xl">
             <span className="inline-block py-1 px-3 rounded-full bg-gray-50 border border-gray-200 text-gray-600 text-xs font-semibold tracking-wide uppercase mb-6">
-              ● Latest Blogs
+              Latest Blogs
             </span>
             <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
               Read Our Latest Blogs

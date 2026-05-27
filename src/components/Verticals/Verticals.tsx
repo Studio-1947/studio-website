@@ -22,7 +22,6 @@ export default function Verticals() {
             transition={{ duration: 0.5 }}
             className="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-gray-500 shadow-sm"
           >
-            <span className="h-1.5 w-1.5 rounded-full bg-[#D60000]" />
             {eyebrow}
           </motion.span>
 
