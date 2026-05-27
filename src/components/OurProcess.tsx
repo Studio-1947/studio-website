@@ -39,7 +39,7 @@ export default function OurProcess() {
  {/* Header */}
  <div className="text-center max-w-4xl mx-auto mb-16 lg:mb-20">
  <span className="inline-block py-1.5 px-4 rounded-full bg-gray-50 border border-gray-200 text-gray-600 text-xs lg:text-sm font-semibold tracking-widest uppercase mb-6">
- ● Our Process
+ Our Process
  </span>
  <h2 className="text-4xl md:text-5xl lg:text-7xl font-black text-gray-900 tracking-tighter leading-[1.1] mb-6">
  We Do More Than Just Build

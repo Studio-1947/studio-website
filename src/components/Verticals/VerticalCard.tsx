@@ -92,12 +92,8 @@ export default function VerticalCard({
 
       {/* Content */}
       <div className="flex flex-1 flex-col p-5 lg:p-6">
-        {/* Accent dot + title */}
-        <div className="mb-3 flex items-center gap-2.5">
-          <span
-            className="h-1.5 w-1.5 flex-shrink-0 rounded-full"
-            style={{ background: accent }}
-          />
+        {/* Title */}
+        <div className="mb-3">
           <h3 className="text-[clamp(1.2rem,1.5vw,1.5rem)] font-bold leading-tight tracking-tight text-gray-900">
             {title}
           </h3>

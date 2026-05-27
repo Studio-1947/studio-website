@@ -68,7 +68,7 @@ export default function Testimonials() {
     <section className="bg-white py-24 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
         <span className="inline-block py-1 px-3 rounded-full bg-gray-50 border border-gray-200 text-gray-600 text-xs font-semibold tracking-wide uppercase mb-6">
-          ● Testimonials
+          Testimonials
         </span>
         <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
           What Our Clients Are Saying

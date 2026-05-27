@@ -55,30 +55,32 @@ export default function Navbar() {
             scrolled
               ? {
                   background: '#FFF7F7',
-                  boxShadow: '0 0 14px 3px rgba(174, 59, 59, 0.10)',
+                  boxShadow: '0 0 14px 3px rgba(174, 59, 59, 0.10), inset 0 0 0 1px rgba(174, 59, 59, 0.10)',
                   borderRadius: '50px',
                   paddingLeft: '20px',
                   paddingRight: '36px',
                   paddingTop: '10px',
                   paddingBottom: '10px',
-                  width: '75vw',
+                  minHeight: '60px',
+                  minWidth: '75vw',
                 }
               : {
-                  background: 'transparent',
-                  boxShadow: 'none',
+                  background: 'rgba(255, 247, 247, 0.78)',
+                  boxShadow: '0 1px 10px rgba(174, 59, 59, 0.07), inset 0 0 0 1.5px rgba(174, 59, 59, 0.18)',
                   borderRadius: '50px',
-                  paddingLeft: '0px',
-                  paddingRight: '0px',
-                  paddingTop: '0px',
-                  paddingBottom: '0px',
-                  width: 'auto',
+                  paddingLeft: '32px',
+                  paddingRight: '36px',
+                  paddingTop: '10px',
+                  paddingBottom: '10px',
+                  minHeight: '60px',
+                  minWidth: 0,
                 }
           }
           transition={{ duration: 0.4, ease: 'easeInOut' }}
-          className="flex items-center justify-between"
+          className="flex items-center"
         >
           {/* Logo — slides in from the left */}
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {scrolled && (
               <motion.div
                 initial={{ x: -40, opacity: 0 }}
@@ -100,7 +102,12 @@ export default function Navbar() {
           </AnimatePresence>
 
           {/* Links */}
-          <div className={`flex items-center gap-14 ${scrolled ? 'ml-auto' : ''}`}>
+          <motion.div
+            layout
+            animate={{ gap: scrolled ? '32px' : '56px' }}
+            transition={{ duration: 0.4, ease: 'easeInOut', layout: { duration: 0.4, ease: 'easeInOut' } }}
+            className={`flex items-center ${scrolled ? 'ml-auto' : ''}`}
+          >
             {NAV_LINKS.map((link) => {
               const isActive =
                 location.pathname === link.href ||
@@ -110,7 +117,7 @@ export default function Navbar() {
                   key={link.name}
                   to={link.href}
                   style={{ ...linkStyle, color: isActive ? '#D80000' : '#8C8484' }}
-                  className={`transition-colors duration-200 hover:text-primary ${
+                  className={`whitespace-nowrap transition-colors duration-200 hover:text-primary ${
                     isActive ? 'underline decoration-2 underline-offset-8' : ''
                   }`}
                 >
@@ -125,7 +132,7 @@ export default function Navbar() {
             >
               Say Hello
             </button>
-          </div>
+          </motion.div>
         </motion.div>
       </nav>
 
@@ -138,7 +145,7 @@ export default function Navbar() {
           animate={
             scrolled
               ? { background: '#FFF7F7', boxShadow: '0 0 14px 3px rgba(174, 59, 59, 0.10)' }
-              : { background: 'transparent', boxShadow: 'none' }
+              : { background: 'rgba(255, 247, 247, 0.78)', boxShadow: '0 1px 10px rgba(174, 59, 59, 0.07)' }
           }
           transition={{ duration: 0.4, ease: 'easeInOut' }}
           className="flex items-center justify-between px-5 py-4"

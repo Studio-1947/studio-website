@@ -17,6 +17,7 @@ const PROJECTS = [
     tags: ['Brand Strategy', 'Identity Design', 'UI/UX', 'Motion'],
     image: IMG_REMODEL_UN,
     accent: '#00E357',
+    tagBreakAt: 2,
   },
   {
     slug: '/portfoliov2/fermy-lab',
@@ -165,14 +166,19 @@ export default function PortfolioShowcase() {
                 {/* Content */}
                 <div className="flex flex-col flex-1 p-6">
                   <div className="flex flex-wrap gap-1.5 mb-3">
-                    {project.tags.map(tag => (
-                      <span
-                        key={tag}
-                        className="px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide border"
-                        style={{ borderColor: project.accent, color: project.accent }}
-                      >
-                        {tag}
-                      </span>
+                    {project.tags.map((tag, idx) => (
+                      <>
+                        {'tagBreakAt' in project && idx === project.tagBreakAt && (
+                          <div key="break" className="w-full" />
+                        )}
+                        <span
+                          key={tag}
+                          className="px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide border"
+                          style={{ borderColor: project.accent, color: project.accent }}
+                        >
+                          {tag}
+                        </span>
+                      </>
                     ))}
                   </div>
                   <h3 className="text-2xl font-black text-[#1A1A1A] leading-tight tracking-tight mb-2">
