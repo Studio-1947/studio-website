@@ -66,9 +66,9 @@ export default function Hero() {
  Explore Our Works
  </Button>
  <Button
- variant="secondary"
+ variant="primary"
  onClick={() => setIsTalkToUsModalOpen(true)}
- className="hover:bg-[#383649] hover:text-white"
+ className="bg-[#D80000] text-white border-2 border-[#D80000] hover:bg-white hover:text-[#D80000] hover:border-[#D80000] transition-colors duration-300 shadow-md active:scale-95"
  >
  Talk to us
  </Button>

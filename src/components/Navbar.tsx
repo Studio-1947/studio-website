@@ -20,6 +20,7 @@ const linkStyle = {
 
 export default function Navbar() {
   const location = useLocation();
+  const isHomepage = location.pathname === '/' || location.pathname === '/v2';
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
@@ -39,6 +40,7 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setMenuOpen(false);
     setModalOpen(false);
   }, [location.pathname]);
@@ -79,10 +81,11 @@ export default function Navbar() {
           transition={{ duration: 0.4, ease: 'easeInOut' }}
           className="flex items-center"
         >
-          {/* Logo — slides in from the left */}
+          {/* Logo / Home Link — slides in from the left */}
           <AnimatePresence mode="popLayout">
-            {scrolled && (
+            {scrolled ? (
               <motion.div
+                key="logo"
                 initial={{ x: -40, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -40, opacity: 0 }}
@@ -98,6 +101,25 @@ export default function Navbar() {
                   />
                 </Link>
               </motion.div>
+            ) : (
+              !isHomepage && (
+                <motion.div
+                  key="home"
+                  initial={{ x: -40, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  exit={{ x: -40, opacity: 0 }}
+                  transition={{ duration: 0.4, ease: 'easeOut' }}
+                  className="pr-[56px]"
+                >
+                  <Link
+                    to="/"
+                    style={linkStyle}
+                    className="whitespace-nowrap transition-colors duration-200 text-[#8C8484] hover:text-[#D80000]"
+                  >
+                    Home
+                  </Link>
+                </motion.div>
+              )
             )}
           </AnimatePresence>
 
@@ -150,9 +172,10 @@ export default function Navbar() {
           transition={{ duration: 0.4, ease: 'easeInOut' }}
           className="flex items-center justify-between px-5 py-4"
         >
-          <AnimatePresence>
+          <AnimatePresence mode="popLayout">
             {scrolled ? (
               <motion.div
+                key="logo"
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 exit={{ x: -20, opacity: 0 }}
@@ -166,6 +189,22 @@ export default function Navbar() {
                     transition={{ repeat: Infinity, duration: 8, ease: 'linear' }}
                     className="h-8 w-auto"
                   />
+                </Link>
+              </motion.div>
+            ) : !isHomepage ? (
+              <motion.div
+                key="home"
+                initial={{ x: -20, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: -20, opacity: 0 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+              >
+                <Link
+                  to="/"
+                  style={linkStyle}
+                  className="whitespace-nowrap transition-colors duration-200 text-[#8C8484] hover:text-[#D80000]"
+                >
+                  Home
                 </Link>
               </motion.div>
             ) : (
@@ -203,7 +242,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -10 }}
               transition={{ duration: 0.3, ease: 'easeInOut' }}
-              className="flex flex-col px-8 pb-8 pt-4 gap-6"
+              className="flex flex-col items-center justify-center px-8 pb-8 pt-4 gap-6"
               style={{ background: '#FFF7F7', boxShadow: '0 8px 24px rgba(174, 59, 59, 0.10)' }}
             >
               {NAV_LINKS.map((link) => {
@@ -215,7 +254,7 @@ export default function Navbar() {
                     key={link.name}
                     to={link.href}
                     style={{ ...linkStyle, fontSize: '18px', color: isActive ? '#D80000' : '#8C8484' }}
-                    className={`transition-colors duration-200 ${
+                    className={`transition-colors duration-200 text-center ${
                       isActive ? 'underline decoration-2 underline-offset-8' : ''
                     }`}
                   >
@@ -226,7 +265,7 @@ export default function Navbar() {
               <button
                 onClick={() => { setMenuOpen(false); setModalOpen(true); }}
                 style={{ ...linkStyle, fontSize: '18px', color: '#8C8484' }}
-                className="text-left transition-colors duration-200"
+                className="text-center transition-colors duration-200"
               >
                 Say Hello
               </button>

@@ -72,11 +72,15 @@ const VillageWaysV2 = lazy(
   () => import("./pages/portfoliov2/VillageWays.tsx"),
 );
 
+const HomeV2 = lazy(() => import("./pages/HomeV2.tsx"));
+
+
 // Legal pages
 const PrivacyPolicy = lazy(() => import("./pages/legal/PrivacyPolicy.tsx"));
 const TermsOfService = lazy(() => import("./pages/legal/TermsOfService.tsx"));
 
 // ─── Loading Fallback ──────────────────────────────────────────────────────
+// eslint-disable-next-line react-refresh/only-export-components
 const PageLoader = () => (
   <div
     style={{
@@ -109,6 +113,8 @@ createRoot(document.getElementById("root")!).render(
       <Suspense fallback={<PageLoader />}>
         <Routes>
           <Route path="/" element={<App />} />
+          <Route path="/v2" element={<HomeV2 />} />
+
 
           {/* External Redirects */}
           <Route

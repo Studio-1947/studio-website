@@ -21,7 +21,7 @@ const CeoVoice: React.FC = () => {
  A Word from Our CEO
  </h2>
 
- <div className="text-xl leading-relaxed text-gray-600 mb-12 relative z-10 space-y-5 text-left max-w-2xl mx-auto">
+ <div className="text-xl leading-relaxed text-gray-600 mb-12 relative z-10 space-y-5 text-center max-w-2xl mx-auto">
  <p>
  Inspired by free thought, Studio 1947 echoes the spirit of voices history left in the margins. Grounded in resilience, we weave together tradition and technology to shape futures led by people, not systems.
  </p>
@@ -37,7 +37,7 @@ const CeoVoice: React.FC = () => {
  <img
  src="/aboutus/signature.svg"
  alt="Rabi . रबि . রবি"
- className="h-20 w-auto opacity-80 select-none block transform -rotate-2"
+ className="h-12 w-auto opacity-80 select-none block transform -rotate-2"
  />
  </div>
 

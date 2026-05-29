@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { ArrowLeft, ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowUpRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const IMG_REMODEL_UN    = '/portfolio/remodelUN/hero.svg';
 const IMG_FERMY_LAB     = '/portfolio/fermylab/Physical Retail Packaging.png';
@@ -61,58 +61,7 @@ const PROJECTS = [
   },
 ];
 
-const GAP = 24; // gap-6 in px
-
 export default function PortfolioShowcase() {
-  const trackRef = useRef<HTMLDivElement>(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [visibleCount, setVisibleCount] = useState(3);
-  const [translateX, setTranslateX] = useState(0);
-
-  useEffect(() => {
-    const update = () => {
-      setVisibleCount(window.innerWidth < 640 ? 1 : window.innerWidth < 1024 ? 2 : 3);
-    };
-    update();
-    window.addEventListener('resize', update);
-    return () => window.removeEventListener('resize', update);
-  }, []);
-
-  const maxIndex = Math.max(0, PROJECTS.length - visibleCount);
-
-  // Recalculate translation whenever index or visible count changes
-  useEffect(() => {
-    setActiveIndex(i => Math.min(i, maxIndex));
-  }, [maxIndex]);
-
-  useEffect(() => {
-    if (!trackRef.current) return;
-    const card = trackRef.current.firstElementChild as HTMLElement | null;
-    if (!card) return;
-    setTranslateX(-activeIndex * (card.offsetWidth + GAP));
-  }, [activeIndex, visibleCount]);
-
-  // Recalculate on resize
-  useEffect(() => {
-    const recalc = () => {
-      if (!trackRef.current) return;
-      const card = trackRef.current.firstElementChild as HTMLElement | null;
-      if (!card) return;
-      setTranslateX(-activeIndex * (card.offsetWidth + GAP));
-    };
-    window.addEventListener('resize', recalc);
-    return () => window.removeEventListener('resize', recalc);
-  }, [activeIndex]);
-
-  const go = (dir: 'prev' | 'next') => {
-    setActiveIndex(i =>
-      dir === 'next' ? Math.min(i + 1, maxIndex) : Math.max(i - 1, 0),
-    );
-  };
-
-  const canPrev = activeIndex > 0;
-  const canNext = activeIndex < maxIndex;
-
   return (
     <section id="works" className="bg-[#F7F5F2] py-24">
       <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
@@ -136,28 +85,30 @@ export default function PortfolioShowcase() {
           </Link>
         </div>
 
-        {/* Carousel */}
-        <div className="overflow-hidden">
-          <div
-            ref={trackRef}
-            className="flex gap-6"
-            style={{
-              transform: `translateX(${translateX}px)`,
-              transition: 'transform 0.55s cubic-bezier(0.4, 0, 0.2, 1)',
-            }}
-          >
-            {PROJECTS.map((project, i) => (
+        {/* Grid of 3 by 2 (on large screens) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {PROJECTS.map((project, i) => (
+            <motion.div
+              key={project.slug}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ 
+                duration: 0.6, 
+                delay: (i % 3) * 0.12, 
+                ease: [0.215, 0.61, 0.355, 1] 
+              }}
+            >
               <Link
-                key={project.slug}
                 to={project.slug}
-                className="group flex-none w-full sm:w-[calc((100%-1.5rem)/2)] lg:w-[calc((100%-3rem)/3)] flex flex-col overflow-hidden rounded-2xl bg-white border border-black/[0.06] shadow-sm hover:shadow-xl transition-shadow duration-500"
+                className="group flex h-full flex-col overflow-hidden rounded-2xl bg-white border border-black/[0.06] shadow-sm hover:shadow-xl transition-shadow duration-500"
               >
                 {/* Image */}
                 <div className="aspect-[16/10] overflow-hidden">
                   <img
                     src={project.image}
                     alt={project.title}
-                    loading={i === 0 ? 'eager' : 'lazy'}
+                    loading={i < 3 ? 'eager' : 'lazy'}
                     decoding="async"
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
                   />
@@ -167,26 +118,28 @@ export default function PortfolioShowcase() {
                 <div className="flex flex-col flex-1 p-6">
                   <div className="flex flex-wrap gap-1.5 mb-3">
                     {project.tags.map((tag, idx) => (
-                      <>
+                      <div key={tag} className="flex items-center">
                         {'tagBreakAt' in project && idx === project.tagBreakAt && (
-                          <div key="break" className="w-full" />
+                          <div className="w-full h-0" />
                         )}
                         <span
-                          key={tag}
                           className="px-2.5 py-1 rounded-full text-[10px] font-semibold tracking-wide border"
                           style={{ borderColor: project.accent, color: project.accent }}
                         >
                           {tag}
                         </span>
-                      </>
+                      </div>
                     ))}
                   </div>
+                  
                   <h3 className="text-2xl font-black text-[#1A1A1A] leading-tight tracking-tight mb-2">
                     {project.title}
                   </h3>
+                  
                   <p className="text-[#6B6B6B] text-sm font-light leading-relaxed flex-1">
                     {project.subtitle}
                   </p>
+                  
                   <div className="flex items-center gap-2 mt-5">
                     <span
                       className="text-xs font-bold tracking-wide"
@@ -206,43 +159,8 @@ export default function PortfolioShowcase() {
                   </div>
                 </div>
               </Link>
-            ))}
-          </div>
-        </div>
-
-        {/* Controls */}
-        <div className="flex items-center gap-3 mt-10">
-          <button
-            onClick={() => go('prev')}
-            disabled={!canPrev}
-            aria-label="Previous"
-            className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none"
-          >
-            <ArrowLeft className="w-4 h-4" />
-          </button>
-
-          {/* Dot indicators */}
-          <div className="flex items-center gap-2">
-            {Array.from({ length: maxIndex + 1 }).map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setActiveIndex(i)}
-                aria-label={`Go to slide ${i + 1}`}
-                className={`h-1.5 rounded-full transition-all select-none ${
-                  activeIndex === i ? 'w-8 bg-gray-900' : 'w-1.5 bg-gray-300 hover:bg-gray-400'
-                }`}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={() => go('next')}
-            disabled={!canNext}
-            aria-label="Next"
-            className="w-10 h-10 rounded-full border border-gray-200 flex items-center justify-center text-gray-700 hover:border-gray-900 hover:bg-gray-900 hover:text-white transition-all disabled:opacity-30 disabled:cursor-not-allowed select-none"
-          >
-            <ArrowRight className="w-4 h-4" />
-          </button>
+            </motion.div>
+          ))}
         </div>
 
       </div>
