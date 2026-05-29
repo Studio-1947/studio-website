@@ -30,9 +30,13 @@ export default function Verticals() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.65, delay: 0.1 }}
-            className="mb-6 text-4xl font-black leading-[1.05] tracking-tighter text-gray-900 md:text-6xl lg:text-7xl"
+            className="mb-6 text-4xl font-black leading-[1.05] tracking-tighter text-gray-900 md:text-6xl lg:text-7xl whitespace-pre-line"
           >
-            {heading}
+            {heading.split('\n').map((line, idx) => (
+              <span key={idx} className={idx === 1 ? "text-[#D80000] block mt-1" : "block"}>
+                {line}
+              </span>
+            ))}
           </motion.h2>
 
           <motion.p

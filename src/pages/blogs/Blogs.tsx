@@ -6,157 +6,118 @@ import { usePageMeta } from '../../hooks/usePageMeta';
 import { CardContainer, CardBody, CardItem } from '../../components/ui/3d-card';
 
 const Blogs: React.FC = () => {
- usePageMeta({ title: 'Journal – Studio 1947', description: 'Explorations, essays, and stories from the Studio 1947 team on design, culture, technology, and where they intersect.' });
- useEffect(() => {
- window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
- }, []);
+  usePageMeta({ 
+    title: 'Journal – Studio 1947', 
+    description: 'Explorations, essays, and stories from the Studio 1947 team on design, culture, technology, and where they intersect.' 
+  });
+  
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
 
- return (
- <Layout>
- <div className="bg-white pt-32 pb-24 transition-colors duration-300 min-h-screen">
- <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
- <div className="text-center max-w-3xl mx-auto mb-16 md:mb-24">
- <span className="text-royal-600 font-semibold tracking-wider uppercase text-sm mb-4 block">
- Our Thoughts
- </span>
- <h1 className="text-4xl md:text-5xl lg:text-6xl font-black text-gray-900 tracking-tight leading-tight mb-6">
- Studio 1947<br />
- <span className="text-transparent bg-clip-text bg-gradient-to-r from-royal-600 to-indigo-600">
- Journal
- </span>
- </h1>
- <p className="text-lg md:text-xl text-gray-600 font-light">
- Explorations, essays, and stories from our team. We write about design, culture, technology, and the intersections between them.
- </p>
- </div>
+  return (
+    <Layout>
+      {/* 1. Full Screen Hero Cover */}
+      <div className="relative w-full h-[100vh] flex items-center justify-center overflow-hidden">
+        {/* Full Screen Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-[1.5s]"
+          style={{ backgroundImage: "url('/blogs/blog_hero.png')" }}
+        />
+        {/* Subtle dark overlay for premium high contrast readability */}
+        <div className="absolute inset-0 bg-black/40 z-1" />
 
- {/* Featured Blog */}
- {(() => {
- const featuredBlog = blogs.find(blog => blog.coverImage && blog.coverImage !== '/logo.svg') || blogs[0];
- const otherBlogs = blogs.filter(blog => blog.slug !== (featuredBlog?.slug || ''));
+        {/* Center Aligned Content */}
+        <div className="relative z-10 text-center max-w-3xl mx-auto px-4 select-none pt-12">
+          <span className="text-[#FFEAEA] font-bold tracking-[0.2em] uppercase text-xs sm:text-sm mb-4 block opacity-95">
+            Our Thoughts
+          </span>
+          <h1 className="text-5xl sm:text-7xl font-black text-white tracking-tight leading-[0.95] mb-6">
+            Studio 1947<br />
+            <span className="text-[#D80000]">
+              Journal
+            </span>
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-[#FFFAFA]/85 font-light leading-relaxed max-w-2xl mx-auto">
+            Explorations, essays, and stories from our team. We write about design, culture, technology, and the intersections between them.
+          </p>
+        </div>
+      </div>
 
-            return (
-              <>
-                {featuredBlog && (
-                  <div className="mb-16 md:mb-24 relative group">
-                    <Link to={`/blogs/${featuredBlog.slug}`} className="block h-full relative rounded-3xl overflow-hidden shadow-xl">
-                      <div className="aspect-w-16 aspect-h-9 md:aspect-h-7 lg:aspect-h-6">
-                        {featuredBlog.coverImage === '/logo.svg' ? (
-                          <div className="absolute inset-0 w-full h-[400px] md:h-[500px] lg:h-[600px] bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center transition-transform duration-700 group-hover:scale-105">
-                            <span className="text-white/20 text-8xl md:text-9xl mb-8 block">✧</span>
-                            <span className="text-3xl md:text-5xl font-black text-white tracking-widest uppercase">
-                              Studio 1947
-                            </span>
-                            <span className="text-royal-200 text-xl md:text-2xl font-light tracking-widest uppercase mt-4">
-                              Blogs
-                            </span>
-                          </div>
-                        ) : (
-                          <img
-                            src={featuredBlog.coverImage}
-                            alt={featuredBlog.title}
-                            loading="eager"
-                            decoding="async"
-                            className="w-full h-[400px] md:h-[500px] lg:h-[600px] object-cover transition-transform duration-700 group-hover:scale-105"
-                          />
-                        )}
-                        <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/60 to-transparent opacity-80 group-hover:opacity-90 transition-opacity duration-300"></div>
-                      </div>
-                      <div className="absolute bottom-0 left-0 right-0 p-6 md:p-12 z-10">
-                        <div className="flex items-center gap-4 mb-4">
-                          <span className="px-3 py-1 bg-royal-600 text-white backdrop-blur-md rounded-full text-xs font-semibold tracking-wide uppercase">
-                            Featured
+      {/* 2. Blog Grid Container */}
+      <div className="bg-[#F7F5F2] py-24 sm:py-32 transition-colors duration-300 min-h-[50vh]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          
+          {/* Blog Grid (Rendering all blogs directly) */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+            {blogs.map((blog) => (
+              <CardContainer key={blog.slug} className="w-full h-full" containerClassName="w-full h-full py-4">
+                <CardBody className="bg-white border border-black/[0.05] w-full h-full rounded-2xl p-6 group/card flex flex-col shadow-sm hover:shadow-md transition-shadow duration-300">
+                  <CardItem translateZ="100" className="w-full">
+                    <Link to={`/blogs/${blog.slug}`} className="block relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100 shadow-inner">
+                      {blog.coverImage === '/logo.svg' ? (
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#D80000] to-[#8F0000] flex flex-col items-center justify-center p-6 text-center">
+                          <span className="text-white/30 text-6xl mb-4 block">✧</span>
+                          <span className="text-xl font-black text-white tracking-widest uppercase">Studio 1947</span>
+                          <span className="text-[#FFD6D6] text-sm font-light tracking-widest uppercase mt-2">Blogs</span>
+                        </div>
+                      ) : (
+                        <img
+                          src={blog.coverImage}
+                          alt={blog.title}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover group-hover/card:scale-[1.03] transition-transform duration-500"
+                        />
+                      )}
+                      {blog.language && (
+                        <div className="absolute top-3 right-3 z-10">
+                          <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-white/20">
+                            {blog.language === 'Hindi' 
+                              ? 'Hindi/हिंदी' 
+                              : blog.language === 'Nepali' 
+                                ? 'Nepali/नेपाली' 
+                                : blog.language}
                           </span>
-                          <span className="text-gray-300 text-sm font-medium">{featuredBlog.date}</span>
-                          <span className="hidden sm:inline text-gray-400">•</span>
-                          <span className="hidden sm:inline text-gray-300 text-sm">{featuredBlog.author}</span>
                         </div>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4 line-clamp-2 leading-tight">
-                          {featuredBlog.title}
-                        </h2>
-                        <p className="text-gray-300 md:text-lg mb-6 line-clamp-2 md:line-clamp-3 max-w-3xl">
-                          {featuredBlog.excerpt}
-                        </p>
-                        <span className="inline-flex items-center text-royal-400 font-semibold group-hover:text-royal-300 transition-colors">
-                          Read Article
-                          <svg className="w-5 h-5 ml-2 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                          </svg>
-                        </span>
-                      </div>
+                      )}
                     </Link>
+                  </CardItem>
+
+                  <CardItem translateZ="50" className="w-full mt-5">
+                    <div className="flex items-center gap-3 text-xs sm:text-sm text-gray-500 mb-2 font-medium">
+                      <time dateTime={blog.date}>{blog.date}</time>
+                      <span>•</span>
+                      <span>{blog.author}</span>
+                    </div>
+                    <h3 className="text-lg md:text-xl font-bold text-gray-900 line-clamp-2 group-hover/card:text-[#D80000] transition-colors leading-snug">
+                      <Link to={`/blogs/${blog.slug}`}>{blog.title}</Link>
+                    </h3>
+                  </CardItem>
+
+                  <CardItem translateZ="60" as="p" className="w-full text-gray-500 text-sm mt-3 line-clamp-3 flex-1 leading-relaxed">
+                    {blog.excerpt}
+                  </CardItem>
+
+                  <div className="flex justify-end items-center mt-6">
+                    <CardItem
+                      translateZ={20}
+                      as={Link}
+                      to={`/blogs/${blog.slug}`}
+                      className="px-5 py-2.5 rounded-full bg-[#383649] text-white text-xs font-bold hover:bg-[#D80000] transition-colors duration-300 active:scale-95"
+                    >
+                      Read More →
+                    </CardItem>
                   </div>
-                )}
+                </CardBody>
+              </CardContainer>
+            ))}
+          </div>
 
-                {/* Blog Grid (The rest) */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 gap-y-4 items-stretch">
-                  {otherBlogs.map((blog) => (
-                    <CardContainer key={blog.slug} className="w-full h-full" containerClassName="w-full h-full py-4">
-                      <CardBody className="bg-gray-50 border border-black/[0.1] w-full h-full rounded-xl p-5 group/card flex flex-col">
-                        <CardItem translateZ="100" className="w-full">
-                          <Link to={`/blogs/${blog.slug}`} className="block relative aspect-[4/3] rounded-xl overflow-hidden bg-gray-100">
-                            {blog.coverImage === '/logo.svg' ? (
-                              <div className="absolute inset-0 bg-gradient-to-br from-royal-600 to-indigo-800 flex flex-col items-center justify-center p-6 text-center">
-                                <span className="text-white/30 text-6xl mb-4 block">✧</span>
-                                <span className="text-xl font-black text-white tracking-widest uppercase">Studio 1947</span>
-                                <span className="text-royal-200 text-sm font-light tracking-widest uppercase mt-2">Blogs</span>
-                              </div>
-                            ) : (
-                              <img
-                                src={blog.coverImage}
-                                alt={blog.title}
-                                loading="lazy"
-                                decoding="async"
-                                className="w-full h-full object-cover group-hover/card:shadow-xl"
-                              />
-                            )}
-                            {blog.language && (
-                              <div className="absolute top-3 right-3 z-10">
-                                <span className="px-3 py-1 bg-black/60 backdrop-blur-md text-white text-xs font-semibold rounded-full border border-white/20">
-                                  {blog.language}
-                                </span>
-                              </div>
-                            )}
-                          </Link>
-                        </CardItem>
-
-                        <CardItem translateZ="50" className="w-full mt-4">
-                          <div className="flex items-center gap-3 text-sm text-gray-500 mb-2">
-                            <time dateTime={blog.date}>{blog.date}</time>
-                            <span>•</span>
-                            <span>{blog.author}</span>
-                          </div>
-                          <h3 className="text-lg md:text-xl font-bold text-gray-900 line-clamp-2 group-hover/card:text-royal-600 transition-colors">
-                            <Link to={`/blogs/${blog.slug}`}>{blog.title}</Link>
-                          </h3>
-                        </CardItem>
-
-                        <CardItem translateZ="60" as="p" className="w-full text-gray-500 text-sm mt-3 line-clamp-3 flex-1">
-                          {blog.excerpt}
-                        </CardItem>
-
-                        <div className="flex justify-end items-center mt-5">
-                          <CardItem
-                            translateZ={20}
-                            as={Link}
-                            to={`/blogs/${blog.slug}`}
-                            className="px-4 py-2 rounded-xl bg-black text-white text-xs font-bold"
-                          >
-                            Read More →
-                          </CardItem>
-                        </div>
-                      </CardBody>
-                    </CardContainer>
-                  ))}
-                </div>
-              </>
-            );
-          })()}
-
- </div>
- </div>
- </Layout>
- );
+        </div>
+      </div>
+    </Layout>
+  );
 };
 
 export default Blogs;

@@ -113,7 +113,11 @@ const BlogPost: React.FC = () => {
             {blog.language && blog.language !== "English" && (
               <>
                 <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full font-semibold">
-                  {blog.language}
+                  {blog.language === "Hindi" 
+                    ? "Hindi/हिंदी" 
+                    : blog.language === "Nepali" 
+                      ? "Nepali/नेपाली" 
+                      : blog.language}
                 </span>
                 <span className="text-gray-400">•</span>
               </>

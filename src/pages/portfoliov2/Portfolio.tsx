@@ -100,15 +100,15 @@ export default function PortfolioV2() {
           </div>
 
           {/* Project list */}
-          <div className="flex flex-col gap-6">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
             {PROJECTS.map((project, i) => (
               <Link
                 key={project.slug}
                 to={project.slug}
-                className="group relative flex flex-col md:flex-row overflow-hidden rounded-2xl bg-white border border-black/[0.06] shadow-sm hover:shadow-xl transition-shadow duration-500"
+                className="group relative flex flex-col overflow-hidden rounded-2xl bg-white border border-black/[0.06] shadow-sm hover:shadow-xl transition-shadow duration-500"
               >
                 {/* Image panel */}
-                <div className="relative md:w-1/2 lg:w-[55%] aspect-[16/10] md:aspect-auto overflow-hidden flex-shrink-0">
+                <div className="relative w-full aspect-[16/10] overflow-hidden flex-shrink-0">
                   <img
                     src={project.image}
                     alt={project.title}
@@ -120,7 +120,7 @@ export default function PortfolioV2() {
                 </div>
 
                 {/* Content panel */}
-                <div className="flex flex-col justify-between p-8 md:p-12 flex-1">
+                <div className="flex flex-col justify-between p-8 sm:p-10 flex-1">
                   <div>
                     <div className="flex flex-wrap gap-2 mb-6">
                       {project.tags.map((tag) => (
@@ -134,7 +134,7 @@ export default function PortfolioV2() {
                       ))}
                     </div>
 
-                    <h2 className="text-4xl md:text-5xl font-black text-[#1A1A1A] leading-tight tracking-tight mb-3">
+                    <h2 className="text-3xl sm:text-4xl font-black text-[#1A1A1A] leading-tight tracking-tight mb-3">
                       {project.title}
                     </h2>
                     <p className="text-[#6B6B6B] text-base font-light leading-relaxed">

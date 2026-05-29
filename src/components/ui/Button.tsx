@@ -26,6 +26,7 @@ export const Button: React.FC<ButtonProps> = ({
   href,
   ...props
 }) => {
+  const ComponentTag = Component as any;
   const baseStyles = 'inline-flex items-center justify-center font-medium transition-all duration-300 rounded-full select-none active:scale-95 disabled:opacity-50 disabled:pointer-events-none relative overflow-hidden';
   
   const variants = {
@@ -44,7 +45,7 @@ export const Button: React.FC<ButtonProps> = ({
   // If animate is true, we add the sliding logic
   if (animate && variant === 'primary') {
     return (
-      <Component
+      <ComponentTag
         className={cn(
           'group relative inline-flex items-center justify-center overflow-hidden font-medium text-white transition duration-300 ease-out border-2 border-btn rounded-full select-none active:scale-95',
           sizes[size],
@@ -60,12 +61,12 @@ export const Button: React.FC<ButtonProps> = ({
         </span>
         <span className="absolute flex items-center justify-center w-full h-full text-btn transition-all duration-300 transform group-hover:translate-x-full ease">{children}</span>
         <span className="relative invisible">{children}</span>
-      </Component>
+      </ComponentTag>
     );
   }
 
   return (
-    <Component
+    <ComponentTag
       className={cn(baseStyles, variants[variant], sizes[size], className)}
       disabled={isLoading}
       href={href}
@@ -75,6 +76,6 @@ export const Button: React.FC<ButtonProps> = ({
         <span className="mr-2 h-4 w-4 animate-spin rounded-full border-2 border-white border-t-transparent" />
       ) : null}
       {children}
-    </Component>
+    </ComponentTag>
   );
 };
