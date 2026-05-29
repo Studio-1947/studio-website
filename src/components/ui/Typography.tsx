@@ -32,12 +32,13 @@ export const Typography: React.FC<TypographyProps> = ({
   className,
   children,
 }) => {
+  const ComponentTag = Component as any;
   const gradientStyles = gradient 
     ? 'bg-gradient-to-r from-primary via-primary to-purple-600 bg-clip-text text-transparent'
     : '';
 
   return (
-    <Component
+    <ComponentTag
       className={cn(
         variants[variant],
         gradientStyles,
@@ -45,6 +46,6 @@ export const Typography: React.FC<TypographyProps> = ({
       )}
     >
       {children}
-    </Component>
+    </ComponentTag>
   );
 };

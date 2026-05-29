@@ -122,14 +122,16 @@ export function CardItem({
     }
   }, [isMouseEntered, translateX, translateY, translateZ, rotateX, rotateY, rotateZ]);
 
+  const TagElement = Tag as any;
+
   return (
-    <Tag
+    <TagElement
       ref={ref}
       className={cn("w-fit transition duration-200 ease-linear", className)}
       {...rest}
     >
       {children}
-    </Tag>
+    </TagElement>
   );
 }
 
