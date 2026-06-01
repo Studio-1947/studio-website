@@ -191,24 +191,8 @@ export default function Navbar() {
                   />
                 </Link>
               </motion.div>
-            ) : !isHomepage ? (
-              <motion.div
-                key="home"
-                initial={{ x: -20, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: -20, opacity: 0 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
-              >
-                <Link
-                  to="/"
-                  style={linkStyle}
-                  className="whitespace-nowrap transition-colors duration-200 text-[#8C8484] hover:text-[#D80000]"
-                >
-                  Home
-                </Link>
-              </motion.div>
             ) : (
-              <div className="h-8" />
+              <div key="placeholder" className="h-8" />
             )}
           </AnimatePresence>
 
@@ -245,6 +229,15 @@ export default function Navbar() {
               className="flex flex-col items-center justify-center px-8 pb-8 pt-4 gap-6"
               style={{ background: '#FFF7F7', boxShadow: '0 8px 24px rgba(174, 59, 59, 0.10)' }}
             >
+              <Link
+                to="/"
+                style={{ ...linkStyle, fontSize: '18px', color: isHomepage ? '#D80000' : '#8C8484' }}
+                className={`transition-colors duration-200 text-center ${
+                  isHomepage ? 'underline decoration-2 underline-offset-8' : ''
+                }`}
+              >
+                Home
+              </Link>
               {NAV_LINKS.map((link) => {
                 const isActive =
                   location.pathname === link.href ||
