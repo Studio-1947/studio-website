@@ -85,10 +85,10 @@ export default function BuiltForImpact() {
  {/* Header CTA - Large screens only */}
  <div className="hidden lg:flex items-center gap-3 shrink-0">
  <Link
- to="/ourworks"
+ to="/portfolio"
  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none"
  >
- Our Works
+ Portfolio
  <ArrowUpRight className="w-4 h-4" />
  </Link>
  </div>
@@ -229,10 +229,10 @@ export default function BuiltForImpact() {
  </div>
 
  <Link
- to="/ourworks"
+ to="/portfolio"
  className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-900 text-white text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none"
  >
- Our Works
+ Portfolio
  <ArrowUpRight className="w-4 h-4" />
  </Link>
  </div>

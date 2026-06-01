@@ -136,11 +136,11 @@ export default function VillageWays() {
       {lightboxSrc && (
         <Lightbox src={lightboxSrc} onClose={() => setLightboxSrc(null)} />
       )}
-      <article className="portfoliov2-page bg-[#fafafa] min-h-screen">
+      <article className="portfolio-page bg-[#fafafa] min-h-screen">
         {/* ── Hero ────────────────────────────────────────────────────────── */}
         <div className="relative">
           <Link
-            to="/portfoliov2"
+            to="/portfolio"
             className="absolute top-6 left-6 z-[60] flex items-center justify-center w-10 h-10 md:w-14 md:h-14 bg-[#D60000] rounded-full shadow-lg hover:bg-[#B80000] transition-colors"
             aria-label="Go back"
           >

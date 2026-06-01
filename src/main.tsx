@@ -47,30 +47,19 @@ const Sundargaan = lazy(() => import("./pages/collabs/Sundargaan.tsx"));
 // Figma test page (temporary)
 const FigmaTest = lazy(() => import("./pages/figma/FigmaTest.tsx"));
 
-// Our Work pages
-const FesIndia = lazy(() => import("./pages/ourwork/FesIndia.tsx"));
-const RemodelUn = lazy(() => import("./pages/ourwork/RemodelUn.tsx"));
-const Rajkamal = lazy(() => import("./pages/ourwork/Rajkamal.tsx"));
-const FermyLab = lazy(() => import("./pages/ourwork/FermyLab.tsx"));
-const Awch = lazy(() => import("./pages/ourwork/Awch.tsx"));
-const JanSahas = lazy(() => import("./pages/ourwork/JanSahas.tsx"));
-const Givfunds = lazy(() => import("./pages/ourwork/Givfunds.tsx"));
-const VillageWays = lazy(() => import("./pages/ourwork/VillageWays.tsx"));
-const LocalFutures = lazy(() => import("./pages/ourwork/LocalFutures.tsx"));
-const AllWorks = lazy(() => import("./pages/ourwork/AllWorks.tsx"));
-
-// Portfolio V2 pages
-const PortfolioV2 = lazy(() => import("./pages/portfoliov2/Portfolio.tsx"));
-const RemodelUNv2 = lazy(() => import("./pages/portfoliov2/RemodelUN.tsx"));
-const FermyLabV2 = lazy(() => import("./pages/portfoliov2/FermyLab.tsx"));
-const RajkamalV2 = lazy(() => import("./pages/portfoliov2/RajkamalPrakashan.tsx"));
-const AwchV2 = lazy(() => import("./pages/portfoliov2/Awch.tsx"));
+// V2 Portfolio Components
+const PortfolioV2 = lazy(() => import("./pages/portfolio/Portfolio.tsx"));
+const RemodelUNv2 = lazy(() => import("./pages/portfolio/RemodelUN.tsx"));
+const FermyLabV2 = lazy(() => import("./pages/portfolio/FermyLab.tsx"));
+const RajkamalV2 = lazy(() => import("./pages/portfolio/RajkamalPrakashan.tsx"));
+const AwchV2 = lazy(() => import("./pages/portfolio/Awch.tsx"));
 const LocalFuturesV2 = lazy(
-  () => import("./pages/portfoliov2/LocalFutures.tsx"),
+  () => import("./pages/portfolio/LocalFutures.tsx"),
 );
 const VillageWaysV2 = lazy(
-  () => import("./pages/portfoliov2/VillageWays.tsx"),
+  () => import("./pages/portfolio/VillageWays.tsx"),
 );
+const AiCrowdV2 = lazy(() => import("./pages/portfolio/AiCrowd.tsx"));
 
 const HomeV2 = lazy(() => import("./pages/HomeV2.tsx"));
 
@@ -176,31 +165,23 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/figma" element={<FigmaTest />} />
 
           {/* Portfolio V2 Routes */}
-          <Route path="/portfoliov2" element={<PortfolioV2 />} />
-          <Route path="/portfoliov2/remodel-un" element={<RemodelUNv2 />} />
-          <Route path="/portfoliov2/fermy-lab" element={<FermyLabV2 />} />
-          <Route path="/portfoliov2/rajkamal-prakashan" element={<RajkamalV2 />} />
-          <Route path="/portfoliov2/awch" element={<AwchV2 />} />
+          <Route path="/portfolio" element={<PortfolioV2 />} />
+          <Route path="/portfolio/remodel-un" element={<RemodelUNv2 />} />
+          <Route path="/portfolio/fermy-lab" element={<FermyLabV2 />} />
+          <Route path="/portfolio/rajkamal-prakashan" element={<RajkamalV2 />} />
+          <Route path="/portfolio/awch" element={<AwchV2 />} />
           <Route
-            path="/portfoliov2/local-futures"
+            path="/portfolio/local-futures"
             element={<LocalFuturesV2 />}
           />
           <Route
-            path="/portfoliov2/village-ways"
+            path="/portfolio/village-ways"
             element={<VillageWaysV2 />}
           />
+          <Route path="/portfolio/ai-crowd" element={<AiCrowdV2 />} />
 
           {/* Our Work Routes */}
-          <Route path="/ourworks" element={<AllWorks />} />
-          <Route path="/ourwork/fes-india" element={<FesIndia />} />
-          <Route path="/ourwork/remodel-un" element={<RemodelUn />} />
-          <Route path="/ourwork/rajkamal" element={<Rajkamal />} />
-          <Route path="/ourwork/fermylab" element={<FermyLab />} />
-          <Route path="/ourwork/awch" element={<Awch />} />
-          <Route path="/ourwork/jansahas" element={<JanSahas />} />
-          <Route path="/ourwork/village-ways" element={<VillageWays />} />
-          <Route path="/ourwork/local-futures" element={<LocalFutures />} />
-          <Route path="/ourwork/givfunds" element={<Givfunds />} />
+
 
           {/* Legal Routes */}
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
