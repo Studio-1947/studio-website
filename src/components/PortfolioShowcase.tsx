@@ -8,10 +8,19 @@ const IMG_RAJKAMAL      = '/portfolio/rajkamal/hero.svg';
 const IMG_AWCH          = '/portfolio/awch/hero.png';
 const IMG_LOCAL_FUTURES = '/portfolio/localFutures/hero.png';
 const IMG_VILLAGE_WAYS  = '/portfolio/villageWays/hero.png';
+const IMG_AI_CROWD      = '/portfolio/aiCrowd/hero.svg';
 
 const PROJECTS = [
   {
-    slug: '/portfoliov2/remodel-un',
+    slug: '/portfolio/ai-crowd',
+    title: 'AI Crowd',
+    subtitle: 'Capacity Building & Visual Communication',
+    tags: ['Science', 'Communication', 'Visualisation'],
+    image: IMG_AI_CROWD,
+    accent: '#D60000',
+  },
+  {
+    slug: '/portfolio/remodel-un',
     title: 'ReModel UN',
     subtitle: 'Brand Identity & Visual System',
     tags: ['Brand Strategy', 'Identity Design', 'UI/UX', 'Motion'],
@@ -20,7 +29,7 @@ const PROJECTS = [
     tagBreakAt: 2,
   },
   {
-    slug: '/portfoliov2/fermy-lab',
+    slug: '/portfolio/fermy-lab',
     title: 'Fermy Lab',
     subtitle: 'Master Brand Architecture & Omnichannel System',
     tags: ['Brand Strategy', 'Packaging Design', 'UI System', 'OOH'],
@@ -28,7 +37,7 @@ const PROJECTS = [
     accent: '#3E843E',
   },
   {
-    slug: '/portfoliov2/rajkamal-prakashan',
+    slug: '/portfolio/rajkamal-prakashan',
     title: 'Rajkamal Prakashan',
     subtitle: 'Brand Governance, Enterprise Digital & Omnichannel Event Execution',
     tags: ['Brand Strategy', 'Brand Governance', 'Enterprise Digital', 'Omnichannel'],
@@ -36,7 +45,7 @@ const PROJECTS = [
     accent: '#D80000',
   },
   {
-    slug: '/portfoliov2/awch',
+    slug: '/portfolio/awch',
     title: 'AWCH',
     subtitle: 'Avishkar Women & Children Hospital — Brand, Digital & Social System',
     tags: ['Brand Strategy', 'Visual Identity', 'Digital Platform', 'Social Media'],
@@ -44,7 +53,7 @@ const PROJECTS = [
     accent: '#BF0076',
   },
   {
-    slug: '/portfoliov2/local-futures',
+    slug: '/portfolio/local-futures',
     title: 'Local Futures',
     subtitle: 'Graphics Localization for Hindi-Language Documentary Short',
     tags: ['Graphics Localization', 'Motion Graphics', 'Devanagari', 'Hindi'],
@@ -52,7 +61,7 @@ const PROJECTS = [
     accent: '#1c8aaa',
   },
   {
-    slug: '/portfoliov2/village-ways',
+    slug: '/portfolio/village-ways',
     title: 'Village Ways',
     subtitle: 'Capacity Building & Community Visual Communication System',
     tags: ['Brand Strategy', 'Print Design', 'Social Media', 'Capacity Building'],
@@ -77,7 +86,7 @@ export default function PortfolioShowcase() {
             </h2>
           </div>
           <Link
-            to="/portfoliov2"
+            to="/portfolio"
             className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-gray-900 text-white text-sm font-semibold hover:opacity-80 active:scale-95 transition-all select-none shrink-0"
           >
             View All
@@ -87,7 +96,7 @@ export default function PortfolioShowcase() {
 
         {/* Grid of 3 by 2 (on large screens) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {PROJECTS.map((project, i) => (
+          {PROJECTS.slice(0, 6).map((project, i) => (
             <motion.div
               key={project.slug}
               initial={{ opacity: 0, y: 30 }}

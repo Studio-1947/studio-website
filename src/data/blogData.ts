@@ -19,7 +19,7 @@ export const blogs: BlogPost[] = [
     language: "English",
     tags: [],
     excerpt: "Introduction Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken, and the crisp, golden crust of kulchas—all of these culin...",
-    coverImage: "/blogs/Tandoor Legacy.png",
+    coverImage: "/blogs/Origin of the tandoor.png",
     content: `
 Introduction
 Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken,
@@ -1054,7 +1054,7 @@ systems that we honour rhythm over rush, and community over clockwork.
     language: "Nepali",
     tags: [],
     excerpt: "निष्पक्षताको प्रयोग । बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को दशकमा फेलोसिप अफ रिकन्सिलिएसन संस्था मार्फत् र...",
-    coverImage: "/blogs/nishpakshata-ko-prayog.png",
+    coverImage: "/blogs/निष्पक्षताको प्रयोग । _The practice of impartiality_.png",
     content: `
 निष्पक्षताको प्रयोग ।
 बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को
@@ -1215,7 +1215,7 @@ environmental stewardship, and cultural continuity for future generations.
     language: "Bengali",
     tags: [],
     excerpt: "এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শ...",
-    coverImage: "/blogs/era-ora-ebong-studio-1947-blogs.png",
+    coverImage: "/blogs/এরা ওরা এবং _ STUDIO 1947 BLOGS.png",
     content: `
 এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে
 চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শেষ কি? দুই আর চারে? দুই আর চারে কত? না,
@@ -1537,7 +1537,7 @@ anyone. Stay in your lane. Drive slow, drive safe, but drive.”
     language: "Bengali",
     tags: [],
     excerpt: "আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক...",
-    coverImage: "/blogs/pakhi-basay-design-thinking.png",
+    coverImage: "/blogs/bird's nest.png",
     content: `
 আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম
 যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক্ষ্য করেছি—কাঁচ জিনিসটা

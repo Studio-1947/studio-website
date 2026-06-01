@@ -107,7 +107,7 @@ export default function FigmaTest() {
                 {/* ── Back nav ─────────────────────────────────────────────── */}
                 <div className="pt-28 px-8 lg:px-20 max-w-[1440px] mx-auto">
                     <Link
-                        to="/ourwork/remodel-un"
+                        to="/portfolio/remodel-un"
                         className="inline-flex items-center gap-3 group w-fit"
                     >
                         <span className="w-9 h-9 border border-[#ddd] rounded-full flex items-center justify-center transition-all duration-200 group-hover:bg-[#111] group-hover:border-[#111]">

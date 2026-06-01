@@ -9,6 +9,7 @@ const IMG_RAJKAMAL      = '/portfolio/rajkamal/hero.svg';
 const IMG_AWCH          = '/portfolio/awch/hero.png';
 const IMG_LOCAL_FUTURES = '/portfolio/localFutures/hero.png';
 const IMG_VILLAGE_WAYS  = '/portfolio/villageWays/hero.png';
+const IMG_AI_CROWD      = '/portfolio/aiCrowd/hero.svg';
 
 interface Project {
   slug: string;
@@ -20,6 +21,14 @@ interface Project {
 }
 
 const PROJECTS: Project[] = [
+  {
+    slug: '/portfoliov2/ai-crowd',
+    title: 'AI Crowd',
+    subtitle: 'Capacity Building & Visual Communication',
+    tags: ['Science', 'Communication', 'Visualisation'],
+    image: IMG_AI_CROWD,
+    accent: '#D60000',
+  },
   {
     slug: '/portfoliov2/remodel-un',
     title: 'ReModel UN',
@@ -72,7 +81,7 @@ const PROJECTS: Project[] = [
 
 export default function PortfolioV2() {
   usePageMeta({
-    title: 'Portfolio V2 – Studio 1947',
+    title: 'Portfolio – Studio 1947',
     description: 'A new generation of Studio 1947 case studies — brand identities, visual systems, and omnichannel design.',
   });
 
@@ -82,7 +91,7 @@ export default function PortfolioV2() {
 
   return (
     <Layout>
-      <div className="portfoliov2-page min-h-screen bg-[#F7F5F2] pt-32 pb-24">
+      <div className="portfolio-page min-h-screen bg-[#F7F5F2] pt-32 pb-24">
         <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
 
           {/* Header */}

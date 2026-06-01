@@ -13,8 +13,8 @@ export default function ThemeToggle() {
 
  useEffect(() => {
  const isOurWorkRoute =
- location.pathname === "/ourworks" ||
- location.pathname.startsWith("/ourwork/");
+ location.pathname === "/portfolio" ||
+ location.pathname.startsWith("/portfolio/");
 
  if (isOurWorkRoute) {
  setIsDark(false);
