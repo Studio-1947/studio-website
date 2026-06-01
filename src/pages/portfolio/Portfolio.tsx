@@ -22,7 +22,7 @@ interface Project {
 
 const PROJECTS: Project[] = [
   {
-    slug: '/portfoliov2/ai-crowd',
+    slug: '/portfolio/ai-crowd',
     title: 'AI Crowd',
     subtitle: 'Capacity Building & Visual Communication',
     tags: ['Science', 'Communication', 'Visualisation'],
@@ -30,7 +30,7 @@ const PROJECTS: Project[] = [
     accent: '#D60000',
   },
   {
-    slug: '/portfoliov2/remodel-un',
+    slug: '/portfolio/remodel-un',
     title: 'ReModel UN',
     subtitle: 'Brand Identity & Visual System',
     tags: ['Brand Strategy', 'Identity Design', 'UI/UX', 'Motion'],
@@ -38,7 +38,7 @@ const PROJECTS: Project[] = [
     accent: '#00E357',
   },
   {
-    slug: '/portfoliov2/fermy-lab',
+    slug: '/portfolio/fermy-lab',
     title: 'Fermy Lab',
     subtitle: 'Master Brand Architecture & Omnichannel System',
     tags: ['Brand Strategy', 'Packaging Design', 'UI System', 'OOH'],
@@ -46,7 +46,7 @@ const PROJECTS: Project[] = [
     accent: '#3E843E',
   },
   {
-    slug: '/portfoliov2/rajkamal-prakashan',
+    slug: '/portfolio/rajkamal-prakashan',
     title: 'Rajkamal Prakashan',
     subtitle: 'Brand Governance, Enterprise Digital & Omnichannel Event Execution',
     tags: ['Brand Strategy', 'Brand Governance', 'Enterprise Digital', 'Omnichannel'],
@@ -54,7 +54,7 @@ const PROJECTS: Project[] = [
     accent: '#D80000',
   },
   {
-    slug: '/portfoliov2/awch',
+    slug: '/portfolio/awch',
     title: 'AWCH',
     subtitle: 'Avishkar Women & Children Hospital — Brand, Digital & Social System',
     tags: ['Brand Strategy', 'Visual Identity', 'Digital Platform', 'Social Media'],
@@ -62,7 +62,7 @@ const PROJECTS: Project[] = [
     accent: '#BF0076',
   },
   {
-    slug: '/portfoliov2/local-futures',
+    slug: '/portfolio/local-futures',
     title: 'Local Futures',
     subtitle: 'Graphics Localization for Hindi-Language Documentary Short',
     tags: ['Graphics Localization', 'Motion Graphics', 'Devanagari', 'Hindi'],
@@ -70,7 +70,7 @@ const PROJECTS: Project[] = [
     accent: '#1c8aaa',
   },
   {
-    slug: '/portfoliov2/village-ways',
+    slug: '/portfolio/village-ways',
     title: 'Village Ways',
     subtitle: 'Capacity Building & Community Visual Communication System',
     tags: ['Brand Strategy', 'Print Design', 'Social Media', 'Capacity Building'],
