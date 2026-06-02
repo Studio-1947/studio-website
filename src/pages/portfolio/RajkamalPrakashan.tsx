@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import PortfolioCTA from "../../components/PortfolioCTA";
+import ProjectCredits from "../../components/ProjectCredits";
 
 // ── Local assets (public/portfolio/rejkamal/) ─────────────────────────────────
 const IMG_HERO = "/portfolio/rajkamal/hero.svg";
@@ -583,7 +584,25 @@ export default function RajkamalPrakashan() {
             </Body>
           </section>
 
-          {/* ── CTA ─────────────────────────────────────────────────────────── */}
+          {/* -- Credits --------------------------------------------------- */}
+          <ProjectCredits 
+            client="Rajkamal Prakashan"
+            accentColor="#E52F1D"
+            roles={[
+              { role: "Client Handling", members: "Rabi" },
+              { role: "Creative Direction", members: "Rabi" },
+              { role: "Design", members: "Zahid, Soumajit" },
+              { role: "Strategy", members: "Studio 1947 Team" },
+              { role: "Data", members: "Sankhadipta" },
+              { role: "Technology Build", members: "Soumic" },
+              { role: "Ads Management", members: "Sankhadipta, Santam" },
+              { role: "Internal Communication", members: "Santam" },
+              { role: "3D Character", members: "Nikhil Rai" },
+              { role: "Brand Guideline", members: "Soumajit" }
+            ]}
+          />
+
+          {/* -- CTA -------------------------------------------------------- */}
           <PortfolioCTA />
         </div>
       </article>

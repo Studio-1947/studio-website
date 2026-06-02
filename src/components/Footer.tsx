@@ -104,7 +104,7 @@ export default function Footer() {
         { label: "Home", href: "/" },
         { label: "Our Story", href: "/our-story" },
         { label: "Solutions", href: "/solutions" },
-        { label: "Products", href: "/products" },
+        { label: "Products", href: "/products-and-services" },
         { label: "About Us", href: "/about" },
       ],
     },

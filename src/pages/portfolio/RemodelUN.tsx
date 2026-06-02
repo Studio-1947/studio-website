@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import PortfolioCTA from "../../components/PortfolioCTA";
+import ProjectCredits from "../../components/ProjectCredits";
 
 // ── Assets (public/portfolio/remodelUN/) ──────────────────────────────────────
 const IMG_HERO = "/portfolio/remodelUN/hero.svg";
@@ -776,6 +777,17 @@ export default function RemodelUN() {
               withstand real-world production demands.
             </Body>
           </section>
+
+          {/* ── Credits ─────────────────────────────────────────────────── */}
+          <ProjectCredits 
+            client="AIcrowd"
+            accentColor="#00E357"
+            roles={[
+              { role: "Creative Direction", members: "Rabi" },
+              { role: "Logo Concept & Design", members: "Rabi, Mohanty" },
+              { role: "Brand Guideline", members: "Rabi, Zahid, Sneha" }
+            ]}
+          />
 
           {/* ── CTA ───────────────────────────────────────────────────── */}
           <PortfolioCTA />

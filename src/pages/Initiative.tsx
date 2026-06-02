@@ -17,7 +17,7 @@ const initiatives = [
  id: "sirf-local",
  title: "Sirf Local",
  description:
- "A dedicated platform showcasing exclusively local products, artisans, and experiences, fostering micro-economies and cultural pride.",
+ "Empowering local businesses through data, design, technology, communication & research based solutions.",
  href: "https://www.sirflocal.in/",
  image:
  "https://images.unsplash.com/photo-1558522195-e1201b090344?q=80&w=2000&auto=format&fit=crop", // Replace with actual image later
@@ -137,13 +137,11 @@ export default function Initiative() {
 
  <div className="overflow-hidden">
  <motion.p
- initial={{ opacity: 0, height: 0 }}
  animate={{
- opacity: hoveredCard === initiative.id ? 1 : 0.7,
- height: hoveredCard === initiative.id ? "auto" : "3rem",
+ opacity: hoveredCard === initiative.id ? 1 : 0.75,
  }}
  transition={{ duration: 0.3 }}
- className="text-gray-300 text-lg leading-relaxed line-clamp-2 md:line-clamp-none"
+ className="text-gray-300 text-lg leading-relaxed"
  >
  {initiative.description}
  </motion.p>

@@ -12,7 +12,7 @@ interface SearchResult {
 const items: SearchResult[] = [
  { id: '1', title: 'Home', path: '/', category: 'Page' },
  { id: '2', title: 'About Us', path: '/about', category: 'Page' },
- { id: '3', title: 'Products', path: '/products', category: 'Page' },
+ { id: '3', title: 'Products', path: '/products-and-services', category: 'Page' },
  { id: '4', title: 'Solutions', path: '/solutions', category: 'Page' },
  { id: '5', title: 'Collabs', path: '/collabs', category: 'Page' },
  { id: '6', title: 'Initiative', path: '/initiative', category: 'Page' },

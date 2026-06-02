@@ -76,13 +76,13 @@ export default function Services() {
                 "0px 0px 10px rgba(255,255,255,1), 0px 0px 5px rgba(255,255,255,0.8)",
             }}
           >
-            From performance marketing and cutting-edge web development to
-            high-end photography and brand strategy, we provide everything your
-            business needs to scale elegantly and efficiently.
+            From performance marketing and cutting-edge web development to brand
+            strategy, we provide everything your business needs to scale
+            elegantly and efficiently.
           </p>
 
           <Link
-            to="/solutions"
+            to="/products-and-services#services"
             className="animate-item relative z-40 inline-flex items-center justify-center px-8 py-3 rounded-full font-medium text-white bg-[#383649] border-0 hover:bg-white hover:text-[#383649] transition-colors duration-300"
           >
             Explore All Solutions

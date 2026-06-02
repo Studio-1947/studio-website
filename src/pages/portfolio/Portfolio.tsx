@@ -23,7 +23,7 @@ interface Project {
 const PROJECTS: Project[] = [
   {
     slug: '/portfolio/ai-crowd',
-    title: 'AI Crowd',
+    title: 'AIcrowd',
     subtitle: 'Capacity Building & Visual Communication',
     tags: ['Science', 'Communication', 'Visualisation'],
     image: IMG_AI_CROWD,
@@ -77,6 +77,14 @@ const PROJECTS: Project[] = [
     image: IMG_VILLAGE_WAYS,
     accent: '#94c11f',
   },
+  {
+    slug: '/portfolio/mirik-college',
+    title: 'Mirik College',
+    subtitle: 'Capacity Building through trainings beyond the Classroom',
+    tags: ['Capacity Building', 'Research', 'Education'],
+    image: '/ourworks/mirikCollege/hero.avif',
+    accent: '#ff3b00',
+  },
 ];
 
 export default function PortfolioV2() {
@@ -92,7 +100,7 @@ export default function PortfolioV2() {
   return (
     <Layout>
       <div className="portfolio-page min-h-screen bg-[#F7F5F2] pt-32 pb-24">
-        <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="w-full px-5 sm:px-8 lg:px-12">
 
           {/* Header */}
           <div className="mb-20">
@@ -109,7 +117,7 @@ export default function PortfolioV2() {
           </div>
 
           {/* Project list */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             {PROJECTS.map((project, i) => (
               <Link
                 key={project.slug}
@@ -156,7 +164,7 @@ export default function PortfolioV2() {
                       className="text-sm font-bold tracking-wide transition-colors duration-300"
                       style={{ color: project.accent }}
                     >
-                      View Case Study
+                      View Portfolio
                     </span>
                     <svg
                       className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1"

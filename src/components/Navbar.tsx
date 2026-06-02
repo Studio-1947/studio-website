@@ -8,7 +8,7 @@ const NAV_LINKS = [
   { name: 'Blogs', href: '/blogs' },
   { name: 'Portfolio', href: '/portfolio' },
   { name: 'Initiatives', href: '/initiative' },
-  { name: 'Products & Services', href: '/products' },
+  { name: 'Products & Services', href: '/products-and-services' },
 ];
 
 const linkStyle = {

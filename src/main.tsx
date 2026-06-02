@@ -27,11 +27,11 @@ const Blogs = lazy(() => import("./pages/blogs/Blogs.tsx"));
 const BlogPost = lazy(() => import("./pages/blogs/BlogPost.tsx"));
 
 // Product pages
-const Products = lazy(() => import("./pages/products/Products.tsx"));
-const Doptor = lazy(() => import("./pages/products/Doptor.tsx"));
-const Angan = lazy(() => import("./pages/products/Angan.tsx"));
-const DataAnalysis = lazy(() => import("./pages/products/DataAnalysis.tsx"));
-const SocialMedia = lazy(() => import("./pages/products/SocialMedia.tsx"));
+const ProductsAndServices = lazy(() => import("./pages/products-and-services/ProductsAndServices.tsx"));
+const Doptor = lazy(() => import("./pages/products-and-services/Doptor.tsx"));
+const Angan = lazy(() => import("./pages/products-and-services/Angan.tsx"));
+const DataAnalysis = lazy(() => import("./pages/products-and-services/DataAnalysis.tsx"));
+const SocialMedia = lazy(() => import("./pages/products-and-services/SocialMedia.tsx"));
 
 // Collabs pages
 const WalkingProjectV2 = lazy(
@@ -41,7 +41,7 @@ const AiCrowd = lazy(() => import("./pages/collabs/AiCrowd.tsx"));
 const EcologicalFoundations = lazy(
   () => import("./pages/collabs/EcologicalFoundations.tsx"),
 );
-const MirikCollege = lazy(() => import("./pages/collabs/MirikCollege.tsx"));
+const MirikCollegeV2 = lazy(() => import("./pages/portfolio/MirikCollege.tsx"));
 const Sundargaan = lazy(() => import("./pages/collabs/Sundargaan.tsx"));
 
 // Figma test page (temporary)
@@ -135,11 +135,11 @@ createRoot(document.getElementById("root")!).render(
           <Route path="/blogs/:slug" element={<BlogPost />} />
 
           {/* Product Routes */}
-          <Route path="/products" element={<Products />} />
-          <Route path="/products/doptor" element={<Doptor />} />
-          <Route path="/products/angan" element={<Angan />} />
-          <Route path="/products/data-analysis" element={<DataAnalysis />} />
-          <Route path="/products/social-media" element={<SocialMedia />} />
+          <Route path="/products-and-services" element={<ProductsAndServices />} />
+          <Route path="/products-and-services/doptor" element={<Doptor />} />
+          <Route path="/products-and-services/angan" element={<Angan />} />
+          <Route path="/products-and-services/data-analysis" element={<DataAnalysis />} />
+          <Route path="/products-and-services/social-media" element={<SocialMedia />} />
 
           {/* Collabs Routes */}
           <Route path="/collabs" element={<Navigate to="/" replace />} />
@@ -157,8 +157,8 @@ createRoot(document.getElementById("root")!).render(
             path="/collabs/ecological-foundations"
             element={<EcologicalFoundations />}
           />
-          <Route path="/collabs/mirik-college" element={<MirikCollege />} />
-          <Route path="/collabs/mirikcollege" element={<MirikCollege />} />
+          <Route path="/collabs/mirik-college" element={<Navigate to="/portfolio/mirik-college" replace />} />
+          <Route path="/collabs/mirikcollege" element={<Navigate to="/portfolio/mirik-college" replace />} />
           <Route path="/collabs/sundargaan" element={<Sundargaan />} />
 
           {/* Figma test route (temporary) */}
@@ -179,6 +179,7 @@ createRoot(document.getElementById("root")!).render(
             element={<VillageWaysV2 />}
           />
           <Route path="/portfolio/ai-crowd" element={<AiCrowdV2 />} />
+          <Route path="/portfolio/mirik-college" element={<MirikCollegeV2 />} />
 
           {/* Our Work Routes */}
 

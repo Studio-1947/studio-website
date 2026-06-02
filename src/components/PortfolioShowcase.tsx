@@ -154,7 +154,7 @@ export default function PortfolioShowcase() {
                       className="text-xs font-bold tracking-wide"
                       style={{ color: project.accent }}
                     >
-                      View Case Study
+                      View Portfolio
                     </span>
                     <svg
                       className="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1"
