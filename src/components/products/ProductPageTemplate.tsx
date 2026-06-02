@@ -42,7 +42,7 @@ export default function ProductPageTemplate({ product }: Props) {
 
  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <Link
- to="/products"
+ to="/products-and-services"
  className="inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-gray-400 hover:text-gray-700 transition-colors mb-16"
  >
  <svg
@@ -254,7 +254,7 @@ export default function ProductPageTemplate({ product }: Props) {
  Get in Touch
  </button>
  <Link
- to="/products"
+ to="/products-and-services"
  className="px-8 py-4 rounded-full font-bold border border-white/30 text-white hover:bg-white/10 transition-colors"
  >
  Explore Other Products

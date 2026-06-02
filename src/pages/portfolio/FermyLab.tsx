@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import PortfolioCTA from "../../components/PortfolioCTA";
+import ProjectCredits from "../../components/ProjectCredits";
 
 // ── Local assets (public/portfolio/fermylab/) ─────────────────────────────────
 const IMG_HERO = "/portfolio/fermylab/The-Horizontal-Lockup.png";
@@ -692,6 +693,17 @@ export default function FermyLab() {
               confidence and zero added design debt.
             </Body>
           </section>
+
+          {/* ── Credits ─────────────────────────────────────────────────── */}
+          <ProjectCredits 
+            client="Fermy Lab"
+            accentColor="#3E843E"
+            roles={[
+              { role: "Creative Direction", members: "Rabi" },
+              { role: "Logo Concept & Design", members: "Rabi, Mohanty" },
+              { role: "Brand Guideline", members: "Soumajit, Anudyia" }
+            ]}
+          />
 
           {/* ── CTA ──────────────────────────────────────────────────────── */}
           <PortfolioCTA />

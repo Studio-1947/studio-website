@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../components/Layout';
 import { usePageMeta } from '../../hooks/usePageMeta';
+import ProjectCredits from '../../components/ProjectCredits';
 
 const work = [
  {
@@ -164,6 +165,19 @@ const EcologicalFoundations: React.FC = () => {
  </div>
  </section>
 
+ {/* ── CREDITS ── */}
+ <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-12 md:pb-20">
+ <ProjectCredits 
+  client="FES India"
+  accentColor="#059669"
+  roles={[
+  { role: "Creative Direction", members: "Rabi" },
+  { role: "Brochure Cover", members: "Rabi, Zahid, Manvi" },
+  { role: "Brochures Layout & Design", members: "Soumajit, Anudyia" }
+  ]}
+ />
+ </div>
+
  {/* ── DIVIDER ── */}
  <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
  <div className="border-t border-gray-100" />
@@ -192,7 +206,7 @@ const EcologicalFoundations: React.FC = () => {
  to="/collabs/ai-crowd"
  className="px-6 py-3 rounded-full border border-gray-200 text-sm font-bold text-gray-700 hover:border-gray-400 hover:text-gray-900 transition-colors"
  >
- AICrowd
+ AIcrowd
  </Link>
  <Link
  to="/collabs/mirikcollege"

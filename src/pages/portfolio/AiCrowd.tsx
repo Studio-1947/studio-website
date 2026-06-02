@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import PortfolioCTA from "../../components/PortfolioCTA";
+import ProjectCredits from "../../components/ProjectCredits";
 
 const IMG_HERO = "/portfolio/aiCrowd/hero.svg";
 const IMG_PHASE1_1 = "/portfolio/aiCrowd/Amazon_KDD_Cup_2024.svg";
@@ -116,9 +117,9 @@ function Lightbox({
 // ── Page ──────────────────────────────────────────────────────────────────────
 export default function AiCrowd() {
   usePageMeta({
-    title: "AI Crowd – Portfolio – Studio 1947",
+    title: "AIcrowd – Portfolio – Studio 1947",
     description:
-      "A deep-tech design methodology translating highly complex, multi-dimensional machine learning challenges for AI Crowd.",
+      "A deep-tech design methodology translating highly complex, multi-dimensional machine learning challenges for AIcrowd.",
   });
 
   const [lightboxSrc, setLightboxSrc] = useState<{
@@ -153,7 +154,7 @@ export default function AiCrowd() {
           </Link>
           <img
             src={IMG_HERO}
-            alt="AI Crowd Hero"
+            alt="AIcrowd Hero"
             className="w-full h-[60vh] md:h-[80vh] object-cover"
             loading="eager"
             decoding="async"
@@ -166,7 +167,7 @@ export default function AiCrowd() {
               </span>
             </div>
             <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white tracking-tight leading-none mb-4">
-              AI Crowd
+              AIcrowd
             </h1>
             {/* <div className="flex items-center gap-2">
                <span className="text-white/80 font-medium">Created by:</span>
@@ -470,6 +471,15 @@ export default function AiCrowd() {
               Our decade-spanning engagement with AIcrowd highlights our ultimate competitive advantage: we speak deep-tech fluently. By completely avoiding generic, shallow tech templates, Studio 1947 delivers a rigorous, data-faithful visual architecture that respects the intelligence of the scientific community. We ensure that every challenge interface, dataset callout, and enterprise brand asset looks authoritative, inspiring, and ready to mobilize the world's finest algorithmic minds.
             </Body>
           </section>
+
+          {/* ── Credits ─────────────────────────────────────────────────── */}
+          <ProjectCredits 
+            client="AIcrowd"
+            accentColor="#D60000"
+            roles={[
+              { role: "Science Comm & Visualization", members: "Rabi, Sneha, Mohanty" }
+            ]}
+          />
 
           {/* ── CTA ──────────────────────────────────────────────────────── */}
           <PortfolioCTA />

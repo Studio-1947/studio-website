@@ -35,7 +35,7 @@ export const verticalsSectionData: VerticalsSectionData = {
       featured: true,
       className: "sm:col-span-2 min-h-[31rem]",
       ctaLabel: "Explore products",
-      ctaHref: "/products",
+      ctaHref: "/products-and-services",
     },
     {
       id: "collaborations",
@@ -45,8 +45,8 @@ export const verticalsSectionData: VerticalsSectionData = {
       image: "/vertical/collabs.jpg",
       tone: "emerald",
       className: "min-h-[19rem]",
-      ctaLabel: "View collaborations",
-      ctaHref: "/collabs",
+      ctaLabel: "View portfolio",
+      ctaHref: "/portfolio",
     },
     {
       id: "solutions",

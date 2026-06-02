@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import PortfolioCTA from "../../components/PortfolioCTA";
+import ProjectCredits from "../../components/ProjectCredits";
 
 // ── Brand colors ──────────────────────────────────────────────────────────────
 const GREEN = "#94c11f";
@@ -686,6 +687,17 @@ export default function VillageWays() {
           </section>
 
           <Divider />
+
+          {/* ── Credits ─────────────────────────────────────────────────── */}
+          <ProjectCredits 
+            client="Village Ways"
+            accentColor="#94c11f"
+            roles={[
+              { role: "Direction", members: "Rabi, Pinaki" },
+              { role: "Brochure", members: "Rabi" },
+              { role: "Calendar", members: "Rabi, Zahid, Anudyia" }
+            ]}
+          />
 
           {/* ── CTA ─────────────────────────────────────────────────────────── */}
           <PortfolioCTA />

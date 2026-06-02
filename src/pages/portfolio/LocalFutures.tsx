@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import PortfolioCTA from "../../components/PortfolioCTA";
+import ProjectCredits from "../../components/ProjectCredits";
 
 // ── Assets ────────────────────────────────────────────────────────────────────
 const IMG_HERO = "/portfolio/localFutures/hero.png";
@@ -330,6 +331,19 @@ export default function LocalFutures() {
           </section>
 
           <Divider />
+
+          {/* ── Credits ─────────────────────────────────────────────────── */}
+          <ProjectCredits 
+            client="Local Futures"
+            accentColor="#D60000"
+            roles={[
+              { role: "Localization", members: "Studio 1947 (www.1947.io)" },
+              { role: "Translation & Digital Script", members: "Nadia Imam, Ranjan Kumar, Ataur Rahman" },
+              { role: "Voiceover", members: "Salman Salim" },
+              { role: "Illustration", members: "Pragya Jaiswal" },
+              { role: "Animation", members: "Ahmed Baig" }
+            ]}
+          />
 
           {/* ── CTA ─────────────────────────────────────────────────────────── */}
           <PortfolioCTA />

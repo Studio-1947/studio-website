@@ -4,6 +4,7 @@ import { ArrowLeft } from "lucide-react";
 import Layout from "../../components/Layout";
 import { usePageMeta } from "../../hooks/usePageMeta";
 import PortfolioCTA from "../../components/PortfolioCTA";
+import ProjectCredits from "../../components/ProjectCredits";
 
 // ── Assets ────────────────────────────────────────────────────────────────────
 const IMG_HERO = "/portfolio/awch/hero.png";
@@ -486,6 +487,19 @@ export default function Awch() {
           </section>
 
           <Divider />
+
+          {/* ── Credits ─────────────────────────────────────────────────── */}
+          <ProjectCredits 
+            client="Avishkar"
+            accentColor="#004A99"
+            roles={[
+              { role: "Creative Direction", members: "Rabi, Soumajit" },
+              { role: "Design", members: "Zahid, Nikhil Subba" },
+              { role: "Content", members: "Nadia, Sweety" },
+              { role: "Website Design & Development", members: "Soumajit, Santam" },
+              { role: "Video", members: "Ahmed, Nikhil Subba" }
+            ]}
+          />
 
           {/* ── CTA ─────────────────────────────────────────────────────────── */}
           <PortfolioCTA />
