@@ -12,101 +12,84 @@ export interface BlogPost {
 
 export const blogs: BlogPost[] = [
   {
-    slug: "tandoor-legacy-punjabs-village-cooking-shaped-global-cuisine",
-    title: "Tandoor Legacy: Punjab’s Village Cooking Shaped Global Cuisine",
+    slug: "the-tandoor-legacy-how-punjabs-village-cooking-tradition-shaped-global-cuisine",
+    title:
+      "The ‘Tandoor’ Legacy: How Punjab’s Village Cooking Tradition Shaped Global Cuisine",
     author: "Shivam Gupta",
     date: "Apr 2, 2025",
     language: "English",
     tags: [],
-    excerpt: "Introduction Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken, and the crisp, golden crust of kulchas—all of these culin...",
+    excerpt:
+      "Introduction Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken, and the crisp, golden crust of kulchas—all of these culin...",
     coverImage: "/blogs/Origin of the tandoor.png",
-    content: `
-Introduction
-Imagine the aroma of freshly baked naan, the smoky essence of tandoori chicken,
-and the crisp, golden crust of kulchas—all of these culinary delights share one thing
-in common: the tandoor. This traditional clay oven, rooted deeply in the culture of
-Punjab, has transcended regional boundaries to become a staple in kitchens and
-restaurants across the world. But how did a humble village cooking technique
-influence global cuisine? Let’s explore the incredible journey of the tandoor, its
-historical significance, and its lasting impact on food culture worldwide.
+    content: `Introduction
+
+Imagine the aroma of freshly baked *naan*, the smoky essence of *tandoori* chicken, and the crisp, golden crust of *kulchas*—all of these culinary delights share one thing in common: the *tandoor*. This traditional clay oven, rooted deeply in the culture of Punjab, has transcended regional boundaries to become a staple in kitchens and restaurants across the world. But how did a humble village cooking technique influence global cuisine? Let’s explore the incredible journey of the *tandoor*, its historical significance, and its lasting impact on food culture worldwide.
+
 The Origins of the Tandoor: A Fiery Invention
 
-The tandoor’s history can be traced back thousands of years, with evidence of its
-use found in the Indus Valley Civilization (around 2500 BCE). Archaeologists have
-unearthed remains of cylindrical clay ovens in ancient settlements like Harappa and
-Mohenjo-Daro, suggesting that the people of this era baked bread similar to
-modern-day roti and naan.
-However, the tandoor, as we know it today, became a defining feature of Punjabi
-cuisine during the Mughal era. The Mughals, known for their love of rich, flavorful
-food, adopted and refined tandoor cooking techniques, making dishes like tandoori
-meats and kebabs famous across the Indian subcontinent. Over time, the tandoor
-became an essential part of village life in Punjab, with every home or community
-center having one.
+### Ancient Clay and the Indus Valley
+
+The *tandoor*’s history can be traced back thousands of years, with evidence of its use found in the Indus Valley Civilization (around \`2500 BCE\`). Archaeologists have unearthed remains of cylindrical clay ovens in ancient settlements like Harappa and Mohenjo-Daro, suggesting that the people of this era baked bread similar to modern-day *roti* and *naan*.
+
+### The Royal Refinements of the Mughal Era
+
+However, the *tandoor*, as we know it today, became a defining feature of Punjabi cuisine during the Mughal era. The Mughals, known for their love of rich, flavorful food, adopted and refined *tandoor* cooking techniques, making dishes like *tandoori* meats and kebabs famous across the Indian subcontinent. Over time, the *tandoor* became an essential part of village life in Punjab, with every home or community center having one.
+
 Tandoor: More Than Just a Cooking Tool
-For centuries, the tandoor wasn’t just a cooking appliance—it was a symbol of
-community and togetherness in Punjabi villages. Unlike modern kitchens, where food
-is often prepared in isolation, traditional tandoor cooking was a shared experience.
-● A Community Affair: In many villages, people would take their kneaded
-dough to the communal tandoor to bake rotis or kulchas. The tandoor became
-a place for neighbors to gather, share stories, and bond over food.
-● A Wedding Ritual: Even today, it is common in Punjabi weddings to have a
-‘tandoor night,’ where family members prepare food together as part of the
-pre-wedding celebrations.
-● A Symbol of Hospitality: Offering freshly made tandoori roti with butter or
-ghee is a gesture of warmth and hospitality in Punjabi homes.
+
+### The Communal Hearth of Punjabi Villages
+
+For centuries, the *tandoor* wasn’t just a cooking appliance—it was a symbol of community and togetherness in Punjabi villages. Unlike modern kitchens, where food is often prepared in isolation, traditional *tandoor* cooking was a shared experience.
+
+● A Community Affair: In many villages, people would take their kneaded dough to the communal *tandoor* to bake *rotis* or *kulchas*. The *tandoor* became a place for neighbors to gather, share stories, and bond over food.
+
+● A Wedding Ritual: Even today, it is common in Punjabi weddings to have a ‘*tandoor* night,’ where family members prepare food together as part of the pre-wedding celebrations.
+
+● A Symbol of Hospitality: Offering freshly made *tandoori* *roti* with butter or *ghee* is a gesture of warmth and hospitality in Punjabi homes.
 
 The Magic of Tandoori Cooking
-What makes tandoori food so unique? It’s all in the science of the cooking process.
-The traditional tandoor is a cylindrical clay oven heated with charcoal or wood. When
-food is placed inside, it cooks at extremely high temperatures, often exceeding
-400°C (750°F). The intense heat sears the food quickly, locking in juices and
-creating a delicious smoky flavor that is hard to replicate in a regular oven.
-● Tandoori Roti &amp; Naan: The dough is slapped onto the inner walls of the
-tandoor, where it sticks and bakes to perfection, getting crispy on the outside
-while remaining soft inside.
-● Tandoori Chicken: Marinated in a blend of yogurt and spices, the chicken is
-skewered and cooked in the tandoor, giving it that signature charred and
-smoky taste.
-● Seekh Kebabs: Spiced minced meat is molded onto skewers and roasted in
-the tandoor, making for a succulent and flavorful dish.
-● Amritsari Kulcha: A crispy, stuffed flatbread baked in the tandoor, often filled
-with spiced potatoes and served with chole (chickpeas).
+
+### The Physics of Clay Oven Heat
+
+What makes *tandoori* food so unique? It’s all in the science of the cooking process. The traditional *tandoor* is a cylindrical clay oven heated with charcoal or wood. When food is placed inside, it cooks at extremely high temperatures, often exceeding \`400°C (750°F)\`. The intense heat sears the food quickly, locking in juices and creating a delicious smoky flavor that is hard to replicate in a regular oven.
+
+### Icons of the Tandoori Menu
+
+● *Tandoori* *Roti* & *Naan*: The dough is slapped onto the inner walls of the *tandoor*, where it sticks and bakes to perfection, getting crispy on the outside while remaining soft inside.
+
+● *Tandoori* Chicken: Marinated in a blend of yogurt and spices, the chicken is skewered and cooked in the *tandoor*, giving it that signature charred and smoky taste.
+
+● Seekh Kebabs: Spiced minced meat is molded onto skewers and roasted in the *tandoor*, making for a succulent and flavorful dish.
+
+● Amritsari Kulcha: A crispy, stuffed flatbread baked in the *tandoor*, often filled with spiced potatoes and served with *chole* (chickpeas).
+
 The Tandoor’s Journey Beyond Punjab
-The spread of Punjabi cuisine across India and the world can be largely attributed to
-the partition of 1947. Many Punjabi families, displaced due to the partition, took their
-culinary traditions with them as they migrated to different parts of India and beyond.
-As a result, tandoori cuisine found its way into street food stalls, dhabas (roadside
-eateries), and eventually fine- dining restaurants.
-The global appeal of the tandoor grew rapidly in the 20th century:
 
-● Indian Restaurants Worldwide: From London to New York, Indian restaurants
-made tandoori dishes their highlight, drawing food lovers from all
-backgrounds.
-● Fusion Cuisine: The tandoor’s cooking method inspired chefs globally,
-leading to fusion dishes like tandoori pizzas, tandoori tacos, and even
-tandoori-flavored grilled fish.
-● Home Tandoors: In recent years, portable tandoors and electric versions
-have made their way into modern kitchens, allowing people to recreate the
-authentic flavors at home.
+### Migration, Partition, and Dhabas
+
+The spread of Punjabi cuisine across India and the world can be largely attributed to the partition of \`1947\`. Many Punjabi families, displaced due to the partition, took their culinary traditions with them as they migrated to different parts of India and beyond. As a result, *tandoori* cuisine found its way into street food stalls, *dhabas* (roadside eateries), and eventually fine-dining restaurants.
+
+### Global Expansion and Fusion Culinary Art
+
+The global appeal of the *tandoor* grew rapidly in the 20th century:
+
+● Indian Restaurants Worldwide: From London to New York, Indian restaurants made *tandoori* dishes their highlight, drawing food lovers from all backgrounds.
+
+● Fusion Cuisine: The *tandoor*’s cooking method inspired chefs globally, leading to fusion dishes like *tandoori* pizzas, *tandoori* tacos, and even *tandoori*-flavored grilled fish.
+
+● Home Tandoors: In recent years, portable tandoors and electric versions have made their way into modern kitchens, allowing people to recreate the authentic flavors at home.
+
 The Modern-Day Tandoor: Adapting to Change
-While traditional clay tandoors still hold their charm, modern innovations have made
-tandoor cooking more accessible. Gas tandoors, electric tandoors, and even
-stainless steel versions are now available, making it easier for home cooks and
-restaurant chefs to use this age-old cooking technique. Additionally, with growing
-health consciousness, tandoori food has gained further popularity. Since tandoor
-cooking requires minimal oil and retains the natural flavors of ingredients, it is
-considered a healthier alternative to deep-fried foods.
-Conclusion: A Tradition That Keeps Burning
-The tandoor is not just an oven; it is a legacy that has stood the test of time. From
-ancient Indus Valley kitchens to modern Michelin-starred restaurants, this humble
-clay oven continues to be at the heart of some of the world’s most beloved dishes.
-Whether it’s a smoky naan, a juicy kebab, or a crispy kulcha, the magic of the
-tandoor lives on, bringing people together through the love of food. So, the next time
-you bite into a piece of tandoori chicken or scoop up some curry with warm naan,
 
-remember—you are tasting a piece of Punjab’s rich culinary history, a tradition that
-has truly shaped global cuisine.
-`
+### Convenience and Health in Contemporary Gastronomy
+
+While traditional clay tandoors still hold their charm, modern innovations have made *tandoor* cooking more accessible. Gas tandoors, electric tandoors, and even stainless steel versions are now available, making it easier for home cooks and restaurant chefs to use this age-old cooking technique. Additionally, with growing health consciousness, *tandoori* food has gained further popularity. Since *tandoor* cooking requires minimal oil and retains the natural flavors of ingredients, it is considered a healthier alternative to deep-fried foods.
+
+Conclusion: A Tradition That Keeps Burning
+
+The *tandoor* is not just an oven; it is a legacy that has stood the test of time. From ancient Indus Valley kitchens to modern Michelin-starred restaurants, this humble clay oven continues to be at the heart of some of the world’s most beloved dishes. Whether it’s a smoky *naan*, a juicy kebab, or a crispy *kulcha*, the magic of the *tandoor* lives on, bringing people together through the love of food. So, the next time you bite into a piece of *tandoori* chicken or scoop up some curry with warm *naan*, remember—you are tasting a piece of Punjab’s rich culinary history, a tradition that has truly shaped global cuisine.
+`,
   },
   {
     slug: "the-lost-math-of-kolam",
@@ -115,16 +98,13 @@ has truly shaped global cuisine.
     date: "Jul 2, 2025",
     language: "English",
     tags: [],
-    excerpt: "The Lost Math of Kolam #GenderEquality Mornings in the southern states of India are much the same as anywhere else, with only a small twist—women rise...",
+    excerpt:
+      "The Lost Math of Kolam #GenderEquality Mornings in the southern states of India are much the same as anywhere else, with only a small twist—women rise...",
     coverImage: "/blogs/kolam.png",
-    content: `
-The Lost Math of Kolam
-#GenderEquality
-Mornings in the southern states of India are much the same as anywhere
+    content: `Mornings in the southern states of India are much the same as anywhere
 else, with only a small twist—women rise before dawn, sweep the thresholds
 of their homes, and then sit down to create some of the most intricate
 geometric patterns using rice flour.
-
 
 These designs, known as kolam in Tamil Nadu, rangavalli in Karnataka, and
 muggulu in Andhra Pradesh, are more than decorations—they are visual
@@ -135,22 +115,30 @@ most as ancient knowledge systems that encode geometry, logic, memory,
 and computations. They are representatives of an unwritten algorithmic
 tradition rooted in aesthetics and cultural symbolism, and interwoven with
 the daily lives of the women in southern India.
+
 Decoding Kolams
+
+### Symmetrical Dots and Ephemeral Art
+
 A kolam is a symmetrical, looping pattern created by dropping tiny dots of
 rice flour on the ground and then drawing continuous lines around them in
-
 closed curves. These designs range from simple grids to highly complex
 arrangements, all drawn freehand. Kolams are traditionally drawn outside
 home entrances, symbolizing auspiciousness, welcoming prosperity, and
 warding off evil. They also double as a form of offering to birds and ants,
-promoting ideas of non-violence, and sharing. Though ephemeral—
-gradually erased by wind, rain, or foot traffic—kolams are redrawn every
+promoting ideas of non-violence, and sharing. Though ephemeral—gradually
+erased by wind, rain, or foot traffic—kolams are redrawn every
 day and over time, their patterns become embedded in the cognitive muscle
 memory of the women who create them with religious dedication.
+
 A Women-Led Tradition
+
+### Mathematical Logic Without Formulae
+
 Kolams at first glance may come across as mere ornamentations; but
 upon a closer look, we find embedded within their loops and curves, a
 powerful form of mathematical reasoning.
+
 Kolams are built on the foundations of mathematical tools of
 symmetry, geometry, and pattern recognition. This is a form of math
 that is practiced without formulae or formal instructions. Women,
@@ -158,29 +146,28 @@ most of whom have never studied mathematics in schools, intuitively
 develop an understanding of building layered complexities from dot
 matrices, constructing repeating motifs using modular transformation
 and other such concepts, through these kolam arts.
+
+### Algorithmic Rules in Hand-Drawn Forms
+
 Kolams embody algorithms, instructing where to start, where to loop,
-where to mirrora shape, and where to end, almost like the rules of
+where to mirror a shape, and where to end, almost like the rules of
 construction in computer science. Kolams’ ingenuity lies in
 embedding these rules in hand-drawn form, without ever writing them
 down.
 
+Kolams and Computational Thinking
 
-Kolams and Computational Thinking In recent decades there has been
-a surge in decoding kolams through the lens of computer science. For
-instance, Dr. Nagalakshmi and her team at Anna University have
-created a software that generates kolams based on input patterns,
-thereby reverse-engineering traditional methods into digital codes.
-Mathematician Dr.Sriraman went so far as to describe kolams as a
-form of graph theory and lattice math practiced long before these
-concepts were even formally defined.
-Each kolam is an example of visually coded logic and can have
-potential applications in fields of robotics, computer graphics, and
-generative design. A particularly intriguing subset of kolams is the
-pulli kolam, drawn using the dot grid and continuous lines.
-Researchers have modelled these kolams as the famous Lindenmeyer
-systems— an algorithmic system used to simulate plant growth,
-fractals, and other natural forms.
+### Reverse-Engineering into Digital Codes
+
+In recent decades there has been a surge in decoding kolams through the lens of computer science. For instance, \`Dr. Nagalakshmi\` and her team at \`Anna University\` have created a software that generates kolams based on input patterns, thereby reverse-engineering traditional methods into digital codes. Mathematician \`Dr. Sriraman\` went so far as to describe kolams as a form of \`graph theory\` and \`lattice math\` practiced long before these concepts were even formally defined.
+
+### Lindenmeyer Systems and Fractal Geometry
+
+Each kolam is an example of visually coded logic and can have potential applications in fields of \`robotics\`, \`computer graphics\`, and \`generative design\`. A particularly intriguing subset of kolams is the \`pulli kolam\`, drawn using the dot grid and continuous lines. Researchers have modelled these kolams as the famous \`Lindenmeyer systems\`—an algorithmic system used to simulate plant growth, fractals, and other natural forms.
+
 Cultural Memory and Mapping
+
+### Mnemonic Libraries of Geometric Shapes
 
 What makes kolams even more remarkable is that they are often retained
 entirely in memory. Women memorise hundreds of different patterns and
@@ -188,39 +175,53 @@ reproduce them with unmatched accuracy and creative variation. They need
 no notebooks and no sketches. It is almost as if their brain has transformed
 itself into a mental library of geometric forms.
 
+### Structure, Improvisation, and Heirloom Styles
+
 Looked at in this way, kolams are mnemonic devices, not much different
 from oral epics, or musical ragas, where structure and improvisation coexist
 in harmony. For some families, kolam styles are almost like heirlooms,
 passed down to the next generation as a part of their cultural heritage, to be
 embedded in marriage rituals, festivals, or caste-specific customs.
+
 Kolams of Resistance and Reclamation
+
+### Intellectual Labor and Patriarchal Spaces
 
 Beyond being mathematical wonders, kolams are also layered with social
 meaning and richness. Kolas, as a women-led practice, can be seen as
 enduring forms of intellectual labour of the women, which traditionally has a
 long history of being ignored by patriarchal and colonial systems of
 knowledge.
+
 Women were rarely given a place to shine in formal sciences, but in the
 yards of their homes, they quietly practiced algorithms, encoded memory,
 and mapped symmetrical logic every single day. Kolams were perhaps their
 own unconscious efforts to exert their importance in a field which had long
 been reserved exclusively for males.
+
+### Claims to Space, Knowledge, and Dalit Identity
+
 In recent years, feminist scholars have reinterpreted kolams as silent
 struggles against the continued effort to erase and undermine women’s
 intellectual contributions, as a claim to space and knowledge, and as
 language for the marginalized, especially in rural and Dalit homes, where
 kolams have their own unique and unconventional forms.
+
 Drawing the Line from Past to Future
+
+### Digital Revivals and Algorithmic Art
+
 In the face of the ever-looming threat of globalization, where hand-drawn
 kolams are increasingly being replaced by vinyl stickers or printed mats,
 many young artists are now looking to revive kolam traditions through digital
 art, workshops, and coding platforms. These efforts have taken the forms of
 kolam-generating apps, workshops integrating kolams with coding to raise
 interest among the younger generations, interactive art installations, like
-those by artist Ranjani Shettar, and even the use of kolams in artificial
+those by artist \`Ranjani Shettar\`, and even the use of kolams in artificial
 intelligence to train models in pattern recognition and design. Kolams are
 cultural algorithms and maps of memory, math, and meaning.
 
+### Grounding Modern Algorithms in Ancient Wisdom
 
 They represent an ancient knowledge system, formalized not in books, but
 breathing through repetition, touch, and the rhythm of everyday life. By
@@ -230,51 +231,69 @@ calling it science, yet embodying it with elegance. In a world panting after
 complex coding and algorithms, perhaps we should first pause and look at
 the ground beneath our feet. It is there, in rice flour drawings glistening in
 the morning light, that we find a wisdom we are only beginning to fathom.
-`
+`,
   },
   {
     slug: "clothes-have-no-gender-isnt-it",
-    title: "CLOTHES HAVE \"NO\" GENDER . ISN'T IT ???",
+    title: 'CLOTHES HAVE "NO" GENDER . ISN\'T IT ???',
     author: "DR. Mohammad Ali",
     date: "Jun 24, 2025",
     language: "Hindi",
     tags: [],
-    excerpt: "#Gender-Equality                  #Constitutional_Right                              #Youth CLOTHES HAVE \"NO\" GENDER . ISN'T IT ??? एक स$ची कहानी से ...",
+    excerpt:
+      '#Gender-Equality                  #Constitutional_Right                              #Youth CLOTHES HAVE "#Gender-Equality #Constitutional_Right #Youth | CLOTHES HAVE "NO" GENDER . ISN\'T IT ??? एक स$ची कहानी से ..." GENDER . ISN\'T IT ??? एक स$ची कहानी से ...',
     coverImage: "/blogs/Clothes have no gender.png",
-    content: `
-#Gender-Equality                  #Constitutional_Right                              #Youth
-CLOTHES HAVE "NO" GENDER . ISN'T IT ???
-एक सच्ची कहानी से शुरुआत करते हैं ........
-"Clothes Have No Gender" नामक Campaign का नाम सुना है आपने ? WhatsApp University के बेबुनियाद ज्ञान और कुतर्कों से थोड़ा ऊपर उठ कर सच तलाशने की कोशिश करेंगे तो हमें पता चलेगा कि – कुछ वर्ष पहले 27, October 2020 को स्पेन के एक शहर Bilbao में एक पुरुष छात्र को स्कूल से इसलिए निकाल दिया गया था क्योंकि उसने स्कर्ट (Skirt) (मान्यता के आधार पर महिला के कपड़े) पहन कर स्कूल में दाखिल हो गया था.
+    content: `#Gender-Equality #Constitutional_Right #Youth
 
-स्कूल से निकाले गए उस छात्र के समर्थन में स्कूल के आधे से अधिक छात्र भी स्कर्ट (Skirt) पहन कर स्कूल आ गए. हद तो तब हो गयी जब स्कूल के एक पुरुष शिक्षक ने भी स्कर्ट (Skirt) पहन कर उस छात्र के समर्थन में उतर गए और स्कूल प्रशासन का विरोध करने लगे. देखते ही देखते "Clothes Have No Gender" नामक मुहिम (Campaign) की शुरुआत पूरे स्पेन में होने लगी और इसका समर्थन इंग्लैंड के सड़कों पर भी दिखने लगा.
+एक सच्ची कहानी से शुरुआत करते हैं ........
+
+### स्पेन की एक मुहिम: \`"Clothes Have No Gender"\`
+
+\`"Clothes Have No Gender"\` नामक \`Campaign\` का नाम सुना है आपने ? \`WhatsApp University\` के बेबुनियाद ज्ञान और कुतर्कों से थोड़ा ऊपर उठ कर सच तलाशने की कोशिश करेंगे तो हमें पता चलेगा कि – कुछ वर्ष पहले \`27, October 2020\` को स्पेन के एक शहर \`Bilbao\` में एक पुरुष छात्र को स्कूल से इसलिए निकाल दिया गया था क्योंकि उसने स्कर्ट (\`Skirt\`) (मान्यता के आधार पर महिला के कपड़े) पहन कर स्कूल में दाखिल हो गया था.
+
+स्कूल से निकाले गए उस छात्र के समर्थन में स्कूल के आधे से अधिक छात्र भी स्कर्ट (\`Skirt\`) पहन कर स्कूल आ गए. हद तो तब हो गयी जब स्कूल के एक पुरुष शिक्षक ने भी स्कर्ट (\`Skirt\`) पहन कर उस छात्र के समर्थन में उतर गए और स्कूल प्रशासन का विरोध करने लगे. देखते ही देखते \`"Clothes Have No Gender"\` नामक मुहिम (\`Campaign\`) की शुरुआत पूरे स्पेन में होने लगी और इसका समर्थन इंग्लैंड के सड़कों पर भी दिखने लगा.
+
+### व्यक्तिगत स्वतंत्रता और समान नागरिक संहिता
 
 लड़कों द्वारा स्कर्ट पहनने की घटना पर वहाँ रहने वाले अन्य किसी समुदाय के लड़कों ने स्कर्ट पहनने का न तो समर्थन किया और न ही स्कूल प्रशासन की तरफ़दारी करते हुए ‘समान नागरिक संहिता’ एवं नियमों का हवाला देने में जुट गए ।
 
+### हिजाब विवाद और निजी स्वतंत्रता
+
 परंतु धर्मनिरपेक्षता / पंथनिरपेक्षता को अपने संविधान की प्रस्तावना (आत्मा) में लिखने वाले देश स्कूल के क्लास से लेकर सड़क एवं सेमिनारों तक हिजाब के विरोध में न केवल नारेबाजी करते हैं बल्कि इसे लड़कियों के पिछड़ापन से जोड़ने की पुरज़ोर कोशिश में सड़क से लेकर टीवी स्क्रीन तक चिल्लाते रहते हैं ।
+
+### धार्मिक कट्टरता का प्रभाव और युवा वर्ग
 
 नकारात्मकता की पराकाष्ठा को पीछे छोड़ते हुए हमारे देश में हिजाब के विरोध को लेकर भगवा गमछा लहराया तो किसी ने धार्मिक नारे के सहारे सामने वाले को डराने और धमकाने की कोशिश की । हमारे देश को भगवा गमछे या धार्मिक नारे से दिक्कत नहीं है मगर वो गमछे और नारे इच्छा से नहीं बल्कि किसी को डराने धमकाने और किसी की निजी स्वतंत्रता को समाप्त करने के लिए लगाए गए थे, जो व्यक्ति विरोधी होने के साथ-साथ नैतिक और संवैधानिक दृष्टिकोण से भी इस देश के विरोधी हैं.
 
-जो युवा उन्माद में अंधे होकर, भगवा लगा कर हिजाब का विरोध करते फिरते हैं, उनके माता-पिता को भले ही आज अपने बच्चों पर गर्व हो रहा होगा, पर उन अभिभावकों ने अपनी अगली पीढ़ी को धार्मिक कट्टरता का स्वाद बड़ी ही खूबसूरती से ट्रांसफर कर दिया है. उन्हें लगता है कि - उनके बच्चे देश बदलने का साहसिक कार्य कर रहे हैं, पर वो भूल रहे हैं कि – WhatsApp यूनिवर्सिटी के कुतर्कों से उनके बच्चों के व्यवहार में जो ज़हर घोला जा रहा है, उसका डंक पलटकर उन्हें ही मिलेगा और उसका दंश पूरे देश को झेलना होगा ।
+जो युवा उन्माद में अंधे होकर, भगवा लगा कर हिजाब का विरोध करते फिरते हैं, उनके माता-पिता को भले ही आज अपने बच्चों पर गर्व हो रहा होगा, पर उन अभिभावकों ने अपनी अगली पीढ़ी को धार्मिक कट्टरता का स्वाद बड़ी ही खूबसूरती से ट्रांसफर कर दिया है. उन्हें लगता है कि - उनके बच्चे देश बदलने का साहसिक कार्य कर रहे हैं, पर वो भूल रहे हैं कि – \`WhatsApp यूनिवर्सिटी\` के कुतर्कों से उनके बच्चों के व्यवहार में जो ज़हर घोला जा रहा है, उसका डंक पलटकर उन्हें ही मिलेगा और उसका दंश पूरे देश को झेलना होगा ।
+
+### लोकतांत्रिक मर्यादा और संविधान के नियम
 
 हमारा देश एक लोकतांत्रिक देश है जो संविधान के नियमों से चलता है, जिसमें क़ानून बनाने और उसमें सुधार करने के लिए जनता अपने वोट के ताक़त से विधायिका को चुनती है. उस क़ानून के आधार पर दोषी को सज़ा सुनाने या निर्दोष को न्याय देने का फ़ैसला न्यायपालिका करती है, और उस फ़ैसले को ज़मीनी स्तर पर लागु करने का कार्य की ज़िम्मेदारी कार्यपालिका के हाथों में होती है ।
 
+### धर्मतंत्र बनाम लोकतंत्र: युवा ऊर्जा की दिशा
+
 हमारे देश में धर्म के नाम पर कुछ तथाकथित ठेकेदारों ने धर्मतंत्र, भीड़तंत्र, अराजकतंत्र, मनमानीतंत्र के माध्यम से लोकतंत्र की जड़ों को लगातार हिलाने का प्रयास कर रहे हैं, और इस प्रयास के लिए उन सफ़ेदपोश गुंडों ने देश के कर्मठ युवाओं को चुना है. इनकी कर्मठता को नकारात्मकता की तरफ़ ले जाने के लिए कभी धर्म, फ़र्ज़ी राष्ट्रभक्ति, जाति, संप्रदाय तो कभी क्षेत्रीयता का ज़हर घोलते रहते हैं. कहीं ऐसा न हो, देश के युवाओं की ऊर्जा को ग़लत दिशा देने वाले मुल्क केवल राजनीतिक जुमलों में ही विश्वगुरु के सपने संजो रहा हो.
 
-नफ़रत की राजनीती :- (Politics of hate will turn our children towards crime)
-इस देश के युवाओं को इस तरह दिग्भ्रमित (Astray) किया जा रहा है कि - यदि किसी पंजाबी सरदार जी की पगड़ी का अपमान किसी अन्य देश या फिल्म में भी होता है तो सारा देश इसे देश की इज्ज़त और अस्मिता से जोड़ कर एक साथ आवाज उठाते हैं. सरकारी स्कूलों में सरस्वती वंदना एवं सरस्वती पूजा होने में वैज्ञानिक दृष्टिकोण को किनारे रख कर इसे आस्था से जोड़ कर देखा जाता है पर मुसलमान स्कूल एवं कॉलेज जाती हुई लड़की के हिजाब लगा लेने से देश के तथाकथित धर्मनिरपेक्ष लोगों को दिक्कत होने लगती है. इसी देश में दिगंबर जैन बिना वस्त्र के रह सकते हैं, श्वेतांबर जैन पूरी ज़िंदगी सफ़ेद कपड़े में रह सकते हैं, योगी आदित्यनाथ भगवा वस्त्र में राज्य का सबसे सर्वोच्च संवैधानिक पद संभाल सकते हैं, बस मुसलमान लड़की हिज़ाब नहीं पहन सकती है.
+### दोहरे मापदंड और नफ़रत की राजनीति
+
+नफ़रत की राजनीती :- (\`Politics of hate will turn our children towards crime\`)
+
+इस देश के युवाओं को इस तरह दिग्भ्रमित (\`Astray\`) किया जा रहा है कि - यदि किसी पंजाबी सरदार जी की पगड़ी का अपमान किसी अन्य देश या फिल्म में भी होता है तो सारा देश इसे देश की इज्ज़त और अस्मिता से जोड़ कर एक साथ आवाज उठाते हैं. सरकारी स्कूलों में सरस्वती वंदना एवं सरस्वती पूजा होने में वैज्ञानिक दृष्टिकोण को किनारे रख कर इसे आस्था से जोड़ कर देखा जाता है पर मुसलमान स्कूल एवं कॉलेज जाती हुई लड़की के हिजाब लगा लेने से देश के तथाकथित धर्मनिरपेक्ष लोगों को दिक्कत होने लगती है. इसी देश में दिगंबर जैन बिना वस्त्र के रह सकते हैं, श्वेतांबर जैन पूरी ज़िंदगी सफ़ेद कपड़े में रह सकते हैं, योगी आदित्यनाथ भगवा वस्त्र में राज्य का सबसे सर्वोच्च संवैधानिक पद संभाल सकते हैं, बस मुसलमान लड़की हिज़ाब नहीं पहन सकती है.
+
+### राहत इंदौरी साहब की पंक्तियाँ
 
 अगर किसी को लगता है कि - नफ़रत की राजनीती और युवाओं के दिमाग़ में ज़हर घोलने से किसी एक समुदाय, संप्रदाय या धर्म के युवा बर्बाद हो जाएँगे तो उन्हें रुक कर, ठहर कर पुनर्विचार करते हुए ‘राहत-इंदौरी साहब’ की इस दो पंक्ति को बार-बार पढ़ना चाहिए ।
 
 लगेगी आग तो आएँगे घर कई ज़द में,
 यहाँ पे सिर्फ हमारा मकाँ थोड़ी है.......
 
-Dr. Mohammad Ali
-Assistant Professor
-Patliputra University, Patna
-Mobile : 9334302001
-Email :- ali2011pf@gmail.com
-`
+\`Dr. Mohammad Ali\`
+\`Assistant Professor\`
+\`Patliputra University, Patna\`
+Mobile : \`9334302001\`
+Email :- \`ali2011pf@gmail.com\`
+`,
   },
   {
     slug: "childhood-rituals",
@@ -283,33 +302,38 @@ Email :- ali2011pf@gmail.com
     date: "Jun 24, 2025",
     language: "English",
     tags: [],
-    excerpt: "Childhood Rituals (rituals childhoodrituals belonging)  word count 1023 I grew up in nineties Bombay. A Bombay that was going to soon be called Mumbai...",
+    excerpt:
+      "I grew up in nineties Bombay. A Bombay that was going to soon be called Mumbai, a Bombay which was at the peak of her ‘sapno ka shehar’ attitude...",
     coverImage: "/blogs/Childhood rituals.png",
-    content: `
-Childhood Rituals
-(rituals childhoodrituals belonging)
-
-word count 1023
-I grew up in nineties Bombay. A Bombay that was going to soon be called Mumbai, a
+    content: `I grew up in \`nineties\` Bombay. A Bombay that was going to soon be called Mumbai, a
 Bombay that was going to see the greatest impact of India embracing globalisation,
 a Bombay which was at the peak of her ‘sapno ka shehar’ attitude and owning it with
 full Bambaiyya swag.
+
 More importantly it was for me a secure space where I grew up within the safety of
 certain childhood rituals under my paternal grandma, Papama’s protective care.
 Here, I share with you a few of these rituals which for some reason seem to have
 been left behind in those growing up years.
+
 Ubtan Bath
-“Uddak bhochi taaaplyaa, zauke maa” Papama cautions the 4 yr old me about the
+
+### Steamy Rituals and Golden Gram Flour
+
+“Uddak bhochi taaaplyaa, zauke maa” Papama cautions the \`4 yr old\` me about the
 hot bath water as I await my special “yellow” bath. I stand bare in the small bathroom
 , awaiting Papama to finish preparing the ubtan mixture of gram flour , turmeric and
 milk in the kitchen which is adjacent to where I am standing feeling a bit bored. I
 begin tracing my name on the white tiles of the bathroom wall which are covered with
 water droplets. This is a newly acquired skill, one which I am excited to master.
+
+### Copper Chambus and the Final Splash
+
 ‘Hanngaa yaw ma” Papama beckons me towards her as she enters the bathroom.
 She swiftly gives the ubtan a final mix and begins applying it on my face followed by
 my arms, legs, torso and back. If I think about it now, the scent of the ubtan along
 with the steam in the bathroom makes for a saun like environment.
-The 4 yr old me however says ouch Papama as the rough texture of the ubtan
+
+The \`4 yr old\` me however says ouch Papama as the rough texture of the ubtan
 cleanses and purifies my skin. “Vattantu khelnu kashi zallya pale’ Papama gently
 admonishes me for playing in the hot sun for far too long. “Vaggi kari nave\`’ I plead
 with her to rinse off the ubtan quickly. She dunks the copper chambu into the
@@ -317,38 +341,53 @@ stainless steel bucket, checking that it is just right - neither too hot nor too
 satisfied she asks me to shut my eyes and begins pouring chambu after chambu of
 hot water over my head. My body is thoroughly soaped and washed. My best part is
 about to happen. As the water in the bucket reaches the very bottom, she keeps the
-
 chambu aside, lifts the bucket and pours the rest of the water on my head. The gush
 of water over me thrills me every time . Before I can even open my eyes properly,
 Papama wraps me in a bhairaas and leads me out of the bathtooom to get changed.
+
 Plaits
-8.05 am every school morning, Papama braids my curly frizzy hair. She invariably
-has just five minutes to do this because my school bus arrives promptly at 8.10am
-and if I am lucky at 8.12am. Papama never seems to be fazed by the time pressure.
+
+### Time Pressures and Frizzy Ribbons
+
+\`8.05 am\` every school morning, Papama braids my curly frizzy hair. She invariably
+has just five minutes to do this because my school bus arrives promptly at \`8.10am\`
+and if I am lucky at \`8.12am\`. Papama never seems to be fazed by the time pressure.
 She is confident and efficient. She oils my hair generously to which I always
 complain ‘my friends will call me chip-chip chokhri”. “Ignore kari tanka” Papama asks
-me to ignorethem.
+me to ignore them.
+
 I wish it was that easy I think to myself. Teenage girls can be rather nasty
 but how can I explain this to Papama now?
+
+### Quiet Blessings in the Morning Rush
+
 Her voice interrupts my thoughts. “Tel ghalka baa,barenchi te” she tries to reason
 with me by saying oiling my hair is in fact beneficial for it. I sullenly agree as I need
 my hair to be tied into neat plaits and time is of essence. I make a mental note to talk
 to her about this after school. I can see my brother ready to leave for school. I can;t
 help but be envious of how he doesnt have to go through this hair braiding malarkey.
+
 I see my school bus turning around the corner. “Bus aayle papamaaaa”, I scream
-asshe is tying the end of my second plait with a bright red ribbon. “Vhaee gottasa”,
-shereplies calmly . “Gadbadi kornakkkaaa”, she tells me not to panic. She quickly
+as she is tying the end of my second plait with a bright red ribbon. “Vhaee gottasa”,
+she replies calmly . “Gadbadi kornakkkaaa”, she tells me not to panic. She quickly
 hands me my school bag and water bottle and with blessings and love waves me
 goodbye.
-Kelay Hashale Sliced banana dunked in a bowl of cold milk and sprinkled with
+
+Kelay Hashale
+
+### Sweet Bananas and After-School Comforts
+
+Sliced banana dunked in a bowl of cold milk and sprinkled with
 powdered sugar was an after school snack that I looked forward to as soon as I got
 off the school bus. Haath paay dhuyi anni vaggi yaw khavnchak. Papama’s voice
 greeted me every single day. She would be busy preparing this snack for me as I
 entered home after a long school day.
 
+### Anchors of Belonging in Changing Times
+
 I was sweaty, tired and hungry and kaley hashaley was the perfect pick me up
 snack. The cold milk, soft banana and sweetness from the sugar energised me
-almost immediately. One day we ran out of bananas and the 5 year old me threw a
+almost immediately. One day we ran out of bananas and the \`5 year old\` me threw a
 massive tantrum. I wanted kaley hashale and nothing else. Even a slice of chocolate
 cake would not do. Papama was in a dilemma. I was refusing to eat - a relatively
 new problem as I have always been one of the most non fussy eaters around
@@ -357,16 +396,17 @@ afternoon nap. Without saying a word, he got dressed and stepped out of the hous
 Papama wondered where he went but was far too distracted by my antics. She tried
 telling me a joke, showing me my favourite book and switching on my favourite
 cartoon on television. Nothing worked.
+
 Her methods to calm me down seemed to be failing miserably. Soon after, Ajju
 returned with a handful of bananas and handed them to Papama who was very
 relieved. She quickly made the hashale and as soon as she fed me a spoonful, I
 instantly became quiet. Kaley hashale for me was comfort food - a significant part of
 my daily routine. It provided me with a strange sense of belonging to my home.
-Without it, the afternoon was different and for the 5 year old me, dealing with change
+Without it, the afternoon was different and for the \`5 year old\` me, dealing with change
 was hard. So I latched onto the kaley hashale like an anchor. Even today, when I find
 myself dithering and unsettled, I know what I reach out for almost subconsciously -
 banana, milk and sugar.
-`
+`,
   },
   {
     slug: "sadhu-सध",
@@ -375,14 +415,16 @@ banana, milk and sugar.
     date: "Jun 24, 2025",
     language: "Nepali",
     tags: [],
-    excerpt: "साधु जङ्गलबीचमा साधुको एउटा कुटीर थियो। यिनी दयालु थिए। आँखामा भस्म गर्ने, सराप वा वरदान दिने शक्तिदान तपस्याद्वारा यिनले पाएका थिए। जङ्गलका सारा पशुप...",
+    excerpt:
+      "साधु जङ्गलबीचमा साधुको एउटा कुटीर थियो। यिनी दयालु थिए। आँखामा भस्म गर्ने, सराप वा वरदान दिने शक्तिदान तपस्याद्वारा यिनले पाएका थिए। जङ्गलका सारा पशुप...",
     coverImage: "/blogs/sadhu.png",
-    content: `
-साधु
-जङ्गलबीचमा साधुको एउटा कुटीर थियो। यिनी दयालु थिए। आँखामा भस्म गर्ने, सराप
+    content: `जङ्गलबीचमा साधुको एउटा कुटीर थियो। यिनी दयालु थिए। आँखामा भस्म गर्ने, सराप
 वा वरदान दिने शक्तिदान तपस्याद्वारा यिनले पाएका थिए। जङ्गलका सारा पशुपक्षी
 जङ्गलदेखि यिनका कुटीर वरिपरि निर्धक्क चर्दै गाउँदै घुमफिर गर्थे। चोट घाइते भएका
 पशुपक्षीहरूको निवारण वनौषधिद्वारा यिनले गर्थे।
+
+### साधुको कुटीर र पशुपक्षीहरूसँगको स्नेह
+
 एक दिन साधुले अचानक पशुहरूको बथान घट्दै गएको थाहा पाए। हिज देखिएको पशु
 आज छैन। आजभोलि देखिरहेका पशुहरू फेरि देखिएनन्। रोगले पशुहरू मर्दैछन्, कसैले पो
 मार्दैछन् वा त अर्को ठाउँमा जाँदैछन् भन्ने शङ्कामा साधुले निधो गर्नलागे। निकै दिनको
@@ -392,15 +434,23 @@ banana, milk and sugar.
 री अनि भाँची खाओस्। आकाश छुने इच्छामा बाँची बढ़ेका लिङ्गोले नुहेर यसै धरतीमा
 निहुरिन परोस्।"
 
+### राक्षसको खोजी र बाँसघारीको यात्रा
+
 तामाहरूलाई सराप दिएर साधु राक्षसको खोजीमा जुगा घारीमा आइपुगे। "जुगा हो! कुनै
 राक्षसलाई यताबाट गएको दे"बाँसका तामा हो! कतै राक्षसलाई मारेको पशुसित यताबाट
 गएको देख्यौ कि?"
+
+### जुगा र तामाहरूसँग सोधपुछ
+
 साधुको सोधाइमा तामाहरूले भने- "हामी राक्षसको हौं र उस्तो कुरो सोध्छस्? हामीलाई
 चाहिँ कहिले बढ़ेर त्यो नीलो आकाश छुऔंला भन्ने आतुरी छ, तेरो जस्तो गयो गएन,
 खायो खाएन चियो गर्ने बानी छैन जा....।"
+
+### साधुको सराप र अहङ्कारको सजाय
+
 तामाहरूको फुटानी सुनेर साधुले सराप दिए- "आजदेखि उसो तँ तामाहरूले कलिलैमा
 दया-मायाबिना पशुहरूले चिथोख्यौ कि?"
-`
+`,
   },
   {
     slug: "brewing-beer-and-memories",
@@ -409,136 +459,101 @@ banana, milk and sugar.
     date: "Jun 24, 2025",
     language: "English",
     tags: [],
-    excerpt: "Brewing Beer And Memories   Aliya and her cousins were travelling back from Delhi to their hometown in Arunachal Pradesh. Aliya had bought her naniap...",
+    excerpt:
+      "Brewing Beer And Memories   Aliya and her cousins were travelling back from Delhi to their hometown in Arunachal Pradesh. Aliya had bought her naniap...",
     coverImage: "/blogs/yu beer.png",
-    content: `
-Brewing Beer And
-Memories
-
-
-Aliya and her cousins were travelling back from Delhi to their hometown in Arunachal
+    content: `Aliya and her cousins were travelling back from \`Delhi\` to their hometown in Arunachal
 Pradesh. Aliya had bought her naniapiya (father’s elder sister) a jewellery box from
-Janpath
-and a set of flavoured beer from a shop in Safdarjung, an area famous for
+\`Janpath\` and a set of flavoured beer from a shop in \`Safdarjung\`, an area famous for
+Northeastern cuisine. As they sat on the bamboo floor exchanging pleasantries Aliya’s naniapiya
+was mixing rice spreaded on a tarpaulin sheet with an aluminium ladle.
 
-Northeastern
-cuisine. As they sat on the bamboo floor exchanging pleasantries Aliya’s naniapiya
-was
-mixing rice spreaded on a tarpaulin sheet with an aluminium ladle. 
+### Exchange of Gifts and Flavored Yu
+
 Naniapiya. Ini mein nu gebane aecha gifts lowada. Aathu.
 Ohh. Aecha kesha mein taando! Thank you ah. Aecha aesya? Yu hunji aathu da.
 Aecha mein flavoured yu dumo. Yu ajihone nu aecha ma fruit flavour aetehone
-ichibu topra
-mein taando baida. Aathu aecha Kiwi chi, aecha mango flavour. 
+ichibu topra mein taando baida. Aathu aecha Kiwi chi, aecha mango flavour.
+
 Naniapiya. We have bought gifts for you. Please have a look.
 Ohh. These are beautiful. Thank you dear. What is this? This looks like Yu.
 Yes it is. It is a set of flavoured yu (rice beer). When the rice beer is made it is mixed
-with
-fruit syrup and fruits flavours and then we can drink delicious flavoured fruit beer.
-See this
-one is made up of Kiwi, and this one is a mango flavoured drink.
+with fruit syrup and fruits flavours and then we can drink delicious flavoured fruit beer.
+See this one is made up of Kiwi, and this one is a mango flavoured drink.
+
+### The Tradition of Communal Brewing
+
 As naniapiya nods at the explanation she cannot help but remember how the
-process of
-brewing yu used to be a household chore which connected households through
-barter system
-and merrymaking. Yu is seen as a necessary part of village and community
-festivities. Local
-glutinous rice cultivated in the farm is half boiled along with red rice. Naniapiya says
-the red
-rice is Mishinge jijiko. The name of this variant of red rice might have been derived
-from an
-indigenous collection of rice of the species Oryza sativa, known as Jijiko from Tirap
+process of brewing yu used to be a household chore which connected households through
+barter system and merrymaking. Yu is seen as a necessary part of village and community
+festivities. Local glutinous rice cultivated in the farm is half boiled along with red rice. Naniapiya says
+the red rice is \`Mishinge jijiko\`. The name of this variant of red rice might have been derived
+from an indigenous collection of rice of the species \`Oryza sativa\`, known as \`Jijiko\` from \`Tirap\`
 district.
-Another possibility is another type of variant found in Lohit district which is nearer to
-their
-district of Lower Dibang Valley. The name of the variant is Jijikong (Ahu) of the same
 
-species. One of the ways in exchange in rice varieties and names could have been
-a result of
-weekly markets held in villages and barter system. 
+Another possibility is another type of variant found in \`Lohit\` district which is nearer to
+their district of \`Lower Dibang Valley\`. The name of the variant is \`Jijikong (Ahu)\` of the same species. One of the ways in exchange in rice varieties and names could have been
+a result of weekly markets held in villages and barter system.
+
+### Preparing the Rice and Yeast Cakes
+
 As the local white rice is half boiled and mixed with the red rice it produces a
-nutty, starchy
-aroma. The rice is spreaded evenly on a carpet until it has cooled down
-substantially. Then
-the Pa is broken down into fine powder and mixed with the rice. Pa is a rice
-cake consisting
-of yeast that will help the rice to ferment. It is made out of uncooked rice paste
-which is
-mixed with old rice cakes consisting of yeast or local herbs which fastens the
-fermentation.
-These small rice cakes are shaped into small disks which can be stored for
-months. 
+nutty, starchy aroma. The rice is spreaded evenly on a carpet until it has cooled down
+substantially. Then the Pa is broken down into fine powder and mixed with the rice. Pa is a rice
+cake consisting of yeast that will help the rice to ferment. It is made out of uncooked rice paste
+which is mixed with old rice cakes consisting of yeast or local herbs which fastens the
+fermentation. These small rice cakes are shaped into small disks which can be stored for
+months.
+
+### Naniapiya's Idu Mishmi Recollections
+
 Naniapiya recalls “ Nga ichikihi ho nani so paku ne inane, oko ma pehiyo, pa ajigai
-chi. Pa
-ajite hiyo, aashunu ma brushutu aehiyo, aaya gibene aamegaichida. Aaya ho Pa
-khege ma
-prage lagaichi, aechaho Pa amuni babuda. Hu chi hone khepetya chiyada. Nga
-ichiga
-bihitone Bizari iiho, ayahobu nga aatiko chi nani aalombro so inyime pa ajigai da. Pa
-aji
-hone jigaiho ini yaku alombro mein jipa jeene oko chi lagaiji, aatiko chi, anapra chi
-lagaiji.
-Baha chi taju bu lagaiji, aai aene jigachida.
+chi. Pa ajite hiyo, aashunu ma brushutu aehiyo, aaya gibene aamegaichida. Aaya ho Pa
+khege ma prage lagaichi, aechaho Pa amuni babuda. Hu chi hone khepetya chiyada. Nga
+ichiga bihitone Bizari iiho, ayahobu nga aatiko chi nani aalombro so inyime pa ajigai da. Pa
+aji hone jigaiho ini yaku alombro mein jipa jeene oko chi lagaiji, aatiko chi, anapra chi
+lagaiji. Baha chi taju bu lagaiji, aai aene jigachida.
+
 Buge mein ini mein Bizari ne Pa ajite hayo Dambuk ma amewdane aagugaichida.
-Nga hone,
-ichibu nani khe kani hone Dambuk bojaar aagugaichida. Bojare pa aakhahogaicha
-imu mein
-taando pa lowdane ini maanu ma dega banaba. Ini chi pa wa mosa alombro mein
+Nga hone, ichibu nani khe kani hone Dambuk bojaar aagugaichida. Bojare pa aakhahogaicha
+imu mein taando pa lowdane ini maanu ma dega banaba. Ini chi pa wa mosa alombro mein
+londogahiba. Baha aashunuge pa amehiyo, aaga kani kiku gine aegaichim.
 
-londogahiba. Baha aashunuge pa amehiyo, aaga kani kiku gine aegaichim. 
+### Market Days and Adi Tribe Encounters
+
 “When I was young Whenever we used to return from our fields we would start
-making pa.
-We would make enough that could be stored in our baskets and sell it in the
-markets, some
-people used to come at home to buy it and we would also visit houses in our village.
-The cost
-of selling one pa was 1 Rs. Now it has increased to 10 Rs. When I got married I had
-to shift to
-my husband’s village which is Bizari. I used to make pa along with the village nani
-(mothers).
-We used to talk about our households, childhood, food and much more. Then after
-we made
-and filled our baskets with pa we would go to the market which was at Dambuk. One
-day as
-we went to the market, we opened our baskets and displayed our pa for customers
-and
-suddenly all the people in the market surrounded us. It was so crowded. Hands
-jutting out
-money in exchange of a dozen pa. It was amusing. Most of our customers were Adi
-(another
-tribe residing in Siang, East Siang, Upper Siang, West Siang, Lower Dibang Valley
-and Lohit
-districts). Maybe because most of them lived in Dambuk too. 
+making pa. We would make enough that could be stored in our baskets and sell it in the
+markets, some people used to come at home to buy it and we would also visit houses in our village.
+The cost of selling one pa was \`1 Rs.\` Now it has increased to \`10 Rs.\` When I got married I had
+to shift to my husband’s village which is \`Bizari\`. I used to make pa along with the village nani
+(mothers). We used to talk about our households, childhood, food and much more. Then after
+we made and filled our baskets with pa we would go to the market which was at \`Dambuk\`. One
+day as we went to the market, we opened our baskets and displayed our pa for customers
+and suddenly all the people in the market surrounded us. It was so crowded. Hands
+jutting out money in exchange of a dozen pa. It was amusing. Most of our customers were \`Adi\`
+(another tribe residing in \`Siang\`, \`East Siang\`, \`Upper Siang\`, \`West Siang\`, \`Lower Dibang Valley\`
+and \`Lohit\` districts). Maybe because most of them lived in \`Dambuk\` too.
+
 In the olden days mothers would fill baskets of pa and travel to villages and markets
-in the
-morning. By evening they would return back with two baskets of grains and pulses.”
+in the morning. By evening they would return back with two baskets of grains and pulses.”
+
+### The Physics of Fermentation and Healing
+
 After Pa is mixed with the rice it is evenly spread again. When the rice cools down it
-is stored
-in aluminium or steel beakers. The speed of the fermentation process usually
-depends on the
-temperature and season. During winter season it takes more than two weeks for the
+is stored in aluminium or steel beakers. The speed of the fermentation process usually
+depends on the temperature and season. During winter season it takes more than \`two weeks\` for the
+rice to be properly fermented while in summer the process may be completed in \`a week\`.
 
-rice to be
-properly fermented while in summer the process may be completed in a week. 
+### Yu as a Social Connection and Simple Pleasure
+
 People believe drinking Yu in small quantities help in regulating low blood
-pressure and
-digestion. Although Yu is harmful when consumed heavily, it is also an
-integral process of
-traditional cooking technique. Rice beer, Apong, Zutho, Chuwak, Yu whatever
-the name be it
-has connected several people with love and appreciation for tribal cooking
-and culture. When
-resources were scarce and means of leisure almost none, drinking Yu and
-sharing stories,
-enjoying some hours before lulling into sleep was a social outlet for men and
-women alike to
-enjoy the simple pleasures of life. 
-References 
-
-http://genebank.nbpgr.ernet.in/SeedBank/AccessionDetails.aspx?state=Arunac
-hal%20Prades
-h&&cgrp=1&&cid=2047
-`
+pressure and digestion. Although Yu is harmful when consumed heavily, it is also an
+integral process of traditional cooking technique. Rice beer, Apong, Zutho, Chuwak, Yu whatever
+the name be it has connected several people with love and appreciation for tribal cooking
+and culture. When resources were scarce and means of leisure almost none, drinking Yu and
+sharing stories, enjoying some hours before lulling into sleep was a social outlet for men and
+women alike to enjoy the simple pleasures of life.
+`,
   },
   {
     slug: "bishnu-sendra-parvhunting-festival",
@@ -547,34 +562,37 @@ h&&cgrp=1&&cid=2047
     date: "Jun 30, 2025",
     language: "English",
     tags: [],
-    excerpt: "Bishnu Sendra Parv(Hunting Festival) #traditionalfestival#clim ate#indigenousfestival ___________________________________ A hunting festival called Bi...",
+    excerpt:
+      "#traditionalfestival #climate #indigenousfestival A hunting festival called Bishnu Sendra Parv is celebrated by tribals of Chotanagpur Plateau...",
     coverImage: "/blogs/sendra parva.png",
-    content: `
-Bishnu Sendra
-Parv(Hunting Festival)
-#traditionalfestival#clim
-ate#indigenousfestival
-___________________________________
-A hunting festival called Bishnu Sendra Parv is celebrated by tribals of
-Chotanagpur Plateau. The indigenous communities participating in it are
-called Santhal, Bhumij, Munda, Ho, Birhor and Kharia. In a particular date,
-the men and women of these communities enter the Dalma Wildlife
-Sanctuary situated in Jharkhand. This sanctuary is spread in an area of 192
-km. In the hot month of Indian May, the Sendra Parv’s date is fixed by the
+    content: `#traditionalfestival #climate #indigenousfestival
 
-king of these communities. He is called Dalma king and is christened the
-surname Hembrom. He observes executive monarchywithin the community.
+A hunting festival called Bishnu Sendra Parv is celebrated by tribals of
+\`Chotanagpur Plateau\`. The indigenous communities participating in it are
+called \`Santhal\`, \`Bhumij\`, \`Munda\`, \`Ho\`, \`Birhor\` and \`Kharia\`. In a particular date,
+the men and women of these communities enter the \`Dalma Wildlife Sanctuary\`
+situated in \`Jharkhand\`. This sanctuary is spread in an area of \`192 km\`.
+In the hot month of Indian \`May\`, the Sendra Parv’s date is fixed by the
+king of these communities. He is called \`Dalma king\` and is christened the
+surname \`Hembrom\`. He observes executive monarchy within the community.
+
+### The Tribes of Chotanagpur Plateau
+
 Before we discuss the hunting rituals of these indigenous communities let us
 discuss the Dalma Sanctuary.
-DALMA
-—----------------
-Dalma is situated about 30 km from the steel city Jamshedpur. Dalma has
+
+Dalma Wildlife Sanctuary
+
+### Geography, Flora, and the Asiatic Elephants
+
+Dalma is situated about \`30 km\` from the steel city \`Jamshedpur\`. Dalma has
 gotten its name from the local goddess Dalma Mai. This goddess is
 worshiped by the adjoining village people of the sanctuary.
+
 Dalma is a hotspot for ecotourism.
-The river Swarnarekha runs along the length of the sanctuary and gives
+The river \`Swarnarekha\` runs along the length of the sanctuary and gives
 birth to several scenic waterfalls within the scape. The forests of Dalma
-mainly are divided into Dry peninsular sal andNorthern dry mixed with
+mainly are divided into Dry peninsular sal and Northern dry mixed with
 deciduous forests. The flora has a varied richness of the climbers, herbs,
 shrubs, orchids. Some medicinal plants too participate in the fauna list such
 as Anantmula, Shatavari, Sarpgandha etc. The sanctuary is an abode for
@@ -584,36 +602,48 @@ unofficial elephant sanctuary tag, large varieties of wild animals are also
 found here. Such as barking deer, sloth bear, porcupines, mouse deer,
 Indian giant squirrels, pangolins, mongooses, wild boar, wild buffalo too can
 be sighted in the sanctuary.
+
+### Avian Treasures and Migratory Flyways
+
 Domestic birds such as falcons, gray hornbills, paradise fly catchers, magpie
 robins, egrets, mynas, Indian tree pie, Indian peafowl, different varieties of
 kingfishers, herons, racket tailed drongo, golden oriole etc can be spotted in
 the sanctuary. The migratory birds that fly over the various water bodies
-
-surrounding Dalma hills from Siberia and other cold countries in November.
-These birds begin to return from mid-February. Species such as Ferruginous
+surrounding Dalma hills from \`Siberia\` and other cold countries in \`November\`.
+These birds begin to return from \`mid-February\`. Species such as Ferruginous
 duck, Eurasian Wagon, Red Crested Pochard, Common Pochard, Taiga
 Flycatcher, and Black Bittern.
+
+### Foot Trails and Ecotourism Guidance
+
 The Dalma Sanctuary has no safari but foot trails envelope this shortcoming
 with higher degrees of grace. The trails are carefully marked by the forest
 department authorities for visitors to enjoy the natural beauty. A forest
 guide usually accompanying the wildlife enthusiasts helps them for a
 thorough understanding and enjoyment.
+
 Sendra Parv Rituals Analysis
-—----------------------------------
+
+### Invitations and the Sacred Bonfire
+
 This tradition’s history is undated and has come down from generation to
 generation. These indigenous communities are Polytheist. The tribes not just
-of Jharkhand but from adjacent bordering states such as Odisha, Bihar,
+of \`Jharkhand\` but from adjacent bordering states such as Odisha, Bihar,
 West Bengal too join them. This occasion is celebrated under just one
 leadership of the Dalma King.
+
 This festival’s relevance and ostentisity can be understood from the fact
 that the people beyond their community are invited to partipate and it
 depends upon the intelligibility of the said person to either participate or skip
 the event.
+
 The whole ritual begins by a meeting at their King’s residence or any
 village’s primary school ground or at the courtyard of a village’s temple. A
 fallen palm leaf[called as gira sakam] is given to everyone whose presence
 is anticipated in Sendra. This is a traditional tribal invitation method followed
-till date. More than 10,000 people participate in this hunting festival.
+till date. More than \`10,000\` people participate in this hunting festival.
+
+### Sacred Bonfires and Traditional Weaponry
 
 On the first day the cleaning of their temple is completed. Next day, a
 praying ceremony is observed in the temple. The beginning is marked by
@@ -622,6 +652,7 @@ sing and dance to their traditional and indigenous songs. The next day, the
 men and women ascend the Dalma hills with the intentions of attacking and
 hunting in the Dalma Sanctuary. The hunters do not use modern
 ammunitions like nets, guns, noose etc.
+
 The villagers take the ancient and traditional weapons like bows and arrows,
 farsa[ battle axes ], axes, bejar [dagger], lathi-danda[sticks] and enter the
 forest beating their traditional drums and chanting holy hymns. With these
@@ -629,12 +660,16 @@ weaponaries they hunt animals like birds to wild buffaloes. After their
 hunting culminates, the people gather again at some clearing to settle any
 dispute within the tribal society of the entire region throughout the year. The
 decisions are pronounced in front of their local god Dehri Baba.
+
+### Ecological Awareness and Symbolic Hunting
+
 Since hunting is now widely considered illegal in almost every country of the
 world for the risk of extinction of the endangered and both species who are
 found abundant, the amalgamation of the motley communities is lessening
 year-by-year. Every year the forest department runs social and
 environmental awareness programmes in the local markets and the villages
 showcasing them the danger of ecological imbalance.
+
 During the time of this hunting festival a tight vigil is observed at the
 possible locations serving as entryway for them. Use of patrol teams
 continuously touring the sanctuary to prohibit them from entering the forest.
@@ -643,7 +678,7 @@ cranny, the people sneak through the rough terrain areas to continue this
 ritual of hunting. Albeit with time those who have understood the urgency of
 forest habitat equilibrium, perform the symbolic ritual of hunting i.e. after
 the worshipping, animal hunting is on a rapid rate of decline.
-`
+`,
   },
   {
     slug: "my-boring-traditional-attire-was-never-boring-at-all",
@@ -652,20 +687,18 @@ the worshipping, animal hunting is on a rapid rate of decline.
     date: "Nov 18, 2025",
     language: "English",
     tags: [],
-    excerpt: "My ‘boring’ traditional attire was never ‘boring’ at all  Packing for college was an exciting activity for Imu considering that this was going to be h...",
-    coverImage: "/blogs/My boring traditional attire was never boring at all.png",
-    content: `
-My ‘boring’ traditional attire was never ‘boring’ at all
+    excerpt:
+      "My ‘boring’ traditional attire was never ‘boring’ at all  Packing for college was an exciting activity for Imu considering that this was going to be h...",
+    coverImage:
+      "/blogs/My boring traditional attire was never boring at all.png",
+    content: `Packing for college was an exciting activity for Imu considering that this was going to
+be her first time leaving her hometown of \`seventeen years\` and going to a college in
+another state. As her stomach filled with a heavy sense of impending doom; probably because of
+excitement and jittery nerves, she did a double check on all her belongings packed in her brown
+trolley which her elder sister had packed.
 
-Packing for college was an exciting activity for Imu considering that this was going to
-be her
-first time leaving her hometown of seventeen years and going to a college in
-another state. As
-her stomach filled with a heavy sense of impending doom; probably because of
-excitement
-and jittery nerves, she did a double check on all her belongings packed in her brown
-trolley
-which her elder sister had packed.
+### Sisterly Debates Over a Packing List
+
 Eeee! Aecha aesya? Ngada. Nga aecha thuwe gimbaw gumda! 
 Aecha nu chi Etopolo ni Thuwe. Naniapiya mein college gimbana laada. 
 Eeee. Ngada. Kesha gum. Nga gimbaw gum.
@@ -678,116 +711,88 @@ college.
 Eeee. No. This is not even pretty. I am not taking it.
 Oh c’mon. Take this with you.
 No. No. No!!
+
 But after multiple back and forth between the two sisters which lasted for more than
-half an
-hour the result was final. Imu would be taking her ‘boring’ traditional Etopolo (top)
-and
-Thuwe (wrap around skirt) with her to college. Although Imu had kept her end of the
-bargain
-she promised herself she would not be taking these clothes out from her bag any
-time soon. 
+half an hour the result was final. Imu would be taking her ‘boring’ traditional \`Etopolo\` (top)
+and \`Thuwe\` (wrap around skirt) with her to college. Although Imu had kept her end of the
+bargain she promised herself she would not be taking these clothes out from her bag any
+time soon.
+
+### The Arrival of Indigenous Faith Day
+
 College started and so did new adventures and lessons. Days turned into weeks
-and weeks
-into months and soon it was the Indigenous Faith Day of Arunachal Pradesh. In the
-midst of
-tribal students excited to flaunt their traditional attire Imu found herself nervous at
-the
-thought of wearing hers. 
-The idu mishmi textile pattern consists of simple geometric shapes which are
-decorated with
-smaller colourful shapes. The primary colours used in Idu Mishmi textiles are Black,
-dark or
-bright orange, white. Different cloth pieces have different colour themes. For
-instance- when
-weaving a traditional Thuwe which is a wrap around skirt the colours used are
-mostly black,
-dark or bright orange, white and shimmering yarn is also used for embellishments.
-The
-design on a Thuwe is weaved on a black background with rows of diamond shaped
+and weeks into months and soon it was the \`Indigenous Faith Day\` of \`Arunachal Pradesh\`. In the
+midst of tribal students excited to flaunt their traditional attire Imu found herself nervous at
+the thought of wearing hers.
 
-motifs
-filled with smaller diamonds in shiny silver, white or brighter colours of green or
-bright
-orange. A traditional everyday Etoma , a coat also has the same colour scheme as
-the Thuwe.
-Another coat known as Anatubru is a more colourful version consisting of bright
-yellow
-rectangular strips with black, red and green geometric shaped embroidery. The
-warrior coat
-known as Etondre is made out of thicker yarn or wool. It is mostly in a symmetrical
-black and
-white design. 
+### Anatomy of Idu Mishmi Textile Art
 
-In the earlier days the Idu Mishmi people would use nettle plants to make yarn and
-natural
-plant dyes for the colours. Every loom set was different and had multiple
-components for
-multiple attires. Since the clothes were curated out of natural raw products it was a
-time
-taking process taking up to four to five months. Thus each clothing piece was
-appreciated and
-cost a lot. When Imu was in high school she remembered how her naniapiya
-weaved different
-sets of Thuwe for different occasions. The simpler ones made mostly out of one
-single colour
-could be weaved in a week and would cost around 1000- 1500 Rs. While the ones
-which had
-Joṉ (embroidery/ weaving designs) were much costlier considering the amount of
-time and
-precision it took to complete one. The cost of the latter would start from 3000- 6000
-Rs. 
+The \`Idu Mishmi\` textile pattern consists of simple geometric shapes which are
+decorated with smaller colourful shapes. The primary colours used in \`Idu Mishmi\` textiles are Black,
+dark or bright orange, white. Different cloth pieces have different colour themes. For
+instance- when weaving a traditional \`Thuwe\` which is a wrap around skirt the colours used are
+mostly black, dark or bright orange, white and shimmering yarn is also used for embellishments.
+The design on a \`Thuwe\` is weaved on a black background with rows of diamond shaped motifs
+filled with smaller diamonds in shiny silver, white or brighter colours of green or bright
+orange. A traditional everyday \`Etoma\` , a coat also has the same colour scheme as
+the \`Thuwe\`. Another coat known as \`Anatubru\` is a more colourful version consisting of bright
+yellow rectangular strips with black, red and green geometric shaped embroidery. The
+warrior coat known as \`Etondre\` is made out of thicker yarn or wool. It is mostly in a symmetrical
+black and white design.
+
+### Natural Weaving on a Wooden Loom
+
+In the earlier days the \`Idu Mishmi\` people would use nettle plants to make yarn and
+natural plant dyes for the colours. Every loom set was different and had multiple
+components for multiple attires. Since the clothes were curated out of natural raw products it was a
+time taking process taking up to \`four to five months\`. Thus each clothing piece was
+appreciated and cost a lot. When Imu was in \`high school\` she remembered how her naniapiya
+weaved different sets of \`Thuwe\` for different occasions. The simpler ones made mostly out of one
+single colour could be weaved in a week and would cost around \`1000-1500 Rs.\` While the ones
+which had \`Joṉ\` (embroidery/ weaving designs) were much costlier considering the amount of
+time and precision it took to complete one. The cost of the latter would start from \`3000-6000 Rs.\`
+
+### Intergenerational Lessons on the Loom
+
 Imu remembered how she had to accompany her aunty during the initial phase of
-setting up
-
-the wooden loom for weaving. She would pass the ball of black yarn to her aunty
-who would
-be sitting in front of the loom; one hand waiting for the ball at point A and passing it
-to the
-other hand through the horizontal opening at point B. As the duo repeated this
-process till a
-black piece of desired outcome could be seen they would be sharing anecdotes
-from everyday
-life, incidents of great curiosity, home remedies and life lessons from school and the
+setting up the wooden loom for weaving. She would pass the ball of black yarn to her aunty
+who would be sitting in front of the loom; one hand waiting for the ball at point A and passing it
+to the other hand through the horizontal opening at point B. As the duo repeated this
+process till a black piece of desired outcome could be seen they would be sharing anecdotes
+from everyday life, incidents of great curiosity, home remedies and life lessons from school and the
 farm.
-As the D-day approached, Imu found herself contemplating if her attire would be
-pretty
-enough or if it would be too plain and simple. A pinch of nervousness and a bucket
-load of
-hopefulness later Imu looked at herself in the mirror. She looked pretty. Why did she
-think
-her clothes made her ugly? Perhaps it looked boring to her because she had always
-seen it be
-made out of simple balls of yarn and had worn it multiple times on multiple
-occasions that
-she forgot how colourful it was and how beautiful her clothes made her feel. She
-was wearing
-a lekopo, a traditional necklace made out of small white beads and bigger red
-beads, her
-silver earrings or andisu and her aakuchi (purse) made her resemble her naniapiya,
-her
-mother’s elder sister.
-Mimi, her Adi friend, was also wearing her traditional attire of Ulta Galuk (top) of a
-dark
-black colour and Gale (wrap around skirt) of a bright red colour with horizontal thin
-black
-rows. Her look was complimented with a traditional necklace Aane, made up of
-silver coins
 
-and beads. 
+### The Transformation in the Mirror
+
+As the \`D-day\` approached, Imu found herself contemplating if her attire would be
+pretty enough or if it would be too plain and simple. A pinch of nervousness and a bucket
+load of hopefulness later Imu looked at herself in the mirror. She looked pretty. Why did she
+think her clothes made her ugly? Perhaps it looked boring to her because she had always
+seen it be made out of simple balls of yarn and had worn it multiple times on multiple
+occasions that she forgot how colourful it was and how beautiful her clothes made her feel. She
+was wearing a \`lekopo\`, a traditional necklace made out of small white beads and bigger red
+beads, her silver earrings or \`andisu\` and her \`aakuchi\` (purse) made her resemble her naniapiya,
+her mother’s elder sister.
+
+### Complementary Colors of the Adi Gale
+
+Mimi, her \`Adi\` friend, was also wearing her traditional attire of \`Ulta Galuk\` (top) of a
+dark black colour and \`Gale\` (wrap around skirt) of a bright red colour with horizontal thin
+black rows. Her look was complimented with a traditional necklace \`Aane\`, made up of
+silver coins and beads.
+
+### Roots and Modernity in Harmony
+
 As the two friends joined their classmates all adorning their traditional attires with
-pride and
-gusto, Imu realised how important her clothes made her feel. Every attire was
-different,
-colourful and beautiful. Each attire had a story to tell and a tradition to be preserved
-and
-proud of. She was part of a connection between her traditional roots and the modern
-world.
-Her embarrassment crumbled as she paraded hand in hand with her peers, the sun
-shining
-brightly at the ongoing procession and a smile breaking into her young heart. 
+pride and gusto, Imu realised how important her clothes made her feel. Every attire was
+different, colourful and beautiful. Each attire had a story to tell and a tradition to be preserved
+and proud of. She was part of a connection between her traditional roots and the modern
+world. Her embarrassment crumbled as she paraded hand in hand with her peers, the sun
+shining brightly at the ongoing procession and a smile breaking into her young heart.
+
 References
 https://www.ijfmr.com/papers/2023/5/7112.pdf
-`
+`,
   },
   {
     slug: "empathy-design-design-as-a-means-of-understanding",
@@ -796,265 +801,230 @@ https://www.ijfmr.com/papers/2023/5/7112.pdf
     date: "Oct 2, 2025",
     language: "English",
     tags: [],
-    excerpt: "In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It enables designers to comprehend people’s feelings and experi...",
+    excerpt:
+      "In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It enables designers to comprehend people’s feelings and experi...",
     coverImage: "/blogs/Empathy.png",
-    content: `
-In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It
+    content: `In the realm of design, empathy is not just a crucial principle; it’s the cornerstone. It
 enables designers to comprehend people’s feelings and experiences, empowering
 them to craft solutions that deeply resonate with users.
+
 This concept has deep roots in philosophy, where thinkers have long emphasized
 the significance of understanding others’ perspectives. For designers, this
 understanding is indispensable, as they strive not only to create functional designs
 but also ones that genuinely connect with their audience.
+
 Empathy isn’t merely a theoretical notion; it’s a practical imperative woven into every
 stage of the creative process. From initial research to prototyping, empathy guides
 designers, ensuring that their creations are rooted in a profound understanding of
 users’ needs and desires. It all begins with a sincere curiosity and a readiness to
 immerse oneself in the lived realities of those they design for.
+
 The Role of Empathy in Design
+
+### Listening, Observing, and Putting Assumptions Aside
+
 Empathy isn’t just a theory for designers; it’s a practical tool they use throughout
 their work. They start by listening to and observing the people who will use their
 designs. This means putting aside their own ideas and really trying to understand
 what users need and want. Once they have this understanding, they can start
 
+### Iterative Design and User Testing Feedback
+
 coming up with ideas that fit the users’ needs and situations. Empathy also helps
 designers improve their designs by involving users in testing and getting their
 feedback.
+
 Design as a Means of Understanding
+
+### Pragmatic Philosophy and Real-Life Validation
+
 Design isn’t just about making things look good; it’s about understanding people and
-their experiences. Philosophers like John Dewey and Richard Shusterman have
+their experiences. Philosophers like \`John Dewey\` and \`Richard Shusterman\` have
 talked about how philosophy can help us understand the world better. For designers,
 this means constantly testing their ideas and making sure they work in real life.
-In India, designers face unique challenges because of the country’s
+
+### Designing for Diversity across the Indian Landscape
+
+In \`India\`, designers face unique challenges because of the country’s
 diversity. They need to understand the different cultures, languages, and
 lifestyles of people across the country. This includes both urban and rural
 areas, as well as people from different socioeconomic backgrounds. By
 understanding these differences, designers can create solutions that work
 for everyone.
-`
+`,
   },
   {
     slug: "litti-chokha-a-culinary-treasure-rooted-in-ayurveda-and-sustainability",
-    title: "Litti Chokha: A Culinary Treasure Rooted in Ayurveda and Sustainability",
+    title:
+      "Litti Chokha: A Culinary Treasure Rooted in Ayurveda and Sustainability",
     author: "Prince Singh",
     date: "Sep 24, 2025",
     language: "English",
     tags: [],
-    excerpt: "Litti Chokha: A Culinary Treasure Rooted in Ayurveda and Sustainability  Introduction: More Than Just a Street Food What if I told you that one of Bih...",
+    excerpt:
+      "Introduction: More Than Just a Street Food What if I told you that one of Bihar’s most beloved street foods is also a powerhouse of Ayurvedic nutrition?...",
     coverImage: "/blogs/litti chokha.png",
-    content: `
-Litti Chokha: A Culinary
-Treasure Rooted in
-Ayurveda and
-Sustainability
+    content: `Introduction: More Than Just a Street Food
 
-Introduction: More Than Just a Street Food
-What if I told you that one of Bihar’s most beloved street foods is also a powerhouse
-of Ayurvedic nutrition? Litti Chokha, a dish often associated with rustic flavors and
-roadside eateries, is far more than just comfort food. It is an Ayurveda-approved
-meal that has sustained farmers, warriors, and travelers for centuries, offering a
-perfect balance of nutrition, energy, and sustainability.
-While modern food trends emphasize organic eating, balanced diets, and
-sustainability, this humble dish from Bihar has been following these principles for
-generations. Litti Chokha isn’t just food; it’s a story of heritage, health, and harmony
-with nature.
-Let’s explore how this simple yet powerful dish aligns with Ayurvedic wisdom,
-its cultural significance, and why it deserves a global spotlight.
+What if I told you that one of \`Bihar’s\` most beloved street foods is also a powerhouse of Ayurvedic nutrition? Litti Chokha, a dish often associated with rustic flavors and roadside eateries, is far more than just comfort food. It is an Ayurveda-approved meal that has sustained farmers, warriors, and travelers for centuries, offering a perfect balance of nutrition, energy, and sustainability.
+
+While modern food trends emphasize organic eating, balanced diets, and sustainability, this humble dish from \`Bihar\` has been following these principles for generations. Litti Chokha isn’t just food; it’s a story of heritage, health, and harmony with nature.
+
+Let’s explore how this simple yet powerful dish aligns with Ayurvedic wisdom, its cultural significance, and why it deserves a global spotlight.
+
 The Origins: A Meal of Warriors and Farmers
-Litti Chokha traces its roots to the Magadha Empire (6 th century BCE), one
-of the most powerful kingdoms in ancient India. It is believed that Magadhi
-soldiers relied on Litti because:
-It was lightweight and easy to carry during long journeys.
-It required minimal cooking resources—just a fire to roast the Littis.
-It provided long-lasting energy without refrigeration.
-Over time, this simple yet effective dish became a staple among farmers
-and laborers due to its cost-effectiveness, high nutritional value, and
-ability to stay fresh for hours.
-Even today, Litti Chokha remains a symbol of resilience and
-self-sufficiency, making it one
-of Bihar’s most cherished dishes.
+
+### Magadha Soldiers and Self-Sufficiency
+
+Litti Chokha traces its roots to the \`Magadha Empire\` (\`6th century BCE\`), one of the most powerful kingdoms in ancient India. It is believed that Magadhi soldiers relied on Litti because:
+
+● It was lightweight and easy to carry during long journeys.
+
+● It required minimal cooking resources—just a fire to roast the Littis.
+
+● It provided long-lasting energy without refrigeration.
+
+### Sustenance for Farmers and Laborers
+
+Over time, this simple yet effective dish became a staple among farmers and laborers due to its cost-effectiveness, high nutritional value, and ability to stay fresh for hours. Even today, Litti Chokha remains a symbol of resilience and self-sufficiency, making it one of \`Bihar’s\` most cherished dishes.
 
 Litti Chokha and Ayurveda: A Perfectly Balanced Meal
-Ayurveda, the ancient Indian system of medicine, emphasizes a diet that
-balances the three
-doshas—Vata, Pitta, and Kapha. Surprisingly, Litti Chokha is designed in
-such a way that it
-helps in balancing these energies.
-Litti: A Nutritional Powerhouse
-Litti consists of wheat flour balls stuffed with sattu (roasted gram flour), herbs, and
-spices, then roasted over an open fire.
-Let’s break down its Ayurvedic significance: Sattu (Roasted Gram Flour):
-High in protein and fiber, sattu aids digestion, boosts energy, and keeps the body
-cool. It is beneficial for Pitta dosha, helping in detoxification and preventing acidity.
-Whole Wheat Flour: A great source of complex carbohydrates, ensuring a
-slow energy release and better digestion.
-Provides warmth in winters, making it suitable for Vata dosha. Ajwain (Carom
-Seeds) &amp;
-Jeera (Cumin): Helps in gut health and prevents bloating, making it ideal for
-Kapha balance.
-Mustard Oil: Used in both Littis and Chokha, it improves digestion, is
-antibacterial, and generates warmth—ideal for Vata and Kapha doshas.
-Chokha: A Smoked Delight with Medicinal Benefits Chokha is a mashed
-vegetable side dish made of roasted brinjals (eggplants), tomatoes, potatoes,
-and green chilies. Ayurveda recognizes each of these ingredients for their
-healing properties:
-Brinjal (Eggplant): Rich in antioxidants, great for blood circulation and
-detoxification. Helps in balancing Kapha and Pitta doshas.
 
-Tomatoes: A natural source of Vitamin C, boosting immunity and aiding
-digestion. Helps in detoxification and skin health.
-Garlic &amp; Green Chilies: Known for their anti-inflammatory properties,
-aiding in digestion and boosting metabolism. The combination of smoky
-flavors, earthy spices, and fresh ingredients makes Litti Chokha not only
-delicious but also a medicinal meal that heals the body from within. A Meal for
-All Seasons One of the unique aspects of Litti Chokha is its seasonal
-adaptability. Unlike modern fast foods, which have a fixed nutritional profile,
-this dish naturally adjusts to different weather conditions.
-Summer: Sattu cools the body and prevents heat strokes. The high fiber
-content ensures better digestion and hydration.
-Winter: Mustard oil and wheat provide warmth, keeping the body cozy during
-cold months. The protein-rich sattu ensures higher energy levels in winter.
-Sustainability and Simplicity: A Meal for the Future At a time when the world is
-looking for eco-friendly food solutions, Litti Chokha stands out
-As a sustainable dish:
-* Minimal Cooking Fuel Required – Traditionally, Littis are roasted over cow
-dung cakes or wood fire, reducing dependency on gas or electricity.
-* No Refrigeration Needed – Due to its simple ingredients, it remains fresh for
-longhours without refrigeration.
-*Locally Sourced Ingredients – Every element of this dish is derived from local
-farms, reducing carbon footprint.
-* Zero Waste Cooking – Unlike modern processed food, there is minimal food
-waste in
-making Litti Chokha.
-*This makes it not just a heritage dish, but also an eco-friendly future food
-option.
-A Heritage Dish with a Global Future
-In recent years, Litti Chokha has gained international recognition. With an increasing
-interest in organic and plant-based diets, this dish is now finding its place in:
-Fine-dining restaurants experimenting with gourmet versions. Health-conscious diets
-promoting sattu as a superfood. Vegan and vegetarian cuisine, as it’s naturally
-plant-based. Despite its simplicity, Litti Chokha remains deeply cultural, nutritionally
+### Balancing the Three Doshas
 
-rich, and environmentally sustainable—a rare combination that makes it worthy of
-global appreciation.
-Final Thoughts: Bringing Back Forgotten
-Traditions
-In our rush towards fast food and processed meals, we often overlook the wisdom of
-our ancestors. Litti Chokha is a testament to how traditional diets were naturally
-aligned with health, sustainability, and Ayurveda.
-So, the next time you enjoy a plate of Litti Chokha, remember: You’re not just eating
-a meal; you’re embracing centuries-old wisdom. You’re choosing a dish that
-nourishes your body and respects nature. You’re indulging in a food tradition that
-deserves to be celebrated globally.
-`
+Ayurveda, the ancient Indian system of medicine, emphasizes a diet that balances the three \`doshas\`—\`Vata\`, \`Pitta\`, and \`Kapha\`. Surprisingly, Litti Chokha is designed in such a way that it helps in balancing these energies.
+
+### Litti: Sattu and Spice Synergy
+
+Litti consists of wheat flour balls stuffed with \`sattu\` (roasted gram flour), herbs, and spices, then roasted over an open fire. Let’s break down its Ayurvedic significance:
+
+● \`Sattu\` (Roasted Gram Flour): High in protein and fiber, \`sattu\` aids digestion, boosts energy, and keeps the body cool. It is beneficial for \`Pitta\` \`dosha\`, helping in detoxification and preventing acidity.
+
+● Whole Wheat Flour: A great source of complex carbohydrates, ensuring a slow energy release and better digestion. Provides warmth in winters, making it suitable for \`Vata\` \`dosha\`.
+
+● Ajwain (Carom Seeds) & Jeera (Cumin): Helps in gut health and prevents bloating, making it ideal for \`Kapha\` balance.
+
+● Mustard Oil: Used in both Littis and Chokha, it improves digestion, is antibacterial, and generates warmth—ideal for \`Vata\` and \`Kapha\` \`doshas\`.
+
+### Chokha: Mashed Vegetables and Healing Herbs
+
+Chokha is a mashed vegetable side dish made of roasted brinjals (eggplants), tomatoes, potatoes, and green chilies. Ayurveda recognizes each of these ingredients for their healing properties:
+
+● Brinjal (Eggplant): Rich in antioxidants, great for blood circulation and detoxification. Helps in balancing \`Kapha\` and \`Pitta\` \`doshas\`.
+
+● Tomatoes: A natural source of Vitamin C, boosting immunity and aiding digestion. Helps in detoxification and skin health.
+
+● Garlic & Green Chilies: Known for their anti-inflammatory properties, aiding in digestion and boosting metabolism.
+
+The combination of smoky flavors, earthy spices, and fresh ingredients makes Litti Chokha not only delicious but also a medicinal meal that heals the body from within.
+
+### Seasonal Adaptability and Dosha Balance
+
+One of the unique aspects of Litti Chokha is its seasonal adaptability. Unlike modern fast foods, which have a fixed nutritional profile, this dish naturally adjusts to different weather conditions.
+
+● Summer: \`Sattu\` cools the body and prevents heat strokes. The high fiber content ensures better digestion and hydration.
+
+● Winter: Mustard oil and wheat provide warmth, keeping the body cozy during cold months. The protein-rich \`sattu\` ensures higher energy levels in winter.
+
+### Sustainability and Zero-Waste Principles
+
+At a time when the world is looking for eco-friendly food solutions, Litti Chokha stands out as a sustainable dish:
+
+● Minimal Cooking Fuel Required – Traditionally, Littis are roasted over cow dung cakes or wood fire, reducing dependency on gas or electricity.
+
+● No Refrigeration Needed – Due to its simple ingredients, it remains fresh for long hours without refrigeration.
+
+● Locally Sourced Ingredients – Every element of this dish is derived from local farms, reducing carbon footprint.
+
+● Zero Waste Cooking – Unlike modern processed food, there is minimal food waste in making Litti Chokha.
+
+This makes it not just a heritage dish, but also an eco-friendly future food option.
+
+### Global Horizons and Sattu as a Superfood
+
+In recent years, Litti Chokha has gained international recognition. With an increasing interest in organic and plant-based diets, this dish is now finding its place in:
+
+● Fine-dining restaurants experimenting with gourmet versions.
+
+● Health-conscious diets promoting \`sattu\` as a superfood.
+
+● Vegan and vegetarian cuisine, as it’s naturally plant-based.
+
+Despite its simplicity, Litti Chokha remains deeply cultural, nutritionally rich, and environmentally sustainable—a rare combination that makes it worthy of global appreciation.
+
+### Final Thoughts: Reclaiming Our Culinary Heritage
+
+In our rush towards fast food and processed meals, we often overlook the wisdom of our ancestors. Litti Chokha is a testament to how traditional diets were naturally aligned with health, sustainability, and Ayurveda.
+
+So, the next time you enjoy a plate of Litti Chokha, remember: You’re not just eating a meal; you’re embracing centuries-old wisdom. You’re choosing a dish that nourishes your body and respects nature. You’re indulging in a food tradition that deserves to be celebrated globally.
+`,
   },
   {
     slug: "timekeeping-before-clocks-tracing-ancient-indian-and-bengali-timekeeping-traditions",
-    title: "Timekeeping Before Clocks: Tracing Ancient Indian and Bengali Timekeeping Traditions",
+    title:
+      "Timekeeping Before Clocks: Tracing Ancient Indian and Bengali Timekeeping Traditions",
     author: "Proteeti Satpati",
     date: "Aug 15, 2025",
     language: "English",
     tags: [],
-    excerpt: "Timekeeping Before Clocks: Tracing Ancient Indian andBengali Timekeeping Traditions #Traditional Knowledge \"Time was once told by tides and twilight, ...",
+    excerpt:
+      '#Traditional Knowledge "Time was once told by tides and twilight, sung by birds, and whispered by the wind—long before clocks dared to measure it." Much before...',
     coverImage: "/blogs/Timekeeping Before Clocks.png",
     content: `
-Timekeeping Before Clocks: Tracing Ancient Indian andBengali
-Timekeeping Traditions
 #Traditional Knowledge
-"Time was once told by tides and twilight, sung by birds, and whispered by
-the wind—long before clocks dared to measure it."
-Much before the mechanical clock became a reality, civilisations relied on indigenous
-methods to track time. From celestial observations to water clocks, the human need
-to organize daily life, agriculture, and rituals gave birth to unique timekeeping
-techniques. This was also true for India, especially Bengal, where people wove their
-daily lives around indigenous timekeeping methods that married science with ritual
-and nature with culture.
-In this blog, we delve into the depths of how people in Bengal and the broader Indian
-subcontinent crafted their way of knowing the hour—from astronomical calculations
-to water clocks, and temple bells to birdcalls—and how traditional methods have still
-found a way to retain their presence in cultural practices and continue to persevere
 
-even in the face of the ruthless pace of mechanization that characterizes the world of
-today.
-Celestial Science: Astronomy and the Panchang
-Astronomy played a key role in Indian, and Bengali, timekeeping traditions. The
-movements of celestial bodies were meticulously observed and charted to divide the
-days and years into meaningful units. Bengal, with its rich tradition of astronomy and
-mathematics, had a significant role to play in enriching these early efforts. The
-Panchang, which was the traditional Hindu calendar, used the lunar cycle to divide
-the year into months named after prominent constellations. This calendar was a
-prime example of how important the role of Nakshatras and celestial bodies was in
-determining rituals, agriculture, and governance.
-Panchang was used for centuries by Bengali scholars and priests to determine
-auspicious days for festival dates and agricultural cycles. Bengali astronomy experts
-like Raghunath Purushottama refined these calculations to create more accurate
-almanacs to guide everyday activities. This led to the introduction of concepts such
-as Tithis (lunar days) and Muhurats (auspicious time periods) which were widely
-used for religious and social events. Bangabda: Akbar’s Fusion Calendar Another
-landmark moment in the history of pre-clock timekeeping in Bengal was the
-introduction of the Bengali calendar, Bangabda, which was introduced by Akbar in
-1584. This was a unique fusion of Islamic lunar and Hindu solar tenets of
-timekeeping.
-This helped standardize timekeeping in Bengal, particularly in the case of agriculture,
-aligning tax collection periods with region’s seasonal cycles. Ghati Yantra: Measuring
-Time with Water  people also developed the Ghati system of timekeeping. These
-were water clocks known as Ghati Yantras that would measure the passage of time
-through the controlled flow of water from one vessel to another, through units called
-Ghatikas. This method was widely used in the Dakshineshwar and Kalighat temples
-to signal daily prayer and offering times. They were also widely used to regulate
-trade and administrative work in the medieval cities of Murshidabad and Gauda.
+"Time was once told by tides and twilight, sung by birds, and whispered by the wind—long before clocks dared to measure it."
 
-Nature as a Clock: Ecological Cues and Cultural Rhythms
-During this period in the history of Bengal, we also observe a unique dependence on
-biological and environmental cues to measure time. The call of the cuckoo signaled
-dawn. The ebb and flow of tides guided the fishermen of Sundarbans in timing their
-ventures. He boatmen’s Bhatiyali songs often had references to time and its unique
-nature of waiting for none. Even the auspicious Brahma Muhurta—the religiously
-important pre-dawn hour—was determined based on celestial movements and the
-spiritual and symbolic silence in the natural world. In short, Bengal’s maritime culture
-environmental dependence ensured that natural elements, especially rivers such as
-the Ganges, the Hooghly, and the Brahmaputra played crucial role in guiding trade,
-travel, and daily life.
-Bells and Criers: Sound as a Signal of Time
-The account of timekeeping Bengal perhaps is not complete without the mention of
-an age-old device of signaling time—bells. Mangal Arati, and midday offerings at
-temples, big and small, were signaled using bells. In trade towns like Kolkata and
-Chandannagar, bells rang to indicate market opening and closing hours. Public criers
-often used bells to announce significant events, marking time for communal
-activities.
-The Colonial Shift: From Cycles to Clocks
-With the British, came the European clocks, almost ominously calling time on all the
-means and measures of timekeeping that had been prevailing in the land. Water
-clocks. gave way to Big Ben-style clock towers and wristwatches replaced sundials.
-As times changed, indigenous methods slowly gave way to the more machine-driven
-products, and modern inventions steadily overtook traditional knowledge.
-Echoes in the Present: The Persistence of Traditional Time
+Much before the mechanical clock became a reality, civilisations relied on indigenous methods to track time. From celestial observations to water clocks, the human need to organize daily life, agriculture, and rituals gave birth to unique timekeeping techniques. This was also true for \`India\`, especially \`Bengal\`, where people wove their daily lives around indigenous timekeeping methods that married science with ritual and nature with culture.
 
-However, all has not been lost. Traditional lunar calendars are still considered an
-indispensable part of Bengali households with them being of utmost importance
-when it comes to determining auspicious days for sacred rituals and festivals. This
-goes on to show ancient timekeeping practices have themselves stood the test of
-time. In an increasingly mechanizing world, these methods have somehow still held
-on to their relevance. They are reminders of the deep connection between human
-societies andnature, the ingenuity of ancient science, and the cultural rhythms that
-continue to shape our lives.
-Timekeeping is not just a scientific pursuit; it is a practice deeply woven into the
-Bengali social structure that has endured quietly in a race defined by the beat of
-quartz and atomic seconds. It survives in the ringing of the temple bells, the rhythms
-of the tides, and the occasional rustling of the Bengali calendars in every Bengali
-drawing room; and it is through preservation of these practices and knowledge
-systems that we honour rhythm over rush, and community over clockwork.
-`
+In this blog, we delve into the depths of how people in \`Bengal\` and the broader \`Indian subcontinent\` crafted their way of knowing the hour—from astronomical calculations to water clocks, and temple bells to birdcalls—and how traditional methods have still found a way to retain their presence in cultural practices and continue to persevere even in the face of the ruthless pace of mechanization that characterizes the world of today.
+
+### Celestial Science: Astronomy and the Panchang
+
+Astronomy played a key role in Indian, and Bengali, timekeeping traditions. The movements of celestial bodies were meticulously observed and charted to divide the days and years into meaningful units. \`Bengal\`, with its rich tradition of astronomy and mathematics, had a significant role to play in enriching these early efforts. The \`Panchang\`, which was the traditional \`Hindu\` calendar, used the lunar cycle to divide the year into months named after prominent constellations. This calendar was a prime example of how important the role of \`Nakshatras\` and celestial bodies was in determining rituals, agriculture, and governance.
+
+\`Panchang\` was used for centuries by Bengali scholars and priests to determine auspicious days for festival dates and agricultural cycles. Bengali astronomy experts like \`Raghunath Purushottama\` refined these calculations to create more accurate almanacs to guide everyday activities. This led to the introduction of concepts such as \`Tithis\` (lunar days) and \`Muhurats\` (auspicious time periods) which were widely used for religious and social events.
+
+### Bangabda: Akbar's Fusion Calendar
+
+Another landmark moment in the history of pre-clock timekeeping in \`Bengal\` was the introduction of the \`Bengali\` calendar, \`Bangabda\`, which was introduced by \`Akbar\` in \`1584\`. This was a unique fusion of \`Islamic\` lunar and \`Hindu\` solar tenets of timekeeping.
+
+This helped standardize timekeeping in \`Bengal\`, particularly in the case of agriculture, aligning tax collection periods with region's seasonal cycles.
+
+### Ghati Yantra: Measuring Time with Water
+
+People also developed the \`Ghati\` system of timekeeping. These were water clocks known as \`Ghati Yantras\` that would measure the passage of time through the controlled flow of water from one vessel to another, through units called \`Ghatikas\`. This method was widely used in the \`Dakshineshwar\` and \`Kalighat\` temples to signal daily prayer and offering times. They were also widely used to regulate trade and administrative work in the medieval cities of \`Murshidabad\` and \`Gauda\`.
+
+### Nature as a Clock: Ecological Cues and Cultural Rhythms
+
+During this period in the history of \`Bengal\`, we also observe a unique dependence on biological and environmental cues to measure time. The call of the cuckoo signaled dawn. The ebb and flow of tides guided the fishermen of \`Sundarbans\` in timing their ventures. The boatmen's \`Bhatiyali\` songs often had references to time and its unique nature of waiting for none. Even the auspicious \`Brahma Muhurta\`—the religiously important pre-dawn hour—was determined based on celestial movements and the spiritual and symbolic silence in the natural world. In short, \`Bengal\`'s maritime culture and environmental dependence ensured that natural elements, especially rivers such as the \`Ganges\`, the \`Hooghly\`, and the \`Brahmaputra\` played a crucial role in guiding trade, travel, and daily life.
+
+### Bells and Criers: Sound as a Signal of Time
+
+The account of timekeeping in \`Bengal\` perhaps is not complete without the mention of an age-old device of signaling time—bells. \`Mangal Arati\`, and midday offerings at temples, big and small, were signaled using bells. In trade towns like \`Kolkata\` and \`Chandannagar\`, bells rang to indicate market opening and closing hours. Public criers often used bells to announce significant events, marking time for communal activities.
+
+### The Colonial Shift: From Cycles to Clocks
+
+With the \`British\`, came the European clocks, almost ominously calling time on all the means and measures of timekeeping that had been prevailing in the land. Water clocks gave way to \`Big Ben\`-style clock towers and wristwatches replaced sundials. As times changed, indigenous methods slowly gave way to the more machine-driven products, and modern inventions steadily overtook traditional knowledge.
+
+### Echoes in the Present: The Persistence of Traditional Time
+
+However, all has not been lost. Traditional lunar calendars are still considered an indispensable part of \`Bengali\` households with them being of utmost importance when it comes to determining auspicious days for sacred rituals and festivals. This goes on to show ancient timekeeping practices have themselves stood the test of time. In an increasingly mechanizing world, these methods have somehow still held on to their relevance. They are reminders of the deep connection between human societies and nature, the ingenuity of ancient science, and the cultural rhythms that continue to shape our lives.
+
+Timekeeping is not just a scientific pursuit; it is a practice deeply woven into the \`Bengali\` social structure that has endured quietly in a race defined by the beat of quartz and atomic seconds. It survives in the ringing of the temple bells, the rhythms of the tides, and the occasional rustling of the \`Bengali\` calendars in every Bengali drawing room; and it is through preservation of these practices and knowledge systems that we honour rhythm over rush, and community over clockwork.
+`,
   },
   {
     slug: "नषपकषतक-परयग-the-practice-of-impartiality",
-    title: "निष्पक्षताको प्रयोग । \"The practice of impartiality\"",
+    title: 'निष्पक्षताको प्रयोग । "The practice of impartiality"',
     author: "Pranay Rai",
     date: "Jul 7, 2025",
     language: "Nepali",
     tags: [],
-    excerpt: "निष्पक्षताको प्रयोग । बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को दशकमा फेलोसिप अफ रिकन्सिलिएसन संस्था मार्फत् र...",
-    coverImage: "/blogs/निष्पक्षताको प्रयोग । _The practice of impartiality_.png",
+    excerpt:
+      "निष्पक्षताको प्रयोग । बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को दशकमा फेलोसिप अफ रिकन्सिलिएसन संस्था मार्फत् र...",
+    coverImage:
+      "/blogs/निष्पक्षताको प्रयोग । _The practice of impartiality_.png",
     content: `
 निष्पक्षताको प्रयोग ।
 बेयार्ड रस्टिन एक अफ्रिकी…अमेरिकी नागरिक अगुवा थिए। उनले सुरूमा सन्१९४० र १९५० को
@@ -1087,7 +1057,7 @@ systems that we honour rhythm over rush, and community over clockwork.
 त्यो शहरमा बस्ने काला र गोरा दुवै रंगका मानिसहरूले मलाई बताएअनुसार उक्त घटना पछि श्रीमती
 डफी आफ्नो रेष्टुरेण्टमा कुनै द्वन्द्व नमच्चाई वा लाज नमानी काला मानिसहरूलाई सेवा दिइरहेकी
 छन्, जुन यस्तो भेदभावयुक्त वातावरणमा वास्तवमै एउटा शाहसको कुरा हो।
-`
+`,
   },
   {
     slug: "the-plow-story-a-time-tased-design-methodology",
@@ -1096,125 +1066,54 @@ systems that we honour rhythm over rush, and community over clockwork.
     date: "May 29, 2025",
     language: "English",
     tags: [],
-    excerpt: "The plow, in its most basic form, is a tool designed to cultivate and prepare soil for planting. Its origins can be traced back to ancient civilizatio...",
+    excerpt:
+      "The plow, in its most basic form, is a tool designed to cultivate and prepare soil for planting. Its origins can be traced back to ancient civilizatio...",
     coverImage: "/blogs/Plow story.png",
     content: `
-The plow, in its most basic form, is a tool designed to cultivate and prepare
-soil for planting. Its origins can be traced back to ancient civilizations across
-the globe, where early farmers recognized the need to break up and loosen the
-earth, facilitating the growth of crops. However, the design of these primitive
-plows was not a product of pure ingenuity alone; it was deeply rooted in the
-local knowledge systems that had evolved over generations of intimate
-interaction with the land and its resources.
-In regions where wood was abundant, plows were often crafted from sturdy
-tree branches or logs, their curved shapes mimicking the contours of the
-earth. These designs minimized the strain on farmers while maximizing the
-efficiency of the plowing process. In contrast, in areas where wood was
-scarce, animal bones or antlers were repurposed to create sharp, durable
-plow tips, enabling the tool to slice through even the most stubborn soils.
-The materials used in plow construction were not the only aspect
-influenced by local knowledge; the design itself was shaped by the unique
-environmental conditions of each region. In arid climates, where water
-conservation was paramount, plows were designed with narrow blades that
-created shallow furrows, minimizing soil disturbance and reducing water
+#DesignThinking #TraditionalKnowledge
 
-loss through evaporation. Conversely, in regions with fertile, well-watered
-soils, broader plow blades were favored, allowing for deeper cultivation and
-better aeration of the soil.
-Beyond their functional aspects, the primitive plow designs often carried
-symbolic and cultural significance, reflecting the deep connection between
-agricultural practices and the spiritual beliefs of local communities. Intricate
-carvings or decorative elements adorned these tools, imbuing them with a
-sense of reverence and respect for the land and its bounty.
-Embracing Sustainability through Design Thinking
-As we struggle with the urgent need to develop sustainable agricultural
-practices in the face of climate change, resource depletion, and population
-growth, the principles embodied in the primitive plow design offer valuable
-insights. By embracing the concept of local knowledge systems and
-integrating them into contemporary design thinking, we can create solutions
-that are not only environmentally sound but also culturally relevant and
-socially acceptable.
-One of the key tenets of sustainable design thinking is the recognition that
-solutions must be tailored to specific contexts and environments. The
-primitive plow exemplifies this principle, with its designs adapting to the
-unique conditions and resources of each region. By studying and learning
-from these traditional practices, modern agricultural engineers and designers
-can develop tools and techniques that are attuned to the local ecosystems,
-minimizing environmental impact while maximizing productivity.
-Furthermore, the primitive plow’s emphasis on utilizing locally available and
-renewable materials aligns with the principles of circular economy and
-resource efficiency — core pillars of sustainable design. By drawing
-inspiration from these ancient practices, contemporary designers can create
-agricultural tools and systems that prioritize the use of sustainable materials,
-reducing waste and promoting closed-loop cycles.
+The plow, in its most basic form, is a tool designed to cultivate and prepare soil for planting. Its origins can be traced back to ancient civilizations across the globe, where early farmers recognized the need to break up and loosen the earth, facilitating the growth of crops. However, the design of these primitive plows was not a product of pure ingenuity alone; it was deeply rooted in the local knowledge systems that had evolved over generations of intimate interaction with the land and its resources.
 
-The cultural and symbolic significance of the primitive design of plow also
-highlights the importance of social sustainability in design thinking. By
-acknowledging and respecting the deep-rooted connections between
-agricultural practices and local belief systems, designers can create solutions
-that resonate with the values and aspirations of farming communities. This
-sense of ownership and cultural relevance can foster greater adoption and
-stewardship of sustainable agricultural practices, ultimately contributing to the
-long-term viability of these solutions.
-Theoretical Underpinnings: Integrating Local Knowledge into Sustainable
-Design
-The integration of local knowledge systems into sustainable design practices
-finds theoretical grounding in various disciplines, including anthropology,
-environmental studies, and agricultural sciences.
-One influential framework is the concept of “indigenous technical
-knowledge” (ITK), which recognizes the wealth of knowledge and practices
-that have been developed by local communities over generations of
-interacting with their environments. Scholars such as Paul Richards and
-Gloria Anetor have extensively studied ITK in the context of agriculture,
-highlighting the importance of understanding and incorporating these
-traditional systems into modern agricultural development initiatives.
-Another theoretical lens that supports the incorporation of local knowledge
-is the concept of “agroecology.” Developed by researchers like Miguel Altieri
-and Stephen Gliessman, agroecology is a holistic approach to agriculture
-that emphasizes the integration of ecological principles and traditional
-knowledge systems. By recognizing the intricate relationships between
-crops, soil, water, and other elements of the agroecosystem, agroecology
+In regions where wood was abundant, plows were often crafted from sturdy tree branches or logs, their curved shapes mimicking the contours of the earth. These designs minimized the strain on farmers while maximizing the efficiency of the plowing process. In contrast, in areas where wood was scarce, animal bones or antlers were repurposed to create sharp, durable plow tips, enabling the tool to slice through even the most stubborn soils.
 
-seeks to create sustainable and resilient agricultural systems that are
-tailored to local contexts.
-Furthermore, the field of “ethnoecology” provides a theoretical foundation for
-understanding the intricate relationships between human cultures and their
-environments. Scholars such as Eugene Hunn and Víctor Toledo have
-explored how traditional knowledge systems shape the way communities
-perceive, classify, and interact with their natural surroundings, including their
-agricultural practices. By understanding these cultural frameworks, designers
-can create solutions that are better aligned with the worldviews and values of
-local communities.
-The primitive plow symbolizes the enduring wisdom and adaptability of local
-knowledge systems within agriculture. Rooted in diverse environmental,
-cultural, and social contexts, its design principles provide valuable insights
-for contemporary sustainable design thinking. By incorporating local
-knowledge systems into modern agricultural design processes, we can
-develop solutions that are environmentally sustainable, culturally relevant,
-and socially acceptable. Theoretical frameworks such as indigenous
-technical knowledge, agroecology, and ethnoecology underpin this
-approach, stressing the importance of understanding and respecting the
-intricate relationships between human communities, agricultural practices,
-and ecosystems.
-As we endeavor to address the challenges of 21st-century agriculture, it is
-essential to draw guidance from the past. The primitive plow serves as a
-reminder that true sustainability necessitates a nuanced understanding of
-diverse knowledge systems shaped by millennia of human experiences with
-the natural world. By leveraging the timeless wisdom encapsulated in tools
-like the primitive plow, we can chart a course toward an agricultural future that
+The materials used in plow construction were not the only aspect influenced by local knowledge; the design itself was shaped by the unique environmental conditions of each region. In arid climates, where water conservation was paramount, plows were designed with narrow blades that created shallow furrows, minimizing soil disturbance and reducing water loss through evaporation. Conversely, in regions with fertile, well-watered soils, broader plow blades were favored, allowing for deeper cultivation and better aeration of the soil.
 
-blends traditional knowledge with modern innovation, ensuring food security,
-environmental stewardship, and cultural continuity for future generations.
-`
+Beyond their functional aspects, the primitive plow designs often carried symbolic and cultural significance, reflecting the deep connection between agricultural practices and the spiritual beliefs of local communities. Intricate carvings or decorative elements adorned these tools, imbuing them with a sense of reverence and respect for the land and its bounty.
+
+### Embracing Sustainability through Design Thinking
+
+As we struggle with the urgent need to develop sustainable agricultural practices in the face of climate change, resource depletion, and population growth, the principles embodied in the primitive plow design offer valuable insights. By embracing the concept of local knowledge systems and integrating them into contemporary design thinking, we can create solutions that are not only environmentally sound but also culturally relevant and socially acceptable.
+
+One of the key tenets of sustainable design thinking is the recognition that solutions must be tailored to specific contexts and environments. The primitive plow exemplifies this principle, with its designs adapting to the unique conditions and resources of each region. By studying and learning from these traditional practices, modern agricultural engineers and designers can develop tools and techniques that are attuned to the local ecosystems, minimizing environmental impact while maximizing productivity.
+
+Furthermore, the primitive plow's emphasis on utilizing locally available and renewable materials aligns with the principles of \`circular economy\` and resource efficiency — core pillars of sustainable design. By drawing inspiration from these ancient practices, contemporary designers can create agricultural tools and systems that prioritize the use of sustainable materials, reducing waste and promoting closed-loop cycles.
+
+The cultural and symbolic significance of the primitive design of plow also highlights the importance of social sustainability in design thinking. By acknowledging and respecting the deep-rooted connections between agricultural practices and local belief systems, designers can create solutions that resonate with the values and aspirations of farming communities. This sense of ownership and cultural relevance can foster greater adoption and stewardship of sustainable agricultural practices, ultimately contributing to the long-term viability of these solutions.
+
+### Theoretical Underpinnings: Integrating Local Knowledge into Sustainable Design
+
+The integration of local knowledge systems into sustainable design practices finds theoretical grounding in various disciplines, including anthropology, environmental studies, and agricultural sciences.
+
+One influential framework is the concept of \`indigenous technical knowledge\` (\`ITK\`), which recognizes the wealth of knowledge and practices that have been developed by local communities over generations of interacting with their environments. Scholars such as \`Paul Richards\` and \`Gloria Anetor\` have extensively studied \`ITK\` in the context of agriculture, highlighting the importance of understanding and incorporating these traditional systems into modern agricultural development initiatives.
+
+Another theoretical lens that supports the incorporation of local knowledge is the concept of \`agroecology\`. Developed by researchers like \`Miguel Altieri\` and \`Stephen Gliessman\`, \`agroecology\` is a holistic approach to agriculture that emphasizes the integration of ecological principles and traditional knowledge systems. By recognizing the intricate relationships between crops, soil, water, and other elements of the agroecosystem, \`agroecology\` seeks to create sustainable and resilient agricultural systems that are tailored to local contexts.
+
+Furthermore, the field of \`ethnoecology\` provides a theoretical foundation for understanding the intricate relationships between human cultures and their environments. Scholars such as \`Eugene Hunn\` and \`Víctor Toledo\` have explored how traditional knowledge systems shape the way communities perceive, classify, and interact with their natural surroundings, including their agricultural practices. By understanding these cultural frameworks, designers can create solutions that are better aligned with the worldviews and values of local communities.
+
+The primitive plow symbolizes the enduring wisdom and adaptability of local knowledge systems within agriculture. Rooted in diverse environmental, cultural, and social contexts, its design principles provide valuable insights for contemporary sustainable design thinking. By incorporating local knowledge systems into modern agricultural design processes, we can develop solutions that are environmentally sustainable, culturally relevant, and socially acceptable. Theoretical frameworks such as \`indigenous technical knowledge\`, \`agroecology\`, and \`ethnoecology\` underpin this approach, stressing the importance of understanding and respecting the intricate relationships between human communities, agricultural practices, and ecosystems.
+
+As we endeavor to address the challenges of \`21st\`-century agriculture, it is essential to draw guidance from the past. The primitive plow serves as a reminder that true sustainability necessitates a nuanced understanding of diverse knowledge systems shaped by millennia of human experiences with the natural world. By leveraging the timeless wisdom encapsulated in tools like the primitive plow, we can chart a course toward an agricultural future that blends traditional knowledge with modern innovation, ensuring food security, environmental stewardship, and cultural continuity for future generations.
+`,
   },
   {
     slug: "এর-ওর-এব-they-them-and",
-    title: "এরা ওরা এবং \"They, them, and\"",
+    title: 'এরা ওরা এবং "They, them, and"',
     author: "Ranjan Bhowmick",
     date: "Apr 11, 2025",
     language: "Bengali",
     tags: [],
-    excerpt: "এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শ...",
+    excerpt:
+      "এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে চার। Lets finish it. এখানে শেষ। আপাতত। কিন্তু, শ...",
     coverImage: "/blogs/এরা ওরা এবং _ STUDIO 1947 BLOGS.png",
     content: `
 এই নিয়ে ড্রয়ারটা চতুর্থ বার বন্ধ করললো সুকল্প। ওয়ান টু থ্রি ফফোর। দুই আর দুইয়ে চার। দুই আর দুইয়ে
@@ -1332,7 +1231,7 @@ thought disorder এ ভুগছে। অন্তত ডাক্তার �
 নীলাদ্রি আর ডক্টর কে কে মিত্র। কখননো গল্পটা লিখছি আমি, পড়ছেন আপনি, আর খেলছে আরেকজন।
 আর কখনও... ওয়ান টু থ্রি ফফোর... আমরা আমাদের অবস্থান পরিবর্তন করতে যাচ্ছি। আর সফটওয়ার
 গুললোও নিজস্ব ছক তৈরি করে ফেলছে মানুষের মততো। হ্যাং করে যাচ্ছে গগোটা সিস্টেমটা।
-`
+`,
   },
   {
     slug: "the-deserts-alchemy",
@@ -1341,104 +1240,48 @@ thought disorder এ ভুগছে। অন্তত ডাক্তার �
     date: "Feb 22, 2025",
     language: "English",
     tags: [],
-    excerpt: "The Desert’s Alchemy #LocalSolution Long before industrial salt refineries cropped up to dominate supply chains globally, the indigenous communities a...",
+    excerpt:
+      "#LocalSolution Long before industrial salt refineries cropped up to dominate supply chains globally, the indigenous communities across their arid landscapes...",
     coverImage: "/blogs/Desert's alchemy.png",
     content: `
-The Desert’s Alchemy
-#LocalSolution
-Long before industrial salt refineries cropped up to dominate supply chains globally,
-the indigenous communities across their arid landscapes had already mastered the
-art of extracting salt, not from seawater, but from the soil beneath their feet. In the
-Kutch region of Gujarat, the Agariyas—a marginalized community—are master
-practitioners of a soil-based salt harvesting technique that represents a conscious
-mix of environmental understanding, indigenous engineering, and economic
-resilience. Here we explore how these people, armed with a traditional knowledge
-system, turned salinity into a lifeline, and did so through methods that were frugal,
-sustainable, and deeply rooted in the workings of nature.
+#LocalSolution #TraditionalKnowledge
 
-The Rann of Kutch: A Landscape of Extremes
-The Rann of Kutch is a salt marsh in western India characterized by one of the most
-unique ecosystems in the subcontinent. For the greater portion of the year, it is a
-barren, blinding-white desert, continuously exposed to the sun’s scorching rays, but
-the monsoons here are a different story. The rains transform this place into a shallow
-lake, fed by seasonal rivers and underground saline aquifers. This annual ritual of
-flooding and evaporation leaves behind a salt-rich crust ripe for harvesting. It is this
-mineral-laden earth, not the sea, that has provided the Agariyas with livelihood for
-centuries.
-The Agariyas
-The Agariyas, as their name suggests, are traditional salt farmers of the Rann. Their
-name derives from the word “agar,” meaning “field” where salt is crystallized. For
-generations, these families have migrated to the salt plains after the rains retreat and
-lived there for eight continuous months, isolated from villages, amenities, and formal
-infrastructure. Despite their seasonal isolation, they possess remarkable knowledge
-of geology, crystallography, and hydrology. They have an intuitive grasp over
-complex salt-harvesting stages such as the depth at which brine can be found, the
-ideal temperature and wind conditions for crystallization, evaporation pan designs
-that minimize contamination and maximise yield, and so on. Their unconventional
-method of salt extraction, therefore, deserves some explaining.
-A Different Model of Salt Extraction
-India does have a long coastline that produces sea salt in abundance, but Kutch’s
-salt a welcome exception. Here the saline water does not come from oceans but
-from ancient geological formations beneath the Rann which formed millions of years
-ago when geological activity led to the recession of the Arabian Sea. This soil-based
-harvesting technique involves identifying brine-rich zones through observation and
-ancestral mapping, digging and maintaining bores manually, constructing salt pans,
+Long before industrial salt refineries cropped up to dominate supply chains globally, the indigenous communities across their arid landscapes had already mastered the art of extracting salt, not from seawater, but from the soil beneath their feet. In the \`Kutch\` region of \`Gujarat\`, the \`Agariyas\`—a marginalized community—are master practitioners of a soil-based salt harvesting technique that represents a conscious mix of environmental understanding, indigenous engineering, and economic resilience. Here we explore how these people, armed with a traditional knowledge system refined over centuries, are turning the desert into a resource, and what lessons their practices hold for us in the age of climate change.
 
-regulating flow and evaporation through sluice gates and daily adjustments, and
-finally, manual harvesting using long wooden rakes and drying platforms.
-As can be gauged, this process is physically taxing and requires a sharp eye for
-timing. Moreover, it is entirely weather-dependent—something like a sudden storm
-can upend months of hard work. Yet, the salt produced is one of the finest and
-purest, capable of commanding good markets and prices if it can reach buyers.
-However, most Agariyas are ignorant of the vast possibilities and still earn minimal
-returns due to lack of consumer knowledge and profit-capturing by middlemen.
-What makes their knowledge system so extraordinary is how it seamlessly adapts
-natural forces into productive tools to aid in production of salt. The Agariyas use
-various environmental cues to ensure proper harvesting. They use wind patterns to
-guide evaporation, consider the colour of brine to determine purity—deep green
-means rich mineral content, reddish indicates iron presence—use solar intensity and
-moon cycles to guide production, and use cow-dung and clay as natural filters and
-soil binders in pan construction. Their work may appear rustic and untrained, but
-naturally mirror the scientific principles of passive solar distillation, hydraulic
-engineering, and environmental engineering.
-Lives in Limbo
-The Agariyas are responsible for producing over 75% of Gujarat’s salt. However,
-despite their deep knowledge and indispensable contribution, they live rather
-precarious lives. For decades, they have been treated as encroachers on
-government land and denied basic services like electricity, schooling, and basic
-healthcare. Their children often must drop out of school owing to their migratory
-lifestyle, with little initiative from the authorities to bring them back to school. They
-are also susceptible to health risks—continued exposure to salt and sun leads to
-skin, eye, and respiratory diseases. They are also forced to work under exploitative
-systems with little bargaining powers because most of them work on lands they do
-not own, and produce salt over which they have no claim. To make matters worse,
-their methods are not “formally recognized” by modern industries, meaning that their
+### The Craft of Soil-Based Salt Extraction
 
-indigenous expertise remains undocumented, undervalued, and runs the risk of
-extinction.
-Revival and Recognition
-In recent years, however, NGOs like the Agariya Heet Rakshak Manch and scholars
-from institutions like the Indian Institute of Management, Ahmedabad, have started
-documenting and preserving their knowledge. These institutions have also started
-advocating for the basic rights that the Agariyas have long been denied.
-The Agariya community has from within itself birthed new innovations such as
-replacing diesel generators with solar pumps, cutting down on costs and emissions,
-the establishment of collective marketing platforms to bypass middlemen, and
-training programmes to integrate traditional methods with scientific validation. Some
-Agariyas are even registering their salt as a GI (Geographical Indication) product,
-reclaiming pride and ownership over their ancestral craft.
-From Margins to Models
-Under an unforgiving sun, an invisible workforce toils away in the cracked terrain of
-Kutch, extracting white gold using nothing but generational wisdom, muscle, and
-hope. They are more than salt harvesters—they are scientists equipped with
-environmental knowledge and unparalleled intuition. To bring their knowledge into
-the light is to redefine the meanings of expertise, sustainability, and development—
-topics increasingly relevant in today’s climate-stressed world with increasing issues
-of water scarcity and soil salinity. Their craft provides alternative models for resource
-management, decentralized livelihoods, and equitable economies. Perhaps it is time
-we tasted their salt, not just on our tongues, but in our policies, textbooks, and
-imagination.
-`
+The \`Agariyas\` of \`Kutch\` practice a unique form of salt extraction that draws upon the saline-rich soils of the \`Rann of Kutch\`. Unlike coastal salt farms that rely on seawater evaporation, the \`Agariyas\` harvest brine from the earth itself. The process begins in \`October\`, when families migrate to the \`Little Rann\`—a vast seasonal salt flat—to set up their temporary settlements. Using simple, locally crafted tools, they dig channels and create brine-collection pits. Underground brine, trapped in the saline soil, is drawn to the surface through capillary action and then directed into these pits. As the dry \`Gujarat\` sun does its work, the brine evaporates, leaving behind crystalline salt deposits.
+
+This is a process refined over generations, relying on intimate knowledge of local soil types, seasonal weather patterns, and hydrology. The \`Agariyas\` know, for instance, which patches of the \`Rann\` are most saline, when the brine levels rise, and how to maximize evaporation by adjusting the depth and width of their channels. This knowledge is not written down—it is lived, observed, and passed from parent to child.
+
+### A Community at the Crossroads
+
+Despite the ingenuity of their craft, the \`Agariyas\` face a precarious existence. The community is classified under the \`Scheduled Castes\`, and historically they have been subjected to systemic marginalization. They often lack formal land rights over the salt pans they work, making them vulnerable to displacement. Income is deeply seasonal and dependent on weather conditions—an increasingly unpredictable variable in the era of climate change. In recent years, erratic monsoon patterns and rising temperatures have disrupted the salt crystallization cycle, affecting yields and livelihoods.
+
+Salt pan workers across \`India\` earn among the lowest wages in the country. In \`Kutch\`, the \`Agariyas\` typically earn between \`₹80\`–\`₹120\` per \`100 kg\` of salt—a pittance considering the physical toll of working under the blazing sun, wading through salt-laden water that corrodes skin, and living in temporary shelters with limited access to clean water, healthcare, and education for months at a time.
+
+### Local Knowledge as a Climate Adaptation Tool
+
+What makes the \`Agariya\` practice remarkable from an environmental standpoint is its low ecological footprint. Unlike industrial salt production, which involves large machinery, chemical additives, and significant energy inputs, the \`Agariya\` method is essentially solar-powered and hand-operated. The tools—wooden scrapers, bamboo poles, hand-dug channels—are biodegradable and locally sourced.
+
+Moreover, the \`Agariyas\`' deep observational knowledge of the \`Rann\`'s ecosystem makes them exceptional environmental stewards. They understand the seasonal water table, the movement of brine, and the impact of rainfall on salinity in ways that no satellite or sensor can fully capture. This form of ecological intelligence is increasingly recognized by researchers and NGOs as a valuable resource in designing climate-resilient livelihoods.
+
+Organizations like \`Aajeevika Bureau\` and \`AGOR\` (\`Agaria Hak Yatra\`) have been working to document and amplify this knowledge while advocating for better wages, social protection, and legal recognition for \`Agariya\` salt workers.
+
+### Design Lessons from the Salt Desert
+
+For designers, architects, and policymakers, the \`Agariya\` practice offers a masterclass in context-sensitive, resource-efficient design. Every element of their salt-harvesting system is adapted to the local environment: the geometry of the pits, the timing of migration, the choice of materials, the social structure of labour. There is no wasted energy, no imported solution—only an elegant response to the specific conditions of the \`Rann of Kutch\`.
+
+This is the essence of what scholars call \`indigenous technical knowledge\` (\`ITK\`)—localized, experiential, adaptive, and deeply embedded in community identity. As contemporary design increasingly grapples with questions of sustainability and decolonization, the \`Agariya\` case challenges us to ask: whose knowledge counts? Who gets to be called an expert? And how do we design systems that honour, protect, and integrate traditional knowledge rather than displacing it with imported solutions?
+
+### The Road Ahead: Dignity, Recognition, and Integration
+
+The future of the \`Agariyas\` depends on a dual commitment: preserving their traditional knowledge while ensuring economic and social justice. This means formal recognition of land rights, fair pricing for salt, access to healthcare and education, and integration of \`Agariya\` knowledge into formal environmental management.
+
+Some salt companies and research institutions are beginning to explore collaborations with \`Agariya\` communities, recognizing the value of their soil-reading expertise for sustainable salt production. But systemic change requires policy intervention—labor laws that extend to seasonal workers, welfare schemes that reach migrant communities, and education programs that validate indigenous knowledge systems.
+
+The \`Agariyas\` have spent centuries turning desert soil into a livelihood. In a world facing water scarcity, soil degradation, and climate disruption, their ancient knowledge may hold some of the most forward-looking answers. The challenge is to ensure that when the world finally takes notice, it does so on their terms—with dignity, equity, and respect.
+`,
   },
   {
     slug: "saraswati-on-the-steering-wheel",
@@ -1447,87 +1290,42 @@ imagination.
     date: "Dec 14, 2024",
     language: "English",
     tags: [],
-    excerpt: "“Just a slap, but he can't hit me.\" This dialogue from the movie Thappad, directed by Anubhav Sinha, is not just a dialogue, it’s an inspiration for m...",
+    excerpt:
+      "“Just a slap, but he can't hit me.\" This dialogue from the movie Thappad, directed by Anubhav Sinha, is not just a line, it’s an inspiration for many women...",
     coverImage: "/blogs/Saraswati on steering wheel.png",
     content: `
-“Just a slap, but he can't hit me." This dialogue from the movie Thappad, directed
-by Anubhav Sinha, is not just a dialogue, it’s an inspiration for many women in the
-country. I realised this when I met Saraswati Singh, a woman cab driver from Delhi.
-"If he beats me once, he will beat me again," she said with conviction, emphasising
-that women must first shed the fear that holds them back.
-As I booked a cab, I saw the driver’s name as Saraswati on my phone screen. My
-internal stereotype, as a man, did not make me question the gender of the driver,
-and I assumed it to be the surname of a male driver. But as soon as the cab arrived,
-I was surprised to see a woman behind the wheel. I got in, told her the pin, and as
-we started moving, curiosity took over. The first question I asked—one she had likely
-heard many times before—was, "Chala toh lengi na aap?" (Will you be able to
-drive?). I asked humorously, but let’s not forget stereotypes are often masked as
-jokes. She smiled and replied, "Aap jab destination pe pahunch jaaye toh is sawaal
-ka jawab aap hi dena" (Once we reach your destination, you can answer that
-yourself).
+#GenderEquality #WomensWork
 
-Six years ago, Saraswati worked as a domestic help, washing dishes and cleaning
-homes to make ends meet. Financial struggles pushed her to look for something
-better. That’s when she found out about the Azad Foundation, an organisation that
-trains women to become professional drivers. In 2017, she began working as a
-driver at the airport. She also drove rental cars for years until she bought her own car
-in 2023. Originally from Prayagraj, Saraswati is now a single mother. Her day begins
-with preparing her children for school before heading to work. From 2 PM until late at
-night, she drives across Delhi, picking up and dropping off passengers, all while
-ensuring she earns enough to sustain her family. On how male passengers react to
-seeing a woman drive, she says, "Who decides which job is for men and which one
-is for women?"
-In a world where gender roles continue to dictate professional choices, the Azad
-Foundation is challenging stereotypes by training women to become drivers. "We are
-a feminist organisation," says Madhubala, who currently heads Azad Foundation
-Delhi. "We believe in gender equality and aim to break the patriarchal myth that
-women can only engage in traditional professions like making papads, pickles, or
-stitching." Since its inception in 2008, the Azad Foundation has been working to
-create livelihood opportunities for women by training them as professional drivers.
-"Driving has always been perceived as a male-dominated profession," she explains.
-"We want to change that by enabling women to take up driving not just as a skill but
-as a career." The foundation operates in four cities: Delhi, Chennai, Kolkata, and
-Jaipur. "Currently, there are around 5,000 women drivers across these cities, with
-over 100 women employed as drivers with Delhi Transport Corporation (DTC),"
-Madhubala shares. The initiative not only challenges traditional gender roles but also
-enables financial independence for women from low-income backgrounds. Beyond
-public transport, women trained by the foundation are now employed with ride-hailing
-services like BlueSmart and delivery platforms such as Zomato, Swiggy, and
-Amazon. "There are several gender-based myths about driving, night shifts, and
-navigation," she points out. "We are working to dismantle these biases and make the
-profession accessible to all genders."
-The Azad Foundation does more than just teach women how to drive. It conducts
-empowerment sessions that cover topics such as gender discrimination, workplace
+"Just a slap, but he can't hit me." This dialogue from the movie \`Thappad\`, directed by \`Anubhav Sinha\`, is not just a line, it's an inspiration for many women in the country. I realised this when I met \`Saraswati Singh\`, a woman cab driver from \`Delhi\`.
 
-readiness, and addressing domestic violence. "Many of the women we work with
-have experienced domestic violence," Madhubala says. "We equip them with the
-knowledge to identify violence, improve their communication skills, and plan their
-way forward." For women who seek legal support, the foundation collaborates with
-organisations like JAGORI, and the Delhi Legal Services Authority (DALSA). "While
-we don't directly provide legal aid, we connect women with networks that can support
-them through legal and emotional challenges," she explains. Saraswati, who was
-also subjected to domestic violence, decided one day to leave her abusive marriage.
-"Every girl should first remove the fear inside her, the fear of 'what will people say?'"
-She acknowledges that the job is not easy. "Earlier, we could hit our daily target in
-ten rides. Now, it’s tougher. So I look for shorter rides with better pay." One of the
-biggest challenges for not only women passengers but drivers too, is safety,
-especially at night. Saraswati doesn’t carry any weapons for protection but takes
-precautions. "I avoid going to places like Gurgaon late at night and prefer staying
-within city limits," she admits. Despite these challenges, her presence on the road
-has inspired many female passengers. Many women passengers tell me that they
-feel safer with me, told Saraswati. “Whenever I travel after 9 pm in Delhi, I feel like
-my heart is on the brink. Today, I felt so safe with Saraswati, the only female driver in
-East Delhi, #Kudos to Saraswati.” wrote a woman passenger on X.
-Saraswati Singh’s journey is not just about driving, it’s about survival, strength, and
-self-reliance. A survivor of domestic violence, she refused to stay in an abusive
-marriage. Instead, she chose the road as her path to independence and dignity.
-"Women should step out. It doesn’t matter how much they’ve studied. You learn by
-meeting new people," she says. From being a victim of domestic violence to
-becoming financially independent, Saraswati is a symbol of resilience. She proves
-that when women take control of the steering wheel both in life and on the road, they
-carve their path to empowerment. Her advice to other women? “Don’t listen to
-anyone. Stay in your lane. Drive slow, drive safe, but drive.”
-`
+"If he beats me once, he will beat me again," she said with conviction, emphasising that women must first shed the fear that holds them back.
+
+As I booked a cab, I saw the driver's name as \`Saraswati\` on my phone screen. My internal stereotype, as a man, did not make me question the gender of the driver, and I assumed it to be the surname of a male driver at the airport. She also drove rental cars for years until she bought her own car in \`2023\`. Originally from \`Prayagraj\`, \`Saraswati\` is now a single mother. Her day begins with preparing her children for school before heading to work. From \`2 PM\` until late at night, she drives across \`Delhi\`, picking up and dropping off passengers, all while ensuring she earns enough to sustain her family. On how male passengers react to seeing a woman drive, she says, "Who decides which job is for men and which one is for women?"
+
+### The Azad Foundation: Breaking the Myth
+
+In a world where gender roles continue to dictate professional choices, the \`Azad Foundation\` is challenging stereotypes by training women to become drivers. "We are a feminist organisation," says \`Madhubala\`, who currently heads \`Azad Foundation Delhi\`. "We believe in gender equality and aim to break the patriarchal myth that women can only engage in traditional professions like making papads, pickles, or stitching."
+
+Since its inception in \`2008\`, the \`Azad Foundation\` has been working to create livelihood opportunities for women by training them as professional drivers. "Driving has always been perceived as a male-dominated profession," she explains. "We want to change that by enabling women to take up driving not just as a skill but as a career."
+
+The foundation operates in four cities: \`Delhi\`, \`Chennai\`, \`Kolkata\`, and \`Jaipur\`. "Currently, there are around \`5,000\` women drivers across these cities, with over \`100\` women employed as drivers with \`Delhi Transport Corporation\` (\`DTC\`)," \`Madhubala\` shares. The initiative not only challenges gender norms but also provides economic empowerment to women from marginalized backgrounds.
+
+### On the Road: Stories of Courage
+
+\`Saraswati\`'s story is not unique among women who drive for a living in \`India\`. Across the country, women are increasingly taking the wheel—literally and figuratively—defying social expectations and carving out economic independence.
+
+The \`Azad Foundation\` has trained over \`3,000\` women drivers since its inception. These women, many of whom come from impoverished and abuse-affected backgrounds, have found in driving not just a livelihood but a source of dignity and self-reliance.
+
+For \`Saraswati\`, the cab is more than a vehicle—it is a declaration. Each shift is an act of quiet defiance against the systems that sought to limit her. And with every passenger she picks up, she carries forward a message: that no profession belongs exclusively to any gender, and that women's labour—visible or invisible—deserves recognition, safety, and fair pay.
+
+### Steering Toward Systemic Change
+
+While individual stories of courage inspire, the road to gender equity in the workforce requires systemic change. Women drivers in \`India\` still face significant barriers: harassment from passengers, lack of safe rest stops, limited access to credit for vehicle purchases, and social stigma from families and communities.
+
+Organisations like the \`Azad Foundation\` are addressing these through a holistic approach—providing not just driving training but also life skills, legal literacy, and mental health support. Advocacy efforts are pushing for policies that ensure safe workplaces and equitable pay for women in non-traditional roles.
+
+\`Saraswati Singh\` drives through \`Delhi\`'s crowded streets with quiet determination. Her story—and those of thousands of women like her—is a reminder that the fight for gender equality is not just fought in boardrooms and parliaments. Sometimes, it unfolds on the road, one kilometre at a time.
+`,
   },
   {
     slug: "পখর-বসয়-ডজইন-থক",
@@ -1536,7 +1334,8 @@ anyone. Stay in your lane. Drive slow, drive safe, but drive.”
     date: "Nov 30, 2024",
     language: "Bengali",
     tags: [],
-    excerpt: "আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক...",
+    excerpt:
+      "আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম যাতায়াত। বিগত কয়েকবছর ধরে নানা পাখির আসা-যাওয়া, একটা জিনিস লক...",
     coverImage: "/blogs/bird's nest.png",
     content: `
 আমার বাড়ির বারান্দা বেশ নিরিবিলি, দিনের বেশিরভাগ সময় ঘরের ভেতরে থাকায় বারান্দায় খুব কম
@@ -1577,7 +1376,7 @@ thinking-এর মততো, যেখানে শুধুমাত্র প
 প্রকৃতি আসলে সবসময় শেখায়। আমাদের ডিজাইন থিংকিং-এর অনেক মূলনীতিই ততো এখান থেকেই
 আসে—Adaptability, Resource Efficiency, Sustainable Living। হয়ততো, আমরা যদি ডিজাইনে
 সত্যিকারের কার্যকারিতা খুঁজি, তাহলে এই ঘুঘু আর সানবার্ডের মততোই প্রকৃতি থেকে অনুপ্রেরণা নিতে পারি!
-`
+`,
   },
   {
     slug: "when-birth-belonged-to-women-stories-of-dais-and-displacement",
@@ -1586,201 +1385,104 @@ thinking-এর মততো, যেখানে শুধুমাত্র প
     date: "Oct 19, 2024",
     language: "English",
     tags: [],
-    excerpt: "When Birth Belonged to Women: Stories of Dais and Displacement #GenderEquality “We did not have machines, but we had hands that knew. We watched the m...",
+    excerpt:
+      "#GenderEquality “We did not have machines, but we had hands that knew. We watched the mother, not the monitor. We sang to her, held her, stayed with her—not...",
     coverImage: "/blogs/Dais.png",
     content: `
-When Birth Belonged to
-Women: Stories of Dais
-and Displacement
-#GenderEquality
-“We did not have machines, but we had hands that knew. We watched the mother,
-not the monitor. We sang to her, held her, stayed with her—not for money, but
+#GenderEquality #TraditionalKnowledge #IndigenousKnowledge
 
-because birth is not a job, it is a responsibility.” — Rokeya Bibi, retired dai from
-Murshidabad district
-Before hospitals, ultrasounds, and epidurals, childbirth across the Indian
-subcontinent was a home affair, surrounded by women, rituals, and the indigenous
-knowledge of the traditional midwives. These midwives, known as ‘dais,’ often lacked
-formal education, yet it was their practiced hands that birthed generations of young
-Indians. In regions like West Bengal, their role extended far beyond assisting in
-births, they were integral to the cultural and moral upbringing of the child.
-Unfortunately, as biomedical science grew by leaps and bounds, the local knowledge
-systems were slowly marginalized, as is the case with most indigenous practices.
-However, today, when there is a reawakening to the importance of well-rounded,
-culturally-embedded care, these stories of midwives and their efficiency offer
-profound lessons—not only about childbirth, but also about community, care, and the
-underappreciated genius of women’s intuition. Across India, births were handled by
-experienced midwives who had learnt their craft through apprenticeship rather than
-training. These dais assisted in all stages of childbirth—from recognizing early signs
-of labour, positioning the mother for comfort and ease, cutting and tying the umbilical
-cord with a sterilized sickle—to guiding postpartum care for mother and the babies.
-The skilled midwives were mostly from marginalized caste backgrounds, especially
-in rural areas. Their position in the social fabric provided an interesting duality: they
-were subjects of social stigma, yet essential—no baby could enter the world without
-them to guide the process.
-West Bengal: The Dai as Ritual Healer and Skilled Professional
-In West Bengal, the traditional midwifery had its unique flavour. Here, the dais
-operated not just as birth attendants but also as ritual guardians, particularly in the
-districts of Birbhum, Nadia, and the 24 Parganas. They would often invoke deities,
-especially Shashthi Maa, through songs and mantras to aid in and ensure seamless
-childbirth. They would also instruct the use of ‘shital pati,’ cow dung-coated birthing
-rooms, dietary restrictions, and body-wrapping both as a means of ensuring hygiene
-and as signs of symbolic purity. In Bengal, childbirth was more than a medical
+"We did not have machines, but we had hands that knew. We watched the mother, not the monitor. We sang to her, held her, stayed with her—not for money, but because birth is not a job, it is a responsibility." — \`Rokeya Bibi\`, retired \`dai\` from \`Murshidabad\` district
 
-event—it was a passage drenched in social, cosmic, and emotional meaning. The
-women viewed motherhood and its various steps as rites of transformation—a
-shared experience savoured only by the women.
-Dismantling a System Through ‘Modernisation’
-As colonial and post-colonial views gained traction, midwifery was increasingly
-viewed with suspicion. The British authorities advocated “clean” and “scientific”
-methods of childbirth in institutional settings.
-The newly independent India saw programmes like Reproductive and Child Health
-(RCH) and Janani Suraksha Yojana (JSY) further institutionalise childbirth. Midwives
-were pushed aside by auxiliary nurse midwives (ANMs), and modernization trampled
-all over ancient knowledge. This shift brought with it social distortions, involving
-aspects such as control, class, caste, and gender.
-Once a woman-led affair, childbirth increasingly became a domain of male doctors,
-hospital beds, and vertical hierarchies. However, there have been studies that show
-institutional setups do not automatically ensure trouble-free births. Further, most rural
-women are still apprehensive of the institutional set-up and miss out on the
-postpartum care that dais provided for weeks, but is simply not an option with formal
-systems.
-A Future Where Both Worlds Can Meet
-In recent years, however, there has been a renewed interest in traditional midwifery
-knowledge and attempts to integrate it with modern maternal care. NGOs like
-Chetna Manch and Sakhi Trust have spearheaded this movement. In West Bengal,
-too, there are ongoing attempts by universities like Jadavpur University and
-Viswa-Bharati to document and preserve the memories and skills of retired dais
-before they are lost forever. In rediscovering the ancient genius of dais, we have also
-learnt a few more things about the technique of midwifery—such as how dais were
-often emotional anchors for first-time mothers, how ancient birthing process was a
+Before hospitals, ultrasounds, and epidurals, childbirth across the \`Indian subcontinent\` was a home affair, surrounded by women, rituals, and the indigenous knowledge of the traditional midwives. These midwives, known as \`dais\`, often lacked formal education, yet it was their practiced hands that birthed generations of young Indians. In regions like \`West Bengal\`, their role extended far beyond assisting in births, they were integral to the cultural and moral upbringing of the child.
 
-community event surrounded by women, songs, and comfort, and most importantly,
-how healing did not end with the birth of the baby—postpartum care was just as
-important.
-On a brighter note, India’s maternal mortality has indeed been steadily declining,
-thanks to access to formal healthcare, but numbers do not tell the entire story. The
-lack of culturally sensitive care, especially among marginalized communities, means
-that there is still a substantial trust and compliance gap that needs to be bridged.
-This can be done by integrating traditional knowledge into modern systems: where
-midwives can be trained in obstetrics and traditional care, where safe home-births
-are valid and supported options, and where postpartum care is again given the
-importance it rightly deserves. Dais can become carriers and preachers of their dying
-craft, therebyensuring that maternal care is not only safe but also deeply rooted in
-cultural understanding.
-The Wisdom We Left Behind
-Traditional midwifery in India has different stories to tell. In West Bengal, for
-example, these stories go far beyond childbirth, they are remnants of knowledge that
-we overlook in our technology-centric approach to measuring care; they are
-documentations of women’s wisdom, caste knowledge, and rural knowledge—of little
-importance on paper, of great relevance in the workings of life. As India forges ahead
-in healthcare innovation, revisiting these indigenous knowledge systems does not
-mean we are moving backward. It means we are accepting all that was wise, human,
-and healing, improving them with all the modern knowledge we possess now, and
-letting this improved knowledge system guide us on our path ahead.
-`
+Unfortunately, as biomedical science grew by leaps and bounds, the local knowledge systems were slowly marginalized, as is the case with most indigenous practices. However, today, when there is a reawakening to the importance of well-rounded, culturally-embedded care, these stories of midwives and their efficiency offer profound lessons—not only about childbirth, but also about community, care, and the underappreciated genius of women's intuition.
+
+Across \`India\`, births were handled by experienced midwives who had learnt their craft through apprenticeship rather than training. These \`dais\` assisted in all stages of childbirth—from recognizing early signs of labour, positioning the mother for comfort and ease, cutting and tying the umbilical cord with a sterilized sickle—to guiding postpartum care for mother and the babies. The skilled midwives were mostly from marginalized caste backgrounds, especially in rural areas. Their position in the social fabric provided an interesting duality: they were subjects of social stigma, yet essential—no baby could enter the world without them to guide the process.
+
+### West Bengal: The Dai as Ritual Healer and Skilled Professional
+
+In \`West Bengal\`, the traditional midwifery had its unique flavour. Here, the \`dais\` operated not just as birth attendants but also as ritual guardians, particularly in the districts of \`Birbhum\`, \`Nadia\`, and the \`24 Parganas\`. They would often invoke deities, especially \`Shashthi Maa\`, through songs and mantras to aid in and ensure seamless childbirth. They would also instruct the use of \`shital pati\`, cow dung-coated birthing rooms, dietary restrictions, and body-wrapping both as a means of ensuring hygiene and as signs of symbolic purity.
+
+In \`Bengal\`, childbirth was more than a medical event—it was a passage drenched in social, cosmic, and emotional meaning. The women viewed motherhood and its various steps as rites of transformation—a shared experience savoured only by the women.
+
+### Dismantling a System Through 'Modernisation'
+
+As colonial and post-colonial views gained traction, midwifery was increasingly viewed with suspicion. The \`British\` authorities advocated "clean" and "scientific" methods of childbirth, which gradually displaced the \`dais\`. The post-independence push for \`institutional delivery\` under programs like the \`Janani Suraksha Yojana\` (\`JSY\`) further eroded the role of \`dais\`, incentivizing hospital births over home deliveries.
+
+This shift was not without consequence. While institutional delivery has undeniably improved survival rates in emergency situations, the loss of culturally embedded care has left many women, particularly from rural and tribal communities, feeling alienated and unsupported during childbirth. The clinical setting of a hospital, with its language barriers, unfamiliar protocols, and absence of community, can be deeply disorienting for women accustomed to being surrounded by trusted women from their village.
+
+### Reclaiming the Legacy: Documentation and Integration
+
+Fortunately, there is a growing movement to document and honor the knowledge of \`dais\` before it is lost entirely. Researchers, NGOs, and cultural organizations are working to record the practices, songs, and wisdom of retired \`dais\`. Institutions like \`Srishti Manipal Institute\` and \`Viswa-Bharati\` have initiated projects to document and preserve the memories and skills of retired \`dais\` before they are lost forever.
+
+In rediscovering the ancient genius of \`dais\`, we have also learnt a few more things about the technique of midwifery—such as how \`dais\` were often emotional anchors for first-time mothers, how ancient birthing process was a community event surrounded by women, songs, and comfort, and most importantly, how healing did not end with the birth of the baby—postpartum care was just as important.
+
+On a brighter note, \`India\`'s maternal mortality has indeed been steadily declining, thanks to access to formal healthcare, but numbers do not tell the entire story. The lack of culturally sensitive care, especially among marginalized communities, means that there is still a substantial trust and compliance gap that needs to be bridged. This can be done by integrating traditional knowledge into modern systems: where midwives can be trained in obstetrics and traditional care, where safe home-births are valid and supported options, and where postpartum care is again given the importance it rightly deserves. \`Dais\` can become carriers and preachers of their dying craft, thereby ensuring that maternal care is not only safe but also deeply rooted in cultural understanding.
+
+### The Wisdom We Left Behind
+
+Traditional midwifery in \`India\` has different stories to tell. In \`West Bengal\`, for example, these stories go far beyond childbirth, they are remnants of knowledge that we overlook in our technology-centric approach to measuring care; they are documentations of women's wisdom, caste knowledge, and rural knowledge—of little importance on paper, of great relevance in the workings of life.
+
+As \`India\` forges ahead in healthcare innovation, revisiting these indigenous knowledge systems does not mean we are moving backward. It means we are accepting all that was wise, human, and healing, improving them with all the modern knowledge we possess now, and letting this improved knowledge system guide us on our path ahead.
+`,
   },
   {
     slug: "the-lost-art-of-bengals-nakshi-kantha-embroidery-stories-sewn-into-fabric",
-    title: "The Lost Art of Bengal’s Nakshi Kantha Embroidery: Stories Sewn into Fabric",
+    title:
+      "The Lost Art of Bengal’s Nakshi Kantha Embroidery: Stories Sewn into Fabric",
     author: "Priyanka Biswas",
     date: "Sep 5, 2024",
     language: "English",
     tags: [],
-    excerpt: "The Lost Art of Bengal’s Nakshi Kantha Embroidery Stories Sewn into Fabric  When you hear about Nakshi Kantha, you might think it’s just an old quilt....",
+    excerpt:
+      "The Lost Art of Bengal’s Nakshi Kantha Embroidery Stories Sewn into Fabric  When you hear about Nakshi Kantha, you might think it’s just an old quilt....",
     coverImage: "/blogs/Nakshi Kantha.png",
     content: `
-The Lost Art of Bengal’s
-Nakshi Kantha
-Embroidery
-Stories Sewn into Fabric
+#TraditionalCraft #CulturalHeritage #Bengal
 
-When you hear about Nakshi Kantha, you might think it’s just an old quilt. But for
-many of us from Bengal, it means something deeper. These are not just stitched
-blankets-they hold stories. Real ones. About family, life, hopes, and
-memories.Nakshi Kantha is part of our cultural heritage, especially in Bangladesh
-and West Bengal. Women would take old clothes, usually worn-out saris, layer them,
-and sew them together using a running stitch. That simple technique became
-something special. Over time, this method turned into a style of embroidered
-storytelling that has been passed down for generations.
-What Makes Nakshi Kantha Special?
-The name in itself says a lot. "Nakshi" means design. "Kantha" means quilt. It’s not
-about using fancy materials. It’s about making something really meaningful from
-what you have. People would reuse old clothes from their homes, and even the
-threads that came from those clothes, to make something beautiful. The thread was
-often pulled from old saris too. Every piece told a story - some about daily village life,
-others about dreams, memories, or even big events from history.
-The quilts often show scenes like women working in fields, fish in ponds, peacocks,
-trees, birds,or religious icons. These floral and fauna motifs aren’t random or just for
-show. They often carry meaning, like good luck, fertility, blessings, spiritual beliefs,
-love, or memories. Some even show political changes, struggles from the pastor
-personal loss.
-Why Was It So Important?
-For many women, Nakshi Kantha was a way to express what they couldn’t say out
-loud. Most of them didn’t write in diaries. They stitched their thoughts instead.
-Making these traditional quilts was also a way to support and bond with other women
-in the community.
-They made them for weddings, new babies, or to keep a loved one warm. Often,
-they would pass down these pieces to children and grandchildren. They weren’t just
-items. They were memories - a piece of someone’s life. In some families, a kantha
+When you hear about \`Nakshi Kantha\`, you might think it's just an old quilt. But for many of us from \`Bengal\`, it means something deeper. These are not just stitched blankets—they hold stories. Real ones. About family, life, hopes, and memories. \`Nakshi Kantha\` is part of our cultural heritage, especially in \`Bangladesh\` and \`West Bengal\`. Women would take old clothes, usually worn-out saris, layer them, and sew them together using a running stitch. That simple technique became something special. Over time, this method turned into a style of embroidered storytelling that has been passed down for generations.
 
-was the only thing a woman could call her own. It was something she made by hand,
-and every stitch showed her care, time, and patience.
-How It’s Made
-Let’s keep it simple: You take a few old saris, stack them together on top of each
-other, and sew them all around with tiny running stitches. The designs are usually
-drawn by hand first using chalk or pencil. Then comes the stitching - slow, careful,
-and full of meaning.
-The process takes time. Weeks, sometimes months, depending on the size and
-detail. That’s why each piece feels so personal. It reflects patience, love, and a quiet
-sense of storytelling. It’s the kind of handcrafted textile work that doesn’t rush. The
-stitches may look simple, but the patterns and the stories behind them are not. The
-work often starts at the center and moves outward, like a ripple. This helps balance
-the cloth and the design too.
+### What Makes Nakshi Kantha Special?
 
-What Happened to It?
-So, why do people call Nakshi Kantha embroidery a "lost" art? A few things changed.
-First, machine-made quilts and printed textiles took over the market. They're faster
-and cheaper. That made many people forget the value of slow, handmade pieces.
-Then there’s the shift in lifestyle. Fewer women artisans in villages are sitting down
-to sew these. Many young people are moving to cities, chasing new careers, and
+The name in itself says a lot. "\`Nakshi\`" means design. "\`Kantha\`" means quilt. It's not about using fancy materials. It's about making something really meaningful from what you have. People would reuse old clothes from their homes, and even the threads that came from those clothes, to make something beautiful. The thread was often pulled from old saris too. Every piece told a story—some about daily village life, others about dreams, memories, or even big events from history.
 
-they no longer have the time or space to learn this craft. Even those who do make
-Nakshi Kantha today may struggle to earn enough from it.
-Some artisans worry that their work is being copied or used in ways that don't give
-credit to the original makers. Others feel that mass production takes away the
-meaning, love, and care behind each piece. These concerns are real. Women who
-once made kantha for joy or love now make it for money, often due to their
-situations. And that changes things.
-Is There Hope?
-Yes. There are signs of hope. People are starting to notice again. Some women are
-trying new ideas, using symbolic designs that speak to today’s problems - like
-climate change, migration, or personal stories of loss. They are still using recycled
-fabrics, but the themes are modern. In some places, women are teaching each other
-again. They’re forming groups where they can stitch together, share stories, and sell
-their work. During a recent Durga Puja in Kolkata, a massive 100-foot kantha panel
-showed off their skills and reminded people how valuable this art still is. There’s also
-growing interest in using these quilts in other ways - as home decor, fashion, or even
-framed wall art. That helps keep the craft alive and gives more women artisans the
-chance to earn a living.
-What do these quilts really show us?
-Each piece of Bengal embroidery shows us more than skills or talent. It shows us
-care. It tells us how someone lived, what they felt, and what they wanted to hold on
-to. Whether it’s a spiral for the cycle of life or a fish to represent good luck, these are
-symbolic designs that speak without using words.
-Some quilts show a quiet day in the village - trees, ponds, animals, and family.
-Others share deep emotions. A mother’s love. A daughter’s loss. A woman’s wish for
-a better future. These aren’t just decorations. They’re messages from real lives. If
-you pick up a real Nakshi Kantha, you’re not just holding a quilt. You’re holding
-someone’s voice.
+The quilts often show scenes like women working in fields, fish in ponds, peacocks, trees, birds, or religious icons. These floral and fauna motifs aren't random or just for show. They often carry meaning, like good luck, fertility, blessings, spiritual beliefs, love, or memories. Some even show political changes, struggles from the past, or personal loss.
 
-Final Thoughts
-We don’t need to look far to see the value of old crafts. In the rush to get things
-faster and cheaper, we often forget the beauty in slow, thoughtful work. Nakshi
-Kantha reminds us of that. It reminds us to stop and listen to stories stitched
-into fabric. To respect the hands that made them. And to pass those stories
-forward. Let’s not let this art fade away. Let’s help keep these stitches - and
-the stories inside them - alive.
-`
+### Why Was It So Important?
+
+For many women, \`Nakshi Kantha\` was a way to express what they couldn't say out loud. Most of them didn't write in diaries. They stitched their thoughts instead. Making these traditional quilts was also a way to support and bond with other women in the community.
+
+They made them for weddings, new babies, or to keep a loved one warm. Often, they would pass down these pieces to children and grandchildren. They weren't just items. They were memories—a piece of someone's life. In some families, a kantha was the only thing a woman could call her own. It was something she made by hand, and every stitch showed her care, time, and patience.
+
+### How It's Made
+
+Let's keep it simple: You take a few old saris, stack them together on top of each other, and sew them all around with tiny running stitches. The designs are usually drawn by hand first using chalk or pencil. Then comes the stitching—slow, careful, and full of meaning.
+
+The process takes time. Weeks, sometimes months, depending on the size and detail. That's why each piece feels so personal. It reflects patience, love, and a quiet sense of storytelling. It's the kind of handcrafted textile work that doesn't rush. The stitches may look simple, but the patterns and the stories behind them are not. The work often starts at the center and moves outward, like a ripple. This helps balance the cloth and the design too.
+
+### What Happened to It?
+
+So, why do people call \`Nakshi Kantha\` embroidery a "lost" art? A few things changed. First, machine-made quilts and printed textiles took over the market. They're faster and cheaper. That made many people forget the value of slow, handmade pieces.
+
+Then there's the shift in lifestyle. Fewer women artisans in villages are sitting down to sew these. Many young people are moving to cities, chasing new careers, and they no longer have the time or space to learn this craft. Even those who do make \`Nakshi Kantha\` today may struggle to earn enough from it.
+
+Some artisans worry that their work is being copied or used in ways that don't give credit to the original makers. Others feel that mass production takes away the meaning, love, and care behind each piece. These concerns are real. Women who once made kantha for joy or love now make it for money, often due to their situations. And that changes things.
+
+### Is There Hope?
+
+Yes. There are signs of hope. People are starting to notice again. Some women are trying new ideas, using symbolic designs that speak to today's problems—like climate change, migration, or personal stories of loss. They are still using recycled fabrics, but the themes are modern.
+
+In some places, women are teaching each other again. They're forming groups where they can stitch together, share stories, and sell their work. During a recent \`Durga Puja\` in \`Kolkata\`, a massive \`100\`-foot kantha panel showed off their skills and reminded people how valuable this art still is. There's also growing interest in using these quilts in other ways—as home decor, fashion, or even framed wall art. That helps keep the craft alive and gives more women artisans the chance to earn a living.
+
+### What Do These Quilts Really Show Us?
+
+Each piece of \`Bengal\` embroidery shows us more than skills or talent. It shows us care. It tells us how someone lived, what they felt, and what they wanted to hold on to. Whether it's a spiral for the cycle of life or a fish to represent good luck, these are symbolic designs that speak without using words.
+
+Some quilts show a quiet day in the village—trees, ponds, animals, and family. Others share deep emotions. A mother's love. A daughter's loss. A woman's wish for a better future. These aren't just decorations. They're messages from real lives. If you pick up a real \`Nakshi Kantha\`, you're not just holding a quilt. You're holding someone's voice.
+
+### Final Thoughts
+
+We don't need to look far to see the value of old crafts. In the rush to get things faster and cheaper, we often forget the beauty in slow, thoughtful work. \`Nakshi Kantha\` reminds us of that. It reminds us to stop and listen to stories stitched into fabric. To respect the hands that made them. And to pass those stories forward. Let's not let this art fade away. Let's help keep these stitches—and the stories inside them—alive.
+`,
   },
 ];

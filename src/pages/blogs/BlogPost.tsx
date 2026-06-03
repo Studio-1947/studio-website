@@ -81,13 +81,13 @@ const BlogPost: React.FC = () => {
     .filter(Boolean);
 
   return (
-    <Layout>
-      <article className="bg-white dark:bg-gray-900 pt-24 md:pt-32 pb-24 transition-colors duration-300 min-h-screen">
+    <Layout className="bg-[#F7F5F2]">
+      <article className="bg-[#F7F5F2] pt-24 md:pt-32 pb-24 transition-colors duration-300 min-h-screen">
         {/* Article Header */}
         <header className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 md:mb-16 text-center">
           <Link
             to="/blogs"
-            className="inline-flex items-center text-royal-600 dark:text-royal-400 hover:text-royal-800 dark:hover:text-royal-300 font-medium mb-8 md:mb-12 transition-colors uppercase tracking-wider text-sm"
+            className="inline-flex items-center text-primary hover:text-primary/80 font-medium mb-8 md:mb-12 transition-colors uppercase tracking-wider text-sm"
           >
             <svg
               className="w-4 h-4 mr-2"
@@ -106,13 +106,13 @@ const BlogPost: React.FC = () => {
           </Link>
 
           <div className="flex flex-wrap items-center justify-center gap-4 mb-6 text-sm">
-            <span className="text-gray-500 dark:text-gray-400 font-medium">
+            <span className="text-gray-500 font-medium">
               {blog.date}
             </span>
             <span className="text-gray-400">•</span>
             {blog.language && blog.language !== "English" && (
               <>
-                <span className="px-3 py-1 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full font-semibold">
+                <span className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full font-semibold">
                   {blog.language === "Hindi" 
                     ? "Hindi/हिंदी" 
                     : blog.language === "Nepali" 
@@ -122,15 +122,15 @@ const BlogPost: React.FC = () => {
                 <span className="text-gray-400">•</span>
               </>
             )}
-            <span className="text-gray-900 dark:text-gray-100 font-medium">
+            <span className="text-gray-900 font-medium">
               Written by{" "}
-              <span className="text-royal-600 dark:text-royal-400">
+              <span className="text-primary font-bold">
                 {blog.author}
               </span>
             </span>
           </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-gray-900 dark:text-white tracking-tight leading-[1.1] mb-6">
+          <h1 className="text-4xl md:text-5xl lg:text-7xl font-black text-gray-900 tracking-tight leading-[1.1] mb-6">
             {blog.title}
           </h1>
         </header>
@@ -161,74 +161,128 @@ const BlogPost: React.FC = () => {
         </div>
 
         {/* Content Body */}
-        <div className="max-w-[720px] mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mx-auto space-y-8 text-[18px] md:text-[20px] leading-[1.85] text-gray-800 dark:text-gray-300">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto space-y-8 text-[18px] md:text-[20px] leading-[1.85] text-gray-800">
             {contentBlocks.map((block, idx) => {
-              const lines = block
-                .split("\n")
-                .map((line) => line.trim())
-                .filter(Boolean);
+              const blockText = block.trim();
+              if (!blockText) return null;
 
-              const headingText = lines[0];
-              const isHeading =
-                lines.length === 1 &&
-                (headingText.startsWith("The Origins") ||
-                  headingText.startsWith("Conclusion:") ||
-                  (headingText.length < 50 && headingText.endsWith(":")));
-
-              if (isHeading) {
+              // 1. Detect Tag lines (e.g. "#Gender-Equality #Youth")
+              const isTagLine = blockText.split(/\s+/).every(word => word.startsWith("#"));
+              if (isTagLine) {
                 return (
-                  <h2
-                    key={idx}
-                    className="pt-2 text-2xl md:text-3xl font-bold leading-tight tracking-tight text-gray-900 dark:text-white first:pt-0"
-                  >
-                    {headingText.replace(/^#+\s*/, "")}
-                  </h2>
+                  <div key={idx} className="flex flex-wrap gap-2 text-primary font-bold text-sm mb-4">
+                    {blockText.split(/\s+/).map((tag, tagIdx) => (
+                      <span key={tagIdx} className="px-3 py-1 bg-gray-100 text-gray-700 rounded-full">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 );
               }
 
-              const isListBlock =
-                lines.length > 1 &&
-                lines.every(
-                  (line) => line.startsWith("●") || line.startsWith("*"),
+              // 2. Detect Headings
+              const isHeading =
+                !blockText.includes("\n") &&
+                blockText.length < 85 &&
+                !blockText.endsWith(".") &&
+                !blockText.endsWith("?") &&
+                !blockText.endsWith("!") &&
+                !blockText.endsWith("”") &&
+                !blockText.endsWith("\"");
+
+              const renderFormattedText = (text: string) => {
+                if (!text.includes("*") && !text.includes("`")) {
+                  return text;
+                }
+                const parts = text.split(/(\*.*?\*|`.*?`)/g);
+                return parts.map((part, index) => {
+                  if (part.startsWith("*") && part.endsWith("*")) {
+                    return (
+                      <em key={index} className="font-serif italic text-gray-950 bg-gray-100/60 px-1 rounded-sm font-medium">
+                        {part.slice(1, -1)}
+                      </em>
+                    );
+                  }
+                  if (part.startsWith("`") && part.endsWith("`")) {
+                    return (
+                      <code key={index} className="font-mono text-sm text-primary bg-gray-100 px-1.5 py-0.5 rounded font-semibold">
+                        {part.slice(1, -1)}
+                      </code>
+                    );
+                  }
+                  return part;
+                });
+              };
+
+              if (isHeading) {
+                const isH3 = blockText.startsWith("###");
+                const HeadingTag = isH3 ? "h3" : "h2";
+                const headingClass = isH3
+                  ? "pt-3 text-xl md:text-2xl font-bold leading-tight text-gray-900 mt-6 mb-3"
+                  : "pt-4 text-2xl md:text-3xl font-bold leading-tight tracking-tight text-gray-900 first:pt-0 mt-8 mb-4";
+
+                return (
+                  <HeadingTag
+                    key={idx}
+                    className={headingClass}
+                  >
+                    {renderFormattedText(blockText.replace(/^#+\s*/, ""))}
+                  </HeadingTag>
                 );
+              }
+
+              // 3. Detect List Blocks
+              const isListBlock = 
+                blockText.startsWith("●") || 
+                blockText.startsWith("* ") || 
+                blockText.includes("\n●") || 
+                blockText.includes("\n* ");
 
               if (isListBlock) {
+                const listItems = blockText
+                  .split(/(?:^[●]\s*|^[*]\s+|(?:\n+[●]\s*|\n+[*]\s+))/g)
+                  .map((item) => item.trim())
+                  .filter(Boolean);
+
                 return (
-                  <ul key={idx} className="space-y-3 pl-5">
-                    {lines.map((line, lineIndex) => (
-                      <li
-                        key={lineIndex}
-                        className="list-disc leading-[1.8] text-gray-800 dark:text-gray-300"
-                      >
-                        {line.substring(1).trim()}
-                      </li>
-                    ))}
+                  <ul key={idx} className="list-disc space-y-3 pl-5 my-6">
+                    {listItems.map((item, itemIndex) => {
+                      const itemText = item.replace(/\n+/g, " ").replace(/\s+/g, " ");
+                      return (
+                        <li
+                          key={itemIndex}
+                          className="leading-[1.8] text-gray-800 pl-1"
+                        >
+                          {renderFormattedText(itemText)}
+                        </li>
+                      );
+                    })}
                   </ul>
                 );
               }
 
-              const paragraphText = lines.join(" ").replace(/\s+/g, " ");
-
+              // 4. Default: Paragraph
+              const paragraphText = blockText.replace(/\n+/g, " ").replace(/\s+/g, " ");
               return (
                 <p
                   key={idx}
-                  className="leading-[1.85] text-gray-800 dark:text-gray-300"
+                  className="leading-[1.85] text-gray-800 mb-4"
                 >
-                  {paragraphText}
+                  {renderFormattedText(paragraphText)}
                 </p>
               );
             })}
           </div>
 
           {/* Share / Tags section (placeholder) */}
-          <div className="mt-16 pt-8 border-t border-gray-200 dark:border-gray-800 flex flex-wrap items-center justify-between gap-6">
+          <div className="mt-16 pt-8 border-t border-gray-200 flex flex-wrap items-center justify-between gap-6">
             <div className="flex gap-3">
               <span className="text-gray-500 font-medium">Tags:</span>
-              <span className="text-royal-600 dark:text-royal-400 font-medium">
+              <span className="text-primary font-medium">
                 Culture
               </span>
-              <span className="text-royal-600 dark:text-royal-400 font-medium">
+              <span className="text-primary font-medium">
                 Stories
               </span>
             </div>
@@ -239,7 +293,7 @@ const BlogPost: React.FC = () => {
               </span>
               <button
                 onClick={handleShare}
-                className="w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-400 hover:bg-royal-600 hover:text-white transition-colors"
+                className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 hover:bg-primary hover:text-white transition-colors"
                 title="Share article"
               >
                 <Share2 className="w-5 h-5" />

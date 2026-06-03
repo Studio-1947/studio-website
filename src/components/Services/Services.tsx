@@ -35,7 +35,7 @@ export default function Services() {
         aria-hidden="true"
       >
         <img
-          src="/what_we_do.svg"
+          src="/what_we_do_bg_1.webp"
           alt=""
           className="absolute 
           bottom-0 

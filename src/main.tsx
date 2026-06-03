@@ -16,7 +16,6 @@ const Initiative = lazy(() => import("./pages/Initiative.tsx"));
 const TeamMember = lazy(() => import("./pages/TeamMember.tsx"));
 const About = lazy(() => import("./pages/About.tsx"));
 const Careers = lazy(() => import("./pages/Careers.tsx"));
-const Story = lazy(() => import("./pages/Story.tsx"));
 const Solutions = lazy(() => import("./pages/Solutions.tsx"));
 const ComingSoon = lazy(() => import("./pages/ComingSoon.tsx"));
 const PressMedia = lazy(() => import("./pages/PressMedia.tsx"));
@@ -100,7 +99,7 @@ createRoot(document.getElementById("root")!).render(
     <BrowserRouter>
       <ScrollToTop />
       <Suspense fallback={<PageLoader />}>
-        <Routes>
+          <Routes>
           <Route path="/" element={<App />} />
           <Route path="/v2" element={<HomeV2 />} />
 
@@ -123,7 +122,6 @@ createRoot(document.getElementById("root")!).render(
 
           {/* Core Routes */}
           <Route path="/team/:slug" element={<TeamMember />} />
-          <Route path="/our-story" element={<Story />} />
           <Route path="/about" element={<About />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/solutions" element={<Solutions />} />
