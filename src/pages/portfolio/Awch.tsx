@@ -7,14 +7,14 @@ import PortfolioCTA from "../../components/PortfolioCTA";
 import ProjectCredits from "../../components/ProjectCredits";
 
 // ── Assets ────────────────────────────────────────────────────────────────────
-const IMG_HERO = "/portfolio/awch/hero.png";
-const IMG_ARCH = "/portfolio/awch/Parent-Brand Architecture.png";
+const IMG_HERO = "/portfolio/awch/Parent-Brand Architecture.png";
 const IMG_TYPO = "/portfolio/awch/Typographyfont.png";
 const IMG_WEB = "/portfolio/awch/Simplified Information Architecture.png";
 const IMG_APPT = "/portfolio/awch/Frictionless Appointment UX.png";
 const IMG_SOCIAL_1 = "/portfolio/awch/Instant Recall01.png";
 const IMG_SOCIAL_2 = "/portfolio/awch/Instant Recall02.jpg";
 const IMG_SOCIAL_3 = "/portfolio/awch/Instant Recall03.jpg";
+const IMG_FRAME4 = "/portfolio/awch/Frame 4.png";
 
 // ── Shared primitives ─────────────────────────────────────────────────────────
 function SectionLabel({ children }: { children: React.ReactNode }) {
@@ -266,18 +266,29 @@ export default function Awch() {
               To protect the institution from future design debt, we built an
               adaptable visual architecture. AWCH serves as the primary master
               identity under which specific wings (such as Pediatrics,
-              Gynecology, and Emergency Care) operate. This cohesive blueprint
-              ensures that as the hospital expands its departments, every new
-              facility instantly inherits established brand equity, saving
+              Gynecology, Emergency Care, and advanced Dermatology and Skincare
+              Treatments) operate. This cohesive blueprint ensures that as the
+              hospital expands its services, every new department and specialized
+              clinic instantly inherits established brand equity, saving
               long-term promotional costs.
             </Body>
-            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden">
+            {/* <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden">
               <img
                 src={IMG_ARCH}
                 alt="AWCH master brand logo — Avishkar Women & Children Hospital"
                 className="w-full block cursor-zoom-in"
                 loading="lazy"
                 onClick={() => zoom(IMG_ARCH)}
+              />
+            </div> */}
+
+            <div className="-mx-6 md:mx-0 rounded-none md:rounded-3xl overflow-hidden mt-6">
+              <img
+                src={IMG_FRAME4}
+                alt="AWCH brand architecture showcase"
+                className="w-full block cursor-zoom-in"
+                loading="lazy"
+                onClick={() => zoom(IMG_FRAME4)}
               />
             </div>
           </section>
@@ -489,15 +500,18 @@ export default function Awch() {
           <Divider />
 
           {/* ── Credits ─────────────────────────────────────────────────── */}
-          <ProjectCredits 
+          <ProjectCredits
             client="Avishkar"
             accentColor="#004A99"
             roles={[
               { role: "Creative Direction", members: "Rabi, Soumajit" },
               { role: "Design", members: "Zahid, Nikhil Subba" },
               { role: "Content", members: "Nadia, Sweety" },
-              { role: "Website Design & Development", members: "Soumajit, Santam" },
-              { role: "Video", members: "Ahmed, Nikhil Subba" }
+              {
+                role: "Website Design & Development",
+                members: "Soumajit, Santam",
+              },
+              { role: "Video", members: "Ahmed, Nikhil Subba" },
             ]}
           />
 

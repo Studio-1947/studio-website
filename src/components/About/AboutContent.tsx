@@ -10,7 +10,7 @@ const AboutContent: React.FC = () => {
  {/* Left Column: Heading */}
  <div className="self-center">
  <span className="block text-royal-700 font-bold tracking-[0.2em] uppercase text-sm mb-4">
- Our Philosophy
+ We are Studio 1947
  </span>
  <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight leading-tight text-gray-900 mb-6">
  {aboutData.missionHeading}
@@ -28,16 +28,6 @@ const AboutContent: React.FC = () => {
  ))}
  </div>
  
- <div className="pt-6">
- <blockquote className="relative pl-6 border-l-4 border-royal-700">
- <p className="text-xl md:text-2xl font-serif italic text-gray-800 leading-normal">
- "{aboutData.closingStatement}"
- </p>
- <footer className="mt-3 text-sm font-semibold text-gray-500 not-italic">
- — {aboutData.closingAuthor}
- </footer>
- </blockquote>
- </div>
  </div>
  </div>
  </div>

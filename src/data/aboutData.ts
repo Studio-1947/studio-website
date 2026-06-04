@@ -3,10 +3,8 @@ export const aboutData = {
   missionHeading: "Rooted in Wisdom.\nDesigned for Tomorrow",
 
   missionStatement: [
-    "At Studio 1947, we don't just share information, we move people through stories. We turn ideas into experiences that are not just seen, but felt.",
-    "Rooted in local insights and shaped by global thinking, we blend creativity, strategy, and technology to break through the noise and build what lasts.",
-    "Our work transforms lived narratives into meaningful systems which are designed for today, inspired by the past, and built for what's next."
-  ],
-  closingStatement: "Keep moving forward.",
-  closingAuthor: "Walt Disney"
+    "At Studio 1947, information is static, but stories move people. We turn abstract ideas into visceral experiences—design that isn't just seen, but felt.",
+    "We bridge the gap between local wisdom and global practice. By blending creativity, strategy, and tech, we help brands bypass the noise to build solutions that actually endure.",
+    "Local narratives are our foundation, transforming into systems rooted in lived experience within the space where memory, culture, and technology overlap. We design for today, drawing strength from the past, with our eyes locked on tomorrow."
+  ]
 };

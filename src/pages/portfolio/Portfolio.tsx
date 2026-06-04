@@ -5,8 +5,8 @@ import { usePageMeta } from '../../hooks/usePageMeta';
 
 const IMG_REMODEL_UN    = '/portfolio/remodelUN/hero.svg';
 const IMG_FERMY_LAB     = '/portfolio/fermylab/Physical Retail Packaging.png';
-const IMG_RAJKAMAL      = '/portfolio/rajkamal/hero.svg';
-const IMG_AWCH          = '/portfolio/awch/hero.png';
+const IMG_RAJKAMAL      = '/portfolio/rajkamal/rajkamal_hero.jpeg';
+const IMG_AWCH          = '/portfolio/awch/Parent-Brand Architecture.png';
 const IMG_LOCAL_FUTURES = '/portfolio/localFutures/hero.png';
 const IMG_VILLAGE_WAYS  = '/portfolio/villageWays/hero.png';
 const IMG_AI_CROWD      = '/portfolio/aiCrowd/hero.svg';
