@@ -1,4 +1,3 @@
-import PlasmaWave from "./PlasmaWave";
 
 const TESTIMONIALS = [
   {
@@ -37,17 +36,7 @@ export default function Testimonials() {
   const companyClassName = "text-sm text-gray-500 mt-1";
 
   return (
-    <section className="relative py-24 overflow-hidden bg-gray-50">
-      <div className="absolute inset-0 z-0 opacity-20">
-        <PlasmaWave 
-          colors={["#D60000", "#FF4D4D"]} 
-          speed1={0.05}
-          speed2={0.05}
-          focalLength={0.8}
-          bend1={1}
-          bend2={0.5}
-        />
-      </div>
+    <section className="relative py-24 overflow-hidden">
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 text-center">
         <span className="inline-block py-1 px-3 rounded-full bg-white border border-gray-200 text-gray-600 text-xs font-semibold tracking-wide uppercase mb-6 shadow-sm">

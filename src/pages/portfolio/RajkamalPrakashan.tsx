@@ -7,7 +7,7 @@ import PortfolioCTA from "../../components/PortfolioCTA";
 import ProjectCredits from "../../components/ProjectCredits";
 
 // ── Local assets (public/portfolio/rejkamal/) ─────────────────────────────────
-const IMG_HERO = "/portfolio/rajkamal/hero.svg";
+const IMG_HERO = "/portfolio/rajkamal/rajkamal_hero.jpeg";
 const IMG_SLIDES = "/portfolio/rajkamal/Brand Governance01.png";
 const IMG_CLEARSPACE = "/portfolio/rajkamal/Brand Governance02.png";
 const IMG_LOGO_RULES = "/portfolio/rajkamal/Brand Governance03.png";
